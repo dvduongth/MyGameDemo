@@ -11,8 +11,8 @@ var PACKET_PROCESS_INTERVAL = 100;
 // ========================================================
 // ========================================================
 // Maps
-var MAP_OFFSET_X = -10; // Reserved for screenshake
-var MAP_OFFSET_Y = -10; // Reserved for screenshake
+var MAP_OFFSET_X = -100; // Reserved for screenshake
+var MAP_OFFSET_Y = -100; // Reserved for screenshake
 
 var MAP_WATER_FRAME_NUMBER = 30;
 var MAP_WATER_FRAME_DURATION = 60;
@@ -42,6 +42,7 @@ var DIRECTION_UP = 1;
 var DIRECTION_RIGHT = 2;
 var DIRECTION_DOWN = 3;
 var DIRECTION_LEFT = 4;
+var DIRECTION_IDLE = 5;
 // ========================================================
 // ========================================================
 // ========================================================

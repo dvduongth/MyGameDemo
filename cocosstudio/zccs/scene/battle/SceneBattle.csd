@@ -30,16 +30,16 @@
             <EndColor A="255" R="144" G="238" B="144" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprMapBackground" ActionTag="1326271976" Tag="131" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="172.3662" RightMargin="169.6338" TopMargin="848.5248" BottomMargin="459.4752" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprMapBackground" ActionTag="1326271976" Tag="131" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="171.0000" RightMargin="171.0000" TopMargin="654.0000" BottomMargin="654.0000" ctype="SpriteObjectData">
             <Size X="900.0000" Y="900.0000" />
             <Children>
-              <AbstractNodeData Name="MainBase_4_4" ActionTag="259790017" Tag="132" IconVisible="False" LeftMargin="414.4322" RightMargin="402.5678" TopMargin="805.2276" BottomMargin="11.7724" ctype="SpriteObjectData">
+              <AbstractNodeData Name="MainBase_4_4" ActionTag="259790017" Tag="132" IconVisible="False" LeftMargin="411.1320" RightMargin="405.8680" TopMargin="759.0281" BottomMargin="57.9719" ctype="SpriteObjectData">
                 <Size X="83.0000" Y="83.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="455.9322" Y="53.2724" />
+                <Position X="452.6320" Y="99.4719" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5066" Y="0.0592" />
+                <PrePosition X="0.5029" Y="0.1105" />
                 <PreSize X="0.0922" Y="0.0922" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 1/MainBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
@@ -330,13 +330,13 @@
                 <PrePosition X="0.5750" Y="0.4320" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="MainBase_4_0_50" ActionTag="-994614455" Tag="159" IconVisible="False" LeftMargin="415.2253" RightMargin="401.7747" TopMargin="15.7690" BottomMargin="801.2310" ctype="SpriteObjectData">
+              <AbstractNodeData Name="MainBase_4_0_50" ActionTag="-994614455" Tag="159" IconVisible="False" LeftMargin="413.0068" RightMargin="403.9932" TopMargin="47.9364" BottomMargin="769.0636" ctype="SpriteObjectData">
                 <Size X="83.0000" Y="83.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="456.7253" Y="842.7310" />
+                <Position X="454.5068" Y="810.5636" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5075" Y="0.9364" />
+                <PrePosition X="0.5050" Y="0.9006" />
                 <PreSize X="0.0922" Y="0.0922" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/MainBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
@@ -451,13 +451,13 @@
                 <PrePosition X="0.2991" Y="0.2481" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ndBrick_0_12" ActionTag="1716654474" Tag="170" IconVisible="True" LeftMargin="60.0875" RightMargin="839.9125" TopMargin="591.1102" BottomMargin="308.8898" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="ndBrick_0_12" ActionTag="1716654474" Tag="170" IconVisible="True" LeftMargin="60.8594" RightMargin="839.1406" TopMargin="591.1101" BottomMargin="308.8899" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Concrete_7_33_46_56_70" ActionTag="-1785151721" Tag="171" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Concrete_7_33_46_56_70" ActionTag="-1785151721" Tag="171" IconVisible="False" LeftMargin="29.1149" RightMargin="-72.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="51.6149" />
+                    <Position X="50.6149" Y="0.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -465,10 +465,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Concrete_7_0_35_48_58_72" ActionTag="-1429298529" Tag="172" IconVisible="False" LeftMargin="75.3055" RightMargin="-118.3055" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Concrete_7_0_35_48_58_72" ActionTag="-1429298529" Tag="172" IconVisible="False" LeftMargin="68.5899" RightMargin="-111.5899" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="96.8055" />
+                    <Position X="90.0899" Y="0.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -476,10 +476,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Concrete_7_1_37_50_60_74" ActionTag="984092195" Tag="173" IconVisible="False" LeftMargin="120.4963" RightMargin="-163.4963" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Concrete_7_1_37_50_60_74" ActionTag="984092195" Tag="173" IconVisible="False" LeftMargin="109.0665" RightMargin="-152.0665" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="141.9963" />
+                    <Position X="130.5665" Y="0.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -487,10 +487,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Concrete_7_2_39_52_62_76" ActionTag="-1918722162" Tag="174" IconVisible="False" LeftMargin="165.6870" RightMargin="-208.6870" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Concrete_7_1_37_50_60_74_0" ActionTag="-1811955385" Tag="120" IconVisible="False" LeftMargin="149.8622" RightMargin="-192.8622" TopMargin="-21.3307" BottomMargin="-21.6693" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="187.1870" />
+                    <Position X="171.3622" Y="-0.1693" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -500,19 +500,19 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="60.0875" Y="308.8898" />
+                <Position X="60.8594" Y="308.8899" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0668" Y="0.3432" />
+                <PrePosition X="0.0676" Y="0.3432" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ndBrick_0_0_14" ActionTag="88377848" Tag="175" IconVisible="True" LeftMargin="613.7164" RightMargin="286.2836" TopMargin="589.1071" BottomMargin="310.8929" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="ndBrick_0_0_14" ActionTag="88377848" Tag="175" IconVisible="True" LeftMargin="838.4014" RightMargin="61.5986" TopMargin="596.3284" BottomMargin="303.6716" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Concrete_7_33_46_56_66_78" ActionTag="1908754221" Tag="176" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Concrete_7_33_46_56_66_78" ActionTag="1255630185" Tag="125" IconVisible="False" LeftMargin="-188.3870" RightMargin="145.3870" TopMargin="-28.1243" BottomMargin="-14.8757" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="51.6149" />
+                    <Position X="-166.8870" Y="6.6243" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -520,10 +520,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Concrete_7_0_35_48_58_68_80" ActionTag="-778512165" Tag="177" IconVisible="False" LeftMargin="75.3055" RightMargin="-118.3055" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Concrete_7_0_35_48_58_68_80" ActionTag="57506818" Tag="126" IconVisible="False" LeftMargin="-148.1964" RightMargin="105.1964" TopMargin="-28.1243" BottomMargin="-14.8757" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="96.8055" />
+                    <Position X="-126.6964" Y="6.6243" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -531,10 +531,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Concrete_7_1_37_50_60_70_82" ActionTag="-1367073309" Tag="178" IconVisible="False" LeftMargin="120.4963" RightMargin="-163.4963" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Concrete_7_1_37_50_60_70_82" ActionTag="-1501592513" Tag="127" IconVisible="False" LeftMargin="-108.0053" RightMargin="65.0053" TopMargin="-28.1243" BottomMargin="-14.8757" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="141.9963" />
+                    <Position X="-86.5053" Y="6.6243" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -542,10 +542,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Concrete_7_2_39_52_62_72_84" ActionTag="746293364" Tag="179" IconVisible="False" LeftMargin="165.6870" RightMargin="-208.6870" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Concrete_7_2_39_52_62_72_84" ActionTag="-1566453041" Tag="128" IconVisible="False" LeftMargin="-67.8148" RightMargin="24.8148" TopMargin="-28.1243" BottomMargin="-14.8757" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="187.1870" />
+                    <Position X="-46.3148" Y="6.6243" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -555,10 +555,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="613.7164" Y="310.8929" />
+                <Position X="838.4014" Y="303.6716" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6819" Y="0.3454" />
+                <PrePosition X="0.9316" Y="0.3374" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndBrick_1_16" ActionTag="1645215532" Tag="180" IconVisible="True" LeftMargin="266.6678" RightMargin="633.3322" TopMargin="229.0634" BottomMargin="670.9366" ctype="SingleNodeObjectData">
@@ -759,7 +759,7 @@
                 <PrePosition X="0.6885" Y="0.6552" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ndConcrete_3_22" ActionTag="229970002" Tag="198" IconVisible="True" LeftMargin="270.4809" RightMargin="629.5191" TopMargin="584.1225" BottomMargin="315.8775" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="ndConcrete_3_22" ActionTag="229970002" Tag="198" IconVisible="True" LeftMargin="267.8730" RightMargin="632.1270" TopMargin="591.5423" BottomMargin="308.4577" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_106_116" ActionTag="-1403228768" Tag="199" IconVisible="False" LeftMargin="24.1148" RightMargin="-67.1148" TopMargin="-21.2000" BottomMargin="-21.8000" ctype="SpriteObjectData">
@@ -841,10 +841,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="270.4809" Y="315.8775" />
+                <Position X="267.8730" Y="308.4577" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3005" Y="0.3510" />
+                <PrePosition X="0.2976" Y="0.3427" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndConcrete_3_0_24" ActionTag="1739070866" Tag="206" IconVisible="True" LeftMargin="270.5839" RightMargin="629.4161" TopMargin="306.3678" BottomMargin="593.6322" ctype="SingleNodeObjectData">
@@ -1061,12 +1061,518 @@
                 <PrePosition X="0.5000" Y="-0.2278" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
+              <AbstractNodeData Name="ndConcrete_2_0" ActionTag="-2120945916" Tag="100" IconVisible="True" LeftMargin="-53.5402" RightMargin="953.5402" TopMargin="871.6777" BottomMargin="28.3223" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Concrete_7_10" ActionTag="-391786980" Tag="101" IconVisible="False" LeftMargin="49.1147" RightMargin="-92.1147" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="70.6147" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_0_12" ActionTag="-1879167525" Tag="102" IconVisible="False" LeftMargin="87.4385" RightMargin="-130.4385" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="108.9385" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_1_14" ActionTag="-639669491" Tag="103" IconVisible="False" LeftMargin="128.7619" RightMargin="-171.7619" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="150.2619" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_2_16" ActionTag="-1781178913" Tag="104" IconVisible="False" LeftMargin="171.0854" RightMargin="-214.0854" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="192.5854" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18" ActionTag="1957388231" Tag="105" IconVisible="False" LeftMargin="212.4089" RightMargin="-255.4089" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="233.9089" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_0" ActionTag="-1190580414" Tag="106" IconVisible="False" LeftMargin="254.7322" RightMargin="-297.7322" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="276.2322" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_1" ActionTag="-428444597" Tag="107" IconVisible="False" LeftMargin="295.0559" RightMargin="-338.0559" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="316.5559" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_10_0" ActionTag="-914388982" Tag="137" IconVisible="False" LeftMargin="337.8897" RightMargin="-380.8897" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="359.3897" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_0_12_0" ActionTag="-1180008584" Tag="138" IconVisible="False" LeftMargin="378.2139" RightMargin="-421.2139" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="399.7139" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_1_14_0" ActionTag="-1233480704" Tag="139" IconVisible="False" LeftMargin="419.5370" RightMargin="-462.5370" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="441.0370" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_2_16_0" ActionTag="1094702677" Tag="140" IconVisible="False" LeftMargin="461.8604" RightMargin="-504.8604" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="483.3604" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_2" ActionTag="-628863639" Tag="141" IconVisible="False" LeftMargin="503.1830" RightMargin="-546.1830" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="524.6830" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_0_0" ActionTag="-965117914" Tag="142" IconVisible="False" LeftMargin="545.5073" RightMargin="-588.5073" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="567.0073" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_1_0" ActionTag="287831871" Tag="143" IconVisible="False" LeftMargin="585.8306" RightMargin="-628.8306" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="607.3306" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_10_1" ActionTag="-512290255" Tag="144" IconVisible="False" LeftMargin="626.9934" RightMargin="-669.9934" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="648.4934" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_0_12_1" ActionTag="-2042077950" Tag="145" IconVisible="False" LeftMargin="667.3173" RightMargin="-710.3173" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="688.8173" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_1_14_1" ActionTag="-1936349530" Tag="146" IconVisible="False" LeftMargin="708.6409" RightMargin="-751.6409" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="730.1409" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_2_16_1" ActionTag="2031937241" Tag="147" IconVisible="False" LeftMargin="750.9655" RightMargin="-793.9655" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="772.4655" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_3" ActionTag="158250464" Tag="148" IconVisible="False" LeftMargin="792.2883" RightMargin="-835.2883" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="813.7883" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_0_1" ActionTag="-389087867" Tag="149" IconVisible="False" LeftMargin="834.6112" RightMargin="-877.6112" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="856.1112" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_1_1" ActionTag="-396622533" Tag="150" IconVisible="False" LeftMargin="874.9357" RightMargin="-917.9357" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="896.4357" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_1_1_0" ActionTag="532637931" Tag="151" IconVisible="False" LeftMargin="916.2870" RightMargin="-959.2870" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="937.7870" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-53.5402" Y="28.3223" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.0595" Y="0.0315" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="ndConcrete_2_0_0" ActionTag="1240165330" Tag="152" IconVisible="True" LeftMargin="-49.3060" RightMargin="949.3060" TopMargin="25.3475" BottomMargin="874.6525" ctype="SingleNodeObjectData">
+                <Size X="0.0000" Y="0.0000" />
+                <Children>
+                  <AbstractNodeData Name="Concrete_7_10" ActionTag="-192438790" Tag="153" IconVisible="False" LeftMargin="49.1147" RightMargin="-92.1147" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="70.6147" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_0_12" ActionTag="-1376774922" Tag="154" IconVisible="False" LeftMargin="87.4385" RightMargin="-130.4385" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="108.9385" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_1_14" ActionTag="558331263" Tag="155" IconVisible="False" LeftMargin="128.7619" RightMargin="-171.7619" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="150.2619" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_2_16" ActionTag="-21977613" Tag="156" IconVisible="False" LeftMargin="171.0854" RightMargin="-214.0854" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="192.5854" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18" ActionTag="579123901" Tag="157" IconVisible="False" LeftMargin="212.4089" RightMargin="-255.4089" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="233.9089" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_0" ActionTag="1636313106" Tag="158" IconVisible="False" LeftMargin="254.7322" RightMargin="-297.7322" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="276.2322" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_1" ActionTag="-804204376" Tag="159" IconVisible="False" LeftMargin="295.0559" RightMargin="-338.0559" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="316.5559" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_10_0" ActionTag="285314578" Tag="160" IconVisible="False" LeftMargin="337.8897" RightMargin="-380.8897" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="359.3897" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_0_12_0" ActionTag="1763385484" Tag="161" IconVisible="False" LeftMargin="378.2139" RightMargin="-421.2139" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="399.7139" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_1_14_0" ActionTag="-329749398" Tag="162" IconVisible="False" LeftMargin="419.5370" RightMargin="-462.5370" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="441.0370" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_2_16_0" ActionTag="-1546897340" Tag="163" IconVisible="False" LeftMargin="461.8604" RightMargin="-504.8604" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="483.3604" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_2" ActionTag="1389885019" Tag="164" IconVisible="False" LeftMargin="503.1830" RightMargin="-546.1830" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="524.6830" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_0_0" ActionTag="1281164193" Tag="165" IconVisible="False" LeftMargin="545.5073" RightMargin="-588.5073" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="567.0073" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_1_0" ActionTag="2127430922" Tag="166" IconVisible="False" LeftMargin="585.8306" RightMargin="-628.8306" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="607.3306" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_10_1" ActionTag="-730165413" Tag="167" IconVisible="False" LeftMargin="626.9934" RightMargin="-669.9934" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="648.4934" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_0_12_1" ActionTag="393665883" Tag="168" IconVisible="False" LeftMargin="667.3173" RightMargin="-710.3173" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="688.8173" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_1_14_1" ActionTag="-1011772635" Tag="169" IconVisible="False" LeftMargin="708.6409" RightMargin="-751.6409" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="730.1409" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_2_16_1" ActionTag="932084575" Tag="170" IconVisible="False" LeftMargin="750.9655" RightMargin="-793.9655" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="772.4655" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_3" ActionTag="992981938" Tag="171" IconVisible="False" LeftMargin="792.2883" RightMargin="-835.2883" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="813.7883" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_0_1" ActionTag="-1906027301" Tag="172" IconVisible="False" LeftMargin="834.6112" RightMargin="-877.6112" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="856.1112" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_1_1" ActionTag="-713492742" Tag="173" IconVisible="False" LeftMargin="874.9357" RightMargin="-917.9357" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="896.4357" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Concrete_7_3_18_1_1_0" ActionTag="813277523" Tag="174" IconVisible="False" LeftMargin="916.2870" RightMargin="-959.2870" TopMargin="-20.9671" BottomMargin="-22.0329" ctype="SpriteObjectData">
+                    <Size X="43.0000" Y="43.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="937.7870" Y="-0.5329" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
+                    <BlendFunc Src="1" Dst="771" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint />
+                <Position X="-49.3060" Y="874.6525" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.0548" Y="0.9718" />
+                <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="622.3662" Y="909.4752" />
+            <Position X="621.0000" Y="1104.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5011" Y="0.4119" />
+            <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="0.7246" Y="0.4076" />
             <FileData Type="Normal" Path="resources/textures/Map/Background_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />

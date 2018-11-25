@@ -1,144 +1,123 @@
 "use strict";
 var Bullet = cc.Sprite.extend({
-    ctor: function (game, id, team) {
-        // Identifier
-        this.m_id = id;
-        this.m_team = team;
+    _className: "Bullet",
+    getClassName: function () {
+        return this._className;
+    },
+    ctor: function (id, direction, team, type) {
+        this.setID(id);
+        this.setTeam(team);
+        this.setType(type);
+        this.setDirection(direction);
         //super
-        this._super();
+        var path;
+        switch (type) {
+            case TANK_LIGHT:
+                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__BULLET__1_PNG);
+                break;
+            case TANK_MEDIUM:
+                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__BULLET__2_PNG);
+                break;
+            case TANK_HEAVY:
+                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__BULLET__3_PNG);
+                break;
+            default :
+                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__BULLET__1_PNG);
+                break;
+        }
+        this._super(path);
         this.initBullet();
     },
     initBullet: function () {
-        this.m_data = [];
-
-        // Current state
-        this.m_type = 0;
-        this.m_x = -1;
-        this.m_y = -1;
-        this.m_direction = 0;
-        this.m_live = false;
-        this.m_hit = false;
+        this.setSpeed(Setting.BULLET_SPEED);
     },
-
-    // An array to contain state in the past
-    DataAnchor: function () {
-        var _t = {};
-        _t.m_time = 0;
-        _t.m_type = 0;
-        _t.m_x = 0;
-        _t.m_y = 0;
-        _t.m_direction = 0;
-        _t.m_live = false;
-        _t.m_hit = false;
-        return _t;
+    setID: function (id) {
+        this._bulletID = id;
     },
-
-    // Add a state in a specific time
-    AddDataAnchor: function (time, type, x, y, dir, live, hit) {
-        var tempAnchor = this.DataAnchor();
-        tempAnchor.m_time = time;
-        tempAnchor.m_type = type;
-        tempAnchor.m_x = x;
-        tempAnchor.m_y = y;
-        tempAnchor.m_direction = dir;
-        tempAnchor.m_live = live;
-        tempAnchor.m_hit = hit;
-
-
-        if (tempAnchor.m_hit) {
-            /*if (tempAnchor.m_type == TANK_HEAVY) {
-             game.SpawnExplosion (time, EXPLOSION_BULLET, tempAnchor.m_x, tempAnchor.m_y);
-             }
-             else {
-             game.SpawnExplosion (time, EXPLOSION_CANNON, tempAnchor.m_x, tempAnchor.m_y);
-             }*/
-        }
-
-        this.m_data.push(tempAnchor);
+    getID: function () {
+        return this._bulletID;
     },
-
-    // Clone a new state, at a new time, but with old data like previous state
-    // This process to make a contiuous timeline. You can think of it as a fake update
-    // We won't do it if was updated by a real packet.
-    AddIdleDataAnchor: function (time) {
-        var previousAnchor = this.m_data[this.m_data.length - 1];
-
-        if (previousAnchor) {
-            var tempAnchor = this.DataAnchor();
-            tempAnchor.m_time = time;
-            tempAnchor.m_type = previousAnchor.m_type;
-            tempAnchor.m_x = previousAnchor.m_x;
-            tempAnchor.m_y = previousAnchor.m_y;
-            tempAnchor.m_direction = previousAnchor.m_direction;
-            tempAnchor.m_live = previousAnchor.m_live;
-            this.m_data.push(tempAnchor);
-        }
+    setTeam: function (t) {
+        this._bulletTeam = t;
     },
-
-    // Update function, called with a specific moment in the timeline
-    // We gonna interpolate all state, based on the data anchors.
-    Update: function (time) {
-        var prevAnchor = null;
-        var nextAnchor = null;
-
-        for (var i = 0; i < this.m_data.length - 1; i++) {
-            if (time >= this.m_data[i].m_time && time < this.m_data[i + 1].m_time) {
-                prevAnchor = this.m_data[i];
-                nextAnchor = this.m_data[i + 1];
-                break;
-            }
-        }
-
-        if (prevAnchor && nextAnchor) {
-            if (prevAnchor.m_live == false) {
-                this.m_x = nextAnchor.m_x;
-                this.m_y = nextAnchor.m_y;
-            }
-            else {
-                var interpolateFactor = (time - prevAnchor.m_time) / (nextAnchor.m_time - prevAnchor.m_time);
-                this.m_x = prevAnchor.m_x + (nextAnchor.m_x - prevAnchor.m_x) * interpolateFactor;
-                this.m_y = prevAnchor.m_y + (nextAnchor.m_y - prevAnchor.m_y) * interpolateFactor;
-            }
-            this.m_type = prevAnchor.m_type;
-            this.m_direction = prevAnchor.m_direction;
-            this.m_live = prevAnchor.m_live;
-        }
-        else {
-            this.m_live = false;
-        }
+    getTeam: function () {
+        return this._bulletTeam;
     },
-
-    // Draw - obvious comment is obvious
-    Draw: function () {
-        if (this.m_live) {
-            var angle = 0;
-            if (this.m_direction == DIRECTION_UP) {
+    setType: function (t) {
+        this._tankType = t;
+    },
+    getType: function () {
+        return this._tankType;
+    },
+    setDirection: function (d) {
+        this._bulletDirection = d;
+        //LogUtils.getInstance().log([this.getClassName(), "setDirection", d]);
+    },
+    getDirection: function () {
+        return this._bulletDirection;
+    },
+    setSpeed: function (s) {
+        this._bulletSpeed = s;
+    },
+    getSpeed: function () {
+        return this._bulletSpeed;
+    },
+    // Draw
+    update: function (dt) {
+        var angle = 0;
+        var dX = 0;
+        var dY = 0;
+        switch (this.getDirection()) {
+            case DIRECTION_UP:
                 angle = 0;
-            }
-            else if (this.m_direction == DIRECTION_RIGHT) {
-                angle = 90;
-            }
-            else if (this.m_direction == DIRECTION_DOWN) {
+                dY = this.getSpeed();
+                break;
+            case DIRECTION_DOWN:
                 angle = 180;
-            }
-            else if (this.m_direction == DIRECTION_LEFT) {
+                dY = -this.getSpeed();
+                break;
+            case DIRECTION_LEFT:
                 angle = 270;
-            }
-            /*g_graphicEngine.SetDrawModeAddActive (g_context, true);
-             g_graphicEngine.Draw (g_context, imgBullet[this.m_type], 0, 0, BLOCK_SIZE, BLOCK_SIZE, this.m_x * BLOCK_SIZE + g_gsActionPhase.m_screenShakeX, this.m_y * BLOCK_SIZE + g_gsActionPhase.m_screenShakeY, BLOCK_SIZE, BLOCK_SIZE, 1, false, false, angle);
-             g_graphicEngine.SetDrawModeAddActive (g_context, false);
-
-             if (this.m_type == TANK_HEAVY) {
-             whiteSmoke.Pause();
-             }
-             else {
-             whiteSmoke.Resume();
-             whiteSmoke.m_x = (this.m_x + 0.5) * BLOCK_SIZE;
-             whiteSmoke.m_y = (this.m_y + 0.5) * BLOCK_SIZE;
-             }*/
+                dX = -this.getSpeed();
+                break;
+            case DIRECTION_RIGHT:
+                angle = 90;
+                dX = this.getSpeed();
+                break;
+            default :
+                //DIRECTION_UP
+                angle = 0;
+                dY = this.getSpeed();
+                break;
         }
-        /*else {
-         whiteSmoke.Pause();
-         }*/
+        this.setPositionX(this.getPositionX() + dX);
+        this.setPositionY(this.getPositionY() + dY);
+        this.setRotation(angle);
+        this.checkOutOfBoundingScreen();
+    },
+    checkOutOfBoundingScreen: function () {
+        var parent = this.getParent();
+        var worldPos = parent.convertToWorldSpace(this.getPosition());
+        if (worldPos.x >= (gv.WIN_SIZE.width + MAP_OFFSET_X)) {
+            this.destroy();
+            return true;
+        }
+        if (worldPos.y >= (gv.WIN_SIZE.height + MAP_OFFSET_Y)) {
+            this.destroy();
+            return true;
+        }
+        if (worldPos.x <= -MAP_OFFSET_Y) {
+            this.destroy();
+            return true;
+        }
+        if (worldPos.y <= -MAP_OFFSET_Y) {
+            this.destroy();
+            return true;
+        }
+        return false;
+    },
+    destroy: function () {
+        gv.engine.getBattleMgr().removeBullet(this.getID());
+        this.removeFromParent(true);
     }
 });

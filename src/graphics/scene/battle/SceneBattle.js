@@ -28,6 +28,9 @@ var SceneBattle = BaseScene.extend({
         this.removeTouchListenerOneByOneTank();
         this._super();
     },
+    update: function (dt) {
+        gv.engine.getBattleMgr().update(dt);
+    },
 
     createTouchListenerOneByOneTank: function () {
         this.removeTouchListenerOneByOneTank();
@@ -74,9 +77,9 @@ var SceneBattle = BaseScene.extend({
         var nPos = this.sprMapBackground.convertToNodeSpace(worldPos);
 
         var rect = cc.rect(0, 0, this.sprMapBackground.getContentSize().width, this.sprMapBackground.getContentSize().height);
-        if(cc.rectContainsPoint(rect, nPos)){
+        if (cc.rectContainsPoint(rect, nPos)) {
             target.setScale(0.3);
-        }else{
+        } else {
             target.setScale(1);
         }
         return true;
@@ -90,8 +93,8 @@ var SceneBattle = BaseScene.extend({
         var nPos = this.sprMapBackground.convertToNodeSpace(worldPos);
 
         var rect = cc.rect(0, 0, this.sprMapBackground.getContentSize().width, this.sprMapBackground.getContentSize().height);
-        if(cc.rectContainsPoint(rect, nPos)){
-            gv.engine.getBattleMgr().throwTank(this.sprMapBackground, nPos);
+        if (cc.rectContainsPoint(rect, nPos)) {
+            gv.engine.getBattleMgr().throwTank(this.sprMapBackground, nPos, TEAM_1, TANK_LIGHT);
         }
         target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
         target.setScale(1);
