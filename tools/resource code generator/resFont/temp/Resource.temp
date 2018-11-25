@@ -1,0 +1,14 @@
+/**
+*	Auto generate
+**/
+
+//todo define
+var resFont = {
+	@list_attribute@
+};
+
+
+//todo for preload
+for (var i in resFont) {
+    g_resources.push(resFont[i]);
+}

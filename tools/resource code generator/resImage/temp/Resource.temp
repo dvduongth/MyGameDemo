@@ -1,0 +1,13 @@
+/**
+*	Auto generate
+**/
+
+//todo define
+var resImg = {
+	@list_attribute@
+};
+
+var resImgList = [];
+for(var key in resImg){
+	resImgList.push(resImg[key]);
+}

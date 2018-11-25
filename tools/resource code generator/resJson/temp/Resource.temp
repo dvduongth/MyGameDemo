@@ -1,0 +1,13 @@
+/**
+*	Auto generate
+**/
+
+//todo define
+var resJson = {
+	@list_attribute@
+};
+
+//todo for preload
+for (var i in resJson) {
+    g_resources.push(resJson[i]);
+}

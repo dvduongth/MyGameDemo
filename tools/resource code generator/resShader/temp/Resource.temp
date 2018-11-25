@@ -1,0 +1,8 @@
+/**
+*	Auto generate
+**/
+
+//todo define
+var resShader = {
+	@list_attribute@
+};
