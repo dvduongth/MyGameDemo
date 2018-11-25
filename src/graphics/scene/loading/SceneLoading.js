@@ -22,11 +22,11 @@ var SceneLoading = BaseScene.extend({
                 ));
             });
             //start load for cache data
-            /*guiLoading.loadTextures(resImgList, function () {
+            guiLoading.loadTextures(resImgList, function () {
                 guiLoading.loadPlistTextures(resPlist, function () {
                     guiLoading.loadSoundMusic(resSoundMusic, guiLoading.getLoadingDoneCallback());
                 });
-            });*/
+            });
         } else {
             LogUtils.getInstance().error([this.getClassName(), "guiLoading is null"]);
         }

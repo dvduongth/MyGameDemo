@@ -1,6 +1,6 @@
 {
   "ID": "5613b6e4-18b4-4da9-ab2b-a9baf1886b46",
-  "Version": "2.2.8.0",
+  "Version": "2.3.4",
   "Name": "SceneLoading",
   "Content": {
     "Content": {
@@ -15,6 +15,7 @@
         "Tag": 99,
         "Children": [
           {
+            "ClipAble": false,
             "ComboBoxIndex": 2,
             "SingleColor": {
               "R": 150,
@@ -82,6 +83,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -154,6 +157,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -200,7 +205,12 @@
         "Name": "Scene",
         "ctype": "SingleNodeObjectData"
       },
-      "ctype": "GameProjectData"
+      "UsedResources": [
+        "../../../button/CloseNormal.png",
+        "../../../button/CloseSelected.png",
+        "../../../fonts/font_game_bold.ttf"
+      ],
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"

@@ -6,14 +6,14 @@
       <ObjectData Name="Scene" Tag="128" ctype="GameNodeObjectData">
         <Size X="1242.0000" Y="2208.0000" />
         <Children>
-          <AbstractNodeData Name="sprSplash" ActionTag="-1616802712" Tag="129" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="32.3668" RightMargin="29.6332" TopMargin="860.7167" BottomMargin="467.2833" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprSplash" ActionTag="-1616802712" Tag="129" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="32.3662" RightMargin="29.6338" TopMargin="860.7328" BottomMargin="467.2672" ctype="SpriteObjectData">
             <Size X="1180.0000" Y="880.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="622.3668" Y="907.2833" />
+            <Position X="622.3662" Y="907.2672" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5011" Y="0.4109" />
-            <PreSize X="1.0387" Y="1.3750" />
+            <PreSize X="0.9501" Y="0.3986" />
             <FileData Type="Normal" Path="resources/textures/Splash.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -30,7 +30,7 @@
             <EndColor A="255" R="144" G="238" B="144" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprMapBackground" ActionTag="1326271976" Tag="131" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="172.3660" RightMargin="169.6340" TopMargin="848.4791" BottomMargin="459.5209" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprMapBackground" ActionTag="1326271976" Tag="131" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="172.3662" RightMargin="169.6338" TopMargin="848.5248" BottomMargin="459.4752" ctype="SpriteObjectData">
             <Size X="900.0000" Y="900.0000" />
             <Children>
               <AbstractNodeData Name="MainBase_4_4" ActionTag="259790017" Tag="132" IconVisible="False" LeftMargin="414.4322" RightMargin="402.5678" TopMargin="805.2276" BottomMargin="11.7724" ctype="SpriteObjectData">
@@ -40,7 +40,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5066" Y="0.0592" />
-                <PreSize X="0.0000" Y="0.0000" />
+                <PreSize X="0.0922" Y="0.0922" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 1/MainBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -51,7 +51,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1965" Y="0.2072" />
-                <PreSize X="0.0000" Y="0.0000" />
+                <PreSize X="0.0922" Y="0.0922" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 1/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -62,7 +62,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8207" Y="0.2064" />
-                <PreSize X="0.0000" Y="0.0000" />
+                <PreSize X="0.0922" Y="0.0922" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 1/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -337,7 +337,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5075" Y="0.9364" />
-                <PreSize X="0.0000" Y="0.0000" />
+                <PreSize X="0.0922" Y="0.0922" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/MainBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -348,7 +348,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1928" Y="0.7956" />
-                <PreSize X="0.0000" Y="0.0000" />
+                <PreSize X="0.0922" Y="0.0922" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -359,7 +359,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8193" Y="0.7997" />
-                <PreSize X="0.0000" Y="0.0000" />
+                <PreSize X="0.0922" Y="0.0922" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -941,10 +941,10 @@
                   <AbstractNodeData Name="Panel_2_11" ActionTag="590409940" Tag="215" IconVisible="False" LeftMargin="-450.0000" RightMargin="-450.0000" TopMargin="-200.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="900.0000" Y="200.0000" />
                     <Children>
-                      <AbstractNodeData Name="slotTank_0_Team_1_4" ActionTag="-1690328356" Tag="216" IconVisible="False" LeftMargin="54.1608" RightMargin="685.8392" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="slotTank_0_Team_1" ActionTag="-1690328356" Tag="216" IconVisible="False" LeftMargin="54.1608" RightMargin="685.8392" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="160.0000" Y="160.0000" />
                         <Children>
-                          <AbstractNodeData Name="imgTank_0_Team_1_2" ActionTag="-1312654583" Tag="217" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="imgTank_0_Team_1" ActionTag="-1312654583" Tag="217" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
                             <Size X="150.0000" Y="150.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="80.0000" Y="80.0000" />
@@ -966,10 +966,10 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_1_Team_1_6" ActionTag="-746500973" Tag="218" IconVisible="False" LeftMargin="264.6614" RightMargin="475.3386" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="slotTank_1_Team_1" ActionTag="-746500973" Tag="218" IconVisible="False" LeftMargin="264.6614" RightMargin="475.3386" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="160.0000" Y="160.0000" />
                         <Children>
-                          <AbstractNodeData Name="imgTank_1_Team_1_4" ActionTag="-896057026" Tag="219" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="imgTank_1_Team_1" ActionTag="-896057026" Tag="219" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
                             <Size X="150.0000" Y="150.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="80.0000" Y="80.0000" />
@@ -991,10 +991,10 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_2_Team_1_8" ActionTag="-1624680280" Tag="220" IconVisible="False" LeftMargin="475.1620" RightMargin="264.8380" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="slotTank_2_Team_1" ActionTag="-1624680280" Tag="220" IconVisible="False" LeftMargin="475.1620" RightMargin="264.8380" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="160.0000" Y="160.0000" />
                         <Children>
-                          <AbstractNodeData Name="imgTank_2_Team_1_6" ActionTag="-1808892263" Tag="221" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="imgTank_2_Team_1" ActionTag="-1808892263" Tag="221" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
                             <Size X="150.0000" Y="150.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="80.0000" Y="80.0000" />
@@ -1016,10 +1016,10 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_3_Team_1_10" ActionTag="618396541" Tag="222" IconVisible="False" LeftMargin="685.6627" RightMargin="54.3373" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="slotTank_3_Team_1" ActionTag="618396541" Tag="222" IconVisible="False" LeftMargin="685.6627" RightMargin="54.3373" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="160.0000" Y="160.0000" />
                         <Children>
-                          <AbstractNodeData Name="imgTank_3_Team_1_8" ActionTag="989383600" Tag="223" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="imgTank_3_Team_1" ActionTag="989383600" Tag="223" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
                             <Size X="150.0000" Y="150.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="80.0000" Y="80.0000" />
@@ -1063,25 +1063,25 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="622.3660" Y="909.5209" />
+            <Position X="622.3662" Y="909.4752" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5011" Y="0.4119" />
-            <PreSize X="1.4063" Y="0.9375" />
+            <PreSize X="0.7246" Y="0.4076" />
             <FileData Type="Normal" Path="resources/textures/Map/Background_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="btnBackToLobby" ActionTag="566998122" Tag="224" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="953.7490" RightMargin="27.2510" TopMargin="32.9434" BottomMargin="2102.0566" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="231" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="261.0000" Y="73.0000" />
             <Children>
-              <AbstractNodeData Name="Text_2_3_3_2" ActionTag="688898436" Tag="225" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="19.5000" RightMargin="19.5000" TopMargin="18.0000" BottomMargin="18.0000" FontSize="24" LabelText="BACK TO LOBBY" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="222.0000" Y="37.0000" />
+              <AbstractNodeData Name="Text_2_3_3_2" ActionTag="688898436" Tag="225" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="30.5000" RightMargin="30.5000" TopMargin="18.0000" BottomMargin="18.0000" FontSize="24" LabelText="BACK TO LOBBY" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="200.0000" Y="37.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="130.5000" Y="36.5000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="192" B="203" />
                 <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="0.3472" Y="0.5932" />
+                <PreSize X="0.7663" Y="0.5068" />
                 <FontResource Type="Normal" Path="fonts/font_game_bold.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -1092,7 +1092,7 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8730" Y="0.9685" />
-            <PreSize X="0.2298" Y="0.1141" />
+            <PreSize X="0.2101" Y="0.0331" />
             <TextColor A="255" R="65" G="65" B="70" />
             <PressedFileData Type="Normal" Path="button/button_green_0.png" Plist="" />
             <NormalFileData Type="Normal" Path="button/button_green_0.png" Plist="" />

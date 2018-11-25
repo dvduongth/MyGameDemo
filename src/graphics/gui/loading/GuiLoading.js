@@ -1,34 +1,72 @@
 'use strict';
 var GuiLoading = BaseGUI.extend({
     _className: "GuiLoading",
-    _numberOfSprites: 0,
-    _numberOfLoadedSprites: 0,
-    _numberOfPlist: 0,
-    _numberOfLoadedPlist: 0,
-    _numberOfSoundMusic: 0,
-    _numberOfLoadedSoundMusic: 0,
     ctor: function () {
+        //todo ccs variables
         this.ndLoadingProgress = null;
         this.lbLoadingPercent = null;
         this.ldbPercent = null;
-
         this._super(resJson.ZCCS__GUI__LOADING__GUILOADING);
     },
     initGUI: function () {
-
+        LogUtils.getInstance().log([this.getClassName(), "initGUI"]);
+        this.reset();
+    },
+    setNumberOfSprites: function (value) {
+        this._numberOfSprites = value;
+        LogUtils.getInstance().log([this.getClassName(), "setNumberOfSprites value", value]);
+    },
+    getNumberOfSprites: function () {
+        return this._numberOfSprites;
+    },
+    setNumberOfLoadedSprites: function (value) {
+        this._numberOfLoadedSprites = value;
+        LogUtils.getInstance().log([this.getClassName(), "setNumberOfLoadedSprites value", value]);
+    },
+    getNumberOfLoadedSprites: function () {
+        return this._numberOfLoadedSprites;
+    },
+    setNumberOfPlist: function (value) {
+        this._numberOfPlist = value;
+        LogUtils.getInstance().log([this.getClassName(), "setNumberOfPlist value", value]);
+    },
+    getNumberOfPlist: function () {
+        return this._numberOfPlist;
+    },
+    setNumberOfLoadedPlist: function (value) {
+        this._numberOfLoadedPlist = value;
+        LogUtils.getInstance().log([this.getClassName(), "setNumberOfLoadedPlist value", value]);
+    },
+    getNumberOfLoadedPlist: function () {
+        return this._numberOfLoadedPlist;
+    },
+    setNumberOfSoundMusic: function (value) {
+        this._numberOfSoundMusic = value;
+        LogUtils.getInstance().log([this.getClassName(), "setNumberOfSoundMusic value", value]);
+    },
+    getNumberOfSoundMusic: function () {
+        return this._numberOfSoundMusic;
+    },
+    setNumberOfLoadedSoundMusic: function (value) {
+        this._numberOfLoadedSoundMusic = value;
+        LogUtils.getInstance().log([this.getClassName(), "setNumberOfLoadedSoundMusic value", value]);
+    },
+    getNumberOfLoadedSoundMusic: function () {
+        return this._numberOfLoadedSoundMusic;
     },
     onEnter: function () {
+        LogUtils.getInstance().log([this.getClassName(), "onEnter"]);
         this._super();
-        this.reset();
     },
 
     reset: function () {
-        this._numberOfSprites = 0;
-        this._numberOfLoadedSprites = 0;
-        this._numberOfPlist = 0;
-        this._numberOfLoadedPlist = 0;
-        this._numberOfSoundMusic = 0;
-        this._numberOfLoadedSoundMusic = 0;
+        LogUtils.getInstance().log([this.getClassName(), "reset"]);
+        this.setNumberOfSprites(0);
+        this.setNumberOfLoadedSprites(0);
+        this.setNumberOfPlist(0);
+        this.setNumberOfLoadedPlist(0);
+        this.setNumberOfSoundMusic(0);
+        this.setNumberOfLoadedSoundMusic(0);
         this.ndLoadingProgress.setVisible(false);
     },
 
@@ -44,26 +82,25 @@ var GuiLoading = BaseGUI.extend({
      * @param {Array} textureArr
      * @param callback
      */
-
     loadTextures: function(textureArr, callback){
         LogUtils.getInstance().log([this.getClassName(), "call loadTextures", callback != null ? " with callback" : "callback null"]);
         this.lbLoadingPercent.setString("START LOAD TEXTURES");
         this.setLoadingTexturesDoneCallback(callback);
         this.ndLoadingProgress.setVisible(true);
-        this._numberOfSprites = textureArr.length;
+        this.setNumberOfSprites(textureArr.length);
         var texCache = cc.textureCache;
-        for(var i = 0; i < textureArr.length; ++i){
+        for(var i = 0; i < this.getNumberOfSprites(); ++i){
             texCache.addImageAsync(textureArr[i], this.loadingCallBack, this);
         }
     },
 
     loadingCallBack:function () {
-        ++this._numberOfLoadedSprites;
-        var percent = Math.floor((this._numberOfLoadedSprites / this._numberOfSprites) * 100);
+        this.setNumberOfLoadedSprites(this.getNumberOfLoadedSprites() + 1);
+        var percent = Math.floor((this.getNumberOfLoadedSprites() / this.getNumberOfSprites()) * 100);
         this.lbLoadingPercent.setString(percent + '%');
         this.ldbPercent.setPercent(percent);
         LogUtils.getInstance().log([this.getClassName(), "loadingCallBack percent", percent, "%"]);
-        if (this._numberOfLoadedSprites == this._numberOfSprites) {
+        if (this.getNumberOfLoadedSprites() == this.getNumberOfSprites()) {
             this.loadTexturesDone();
         }
     },
@@ -91,14 +128,14 @@ var GuiLoading = BaseGUI.extend({
         var _this = this;
         this.lbLoadingPercent.setString("START LOAD PLIST TEXTURES");
         this.ndLoadingProgress.setVisible(true);
-        this._numberOfPlist = Object.keys(plistPathObj).length;
+        this.setNumberOfPlist(Object.keys(plistPathObj).length);
         var arr = [];
         for(var v in plistPathObj) {
             arr.push(cc.callFunc(function (sender, path) {
                 LogUtils.getInstance().log([_this.getClassName(), "loadPlistTextures path:", path]);
                 cc.spriteFrameCache.addSpriteFrames(path);
-                ++_this._numberOfLoadedPlist;
-                var percent = Math.floor((_this._numberOfLoadedPlist / _this._numberOfPlist) * 100);
+                _this.setNumberOfLoadedPlist(_this.getNumberOfLoadedPlist() + 1);
+                var percent = Math.floor((_this.getNumberOfLoadedPlist() / _this.getNumberOfPlist()) * 100);
                 _this.lbLoadingPercent.setString(percent + '%');
                 _this.ldbPercent.setPercent(percent);
             }, null, plistPathObj[v]));
@@ -115,14 +152,14 @@ var GuiLoading = BaseGUI.extend({
         this.lbLoadingPercent.setString("START LOAD SOUND MUSIC");
         var _this = this;
         this.ndLoadingProgress.setVisible(true);
-        this._numberOfSoundMusic = Object.keys(soundMusicPathObj).length;
+        this.setNumberOfSoundMusic(Object.keys(soundMusicPathObj).length);
         var arr = [];
         for(var v in soundMusicPathObj) {
             arr.push(cc.callFunc(function (sender, path) {
                 cc.audioEngine.preloadEffect(path);
                 LogUtils.getInstance().log([_this.getClassName(), "loadSoundMusic path:", path]);
-                ++_this._numberOfLoadedSoundMusic;
-                var percent = Math.floor((_this._numberOfLoadedSoundMusic / _this._numberOfSoundMusic) * 100);
+                _this.setNumberOfLoadedSoundMusic(_this.getNumberOfLoadedSoundMusic() + 1);
+                var percent = Math.floor((_this.getNumberOfLoadedSoundMusic() / _this.getNumberOfSoundMusic()) * 100);
                 _this.lbLoadingPercent.setString(percent + '%');
                 _this.ldbPercent.setPercent(percent);
             }, null, soundMusicPathObj[v]));

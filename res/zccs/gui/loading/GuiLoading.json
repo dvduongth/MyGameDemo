@@ -1,6 +1,6 @@
 {
   "ID": "5e5888c9-b121-4205-a294-648c7e7ce835",
-  "Version": "2.2.8.0",
+  "Version": "2.3.4",
   "Name": "GuiLoading",
   "Content": {
     "Content": {
@@ -15,6 +15,7 @@
         "Tag": 23,
         "Children": [
           {
+            "ClipAble": false,
             "ComboBoxIndex": 2,
             "SingleColor": {
               "R": 150,
@@ -83,6 +84,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -152,6 +155,7 @@
             "Tag": 26,
             "Children": [
               {
+                "ClipAble": false,
                 "ComboBoxIndex": 2,
                 "SingleColor": {
                   "R": 77,
@@ -224,6 +228,8 @@
                   "G": 110,
                   "B": 110
                 },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -321,7 +327,12 @@
         "Name": "Scene",
         "ctype": "SingleNodeObjectData"
       },
-      "ctype": "GameProjectData"
+      "UsedResources": [
+        "../../../Default/LoadingBarFile.png",
+        "../../../fonts/font_game_bold.ttf",
+        "../../../fonts/font_game_bold_italic.ttf"
+      ],
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"

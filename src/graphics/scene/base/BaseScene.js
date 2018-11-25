@@ -242,6 +242,7 @@ var BaseScene = cc.Scene.extend({
     },
 
     syncAllChildren: function () {
+        LogUtils.getInstance().log([this.getClassName(), "start syncAllChildren"]);
         this._syncChildrenInNode(this._rootNode);
         LogUtils.getInstance().log([this.getClassName(), "syncAllChildren success"]);
     },
@@ -255,10 +256,10 @@ var BaseScene = cc.Scene.extend({
             return false;
         }
         var nameChild;
-        LogUtils.getInstance().log(["length",allChildren.length]);
+        //LogUtils.getInstance().log(["length",allChildren.length]);
         for (var i = 0; i < allChildren.length; i++) {
             nameChild = allChildren[i].getName();
-            LogUtils.getInstance().log(["_syncChildrenInNode",nameChild]);
+            //LogUtils.getInstance().log(["_syncChildrenInNode",nameChild]);
             if (nameChild in this && this[nameChild] === null) {
                 this[nameChild] = allChildren[i];
                 LogUtils.getInstance().log([this.getClassName(), "got it: name ", nameChild]);

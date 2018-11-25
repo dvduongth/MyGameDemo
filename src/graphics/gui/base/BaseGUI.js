@@ -236,7 +236,7 @@ var BaseGUI = cc.Layer.extend({
     syncAllChildren: function () {
         LogUtils.getInstance().log([this.getClassName(), "start syncAllChildren"]);
         this._syncChildrenInNode(this._rootNode);
-        LogUtils.getInstance.log([this.getClassName(), "syncAllChildren success"]);
+        LogUtils.getInstance().log([this.getClassName(), "syncAllChildren success"]);
     },
 
     _syncChildrenInNode: function (node) {
@@ -248,10 +248,10 @@ var BaseGUI = cc.Layer.extend({
             return false;
         }
         var nameChild;
-        LogUtils.getInstance().log(["length", allChildren.length]);
+        //LogUtils.getInstance().log(["length", allChildren.length]);
         for (var i = 0; i < allChildren.length; i++) {
             nameChild = allChildren[i].getName();
-            LogUtils.getInstance().log(["_syncChildrenInNode i =", i, nameChild]);
+            //LogUtils.getInstance().log(["_syncChildrenInNode i =", i, nameChild]);
             if (nameChild in this && this[nameChild] === null) {
                 this[nameChild] = allChildren[i];
                 LogUtils.getInstance().log([this.getClassName(), "i =", i, "_syncChildrenInNode got it: name ", nameChild]);
@@ -261,9 +261,9 @@ var BaseGUI = cc.Layer.extend({
                 }
             }
             this._syncChildrenInNode(allChildren[i]);
-            LogUtils.getInstance().log(["for next i =", i + 1]);
+            //LogUtils.getInstance().log(["for next i =", i + 1]);
         }
-        LogUtils.getInstance().log([this.getClassName(), "_syncChildrenInNode for done"]);
+        //LogUtils.getInstance().log([this.getClassName(), "_syncChildrenInNode for done"]);
         return true;
     },
 

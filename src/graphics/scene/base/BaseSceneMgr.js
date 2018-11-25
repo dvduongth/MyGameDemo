@@ -39,7 +39,7 @@ var BaseSceneMgr = cc.Class.extend({
 
     setCurrentSceneId: function (id) {
         this._currentSceneId = id;
-        LogUtils.getInstance().log([this.getClassName(), "setCurrentSceneId", id > -1 ? GUI_ID.toEnumStringByValue(id) : id]);
+        LogUtils.getInstance().log([this.getClassName(), "setCurrentSceneId", id > -1 ? SCENE_ID.toEnumStringByValue(id) : id]);
     },
     getCurrentSceneId: function () {
         return this._currentSceneId;
@@ -58,7 +58,7 @@ var BaseSceneMgr = cc.Class.extend({
 
     setOldSceneId: function (id) {
         this._oldSceneId = id;
-        LogUtils.getInstance().log([this.getClassName(), "setOldSceneId", id > -1 ? GUI_ID.toEnumStringByValue(id) : id]);
+        LogUtils.getInstance().log([this.getClassName(), "setOldSceneId", id > -1 ? SCENE_ID.toEnumStringByValue(id) : id]);
     },
     getOldSceneId: function () {
         return this._oldSceneId;
@@ -136,10 +136,10 @@ var BaseSceneMgr = cc.Class.extend({
     },
 
     /**
-     *
      * @param id
+     * @param isSkipTransition
      */
-    viewSceneById: function (id) {
+    viewSceneById: function (id, isSkipTransition) {
         LogUtils.getInstance().log([this.getClassName(), "call viewSceneById", SCENE_ID.toEnumStringByValue(id), id]);
         if (this.isCurrentSceneById(id)) {
             LogUtils.getInstance().log([this.getClassName(), "viewSceneById return because of during current scene", id]);
@@ -151,7 +151,7 @@ var BaseSceneMgr = cc.Class.extend({
             this.removeScene(this.getOldSceneId());
         }
         this.setCurrentSceneId(id);
-        this.viewScene(this.getScene(id));
+        this.viewScene(this.getScene(id), isSkipTransition);
         LogUtils.getInstance().log([this.getClassName(), "viewSceneById call initScene"]);
         this.getScene(this.getCurrentSceneId()).initScene();
     },
@@ -159,14 +159,15 @@ var BaseSceneMgr = cc.Class.extend({
     /**
      *
      * @param {BaseScene} scene
+     * @param isSkipTransition
      */
-    viewScene: function (scene) {
+    viewScene: function (scene, isSkipTransition) {
         LogUtils.getInstance().log([this.getClassName(), "call viewScene"]);
         // check correct "Layer" type
         var isScene = cc.arrayVerifyType([scene], BaseScene);
         if (isScene) {
             // initialize director
-            if (this.getOldSceneId() === -1) {
+            if (this.getOldSceneId() === -1 || isSkipTransition) {
                 cc.director.runScene(scene);
             } else {
                 var pTransition = this.getSceneFactory().createTransition(scene, this.getOldSceneId(), this.getCurrentSceneId());

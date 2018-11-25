@@ -21,7 +21,7 @@ var Enum = function (enumName) {
                 continue;
             }
             if(this[x] == value) {
-                LogUtils.getInstance().log([enumName,  "toEnumStringByValue", x + " = " + this[x]]);
+                //LogUtils.getInstance().log([enumName,  "toEnumStringByValue", x + " = " + this[x]]);
                 return x + "";
             }
         }

@@ -12,7 +12,7 @@
         <iOS_BundleID Value="" />
         <Platform Value="None" />
         <RunPlatform Value="None" />
-        <FrameworkVersion Value="" />
+        <FrameworkVersion Value="None" />
         <IsDebugKeystore Value="True" />
         <KeystorePassword Value="" />
         <KeystoreAliasName Value="" />
@@ -31,9 +31,9 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="zccs/gui/loading/GuiLoading.csd" />
+          <FilePathData Path="zccs/scene/battle/SceneBattle.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="zccs/gui/loading/GuiLoading.csd" />
+        <ActiveDocument Path="zccs/scene/battle/SceneBattle.csd" />
       </Value>
     </Item>
   </Properties>

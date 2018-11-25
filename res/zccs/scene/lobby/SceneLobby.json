@@ -1,6 +1,6 @@
 {
   "ID": "ba153985-e265-42f8-9947-40880262ff3b",
-  "Version": "2.2.8.0",
+  "Version": "2.3.4",
   "Name": "SceneLobby",
   "Content": {
     "Content": {
@@ -62,6 +62,7 @@
             "ctype": "SpriteObjectData"
           },
           {
+            "ClipAble": false,
             "BackColorAlpha": 102,
             "ComboBoxIndex": 2,
             "SingleColor": {
@@ -133,6 +134,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -205,6 +208,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -254,6 +259,8 @@
                   "G": 110,
                   "B": 110
                 },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
                 "ShadowEnabled": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -335,6 +342,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -381,7 +390,14 @@
         "Name": "Scene",
         "ctype": "SingleNodeObjectData"
       },
-      "ctype": "GameProjectData"
+      "UsedResources": [
+        "../../../button/bt_chon.png",
+        "../../../button/CloseNormal.png",
+        "../../../button/CloseSelected.png",
+        "../../../fonts/font_game_bold.ttf",
+        "../../../resources/textures/Splash.png"
+      ],
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"

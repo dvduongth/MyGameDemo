@@ -94,6 +94,7 @@ var SceneBattle = BaseScene.extend({
             gv.engine.getBattleMgr().throwTank(this.sprMapBackground, nPos);
         }
         target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
+        target.setScale(1);
     },
 
     onTouchCancelledTank: function (touch, event) {

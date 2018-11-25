@@ -11,17 +11,17 @@
         "cocostudio"
     ],
     "jsListOrder": [
+        "src/utilities/LogUtils.js",
         "src/Setting.js",
         "src/GlobalVar.js",
-        "src/utilities/LogUtils.js",
         "src/resources/**/*.js",
         "src/*.js",
         "src/**/*.js"
     ],
     "jsList": [
+        "src/utilities/LogUtils.js",
         "src/Setting.js",
         "src/GlobalVar.js",
-        "src/utilities/LogUtils.js",
         "src/resources/ResourceFont.js",
         "src/resources/ResourceImage.js",
         "src/resources/ResourceJson.js",

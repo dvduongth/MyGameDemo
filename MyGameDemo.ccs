@@ -163,11 +163,9 @@
             </Folder>
             <Folder Name="ogre">
               <File Name="roRing.mesh" />
-              <Mesh Name="starRing.c3b" />
               <File Name="starRing.mesh" />
             </Folder>
             <Folder Name="scripts">
-              <Pu Name="atomicity.pu" />
               <Pu Name="bubbles.pu" />
               <Pu Name="dice_01.pu" />
               <Pu Name="dice_02.pu" />
@@ -178,7 +176,6 @@
               <Pu Name="lineStreak.pu" />
               <Pu Name="lo_ring.pu" />
               <Pu Name="locxoay.pu" />
-              <Pu Name="lotus.pu" />
               <Pu Name="psychoBurn.pu" />
               <Pu Name="rainSystem_1.pu" />
               <Pu Name="rainSystem_2.pu" />
@@ -188,7 +185,6 @@
               <Pu Name="tail1.pu" />
               <Pu Name="teleport.pu" />
               <Pu Name="teleport2.pu" />
-              <Pu Name="test2.pu" />
             </Folder>
             <Folder Name="textures">
               <Image Name="anh02.png" />

@@ -1,6 +1,6 @@
 {
   "ID": "25c1be77-dc38-4830-bb22-547c6972815e",
-  "Version": "2.2.8.0",
+  "Version": "2.3.4",
   "Name": "SceneBattle",
   "Content": {
     "Content": {
@@ -29,8 +29,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 622.3668,
-              "Y": 907.2833
+              "X": 622.3662,
+              "Y": 907.2672
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -43,15 +43,15 @@
               "Y": 0.4109
             },
             "PreSize": {
-              "X": 1.0387,
-              "Y": 1.375
+              "X": 0.9501,
+              "Y": 0.3986
             },
             "HorizontalEdge": "BothEdge",
             "VerticalEdge": "BothEdge",
-            "LeftMargin": 32.3668,
-            "RightMargin": 29.6332,
-            "TopMargin": 860.7167,
-            "BottomMargin": 467.2833,
+            "LeftMargin": 32.3662,
+            "RightMargin": 29.6338,
+            "TopMargin": 860.7328,
+            "BottomMargin": 467.2672,
             "Tag": 129,
             "ActionTag": -1616802712,
             "Size": {
@@ -62,6 +62,7 @@
             "ctype": "SpriteObjectData"
           },
           {
+            "ClipAble": false,
             "BackColorAlpha": 102,
             "ComboBoxIndex": 2,
             "SingleColor": {
@@ -131,8 +132,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 622.366,
-              "Y": 909.5209
+              "X": 622.3662,
+              "Y": 909.4752
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -145,15 +146,15 @@
               "Y": 0.4119
             },
             "PreSize": {
-              "X": 1.4063,
-              "Y": 0.9375
+              "X": 0.7246,
+              "Y": 0.4076
             },
             "HorizontalEdge": "BothEdge",
             "VerticalEdge": "BothEdge",
-            "LeftMargin": 172.366,
-            "RightMargin": 169.634,
-            "TopMargin": 848.4791,
-            "BottomMargin": 459.5209,
+            "LeftMargin": 172.3662,
+            "RightMargin": 169.6338,
+            "TopMargin": 848.5248,
+            "BottomMargin": 459.4752,
             "Tag": 131,
             "Children": [
               {
@@ -185,8 +186,8 @@
                   "Y": 0.0592
                 },
                 "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
+                  "X": 0.0922,
+                  "Y": 0.0922
                 },
                 "LeftMargin": 414.4322,
                 "RightMargin": 402.5678,
@@ -230,8 +231,8 @@
                   "Y": 0.2072
                 },
                 "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
+                  "X": 0.0922,
+                  "Y": 0.0922
                 },
                 "LeftMargin": 135.375,
                 "RightMargin": 681.625,
@@ -275,8 +276,8 @@
                   "Y": 0.2064
                 },
                 "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
+                  "X": 0.0922,
+                  "Y": 0.0922
                 },
                 "LeftMargin": 697.1256,
                 "RightMargin": 119.8744,
@@ -1360,8 +1361,8 @@
                   "Y": 0.9364
                 },
                 "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
+                  "X": 0.0922,
+                  "Y": 0.0922
                 },
                 "LeftMargin": 415.2253,
                 "RightMargin": 401.7747,
@@ -1405,8 +1406,8 @@
                   "Y": 0.7956
                 },
                 "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
+                  "X": 0.0922,
+                  "Y": 0.0922
                 },
                 "LeftMargin": 132.0627,
                 "RightMargin": 684.9373,
@@ -1450,8 +1451,8 @@
                   "Y": 0.7997
                 },
                 "PreSize": {
-                  "X": 0.0,
-                  "Y": 0.0
+                  "X": 0.0922,
+                  "Y": 0.0922
                 },
                 "LeftMargin": 695.8481,
                 "RightMargin": 121.1519,
@@ -3755,6 +3756,7 @@
                 "Tag": 214,
                 "Children": [
                   {
+                    "ClipAble": false,
                     "BackColorAlpha": 102,
                     "ComboBoxIndex": 1,
                     "SingleColor": {
@@ -3799,6 +3801,7 @@
                     "Tag": 215,
                     "Children": [
                       {
+                        "ClipAble": false,
                         "BackColorAlpha": 102,
                         "ComboBoxIndex": 1,
                         "SingleColor": {
@@ -3886,7 +3889,7 @@
                               "X": 150.0,
                               "Y": 150.0
                             },
-                            "Name": "imgTank_0_Team_1_2",
+                            "Name": "imgTank_0_Team_1",
                             "ctype": "ImageViewObjectData"
                           }
                         ],
@@ -3895,10 +3898,11 @@
                           "X": 160.0,
                           "Y": 160.0
                         },
-                        "Name": "slotTank_0_Team_1_4",
+                        "Name": "slotTank_0_Team_1",
                         "ctype": "PanelObjectData"
                       },
                       {
+                        "ClipAble": false,
                         "BackColorAlpha": 102,
                         "ComboBoxIndex": 1,
                         "SingleColor": {
@@ -3984,7 +3988,7 @@
                               "X": 150.0,
                               "Y": 150.0
                             },
-                            "Name": "imgTank_1_Team_1_4",
+                            "Name": "imgTank_1_Team_1",
                             "ctype": "ImageViewObjectData"
                           }
                         ],
@@ -3993,10 +3997,11 @@
                           "X": 160.0,
                           "Y": 160.0
                         },
-                        "Name": "slotTank_1_Team_1_6",
+                        "Name": "slotTank_1_Team_1",
                         "ctype": "PanelObjectData"
                       },
                       {
+                        "ClipAble": false,
                         "BackColorAlpha": 102,
                         "ComboBoxIndex": 1,
                         "SingleColor": {
@@ -4082,7 +4087,7 @@
                               "X": 150.0,
                               "Y": 150.0
                             },
-                            "Name": "imgTank_2_Team_1_6",
+                            "Name": "imgTank_2_Team_1",
                             "ctype": "ImageViewObjectData"
                           }
                         ],
@@ -4091,10 +4096,11 @@
                           "X": 160.0,
                           "Y": 160.0
                         },
-                        "Name": "slotTank_2_Team_1_8",
+                        "Name": "slotTank_2_Team_1",
                         "ctype": "PanelObjectData"
                       },
                       {
+                        "ClipAble": false,
                         "BackColorAlpha": 102,
                         "ComboBoxIndex": 1,
                         "SingleColor": {
@@ -4180,7 +4186,7 @@
                               "X": 150.0,
                               "Y": 150.0
                             },
-                            "Name": "imgTank_3_Team_1_8",
+                            "Name": "imgTank_3_Team_1",
                             "ctype": "ImageViewObjectData"
                           }
                         ],
@@ -4189,7 +4195,7 @@
                           "X": 160.0,
                           "Y": 160.0
                         },
-                        "Name": "slotTank_3_Team_1_10",
+                        "Name": "slotTank_3_Team_1",
                         "ctype": "PanelObjectData"
                       }
                     ],
@@ -4250,6 +4256,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -4270,8 +4278,8 @@
               "Y": 0.9685
             },
             "PreSize": {
-              "X": 0.2298,
-              "Y": 0.1141
+              "X": 0.2101,
+              "Y": 0.0331
             },
             "HorizontalEdge": "RightEdge",
             "VerticalEdge": "TopEdge",
@@ -4299,6 +4307,8 @@
                   "G": 110,
                   "B": 110
                 },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
                 "ShadowEnabled": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -4324,17 +4334,17 @@
                   "Y": 0.5
                 },
                 "PreSize": {
-                  "X": 0.3472,
-                  "Y": 0.5932
+                  "X": 0.7663,
+                  "Y": 0.5068
                 },
-                "LeftMargin": 19.5,
-                "RightMargin": 19.5,
+                "LeftMargin": 30.5,
+                "RightMargin": 30.5,
                 "TopMargin": 18.0,
                 "BottomMargin": 18.0,
                 "Tag": 225,
                 "ActionTag": 688898436,
                 "Size": {
-                  "X": 222.0,
+                  "X": 200.0,
                   "Y": 37.0
                 },
                 "Name": "Text_2_3_3_2",
@@ -4380,6 +4390,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -4426,7 +4438,24 @@
         "Name": "Scene",
         "ctype": "SingleNodeObjectData"
       },
-      "ctype": "GameProjectData"
+      "UsedResources": [
+        "../../../button/button_green_0.png",
+        "../../../button/CloseNormal.png",
+        "../../../button/CloseSelected.png",
+        "../../../fonts/font_game_bold.ttf",
+        "../../../resources/textures/Base/Team 1/MainBase.png",
+        "../../../resources/textures/Base/Team 1/SideBase.png",
+        "../../../resources/textures/Base/Team 2/MainBase.png",
+        "../../../resources/textures/Base/Team 2/SideBase.png",
+        "../../../resources/textures/Map/Background_1.png",
+        "../../../resources/textures/Map/Brick 1.png",
+        "../../../resources/textures/Map/Concrete.png",
+        "../../../resources/textures/Splash.png",
+        "../../../resources/textures/Tank/Team 1/1A.png",
+        "../../../resources/textures/Tank/Team 1/2A.png",
+        "../../../resources/textures/Tank/Team 1/3A.png"
+      ],
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"

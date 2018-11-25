@@ -57,7 +57,7 @@ var Engine = cc.Class.extend({
         this.getSceneMgr().viewSceneById(SCENE_ID.LOADING);
     },
     viewSceneLogin: function () {
-        this.getSceneMgr().viewSceneById(SCENE_ID.LOGIN);
+        this.getSceneMgr().viewSceneById(SCENE_ID.LOGIN, true);
     },
     viewSceneLobby: function () {
         this.getSceneMgr().viewSceneById(SCENE_ID.LOBBY);

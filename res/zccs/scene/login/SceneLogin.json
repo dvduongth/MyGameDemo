@@ -1,6 +1,6 @@
 {
   "ID": "a2ee0952-26b5-49ae-8bf9-4f1d6279b798",
-  "Version": "2.2.8.0",
+  "Version": "2.3.4",
   "Name": "SceneLogin",
   "Content": {
     "Content": {
@@ -14,6 +14,7 @@
       "ObjectData": {
         "Children": [
           {
+            "ClipAble": false,
             "BackColorAlpha": 102,
             "ComboBoxIndex": 2,
             "SingleColor": {
@@ -83,6 +84,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "AnchorPoint": {
               "ScaleX": 0.5,
               "ScaleY": 0.5
@@ -154,6 +157,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -203,6 +208,8 @@
                   "G": 110,
                   "B": 110
                 },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
                 "ShadowEnabled": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -284,6 +291,8 @@
               "G": 110,
               "B": 110
             },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -330,7 +339,13 @@
         "Name": "Scene",
         "ctype": "SingleNodeObjectData"
       },
-      "ctype": "GameProjectData"
+      "UsedResources": [
+        "../../../button/bt_chon.png",
+        "../../../button/CloseNormal.png",
+        "../../../button/CloseSelected.png",
+        "../../../fonts/font_game_bold.ttf"
+      ],
+      "ctype": "GameFileData"
     }
   },
   "Type": "Scene"

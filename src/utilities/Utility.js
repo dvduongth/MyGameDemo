@@ -203,7 +203,7 @@ var Utility = (function () {
                 fontName = resFont.FONT_GAME_BOLD;
             }
             if (fontSize === undefined) {
-                fontSize = 24;
+                fontSize = 48;
             }
             if (color === undefined) {
                 color = cc.WHITE;
