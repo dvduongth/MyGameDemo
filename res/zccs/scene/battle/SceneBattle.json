@@ -1,0 +1,4433 @@
+{
+  "ID": "25c1be77-dc38-4830-bb22-547c6972815e",
+  "Version": "2.2.8.0",
+  "Name": "SceneBattle",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 128,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "resources/textures/Splash.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 622.3668,
+              "Y": 907.2833
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5011,
+              "Y": 0.4109
+            },
+            "PreSize": {
+              "X": 1.0387,
+              "Y": 1.375
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "LeftMargin": 32.3668,
+            "RightMargin": 29.6332,
+            "TopMargin": 860.7167,
+            "BottomMargin": 467.2833,
+            "Tag": 129,
+            "ActionTag": -1616802712,
+            "Size": {
+              "X": 1180.0,
+              "Y": 880.0
+            },
+            "Name": "sprSplash",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "BackColorAlpha": 102,
+            "ComboBoxIndex": 2,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 0,
+              "G": 128,
+              "B": 0
+            },
+            "EndColor": {
+              "R": 144,
+              "G": 238,
+              "B": 144
+            },
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "StretchWidthEnable": true,
+            "StretchHeightEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "LeftEdge",
+            "VerticalEdge": "BottomEdge",
+            "Tag": 130,
+            "ActionTag": -1929996547,
+            "Size": {
+              "X": 1242.0,
+              "Y": 2208.0
+            },
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "resources/textures/Map/Background_1.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 622.366,
+              "Y": 909.5209
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5011,
+              "Y": 0.4119
+            },
+            "PreSize": {
+              "X": 1.4063,
+              "Y": 0.9375
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "LeftMargin": 172.366,
+            "RightMargin": 169.634,
+            "TopMargin": 848.4791,
+            "BottomMargin": 459.5209,
+            "Tag": 131,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 1/MainBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 455.9322,
+                  "Y": 53.2724
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5066,
+                  "Y": 0.0592
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 414.4322,
+                "RightMargin": 402.5678,
+                "TopMargin": 805.2276,
+                "BottomMargin": 11.7724,
+                "Tag": 132,
+                "ActionTag": 259790017,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "MainBase_4_4",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 1/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 176.875,
+                  "Y": 186.4462
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1965,
+                  "Y": 0.2072
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 135.375,
+                "RightMargin": 681.625,
+                "TopMargin": 672.0538,
+                "BottomMargin": 144.9462,
+                "Tag": 133,
+                "ActionTag": -86037252,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_5_6",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 1/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 738.6256,
+                  "Y": 185.7879
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8207,
+                  "Y": 0.2064
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 697.1256,
+                "RightMargin": 119.8744,
+                "TopMargin": 672.7121,
+                "BottomMargin": 144.2879,
+                "Tag": 134,
+                "ActionTag": -2056528781,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_6_8",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 114.673,
+                  "Y": 389.5667
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.1274,
+                  "Y": 0.4329
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 114.673,
+                "RightMargin": 785.327,
+                "TopMargin": 510.4333,
+                "BottomMargin": 389.5667,
+                "Tag": 135,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 136,
+                    "ActionTag": 1028744478,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_10",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 137,
+                    "ActionTag": -1711192657,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_12",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 138,
+                    "ActionTag": 817034742,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_14",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 139,
+                    "ActionTag": 1614706151,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_16",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 232.3774,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 210.8774,
+                    "RightMargin": -253.8774,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 140,
+                    "ActionTag": -695300942,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_18",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -163797610,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndConcrete_2",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 118.5352,
+                  "Y": 509.9955
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.1317,
+                  "Y": 0.5667
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 118.5352,
+                "RightMargin": 781.4648,
+                "TopMargin": 390.0045,
+                "BottomMargin": 509.9955,
+                "Tag": 141,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 142,
+                    "ActionTag": 2096655628,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_13_20",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 143,
+                    "ActionTag": -577784739,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_15_22",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 144,
+                    "ActionTag": -1626629099,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_17_24",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 145,
+                    "ActionTag": -464729182,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_19_26",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 232.3774,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 210.8774,
+                    "RightMargin": -253.8774,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 146,
+                    "ActionTag": -1480505572,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_21_28",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -1156185391,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndConcrete_0_4",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 512.8926,
+                  "Y": 509.9955
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.5699,
+                  "Y": 0.5667
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 512.8926,
+                "RightMargin": 387.1074,
+                "TopMargin": 390.0045,
+                "BottomMargin": 509.9955,
+                "Tag": 147,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 148,
+                    "ActionTag": -1586829342,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_23_30",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 149,
+                    "ActionTag": 2053145531,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_25_32",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 150,
+                    "ActionTag": -1148548736,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_27_34",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 151,
+                    "ActionTag": 142595695,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_29_36",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 232.3774,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 210.8774,
+                    "RightMargin": -253.8774,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 152,
+                    "ActionTag": 1238015482,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_31_38",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -1877333308,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndConcrete_1_6",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 517.4958,
+                  "Y": 388.7736
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.575,
+                  "Y": 0.432
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 517.4958,
+                "RightMargin": 382.5042,
+                "TopMargin": 511.2264,
+                "BottomMargin": 388.7736,
+                "Tag": 153,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 154,
+                    "ActionTag": -184398568,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_33_40",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 155,
+                    "ActionTag": -1566555267,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_35_42",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 156,
+                    "ActionTag": 1244335666,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_37_44",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 157,
+                    "ActionTag": -865532717,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_39_46",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 232.3774,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 210.8774,
+                    "RightMargin": -253.8774,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 158,
+                    "ActionTag": -70981119,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_41_48",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 1135787831,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndConcrete_2_8",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/MainBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 456.7253,
+                  "Y": 842.731
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5075,
+                  "Y": 0.9364
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 415.2253,
+                "RightMargin": 401.7747,
+                "TopMargin": 15.769,
+                "BottomMargin": 801.231,
+                "Tag": 159,
+                "ActionTag": -994614455,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "MainBase_4_0_50",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 173.5627,
+                  "Y": 716.0532
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1928,
+                  "Y": 0.7956
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 132.0627,
+                "RightMargin": 684.9373,
+                "TopMargin": 142.4468,
+                "BottomMargin": 674.5532,
+                "Tag": 160,
+                "ActionTag": 60264110,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_5_0_52",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 737.3481,
+                  "Y": 719.6957
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8193,
+                  "Y": 0.7997
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 695.8481,
+                "RightMargin": 121.1519,
+                "TopMargin": 138.8043,
+                "BottomMargin": 678.1957,
+                "Tag": 161,
+                "ActionTag": -1416324201,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_6_0_54",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 269.1486,
+                  "Y": 223.3337
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.2991,
+                  "Y": 0.2481
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 269.1486,
+                "RightMargin": 630.8514,
+                "TopMargin": 676.6663,
+                "BottomMargin": 223.3337,
+                "Tag": 162,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 163,
+                    "ActionTag": -1950446156,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_33_46_56",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 164,
+                    "ActionTag": 1378985881,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_35_48_58",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 165,
+                    "ActionTag": -2047484388,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_37_50_60",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 166,
+                    "ActionTag": 661802020,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_39_52_62",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 232.3774,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 210.8774,
+                    "RightMargin": -253.8774,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 167,
+                    "ActionTag": -2020441391,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_41_54_64",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 279.1,
+                      "Y": -0.2999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 257.6,
+                    "RightMargin": -300.6,
+                    "TopMargin": -21.2001,
+                    "BottomMargin": -21.7999,
+                    "Tag": 168,
+                    "ActionTag": -444575732,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_41_54_0_66",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 326.2157,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 304.7157,
+                    "RightMargin": -347.7157,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 169,
+                    "ActionTag": 1152188546,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_41_54_1_68",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 784795594,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndBrick_10",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 60.0875,
+                  "Y": 308.8898
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0668,
+                  "Y": 0.3432
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 60.0875,
+                "RightMargin": 839.9125,
+                "TopMargin": 591.1102,
+                "BottomMargin": 308.8898,
+                "Tag": 170,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 171,
+                    "ActionTag": -1785151721,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_33_46_56_70",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 172,
+                    "ActionTag": -1429298529,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_35_48_58_72",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 173,
+                    "ActionTag": 984092195,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_37_50_60_74",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 174,
+                    "ActionTag": -1918722162,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_39_52_62_76",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 1716654474,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndBrick_0_12",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 613.7164,
+                  "Y": 310.8929
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.6819,
+                  "Y": 0.3454
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 613.7164,
+                "RightMargin": 286.2836,
+                "TopMargin": 589.1071,
+                "BottomMargin": 310.8929,
+                "Tag": 175,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 176,
+                    "ActionTag": 1908754221,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_33_46_56_66_78",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 177,
+                    "ActionTag": -778512165,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_35_48_58_68_80",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 178,
+                    "ActionTag": -1367073309,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_37_50_60_70_82",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 179,
+                    "ActionTag": 746293364,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_39_52_62_72_84",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 88377848,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndBrick_0_0_14",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 266.6678,
+                  "Y": 670.9366
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.2963,
+                  "Y": 0.7455
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 266.6678,
+                "RightMargin": 633.3322,
+                "TopMargin": 229.0634,
+                "BottomMargin": 670.9366,
+                "Tag": 180,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 181,
+                    "ActionTag": -164932450,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_33_46_76_86",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 182,
+                    "ActionTag": 1657364039,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_35_48_78_88",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 183,
+                    "ActionTag": -205623967,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_37_50_80_90",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 184,
+                    "ActionTag": 1764830649,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_39_52_82_92",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 232.3774,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 210.8774,
+                    "RightMargin": -253.8774,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 185,
+                    "ActionTag": 1955913416,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_41_54_84_94",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 279.1,
+                      "Y": -0.2999
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 257.6,
+                    "RightMargin": -300.6,
+                    "TopMargin": -21.2001,
+                    "BottomMargin": -21.7999,
+                    "Tag": 186,
+                    "ActionTag": -77758907,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_41_54_0_86_96",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 326.2157,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 304.7157,
+                    "RightMargin": -347.7157,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 187,
+                    "ActionTag": 543135559,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_41_54_1_88_98",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 1645215532,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndBrick_1_16",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 53.8214,
+                  "Y": 589.6752
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.0598,
+                  "Y": 0.6552
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 53.8214,
+                "RightMargin": 846.1786,
+                "TopMargin": 310.3248,
+                "BottomMargin": 589.6752,
+                "Tag": 188,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 189,
+                    "ActionTag": 1208734360,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_33_46_56_90_100",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 190,
+                    "ActionTag": 773108744,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_35_48_58_92_102",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 191,
+                    "ActionTag": 1346197661,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_37_50_60_94_104",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 192,
+                    "ActionTag": -89773693,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_39_52_62_96_106",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -1939443215,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndBrick_0_1_18",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 619.6583,
+                  "Y": 589.6432
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.6885,
+                  "Y": 0.6552
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 619.6583,
+                "RightMargin": 280.3417,
+                "TopMargin": 310.3568,
+                "BottomMargin": 589.6432,
+                "Tag": 193,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.6149,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.1149,
+                    "RightMargin": -73.1149,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 194,
+                    "ActionTag": 11116213,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_33_46_56_66_98_108",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.8055,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.3055,
+                    "RightMargin": -118.3055,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 195,
+                    "ActionTag": 1499418254,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_35_48_58_68_100_110",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 141.9963,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4963,
+                    "RightMargin": -163.4963,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 196,
+                    "ActionTag": 1791297560,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_37_50_60_70_102_112",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 187.187,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 165.687,
+                    "RightMargin": -208.687,
+                    "TopMargin": -21.5,
+                    "BottomMargin": -21.5,
+                    "Tag": 197,
+                    "ActionTag": -1528325962,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_39_52_62_72_104_114",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 1996472788,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndBrick_0_0_0_20",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 270.4809,
+                  "Y": 315.8775
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.3005,
+                  "Y": 0.351
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 270.4809,
+                "RightMargin": 629.5191,
+                "TopMargin": 584.1225,
+                "BottomMargin": 315.8775,
+                "Tag": 198,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 45.6148,
+                      "Y": -0.3
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 24.1148,
+                    "RightMargin": -67.1148,
+                    "TopMargin": -21.2,
+                    "BottomMargin": -21.8,
+                    "Tag": 199,
+                    "ActionTag": -1403228768,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_106_116",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 91.4192,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 69.9192,
+                    "RightMargin": -112.9192,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 200,
+                    "ActionTag": 245057143,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_108_118",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 137.2236,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 115.7236,
+                    "RightMargin": -158.7236,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 201,
+                    "ActionTag": -829012544,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_110_120",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 183.028,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 161.528,
+                    "RightMargin": -204.528,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 202,
+                    "ActionTag": 1211380645,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_112_122",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 228.8323,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 207.3323,
+                    "RightMargin": -250.3323,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 203,
+                    "ActionTag": -587868459,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_114_124",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 274.6367,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 253.1367,
+                    "RightMargin": -296.1367,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 204,
+                    "ActionTag": 330867126,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_114_0_126",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 320.4411,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 298.9411,
+                    "RightMargin": -341.9411,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 205,
+                    "ActionTag": -247656035,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_114_1_128",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 229970002,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndConcrete_3_22",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 270.5839,
+                  "Y": 593.6322
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.3006,
+                  "Y": 0.6596
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 270.5839,
+                "RightMargin": 629.4161,
+                "TopMargin": 306.3678,
+                "BottomMargin": 593.6322,
+                "Tag": 206,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 45.6148,
+                      "Y": -0.3
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 24.1148,
+                    "RightMargin": -67.1148,
+                    "TopMargin": -21.2,
+                    "BottomMargin": -21.8,
+                    "Tag": 207,
+                    "ActionTag": 525757770,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_106_118_130",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 91.4192,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 69.9192,
+                    "RightMargin": -112.9192,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 208,
+                    "ActionTag": -1204977047,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_0_108_120_132",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 137.2236,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 115.7236,
+                    "RightMargin": -158.7236,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 209,
+                    "ActionTag": 214038955,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_1_110_122_134",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 183.028,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 161.528,
+                    "RightMargin": -204.528,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 210,
+                    "ActionTag": -1336204624,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_2_112_124_136",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 228.8323,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 207.3323,
+                    "RightMargin": -250.3323,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 211,
+                    "ActionTag": -833145262,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_114_126_138",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 274.6367,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 253.1367,
+                    "RightMargin": -296.1367,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 212,
+                    "ActionTag": -2025026294,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_114_0_128_140",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 320.4411,
+                      "Y": -0.3001
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 298.9411,
+                    "RightMargin": -341.9411,
+                    "TopMargin": -21.1999,
+                    "BottomMargin": -21.8001,
+                    "Tag": 213,
+                    "ActionTag": -1273903318,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Concrete_7_3_114_1_130_142",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 1739070866,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndConcrete_3_0_24",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 450.0,
+                  "Y": -205.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": -0.2278
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "HorizontalEdge": "BothEdge",
+                "VerticalEdge": "BottomEdge",
+                "LeftMargin": 450.0,
+                "RightMargin": 450.0,
+                "TopMargin": 1105.0,
+                "BottomMargin": -205.0,
+                "Tag": 214,
+                "Children": [
+                  {
+                    "BackColorAlpha": 102,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5
+                    },
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -450.0,
+                    "RightMargin": -450.0,
+                    "TopMargin": -200.0,
+                    "Tag": 215,
+                    "Children": [
+                      {
+                        "BackColorAlpha": 102,
+                        "ComboBoxIndex": 1,
+                        "SingleColor": {
+                          "R": 128,
+                          "G": 0,
+                          "B": 128
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
+                        "TouchEnable": true,
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 54.1608,
+                          "Y": 21.8905
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.0602,
+                          "Y": 0.1095
+                        },
+                        "PreSize": {
+                          "X": 0.1778,
+                          "Y": 0.8
+                        },
+                        "LeftMargin": 54.1608,
+                        "RightMargin": 685.8392,
+                        "TopMargin": 18.1095,
+                        "BottomMargin": 21.8905,
+                        "Tag": 216,
+                        "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Tank/Team 1/1A.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 13,
+                            "Scale9OriginY": 13,
+                            "Scale9Width": 14,
+                            "Scale9Height": 14,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 80.0,
+                              "Y": 80.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.9375,
+                              "Y": 0.9375
+                            },
+                            "LeftMargin": 5.0,
+                            "RightMargin": 5.0,
+                            "TopMargin": 5.0,
+                            "BottomMargin": 5.0,
+                            "Tag": 217,
+                            "ActionTag": -1312654583,
+                            "Size": {
+                              "X": 150.0,
+                              "Y": 150.0
+                            },
+                            "Name": "imgTank_0_Team_1_2",
+                            "ctype": "ImageViewObjectData"
+                          }
+                        ],
+                        "ActionTag": -1690328356,
+                        "Size": {
+                          "X": 160.0,
+                          "Y": 160.0
+                        },
+                        "Name": "slotTank_0_Team_1_4",
+                        "ctype": "PanelObjectData"
+                      },
+                      {
+                        "BackColorAlpha": 102,
+                        "ComboBoxIndex": 1,
+                        "SingleColor": {
+                          "R": 128,
+                          "G": 0,
+                          "B": 128
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
+                        "TouchEnable": true,
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 264.6614,
+                          "Y": 21.8904
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.2941,
+                          "Y": 0.1095
+                        },
+                        "PreSize": {
+                          "X": 0.1778,
+                          "Y": 0.8
+                        },
+                        "LeftMargin": 264.6614,
+                        "RightMargin": 475.3386,
+                        "TopMargin": 18.1096,
+                        "BottomMargin": 21.8904,
+                        "Tag": 218,
+                        "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Tank/Team 1/2A.png",
+                              "Plist": ""
+                            },
+                            "Scale9Width": 40,
+                            "Scale9Height": 40,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 80.0,
+                              "Y": 80.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.9375,
+                              "Y": 0.9375
+                            },
+                            "LeftMargin": 5.0,
+                            "RightMargin": 5.0,
+                            "TopMargin": 5.0,
+                            "BottomMargin": 5.0,
+                            "Tag": 219,
+                            "ActionTag": -896057026,
+                            "Size": {
+                              "X": 150.0,
+                              "Y": 150.0
+                            },
+                            "Name": "imgTank_1_Team_1_4",
+                            "ctype": "ImageViewObjectData"
+                          }
+                        ],
+                        "ActionTag": -746500973,
+                        "Size": {
+                          "X": 160.0,
+                          "Y": 160.0
+                        },
+                        "Name": "slotTank_1_Team_1_6",
+                        "ctype": "PanelObjectData"
+                      },
+                      {
+                        "BackColorAlpha": 102,
+                        "ComboBoxIndex": 1,
+                        "SingleColor": {
+                          "R": 128,
+                          "G": 0,
+                          "B": 128
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
+                        "TouchEnable": true,
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 475.162,
+                          "Y": 21.8905
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.528,
+                          "Y": 0.1095
+                        },
+                        "PreSize": {
+                          "X": 0.1778,
+                          "Y": 0.8
+                        },
+                        "LeftMargin": 475.162,
+                        "RightMargin": 264.838,
+                        "TopMargin": 18.1095,
+                        "BottomMargin": 21.8905,
+                        "Tag": 220,
+                        "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Tank/Team 1/3A.png",
+                              "Plist": ""
+                            },
+                            "Scale9Width": 40,
+                            "Scale9Height": 40,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 80.0,
+                              "Y": 80.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.9375,
+                              "Y": 0.9375
+                            },
+                            "LeftMargin": 5.0,
+                            "RightMargin": 5.0,
+                            "TopMargin": 5.0,
+                            "BottomMargin": 5.0,
+                            "Tag": 221,
+                            "ActionTag": -1808892263,
+                            "Size": {
+                              "X": 150.0,
+                              "Y": 150.0
+                            },
+                            "Name": "imgTank_2_Team_1_6",
+                            "ctype": "ImageViewObjectData"
+                          }
+                        ],
+                        "ActionTag": -1624680280,
+                        "Size": {
+                          "X": 160.0,
+                          "Y": 160.0
+                        },
+                        "Name": "slotTank_2_Team_1_8",
+                        "ctype": "PanelObjectData"
+                      },
+                      {
+                        "BackColorAlpha": 102,
+                        "ComboBoxIndex": 1,
+                        "SingleColor": {
+                          "R": 128,
+                          "G": 0,
+                          "B": 128
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
+                        "TouchEnable": true,
+                        "AnchorPoint": {},
+                        "Position": {
+                          "X": 685.6627,
+                          "Y": 21.8904
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.7618,
+                          "Y": 0.1095
+                        },
+                        "PreSize": {
+                          "X": 0.1778,
+                          "Y": 0.8
+                        },
+                        "LeftMargin": 685.6627,
+                        "RightMargin": 54.3373,
+                        "TopMargin": 18.1096,
+                        "BottomMargin": 21.8904,
+                        "Tag": 222,
+                        "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Tank/Team 1/3A.png",
+                              "Plist": ""
+                            },
+                            "Scale9Width": 40,
+                            "Scale9Height": 40,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 80.0,
+                              "Y": 80.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.9375,
+                              "Y": 0.9375
+                            },
+                            "LeftMargin": 5.0,
+                            "RightMargin": 5.0,
+                            "TopMargin": 5.0,
+                            "BottomMargin": 5.0,
+                            "Tag": 223,
+                            "ActionTag": 989383600,
+                            "Size": {
+                              "X": 150.0,
+                              "Y": 150.0
+                            },
+                            "Name": "imgTank_3_Team_1_8",
+                            "ctype": "ImageViewObjectData"
+                          }
+                        ],
+                        "ActionTag": 618396541,
+                        "Size": {
+                          "X": 160.0,
+                          "Y": 160.0
+                        },
+                        "Name": "slotTank_3_Team_1_10",
+                        "ctype": "PanelObjectData"
+                      }
+                    ],
+                    "ActionTag": 590409940,
+                    "Size": {
+                      "X": 900.0,
+                      "Y": 200.0
+                    },
+                    "Name": "Panel_2_11",
+                    "ctype": "PanelObjectData"
+                  }
+                ],
+                "ActionTag": -902819725,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Node_1_26",
+                "ctype": "SingleNodeObjectData"
+              }
+            ],
+            "ActionTag": 1326271976,
+            "Size": {
+              "X": 900.0,
+              "Y": 900.0
+            },
+            "Name": "sprMapBackground",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "button/button_green_0.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "button/button_green_0.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 231,
+            "Scale9Height": 51,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1084.249,
+              "Y": 2138.5566
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.873,
+              "Y": 0.9685
+            },
+            "PreSize": {
+              "X": 0.2298,
+              "Y": 0.1141
+            },
+            "HorizontalEdge": "RightEdge",
+            "VerticalEdge": "TopEdge",
+            "LeftMargin": 953.749,
+            "RightMargin": 27.251,
+            "TopMargin": 32.9434,
+            "BottomMargin": 2102.0566,
+            "Tag": 224,
+            "Children": [
+              {
+                "FontSize": 24,
+                "LabelText": "BACK TO LOBBY",
+                "FontResource": {
+                  "Type": "Normal",
+                  "Path": "fonts/font_game_bold.ttf",
+                  "Plist": ""
+                },
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "OutlineEnabled": true,
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowEnabled": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 130.5,
+                  "Y": 36.5
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 192,
+                  "B": 203
+                },
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 0.3472,
+                  "Y": 0.5932
+                },
+                "LeftMargin": 19.5,
+                "RightMargin": 19.5,
+                "TopMargin": 18.0,
+                "BottomMargin": 18.0,
+                "Tag": 225,
+                "ActionTag": 688898436,
+                "Size": {
+                  "X": 222.0,
+                  "Y": 37.0
+                },
+                "Name": "Text_2_3_3_2",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": 566998122,
+            "Size": {
+              "X": 261.0,
+              "Y": 73.0
+            },
+            "Name": "btnBackToLobby",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "button/CloseSelected.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "button/CloseNormal.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 13,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 18,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 157.9873,
+              "Y": 2065.8877
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1272,
+              "Y": 0.9356
+            },
+            "PreSize": {
+              "X": 0.161,
+              "Y": 0.0906
+            },
+            "HorizontalEdge": "LeftEdge",
+            "VerticalEdge": "TopEdge",
+            "LeftMargin": 57.9873,
+            "RightMargin": 984.0127,
+            "TopMargin": 42.1123,
+            "BottomMargin": 1965.8877,
+            "Tag": 356,
+            "ActionTag": -1364130738,
+            "Size": {
+              "X": 200.0,
+              "Y": 200.0
+            },
+            "Name": "btnClose",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1242.0,
+          "Y": 2208.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

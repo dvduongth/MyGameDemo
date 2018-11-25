@@ -1,0 +1,207 @@
+{
+  "ID": "5613b6e4-18b4-4da9-ab2b-a9baf1886b46",
+  "Version": "2.2.8.0",
+  "Name": "SceneLoading",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 99,
+        "Children": [
+          {
+            "ComboBoxIndex": 2,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 30,
+              "G": 144
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PercentWidthEnable": true,
+            "PercentHeightEnable": true,
+            "PercentWidthEnabled": true,
+            "PercentHeightEnabled": true,
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "LeftEdge",
+            "VerticalEdge": "BottomEdge",
+            "Tag": 126,
+            "ActionTag": -1782047441,
+            "Size": {
+              "X": 1242.0,
+              "Y": 2208.0
+            },
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FontSize": 48,
+            "LabelText": "SCENE LOADING",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "fonts/font_game_bold.ttf",
+              "Plist": ""
+            },
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 604.316,
+              "Y": 1569.5393
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 165,
+              "G": 42,
+              "B": 42
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4866,
+              "Y": 0.7108
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "TopEdge",
+            "LeftMargin": 405.316,
+            "RightMargin": 438.684,
+            "TopMargin": 603.4607,
+            "BottomMargin": 1534.5393,
+            "Tag": 127,
+            "ActionTag": 589791816,
+            "Size": {
+              "X": 398.0,
+              "Y": 70.0
+            },
+            "Name": "Text_1",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "button/CloseSelected.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "button/CloseNormal.png",
+              "Plist": ""
+            },
+            "Scale9OriginX": 13,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 18,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 157.9873,
+              "Y": 2065.8877
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1272,
+              "Y": 0.9356
+            },
+            "PreSize": {
+              "X": 0.161,
+              "Y": 0.0906
+            },
+            "HorizontalEdge": "LeftEdge",
+            "VerticalEdge": "TopEdge",
+            "LeftMargin": 57.9873,
+            "RightMargin": 984.0127,
+            "TopMargin": 42.1123,
+            "BottomMargin": 1965.8877,
+            "Tag": 357,
+            "ActionTag": -786238640,
+            "Size": {
+              "X": 200.0,
+              "Y": 200.0
+            },
+            "Name": "btnClose",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1242.0,
+          "Y": 2208.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

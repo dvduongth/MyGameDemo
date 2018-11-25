@@ -1,0 +1,380 @@
+<Solution>
+  <PropertyGroup Name="MyGameDemo" Version="2.2.8.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="button">
+          <Image Name="back_btn.png" />
+          <Image Name="btn_blue_0.png" />
+          <Image Name="btn_blue_1.png" />
+          <Image Name="btn_orange_0.png" />
+          <Image Name="bt_chon.png" />
+          <Image Name="button_brown_0.png" />
+          <Image Name="button_green_0.png" />
+          <Image Name="button_green_1.png" />
+          <Image Name="button_green_2.png" />
+          <Image Name="button_green_3.png" />
+          <Image Name="button_QuickComplete.png" />
+          <Image Name="button_recieveGift.png" />
+          <Image Name="button_yellow_0.png" />
+          <Image Name="button_yellow_1.png" />
+          <Image Name="button_yellow_2.png" />
+          <Image Name="button_yellow_3.png" />
+          <Image Name="CloseNormal.png" />
+          <Image Name="CloseSelected.png" />
+          <Image Name="x.png" />
+          <Image Name="x2.png" />
+          <Image Name="x3.png" />
+        </Folder>
+        <Folder Name="Default">
+          <Image Name="Button_Disable.png" />
+          <Image Name="Button_Normal.png" />
+          <Image Name="Button_Press.png" />
+          <Image Name="CheckBoxNode_Disable.png" />
+          <Image Name="CheckBoxNode_Normal.png" />
+          <Image Name="CheckBox_Disable.png" />
+          <Image Name="CheckBox_Normal.png" />
+          <Image Name="CheckBox_Press.png" />
+          <Image Name="ImageFile.png" />
+          <Image Name="Sprite.png" />
+        </Folder>
+        <File Name="favicon.ico" />
+        <Folder Name="fonts">
+          <TTF Name="font_game.ttf" />
+          <TTF Name="font_game_bold.ttf" />
+          <TTF Name="font_game_bold_italic.ttf" />
+          <TTF Name="font_game_italic.ttf" />
+        </Folder>
+        <Folder Name="number">
+          <Folder Name="style1">
+            <Image Name="0.png" />
+            <Image Name="1.png" />
+            <Image Name="2.png" />
+            <Image Name="3.png" />
+            <Image Name="4.png" />
+            <Image Name="5.png" />
+            <Image Name="6.png" />
+            <Image Name="7.png" />
+            <Image Name="8.png" />
+            <Image Name="9.png" />
+          </Folder>
+          <Folder Name="style2">
+            <Image Name="0.png" />
+            <Image Name="1.png" />
+            <Image Name="2.png" />
+            <Image Name="3.png" />
+            <Image Name="4.png" />
+            <Image Name="5.png" />
+            <Image Name="6.png" />
+            <Image Name="7.png" />
+            <Image Name="8.png" />
+            <Image Name="9.png" />
+          </Folder>
+          <Folder Name="style3">
+            <Image Name="0.png" />
+            <Image Name="1.png" />
+            <Image Name="2.png" />
+            <Image Name="3.png" />
+            <Image Name="4.png" />
+            <Image Name="5.png" />
+            <Image Name="6.png" />
+            <Image Name="7.png" />
+            <Image Name="8.png" />
+            <Image Name="9.png" />
+            <Image Name="dot.png" />
+            <Image Name="minus.png" />
+            <Image Name="plus.png" />
+          </Folder>
+          <Folder Name="style4">
+            <Image Name="1.png" />
+            <Image Name="2.png" />
+            <Image Name="3.png" />
+            <Image Name="4.png" />
+            <Image Name="5.png" />
+            <Image Name="6.png" />
+            <Image Name="7.png" />
+            <Image Name="8.png" />
+          </Folder>
+        </Folder>
+        <Folder Name="particle">
+          <Folder Name="Particle">
+            <PlistParticleFile Name="particle_baybang.plist" />
+            <PlistParticleFile Name="particle_rainbow.plist" />
+            <PlistParticleFile Name="particle_texture1.plist" />
+            <PlistParticleFile Name="particle_texture2.plist" />
+            <PlistParticleFile Name="particle_texture3.plist" />
+            <PlistParticleFile Name="particle_texture4.plist" />
+            <PlistParticleFile Name="particle_texture5.plist" />
+            <PlistParticleFile Name="particle_texture6.plist" />
+            <PlistParticleFile Name="particle_texture7.plist" />
+            <PlistParticleFile Name="particle_texture8.plist" />
+            <PlistParticleFile Name="particle_texture_blue.plist" />
+            <PlistParticleFile Name="particle_texture_green.plist" />
+            <PlistParticleFile Name="particle_texture_red.plist" />
+            <PlistParticleFile Name="particle_texture_tail1.plist" />
+            <PlistParticleFile Name="particle_texture_yellow.plist" />
+            <PlistParticleFile Name="tail_particle1.plist" />
+            <Image Name="fx_2.png" />
+            <Image Name="fx_3.png" />
+            <Image Name="fx_4h.png" />
+            <Image Name="fx_4l.png" />
+            <Image Name="fx_4m.png" />
+            <Image Name="fx_4n.png" />
+            <Image Name="particle_texture.png" />
+          </Folder>
+          <Folder Name="particle3d">
+            <Folder Name="materials">
+              <File Name="anh02.material" />
+              <File Name="anh03.material" />
+              <File Name="anh04.material" />
+              <File Name="anh05.material" />
+              <File Name="anh06.material" />
+              <File Name="anh09.material" />
+              <File Name="anh10.material" />
+              <File Name="bot_dice01.material" />
+              <File Name="bot_dice02.material" />
+              <File Name="bot_dice03.material" />
+              <File Name="bot_dice04.material" />
+              <File Name="bot_dice05.material" />
+              <File Name="bot_dice06.material" />
+              <File Name="bublbe.material" />
+              <File Name="bubleblur.material" />
+              <File Name="circle.material" />
+              <File Name="flare.material" />
+              <File Name="Flare_04.material" />
+              <File Name="gold5.material" />
+              <File Name="golden.material" />
+              <File Name="lotus.material" />
+              <File Name="Rain.material" />
+              <File Name="rain01.material" />
+              <File Name="ring_defMat.material" />
+              <File Name="Smoke_02.material" />
+              <File Name="snow01.material" />
+              <File Name="Spark_01.material" />
+              <File Name="Star_03.material" />
+              <File Name="star_05.material" />
+              <File Name="streak01.material" />
+              <File Name="streak_02.material" />
+              <File Name="streak_03.material" />
+              <File Name="Streak_04.material" />
+            </Folder>
+            <Folder Name="models">
+              <File Name="roRing.mesh" />
+              <File Name="starRing.mesh" />
+            </Folder>
+            <Folder Name="ogre">
+              <File Name="roRing.mesh" />
+              <Mesh Name="starRing.c3b" />
+              <File Name="starRing.mesh" />
+            </Folder>
+            <Folder Name="scripts">
+              <Pu Name="atomicity.pu" />
+              <Pu Name="bubbles.pu" />
+              <Pu Name="dice_01.pu" />
+              <Pu Name="dice_02.pu" />
+              <Pu Name="dice_03.pu" />
+              <Pu Name="dice_04.pu" />
+              <Pu Name="dice_05.pu" />
+              <Pu Name="dice_06.pu" />
+              <Pu Name="lineStreak.pu" />
+              <Pu Name="locxoay.pu" />
+              <Pu Name="lotus.pu" />
+              <Pu Name="lo_ring.pu" />
+              <Pu Name="psychoBurn.pu" />
+              <Pu Name="rainSystem_1.pu" />
+              <Pu Name="rainSystem_2.pu" />
+              <Pu Name="snow.pu" />
+              <Pu Name="spiralStars.pu" />
+              <Pu Name="starRing.pu" />
+              <Pu Name="tail1.pu" />
+              <Pu Name="teleport.pu" />
+              <Pu Name="teleport2.pu" />
+              <Pu Name="test2.pu" />
+            </Folder>
+            <Folder Name="textures">
+              <Image Name="anh02.png" />
+              <Image Name="anh03.png" />
+              <Image Name="anh04.png" />
+              <Image Name="anh05.png" />
+              <Image Name="anh06.png" />
+              <Image Name="anh09.png" />
+              <Image Name="anh10.png" />
+              <Image Name="bot_dice01.png" />
+              <Image Name="bot_dice02.png" />
+              <Image Name="bot_dice03.png" />
+              <Image Name="bot_dice04.png" />
+              <Image Name="bot_dice05.png" />
+              <Image Name="bot_dice06.png" />
+              <Image Name="gold.png" />
+              <Image Name="lotus.png" />
+              <Image Name="point04.png" />
+              <Image Name="pump_bubble.png" />
+              <Image Name="pump_bubble_blurred.png" />
+              <Image Name="pump_flare_04.png" />
+              <Image Name="pump_smoke_02.png" />
+              <Image Name="pump_snow_01.png" />
+              <Image Name="pump_spark_01.png" />
+              <Image Name="pump_star_03.png" />
+              <Image Name="pump_star_05.png" />
+              <Image Name="pump_streak_01.png" />
+              <Image Name="pump_streak_02.png" />
+              <Image Name="pump_streak_03.png" />
+              <Image Name="pump_streak_04.png" />
+              <Image Name="pu_circle.png" />
+              <Image Name="pu_flare.png" />
+              <Image Name="pu_rain.png" />
+              <Image Name="pu_rain_01.png" />
+              <Image Name="ring2.png" />
+              <Image Name="testPU.png" />
+            </Folder>
+          </Folder>
+          <Image Name="ElectricPoint1.png" />
+          <Image Name="test.png" />
+        </Folder>
+        <Folder Name="resources">
+          <Folder Name="json" />
+          <Folder Name="textures">
+            <Folder Name="Base">
+              <Folder Name="Team 1">
+                <Image Name="MainBase.png" />
+                <Image Name="MainBaseD.png" />
+                <Image Name="SideBase.png" />
+                <Image Name="SideBaseD.png" />
+              </Folder>
+              <Folder Name="Team 2">
+                <Image Name="MainBase.png" />
+                <Image Name="MainBaseD.png" />
+                <Image Name="SideBase.png" />
+                <Image Name="SideBaseD.png" />
+              </Folder>
+            </Folder>
+            <Folder Name="Bullet">
+              <Image Name="1.png" />
+              <Image Name="2.png" />
+              <Image Name="3.png" />
+            </Folder>
+            <Folder Name="Explosion">
+              <Image Name="1.png" />
+              <Image Name="2.png" />
+              <Image Name="3.png" />
+              <Image Name="4.png" />
+              <Image Name="5.png" />
+              <Image Name="6.png" />
+              <Image Name="7.png" />
+              <Image Name="8.png" />
+            </Folder>
+            <Folder Name="Map">
+              <Image Name="Background.png" />
+              <Image Name="Background_1.png" />
+              <Image Name="Brick 1.png" />
+              <Image Name="Brick 2.png" />
+              <Image Name="Brick 3.png" />
+              <Image Name="Brick 4.png" />
+              <Image Name="Brick 5.png" />
+              <Image Name="Concrete.png" />
+              <Image Name="Water.png" />
+            </Folder>
+            <Folder Name="Particle">
+              <Image Name="BlackSmoke.png" />
+              <Image Name="Frag.png" />
+              <Image Name="WhiteSmoke.png" />
+            </Folder>
+            <Folder Name="PowerUp">
+              <Image Name="Airplane 1.png" />
+              <Image Name="Airplane 2.png" />
+              <Image Name="Airstrike.png" />
+              <Image Name="EMP.png" />
+            </Folder>
+            <Folder Name="Strings">
+              <Image Name="BadDraw.png" />
+              <Image Name="Draw.png" />
+              <Image Name="StringTemplate.png" />
+              <Image Name="Team1Win.png" />
+              <Image Name="Team2Win.png" />
+            </Folder>
+            <Folder Name="Tank">
+              <Folder Name="Team 1">
+                <Image Name="1A.png" />
+                <Image Name="1B.png" />
+                <Image Name="1C.png" />
+                <Image Name="1D.png" />
+                <Image Name="1S.png" />
+                <Image Name="2A.png" />
+                <Image Name="2B.png" />
+                <Image Name="2C.png" />
+                <Image Name="2D.png" />
+                <Image Name="2S.png" />
+                <Image Name="3A.png" />
+                <Image Name="3B.png" />
+                <Image Name="3C.png" />
+                <Image Name="3D.png" />
+                <Image Name="3S.png" />
+              </Folder>
+              <Folder Name="Team 2">
+                <Image Name="1A.png" />
+                <Image Name="1B.png" />
+                <Image Name="1C.png" />
+                <Image Name="1D.png" />
+                <Image Name="1S.png" />
+                <Image Name="2A.png" />
+                <Image Name="2B.png" />
+                <Image Name="2C.png" />
+                <Image Name="2D.png" />
+                <Image Name="2S.png" />
+                <Image Name="3A.png" />
+                <Image Name="3B.png" />
+                <Image Name="3C.png" />
+                <Image Name="3D.png" />
+                <Image Name="3S.png" />
+              </Folder>
+            </Folder>
+            <Folder Name="UI">
+              <Image Name="FastForwardButton.png" />
+              <Image Name="MetalBoard.png" />
+              <Image Name="RewindButton.png" />
+            </Folder>
+            <Image Name="Splash.png" />
+          </Folder>
+        </Folder>
+        <Folder Name="shaders">
+          <File Name="blur.fsh" />
+          <File Name="change_color.fsh" />
+          <File Name="gray.fsh" />
+          <File Name="gray.vsh" />
+          <File Name="z1.fsh" />
+          <File Name="z1.vsh" />
+        </Folder>
+        <Folder Name="shadow">
+          <File Name="pass.vsh" />
+          <File Name="shadowRender.fsh" />
+          <Image Name="shadow1.png" />
+        </Folder>
+        <Folder Name="zccs">
+          <Folder Name="gui">
+            <Folder Name="login" />
+            <Folder Name="loading">
+              <Project Name="GuiLoading.csd" Type="Scene" />
+            </Folder>
+            <Folder Name="lobby" />
+            <Folder Name="battle" />
+            <Folder Name="popup" />
+          </Folder>
+          <Folder Name="scene">
+            <Folder Name="lobby">
+              <Project Name="SceneLobby.csd" Type="Scene" />
+            </Folder>
+            <Folder Name="login">
+              <Project Name="SceneLogin.csd" Type="Scene" />
+            </Folder>
+            <Folder Name="battle">
+              <Project Name="SceneBattle.csd" Type="Scene" />
+            </Folder>
+            <Folder Name="loading">
+              <Project Name="SceneLoading.csd" Type="Scene" />
+            </Folder>
+          </Folder>
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

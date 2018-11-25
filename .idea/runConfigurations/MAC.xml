@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MAC" type="#org.ccdt.lua.launch.CocosJSConfigurationType" factoryName="JSBinding">
+    <first key="runtime_arguments" stringValue="" />
+    <first key="force_update_entry_file" booleanValue="true" />
+    <first key="disable_live_coding" booleanValue="false" />
+    <first key="disable_using_upload" booleanValue="false" />
+    <first key="argument_map">
+      <second key="macruntime" stringValue="simulator/mac/MyGameDemo-desktop.app" />
+      <second key="win32runtime" stringValue="" />
+      <second key="connector_id" stringValue="jsbinding.mac.attach.connector" />
+      <second key="remotePlatform" stringValue="Android" />
+      <second key="host" stringValue="127.0.0.1" />
+      <second key="androidruntime" stringValue="runtime/android/PrebuiltRuntimeJs.apk" />
+      <second key="iosruntime" stringValue="" />
+    </first>
+    <method />
+  </configuration>
+</component>
