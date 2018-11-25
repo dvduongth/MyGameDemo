@@ -1,0 +1,3 @@
+CheckConnection for start timeout Enum.MATCH_RESULT_BAD_DRAW Enum.STATE_FINISHED
+game request broadcast data.length 4
+Game SaveReplay
