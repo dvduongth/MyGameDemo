@@ -4,11 +4,12 @@ var Bullet = cc.Sprite.extend({
     getClassName: function () {
         return this._className;
     },
-    ctor: function (id, direction, team, type) {
+    ctor: function (id, direction, team, type, tankGunId) {
         this.setID(id);
         this.setTeam(team);
         this.setType(type);
         this.setDirection(direction);
+        this.setTankGunID(tankGunId);
         //super
         var path;
         switch (type) {
@@ -56,6 +57,12 @@ var Bullet = cc.Sprite.extend({
     getDirection: function () {
         return this._bulletDirection;
     },
+    setTankGunID: function (d) {
+        this._tankGunID = d;
+    },
+    getTankGunID: function () {
+        return this._tankGunID;
+    },
     setSpeed: function (s) {
         this._bulletSpeed = s;
     },
@@ -90,10 +97,19 @@ var Bullet = cc.Sprite.extend({
                 dY = this.getSpeed();
                 break;
         }
-        this.setPositionX(this.getPositionX() + dX);
-        this.setPositionY(this.getPositionY() + dY);
         this.setRotation(angle);
-        this.checkOutOfBoundingScreen();
+        if(dX != 0 || dY != 0) {
+            //move before
+            this.setPositionX(this.getPositionX() + dX);
+            this.setPositionY(this.getPositionY() + dY);
+            //todo check collision
+            if(gv.engine.getBattleMgr().checkCollisionBulletWithTarget(this.getID())) {
+                //destroy
+                this.destroy(true);
+            }else{
+                this.checkOutOfBoundingScreen();
+            }
+        }
     },
     checkOutOfBoundingScreen: function () {
         var parent = this.getParent();
@@ -116,8 +132,11 @@ var Bullet = cc.Sprite.extend({
         }
         return false;
     },
-    destroy: function () {
+    destroy: function (hasExplosion) {
         gv.engine.getBattleMgr().removeBullet(this.getID());
         this.removeFromParent(true);
+    },
+    getWorldPosition: function () {
+        return this.getParent().convertToWorldSpace(this.getPosition());
     }
 });

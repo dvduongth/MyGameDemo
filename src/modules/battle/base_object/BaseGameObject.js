@@ -100,5 +100,11 @@ var BaseGameObject = cc.Class.extend({
         if(this.getRootNode() != null) {
             this.getRootNode().removeFromParent(true);
         }
+    },
+    getParent: function () {
+        return this.getRootNode().getParent();
+    },
+    getWorldPosition: function () {
+        return this.getParent().convertToWorldSpace(this.getPosition());
     }
 });

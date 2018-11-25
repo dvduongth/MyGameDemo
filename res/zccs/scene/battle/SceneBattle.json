@@ -172,8 +172,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 452.632,
-                  "Y": 99.4719
+                  "X": 450.6319,
+                  "Y": 91.4721
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -182,17 +182,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.5029,
-                  "Y": 0.1105
+                  "X": 0.5007,
+                  "Y": 0.1016
                 },
                 "PreSize": {
                   "X": 0.0922,
                   "Y": 0.0922
                 },
-                "LeftMargin": 411.132,
-                "RightMargin": 405.868,
-                "TopMargin": 759.0281,
-                "BottomMargin": 57.9719,
+                "LeftMargin": 409.1319,
+                "RightMargin": 407.8681,
+                "TopMargin": 767.028,
+                "BottomMargin": 49.9721,
                 "Tag": 132,
                 "ActionTag": 259790017,
                 "Size": {
@@ -217,8 +217,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 176.875,
-                  "Y": 186.4462
+                  "X": 173.2998,
+                  "Y": 174.3674
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -227,17 +227,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.1965,
-                  "Y": 0.2072
+                  "X": 0.1926,
+                  "Y": 0.1937
                 },
                 "PreSize": {
                   "X": 0.0922,
                   "Y": 0.0922
                 },
-                "LeftMargin": 135.375,
-                "RightMargin": 681.625,
-                "TopMargin": 672.0538,
-                "BottomMargin": 144.9462,
+                "LeftMargin": 131.7998,
+                "RightMargin": 685.2002,
+                "TopMargin": 684.1326,
+                "BottomMargin": 132.8674,
                 "Tag": 133,
                 "ActionTag": -86037252,
                 "Size": {
@@ -262,8 +262,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 738.6256,
-                  "Y": 185.7879
+                  "X": 728.8678,
+                  "Y": 175.4213
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -272,17 +272,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8207,
-                  "Y": 0.2064
+                  "X": 0.8099,
+                  "Y": 0.1949
                 },
                 "PreSize": {
                   "X": 0.0922,
                   "Y": 0.0922
                 },
-                "LeftMargin": 697.1256,
-                "RightMargin": 119.8744,
-                "TopMargin": 672.7121,
-                "BottomMargin": 144.2879,
+                "LeftMargin": 687.3678,
+                "RightMargin": 129.6322,
+                "TopMargin": 683.0787,
+                "BottomMargin": 133.9213,
                 "Tag": 134,
                 "ActionTag": -2056528781,
                 "Size": {
@@ -352,8 +352,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 737.3481,
-                  "Y": 719.6957
+                  "X": 725.1532,
+                  "Y": 724.7173
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -362,17 +362,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8193,
-                  "Y": 0.7997
+                  "X": 0.8057,
+                  "Y": 0.8052
                 },
                 "PreSize": {
                   "X": 0.0922,
                   "Y": 0.0922
                 },
-                "LeftMargin": 695.8481,
-                "RightMargin": 121.1519,
-                "TopMargin": 138.8043,
-                "BottomMargin": 678.1957,
+                "LeftMargin": 683.6532,
+                "RightMargin": 133.3468,
+                "TopMargin": 133.7827,
+                "BottomMargin": 683.2173,
                 "Tag": 161,
                 "ActionTag": -1416324201,
                 "Size": {
@@ -397,8 +397,8 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 173.5627,
-                  "Y": 716.0532
+                  "X": 175.8559,
+                  "Y": 725.8359
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -407,17 +407,17 @@
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.1928,
-                  "Y": 0.7956
+                  "X": 0.1954,
+                  "Y": 0.8065
                 },
                 "PreSize": {
                   "X": 0.0922,
                   "Y": 0.0922
                 },
-                "LeftMargin": 132.0627,
-                "RightMargin": 684.9373,
-                "TopMargin": 142.4468,
-                "BottomMargin": 674.5532,
+                "LeftMargin": 134.3559,
+                "RightMargin": 682.6441,
+                "TopMargin": 132.6641,
+                "BottomMargin": 684.3359,
                 "Tag": 160,
                 "ActionTag": 60264110,
                 "Size": {
@@ -1400,8 +1400,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 114.673,
-                  "Y": 389.5667
+                  "X": 60.2526,
+                  "Y": 111.1791
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1410,17 +1410,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.1274,
-                  "Y": 0.4329
+                  "X": 0.0669,
+                  "Y": 0.1235
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 114.673,
-                "RightMargin": 785.327,
-                "TopMargin": 510.4333,
-                "BottomMargin": 389.5667,
+                "LeftMargin": 60.2526,
+                "RightMargin": 839.7474,
+                "TopMargin": 788.8209,
+                "BottomMargin": 111.1791,
                 "Tag": 135,
                 "Children": [
                   {
@@ -1438,7 +1438,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 51.6149,
+                      "X": 50.6149,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -1455,8 +1455,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 30.1149,
-                    "RightMargin": -73.1149,
+                    "LeftMargin": 29.1149,
+                    "RightMargin": -72.1149,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 136,
@@ -1483,7 +1483,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 96.8055,
+                      "X": 90.8055,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -1500,8 +1500,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 75.3055,
-                    "RightMargin": -118.3055,
+                    "LeftMargin": 69.3055,
+                    "RightMargin": -112.3055,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 137,
@@ -1528,7 +1528,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 141.9963,
+                      "X": 130.9964,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -1545,8 +1545,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 120.4963,
-                    "RightMargin": -163.4963,
+                    "LeftMargin": 109.4964,
+                    "RightMargin": -152.4964,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 138,
@@ -1573,8 +1573,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 187.187,
-                      "Y": 0.0
+                      "X": 50.1974,
+                      "Y": 42.5631
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1590,12 +1590,12 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 165.687,
-                    "RightMargin": -208.687,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
-                    "Tag": 139,
-                    "ActionTag": 1614706151,
+                    "LeftMargin": 28.6974,
+                    "RightMargin": -71.6974,
+                    "TopMargin": -64.0631,
+                    "BottomMargin": 21.0631,
+                    "Tag": 140,
+                    "ActionTag": -695300942,
                     "Size": {
                       "X": 43.0,
                       "Y": 43.0
@@ -1618,8 +1618,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 232.3774,
-                      "Y": 0.0
+                      "X": 51.1852,
+                      "Y": 84.5144
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1635,17 +1635,17 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 210.8774,
-                    "RightMargin": -253.8774,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
-                    "Tag": 140,
-                    "ActionTag": -695300942,
+                    "LeftMargin": 29.6852,
+                    "RightMargin": -72.6852,
+                    "TopMargin": -106.0144,
+                    "BottomMargin": 63.0144,
+                    "Tag": 211,
+                    "ActionTag": 1463789336,
                     "Size": {
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "ObstacleHard",
+                    "Name": "ObstacleHard ",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -1660,8 +1660,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 118.5352,
-                  "Y": 509.9955
+                  "X": 54.2106,
+                  "Y": 789.4005
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1670,17 +1670,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.1317,
-                  "Y": 0.5667
+                  "X": 0.0602,
+                  "Y": 0.8771
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 118.5352,
-                "RightMargin": 781.4648,
-                "TopMargin": 390.0045,
-                "BottomMargin": 509.9955,
+                "LeftMargin": 54.2106,
+                "RightMargin": 845.7894,
+                "TopMargin": 110.5995,
+                "BottomMargin": 789.4005,
                 "Tag": 141,
                 "Children": [
                   {
@@ -1698,7 +1698,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 51.6149,
+                      "X": 57.6148,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -1715,8 +1715,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 30.1149,
-                    "RightMargin": -73.1149,
+                    "LeftMargin": 36.1148,
+                    "RightMargin": -79.1148,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 142,
@@ -1743,7 +1743,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 96.8055,
+                      "X": 99.8055,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -1760,8 +1760,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 75.3055,
-                    "RightMargin": -118.3055,
+                    "LeftMargin": 78.3055,
+                    "RightMargin": -121.3055,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 143,
@@ -1833,8 +1833,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 187.187,
-                      "Y": 0.0
+                      "X": 57.8378,
+                      "Y": -42.4956
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1850,10 +1850,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 165.687,
-                    "RightMargin": -208.687,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 36.3378,
+                    "RightMargin": -79.3378,
+                    "TopMargin": 20.9956,
+                    "BottomMargin": -63.9956,
                     "Tag": 145,
                     "ActionTag": -464729182,
                     "Size": {
@@ -1878,8 +1878,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 232.3774,
-                      "Y": 0.0
+                      "X": 58.2652,
+                      "Y": -84.4188
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -1895,10 +1895,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 210.8774,
-                    "RightMargin": -253.8774,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 36.7652,
+                    "RightMargin": -79.7652,
+                    "TopMargin": 62.9188,
+                    "BottomMargin": -105.9188,
                     "Tag": 146,
                     "ActionTag": -1480505572,
                     "Size": {
@@ -1920,8 +1920,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 512.8926,
-                  "Y": 509.9955
+                  "X": 647.5186,
+                  "Y": 788.7204
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -1930,17 +1930,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.5699,
-                  "Y": 0.5667
+                  "X": 0.7195,
+                  "Y": 0.8764
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 512.8926,
-                "RightMargin": 387.1074,
-                "TopMargin": 390.0045,
-                "BottomMargin": 509.9955,
+                "LeftMargin": 647.5186,
+                "RightMargin": 252.4814,
+                "TopMargin": 111.2796,
+                "BottomMargin": 788.7204,
                 "Tag": 147,
                 "Children": [
                   {
@@ -2093,8 +2093,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 187.187,
-                      "Y": 0.0
+                      "X": 140.7095,
+                      "Y": -42.7664
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2110,10 +2110,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 165.687,
-                    "RightMargin": -208.687,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 119.2095,
+                    "RightMargin": -162.2095,
+                    "TopMargin": 21.2664,
+                    "BottomMargin": -64.2664,
                     "Tag": 151,
                     "ActionTag": 142595695,
                     "Size": {
@@ -2138,8 +2138,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 232.3774,
-                      "Y": 0.0
+                      "X": 142.139,
+                      "Y": -84.5332
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2155,10 +2155,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 210.8774,
-                    "RightMargin": -253.8774,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 120.639,
+                    "RightMargin": -163.639,
+                    "TopMargin": 63.0332,
+                    "BottomMargin": -106.0332,
                     "Tag": 152,
                     "ActionTag": 1238015482,
                     "Size": {
@@ -2180,8 +2180,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 517.4958,
-                  "Y": 388.7736
+                  "X": 621.1803,
+                  "Y": 112.5732
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -2190,17 +2190,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.575,
-                  "Y": 0.432
+                  "X": 0.6902,
+                  "Y": 0.1251
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 517.4958,
-                "RightMargin": 382.5042,
-                "TopMargin": 511.2264,
-                "BottomMargin": 388.7736,
+                "LeftMargin": 621.1803,
+                "RightMargin": 278.8197,
+                "TopMargin": 787.4268,
+                "BottomMargin": 112.5732,
                 "Tag": 153,
                 "Children": [
                   {
@@ -2218,7 +2218,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 51.6149,
+                      "X": 90.8053,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -2235,53 +2235,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 30.1149,
-                    "RightMargin": -73.1149,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
-                    "Tag": 154,
-                    "ActionTag": -184398568,
-                    "Size": {
-                      "X": 43.0,
-                      "Y": 43.0
-                    },
-                    "Name": "ObstacleHard",
-                    "ctype": "SpriteObjectData"
-                  },
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "resources/textures/Map/Concrete.png",
-                      "Plist": ""
-                    },
-                    "BlendFunc": {
-                      "Src": 1,
-                      "Dst": 771
-                    },
-                    "AnchorPoint": {
-                      "ScaleX": 0.5,
-                      "ScaleY": 0.5
-                    },
-                    "Position": {
-                      "X": 96.8055,
-                      "Y": 0.0
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "PreSize": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "LeftMargin": 75.3055,
-                    "RightMargin": -118.3055,
+                    "LeftMargin": 69.3053,
+                    "RightMargin": -112.3053,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 155,
@@ -2308,7 +2263,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 141.9963,
+                      "X": 130.9963,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -2325,8 +2280,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 120.4963,
-                    "RightMargin": -163.4963,
+                    "LeftMargin": 109.4963,
+                    "RightMargin": -152.4963,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 156,
@@ -2353,7 +2308,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 187.187,
+                      "X": 170.1865,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -2370,8 +2325,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 165.687,
-                    "RightMargin": -208.687,
+                    "LeftMargin": 148.6865,
+                    "RightMargin": -191.6865,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 157,
@@ -2398,8 +2353,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 232.3774,
-                      "Y": 0.0
+                      "X": 170.85,
+                      "Y": 41.3895
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2415,12 +2370,57 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 210.8774,
-                    "RightMargin": -253.8774,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 149.35,
+                    "RightMargin": -192.35,
+                    "TopMargin": -62.8895,
+                    "BottomMargin": 19.8895,
                     "Tag": 158,
                     "ActionTag": -70981119,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 170.7809,
+                      "Y": 82.8474
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 149.2809,
+                    "RightMargin": -192.2809,
+                    "TopMargin": -104.3474,
+                    "BottomMargin": 61.3474,
+                    "Tag": 218,
+                    "ActionTag": 486497088,
                     "Size": {
                       "X": 43.0,
                       "Y": 43.0
@@ -2440,8 +2440,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 269.1486,
-                  "Y": 223.3337
+                  "X": 334.1531,
+                  "Y": 71.1004
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -2450,17 +2450,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.2991,
-                  "Y": 0.2481
+                  "X": 0.3713,
+                  "Y": 0.079
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 269.1486,
-                "RightMargin": 630.8514,
-                "TopMargin": 676.6663,
-                "BottomMargin": 223.3337,
+                "LeftMargin": 334.1531,
+                "RightMargin": 565.8469,
+                "TopMargin": 828.8996,
+                "BottomMargin": 71.1004,
                 "Tag": 162,
                 "Children": [
                   {
@@ -2478,8 +2478,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 51.6149,
-                      "Y": 0.0
+                      "X": 52.6149,
+                      "Y": -1.0
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2495,10 +2495,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 30.1149,
-                    "RightMargin": -73.1149,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 31.1149,
+                    "RightMargin": -74.1149,
+                    "TopMargin": -20.5,
+                    "BottomMargin": -22.5,
                     "Tag": 163,
                     "ActionTag": -1950446156,
                     "Size": {
@@ -2523,8 +2523,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 96.8055,
-                      "Y": 0.0
+                      "X": 52.4892,
+                      "Y": 40.9127
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2540,10 +2540,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 75.3055,
-                    "RightMargin": -118.3055,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 30.9892,
+                    "RightMargin": -73.9892,
+                    "TopMargin": -62.4127,
+                    "BottomMargin": 19.4127,
                     "Tag": 164,
                     "ActionTag": 1378985881,
                     "Size": {
@@ -2568,8 +2568,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 141.9963,
-                      "Y": 0.0
+                      "X": 53.2234,
+                      "Y": 84.1416
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2585,10 +2585,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 120.4963,
-                    "RightMargin": -163.4963,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 31.7234,
+                    "RightMargin": -74.7234,
+                    "TopMargin": -105.6416,
+                    "BottomMargin": 62.6416,
                     "Tag": 165,
                     "ActionTag": -2047484388,
                     "Size": {
@@ -2613,8 +2613,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 187.187,
-                      "Y": 0.0
+                      "X": 94.3265,
+                      "Y": 83.913
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2630,10 +2630,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 165.687,
-                    "RightMargin": -208.687,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 72.8265,
+                    "RightMargin": -115.8265,
+                    "TopMargin": -105.413,
+                    "BottomMargin": 62.413,
                     "Tag": 166,
                     "ActionTag": 661802020,
                     "Size": {
@@ -2658,8 +2658,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 232.3774,
-                      "Y": 0.0
+                      "X": 136.7447,
+                      "Y": 83.3695
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2675,10 +2675,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 210.8774,
-                    "RightMargin": -253.8774,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 115.2447,
+                    "RightMargin": -158.2447,
+                    "TopMargin": -104.8695,
+                    "BottomMargin": 61.8695,
                     "Tag": 167,
                     "ActionTag": -2020441391,
                     "Size": {
@@ -2703,8 +2703,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 279.1,
-                      "Y": -0.2999
+                      "X": 179.3804,
+                      "Y": 82.8415
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2720,10 +2720,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 257.6,
-                    "RightMargin": -300.6,
-                    "TopMargin": -21.2001,
-                    "BottomMargin": -21.7999,
+                    "LeftMargin": 157.8804,
+                    "RightMargin": -200.8804,
+                    "TopMargin": -104.3415,
+                    "BottomMargin": 61.3415,
                     "Tag": 168,
                     "ActionTag": -444575732,
                     "Size": {
@@ -2748,8 +2748,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 326.2157,
-                      "Y": -0.3001
+                      "X": 180.0916,
+                      "Y": 41.1566
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -2765,12 +2765,57 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 304.7157,
-                    "RightMargin": -347.7157,
-                    "TopMargin": -21.1999,
-                    "BottomMargin": -21.8001,
+                    "LeftMargin": 158.5916,
+                    "RightMargin": -201.5916,
+                    "TopMargin": -62.6566,
+                    "BottomMargin": 19.6566,
                     "Tag": 169,
                     "ActionTag": 1152188546,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 180.4833,
+                      "Y": -0.4097
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 158.9833,
+                    "RightMargin": -201.9833,
+                    "TopMargin": -21.0903,
+                    "BottomMargin": -21.9097,
+                    "Tag": 219,
+                    "ActionTag": -1508599290,
                     "Size": {
                       "X": 43.0,
                       "Y": 43.0
@@ -2986,6 +3031,186 @@
                     "BottomMargin": -21.6693,
                     "Tag": 120,
                     "ActionTag": -1811955385,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 49.4822,
+                      "Y": -41.7482
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 27.9822,
+                    "RightMargin": -70.9821,
+                    "TopMargin": 20.2482,
+                    "BottomMargin": -63.2482,
+                    "Tag": 214,
+                    "ActionTag": 956892031,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 88.957,
+                      "Y": -41.7482
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 67.457,
+                    "RightMargin": -110.457,
+                    "TopMargin": 20.2482,
+                    "BottomMargin": -63.2482,
+                    "Tag": 215,
+                    "ActionTag": 763406882,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 129.4338,
+                      "Y": -41.7482
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 107.9338,
+                    "RightMargin": -150.9338,
+                    "TopMargin": 20.2482,
+                    "BottomMargin": -63.2482,
+                    "Tag": 216,
+                    "ActionTag": -848537999,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 170.2295,
+                      "Y": -41.9171
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 148.7295,
+                    "RightMargin": -191.7295,
+                    "TopMargin": 20.4171,
+                    "BottomMargin": -63.4171,
+                    "Tag": 217,
+                    "ActionTag": 1053626942,
                     "Size": {
                       "X": 43.0,
                       "Y": 43.0
@@ -3220,8 +3445,8 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 266.6678,
-                  "Y": 670.9366
+                  "X": 341.0066,
+                  "Y": 832.1133
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -3230,17 +3455,17 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.2963,
-                  "Y": 0.7455
+                  "X": 0.3789,
+                  "Y": 0.9246
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 266.6678,
-                "RightMargin": 633.3322,
-                "TopMargin": 229.0634,
-                "BottomMargin": 670.9366,
+                "LeftMargin": 341.0066,
+                "RightMargin": 558.9934,
+                "TopMargin": 67.8867,
+                "BottomMargin": 832.1133,
                 "Tag": 180,
                 "Children": [
                   {
@@ -3303,8 +3528,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 96.8055,
-                      "Y": 0.0
+                      "X": 51.3393,
+                      "Y": -42.881
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3320,10 +3545,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 75.3055,
-                    "RightMargin": -118.3055,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 29.8393,
+                    "RightMargin": -72.8393,
+                    "TopMargin": 21.381,
+                    "BottomMargin": -64.381,
                     "Tag": 182,
                     "ActionTag": 1657364039,
                     "Size": {
@@ -3348,8 +3573,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 141.9963,
-                      "Y": 0.0
+                      "X": 50.5482,
+                      "Y": -84.7292
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3365,10 +3590,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 120.4963,
-                    "RightMargin": -163.4963,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 29.0482,
+                    "RightMargin": -72.0482,
+                    "TopMargin": 63.2292,
+                    "BottomMargin": -106.2292,
                     "Tag": 183,
                     "ActionTag": -205623967,
                     "Size": {
@@ -3393,8 +3618,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 187.187,
-                      "Y": 0.0
+                      "X": 94.1884,
+                      "Y": -85.7622
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3410,10 +3635,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 165.687,
-                    "RightMargin": -208.687,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 72.6884,
+                    "RightMargin": -115.6884,
+                    "TopMargin": 64.2622,
+                    "BottomMargin": -107.2622,
                     "Tag": 184,
                     "ActionTag": 1764830649,
                     "Size": {
@@ -3438,8 +3663,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 232.3774,
-                      "Y": 0.0
+                      "X": 137.8298,
+                      "Y": -85.7625
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3455,10 +3680,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 210.8774,
-                    "RightMargin": -253.8774,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 116.3298,
+                    "RightMargin": -159.3298,
+                    "TopMargin": 64.2625,
+                    "BottomMargin": -107.2625,
                     "Tag": 185,
                     "ActionTag": 1955913416,
                     "Size": {
@@ -3483,8 +3708,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 279.1,
-                      "Y": -0.2999
+                      "X": 179.9031,
+                      "Y": -85.5441
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3500,10 +3725,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 257.6,
-                    "RightMargin": -300.6,
-                    "TopMargin": -21.2001,
-                    "BottomMargin": -21.7999,
+                    "LeftMargin": 158.4031,
+                    "RightMargin": -201.4031,
+                    "TopMargin": 64.0441,
+                    "BottomMargin": -107.0441,
                     "Tag": 186,
                     "ActionTag": -77758907,
                     "Size": {
@@ -3528,8 +3753,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 326.2157,
-                      "Y": -0.3001
+                      "X": 179.1465,
+                      "Y": -41.1915
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3545,10 +3770,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 304.7157,
-                    "RightMargin": -347.7157,
-                    "TopMargin": -21.1999,
-                    "BottomMargin": -21.8001,
+                    "LeftMargin": 157.6465,
+                    "RightMargin": -200.6465,
+                    "TopMargin": 19.6915,
+                    "BottomMargin": -62.6915,
                     "Tag": 187,
                     "ActionTag": 543135559,
                     "Size": {
@@ -3556,6 +3781,51 @@
                       "Y": 43.0
                     },
                     "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 180.0653,
+                      "Y": -1.8928
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 158.5653,
+                    "RightMargin": -201.5653,
+                    "TopMargin": -19.6072,
+                    "BottomMargin": -23.3928,
+                    "Tag": 224,
+                    "ActionTag": -264862362,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft ",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -3608,8 +3878,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 51.6149,
-                      "Y": 0.0
+                      "X": 55.615,
+                      "Y": -0.0001
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3625,10 +3895,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 30.1149,
-                    "RightMargin": -73.1149,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 34.115,
+                    "RightMargin": -77.115,
+                    "TopMargin": -21.4999,
+                    "BottomMargin": -21.5001,
                     "Tag": 189,
                     "ActionTag": 1208734360,
                     "Size": {
@@ -3653,8 +3923,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 96.8055,
-                      "Y": 0.0
+                      "X": 95.8055,
+                      "Y": -0.0001
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3670,10 +3940,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 75.3055,
-                    "RightMargin": -118.3055,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 74.3055,
+                    "RightMargin": -117.3055,
+                    "TopMargin": -21.4999,
+                    "BottomMargin": -21.5001,
                     "Tag": 190,
                     "ActionTag": 773108744,
                     "Size": {
@@ -3698,8 +3968,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 141.9963,
-                      "Y": 0.0
+                      "X": 136.9965,
+                      "Y": -0.0001
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3715,10 +3985,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 120.4963,
-                    "RightMargin": -163.4963,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 115.4965,
+                    "RightMargin": -158.4965,
+                    "TopMargin": -21.4999,
+                    "BottomMargin": -21.5001,
                     "Tag": 191,
                     "ActionTag": 1346197661,
                     "Size": {
@@ -3743,8 +4013,8 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 187.187,
-                      "Y": 0.0
+                      "X": 177.1873,
+                      "Y": -0.0001
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -3760,12 +4030,192 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 165.687,
-                    "RightMargin": -208.687,
-                    "TopMargin": -21.5,
-                    "BottomMargin": -21.5,
+                    "LeftMargin": 155.6873,
+                    "RightMargin": -198.6873,
+                    "TopMargin": -21.4999,
+                    "BottomMargin": -21.5001,
                     "Tag": 192,
                     "ActionTag": -89773693,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 56.2348,
+                      "Y": 40.5919
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 34.7348,
+                    "RightMargin": -77.7348,
+                    "TopMargin": -62.0919,
+                    "BottomMargin": 19.0919,
+                    "Tag": 220,
+                    "ActionTag": -492500780,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 97.4257,
+                      "Y": 40.5918
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 75.9257,
+                    "RightMargin": -118.9257,
+                    "TopMargin": -62.0918,
+                    "BottomMargin": 19.0918,
+                    "Tag": 221,
+                    "ActionTag": 698340362,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 137.6182,
+                      "Y": 40.5918
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 116.1182,
+                    "RightMargin": -159.1182,
+                    "TopMargin": -62.0918,
+                    "BottomMargin": 19.0918,
+                    "Tag": 222,
+                    "ActionTag": -1732141850,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 178.8094,
+                      "Y": 40.5918
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 157.3094,
+                    "RightMargin": -200.3094,
+                    "TopMargin": -62.0918,
+                    "BottomMargin": 19.0918,
+                    "Tag": 223,
+                    "ActionTag": 547856902,
                     "Size": {
                       "X": 43.0,
                       "Y": 43.0
@@ -3868,7 +4318,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 96.8055,
+                      "X": 91.8053,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -3885,8 +4335,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 75.3055,
-                    "RightMargin": -118.3055,
+                    "LeftMargin": 70.3053,
+                    "RightMargin": -113.3053,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 195,
@@ -3913,7 +4363,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 141.9963,
+                      "X": 132.9958,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -3930,8 +4380,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 120.4963,
-                    "RightMargin": -163.4963,
+                    "LeftMargin": 111.4958,
+                    "RightMargin": -154.4958,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 196,
@@ -3958,7 +4408,7 @@
                       "ScaleY": 0.5
                     },
                     "Position": {
-                      "X": 187.187,
+                      "X": 173.1865,
                       "Y": 0.0
                     },
                     "Scale": {
@@ -3975,8 +4425,8 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 165.687,
-                    "RightMargin": -208.687,
+                    "LeftMargin": 151.6865,
+                    "RightMargin": -194.6865,
                     "TopMargin": -21.5,
                     "BottomMargin": -21.5,
                     "Tag": 197,
@@ -3986,6 +4436,186 @@
                       "Y": 43.0
                     },
                     "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 51.9044,
+                      "Y": 41.9228
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 30.4044,
+                    "RightMargin": -73.4044,
+                    "TopMargin": -63.4228,
+                    "BottomMargin": 20.4228,
+                    "Tag": 225,
+                    "ActionTag": 1413573400,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft_0",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 92.0953,
+                      "Y": 41.9228
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 70.5953,
+                    "RightMargin": -113.5953,
+                    "TopMargin": -63.4228,
+                    "BottomMargin": 20.4228,
+                    "Tag": 226,
+                    "ActionTag": -1690902852,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft_1",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 132.2863,
+                      "Y": 41.9228
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 110.7863,
+                    "RightMargin": -153.7863,
+                    "TopMargin": -63.4228,
+                    "BottomMargin": 20.4228,
+                    "Tag": 227,
+                    "ActionTag": 1947686643,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft_2",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 173.4779,
+                      "Y": 41.9228
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 151.9779,
+                    "RightMargin": -194.9779,
+                    "TopMargin": -63.4228,
+                    "BottomMargin": 20.4228,
+                    "Tag": 228,
+                    "ActionTag": -1349502985,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft_3",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -7234,6 +7864,1786 @@
                   "Y": 0.0
                 },
                 "Name": "ndConcrete_2_0_0",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": -95.278,
+                  "Y": 319.4631
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": -0.1059,
+                  "Y": 0.355
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": -95.278,
+                "RightMargin": 995.278,
+                "TopMargin": 580.5369,
+                "BottomMargin": 319.4631,
+                "Tag": 168,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": -248.7473
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": 227.2473,
+                    "BottomMargin": -270.2473,
+                    "Tag": 169,
+                    "ActionTag": 1091809321,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": -207.7537
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": 186.2537,
+                    "BottomMargin": -229.2537,
+                    "Tag": 170,
+                    "ActionTag": 1724098030,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": -165.1743
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": 143.6743,
+                    "BottomMargin": -186.6743,
+                    "Tag": 171,
+                    "ActionTag": -1453758391,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": -124.0137
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": 102.5137,
+                    "BottomMargin": -145.5137,
+                    "Tag": 172,
+                    "ActionTag": 2042706177,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": -81.4334
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": 59.9334,
+                    "BottomMargin": -102.9334,
+                    "Tag": 173,
+                    "ActionTag": -264704439,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": -39.4347
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": 17.9347,
+                    "BottomMargin": -60.9347,
+                    "Tag": 174,
+                    "ActionTag": 277856432,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 2.5641
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -24.0641,
+                    "BottomMargin": -18.9359,
+                    "Tag": 175,
+                    "ActionTag": -1064404514,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 45.3056
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -66.8056,
+                    "BottomMargin": 23.8056,
+                    "Tag": 176,
+                    "ActionTag": 180612048,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 87.4659
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -108.9659,
+                    "BottomMargin": 65.9659,
+                    "Tag": 177,
+                    "ActionTag": -1619045894,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 130.7074
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -152.2074,
+                    "BottomMargin": 109.2074,
+                    "Tag": 178,
+                    "ActionTag": 42979010,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 173.5365
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -195.0365,
+                    "BottomMargin": 152.0365,
+                    "Tag": 179,
+                    "ActionTag": -727997624,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 217.1216
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -238.6216,
+                    "BottomMargin": 195.6216,
+                    "Tag": 180,
+                    "ActionTag": -2034620360,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 260.4602
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4453,
+                    "TopMargin": -281.9602,
+                    "BottomMargin": 238.9602,
+                    "Tag": 181,
+                    "ActionTag": -438842163,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 302.5536
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -324.0536,
+                    "BottomMargin": 281.0536,
+                    "Tag": 182,
+                    "ActionTag": -1432063289,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 344.1387
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -365.6387,
+                    "BottomMargin": 322.6387,
+                    "Tag": 183,
+                    "ActionTag": -1968672547,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9453,
+                      "Y": 386.9685
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4453,
+                    "RightMargin": -134.4453,
+                    "TopMargin": -408.4685,
+                    "BottomMargin": 365.4685,
+                    "Tag": 184,
+                    "ActionTag": -1670886198,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 429.5535
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -451.0535,
+                    "BottomMargin": 408.0535,
+                    "Tag": 185,
+                    "ActionTag": -1621360779,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 470.8744
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -492.3744,
+                    "BottomMargin": 449.3744,
+                    "Tag": 186,
+                    "ActionTag": -2143586196,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 112.9454,
+                      "Y": 513.0758
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 91.4454,
+                    "RightMargin": -134.4454,
+                    "TopMargin": -534.5758,
+                    "BottomMargin": 491.5758,
+                    "Tag": 187,
+                    "ActionTag": -579899406,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -469671381,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndConcrete_2_0_1",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 984.7403,
+                  "Y": 377.4566
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 1.0942,
+                  "Y": 0.4194
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 984.7403,
+                "RightMargin": -84.7403,
+                "TopMargin": 522.5433,
+                "BottomMargin": 377.4566,
+                "Tag": 191,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": -306.3297
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": 284.8297,
+                    "BottomMargin": -327.8297,
+                    "Tag": 192,
+                    "ActionTag": 1016775469,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": -265.3355
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": 243.8355,
+                    "BottomMargin": -286.8355,
+                    "Tag": 193,
+                    "ActionTag": -1278673144,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": -222.756
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": 201.256,
+                    "BottomMargin": -244.256,
+                    "Tag": 194,
+                    "ActionTag": 1780738365,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": -181.5954
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": 160.0954,
+                    "BottomMargin": -203.0954,
+                    "Tag": 195,
+                    "ActionTag": 164892287,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": -139.015
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": 117.515,
+                    "BottomMargin": -160.515,
+                    "Tag": 196,
+                    "ActionTag": -66655930,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": -97.0163
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": 75.5163,
+                    "BottomMargin": -118.5163,
+                    "Tag": 197,
+                    "ActionTag": -2132585636,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": -55.0179
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": 33.5179,
+                    "BottomMargin": -76.5179,
+                    "Tag": 198,
+                    "ActionTag": -796184646,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": -12.2763
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -9.2237,
+                    "BottomMargin": -33.7763,
+                    "Tag": 199,
+                    "ActionTag": -1547477300,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 29.8836
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -51.3836,
+                    "BottomMargin": 8.3836,
+                    "Tag": 200,
+                    "ActionTag": 394470267,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 73.1249
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -94.6249,
+                    "BottomMargin": 51.6249,
+                    "Tag": 201,
+                    "ActionTag": -613145670,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 115.9544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -137.4544,
+                    "BottomMargin": 94.4544,
+                    "Tag": 202,
+                    "ActionTag": 1085844547,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 159.5394
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -181.0394,
+                    "BottomMargin": 138.0394,
+                    "Tag": 203,
+                    "ActionTag": -195084057,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 202.879
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -224.379,
+                    "BottomMargin": 181.379,
+                    "Tag": 204,
+                    "ActionTag": 2088184321,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 244.9732
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -266.4732,
+                    "BottomMargin": 223.4732,
+                    "Tag": 205,
+                    "ActionTag": -889644996,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 286.5584
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -308.0584,
+                    "BottomMargin": 265.0584,
+                    "Tag": 206,
+                    "ActionTag": -1462768591,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 329.3876
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -350.8876,
+                    "BottomMargin": 307.8876,
+                    "Tag": 207,
+                    "ActionTag": -1018079579,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 371.9742
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -393.4742,
+                    "BottomMargin": 350.4742,
+                    "Tag": 208,
+                    "ActionTag": 927410122,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 413.2947
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -434.7947,
+                    "BottomMargin": 391.7947,
+                    "Tag": 209,
+                    "ActionTag": 431935123,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Concrete.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -98.4956,
+                      "Y": 455.4976
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -119.9956,
+                    "RightMargin": 76.9956,
+                    "TopMargin": -476.9976,
+                    "BottomMargin": 433.9976,
+                    "Tag": 210,
+                    "ActionTag": 401047921,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleHard",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 647269811,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndConcrete_2_0_1_0",
                 "ctype": "SingleNodeObjectData"
               }
             ],

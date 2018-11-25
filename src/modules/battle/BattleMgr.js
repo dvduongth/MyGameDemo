@@ -19,10 +19,10 @@ var BattleMgr = cc.Class.extend({
     },
 
     update: function (dt) {
-        var spr = this.getMAPSprites();
-        for (var t in spr) {
-            if (spr[t] != null) {
-                spr[t].update(dt);
+        var m = this.getMAPSprites();
+        for (var t in m) {
+            if (m[t] != null) {
+                m[t].update(dt);
             }
         }
     },
@@ -54,10 +54,10 @@ var BattleMgr = cc.Class.extend({
         }
     },
 
-    spawnBullet: function (parent, position, direction, team, type) {
+    spawnBullet: function (parent, position, direction, team, type, tankGunId) {
         //LogUtils.getInstance().log([this.getClassName(), "spawnBullet direction", direction]);
         if (parent != null) {
-            var bullet = new Bullet(this.getBulletID(), direction, team, type);
+            var bullet = new Bullet(this.getBulletID(), direction, team, type, tankGunId);
             parent.addChild(bullet);
             bullet.setPosition(position);
             this.addBullet(bullet);
@@ -120,5 +120,69 @@ var BattleMgr = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "removeObstacle id", id]);
         }
     },
+    checkCollisionTankWithBarrier: function (id) {
+        var m = this.getMAPSprites();
+        var curSpr = m[id];
+        var sprObj, _id;
+        for (var i in m) {
+            _id = i + "";
+            sprObj = m[_id];
+            if (sprObj != null && _id != id) {
+                //check collision with obstacle
+                if(_id.indexOf("obstacle") != -1) {
+                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
+                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with obstacle"]);
+                        return true;
+                    }
+                }
+                //check collision with base
+                if(_id.indexOf("base") != -1) {
+                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
+                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with base"]);
+                        return true;
+                    }
+                }
+                //other tank
+                if(_id.indexOf("tank") != -1) {
+                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
+                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with other tank"]);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    },
+    checkCollisionBulletWithTarget: function (id) {
+        var m = this.getMAPSprites();
+        var curSpr = m[id];
+        var tankGunID = curSpr.getTankGunID();
+        var sprObj, _id;
+        for (var i in m) {
+            _id = i + "";
+            sprObj = m[_id];
+            if (sprObj != null && _id != id && _id != tankGunID) {
+                //check collision with obstacle
+                if(_id.indexOf("obstacle") != -1 && sprObj.isBarrier()) {
+                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
+                        return true;
+                    }
+                }
+                //check collision with base
+                if(_id.indexOf("base") != -1) {
+                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
+                        return true;
+                    }
+                }
+                //other tank
+                if(_id.indexOf("tank") != -1) {
+                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
 });

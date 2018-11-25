@@ -49,4 +49,13 @@ var Obstacle = BaseGameObject.extend({
 				break;
 		}
 	},
+	isBarrier: function () {
+		if(this.getType() == BLOCK_SOFT_OBSTACLE) {
+			return true;
+		}
+		if(this.getType() == BLOCK_HARD_OBSTACLE) {
+			return true;
+		}
+		return false;
+	}
 });

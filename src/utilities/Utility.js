@@ -375,7 +375,39 @@ var Utility = (function () {
         instance.getHeightDynamicFromText = function (width, text, fontName, fontSize) {
             return instance.getDynamicContentSizeText(width, 0, text, fontName, fontSize).height;
         };
-
+        instance.isCollisionOverLapObjectNode = function (node1, node2) {
+            var offset = cc.p(-5, -5);
+            var size1 = node1.getContentSize();
+            var size2 = node2.getContentSize();
+            var anchor = cc.p(0.5, 0.5);
+            var position1 = node1.getParent().convertToWorldSpace(node1.getPosition());
+            var position2 = node2.getParent().convertToWorldSpace(node2.getPosition());
+            //check exist overlap horizontal
+            var isOverlapHorizontal = ((offset.x + position1.x + size1.width * anchor.x) >= (position2.x - size2.width * anchor.x)) && ((offset.x + position2.x + size2.width * anchor.x) >= (position1.x - size1.width * anchor.x));
+            if(!isOverlapHorizontal) {
+                return false;
+            }
+            //check exist overlap vertical
+            var isOverlapVertical = ((offset.y + position1.y + size1.height * anchor.y) >= (position2.y - size2.height * anchor.y)) && ((offset.y + position2.y + size2.height * anchor.y) >= (position1.y - size1.height * anchor.y));
+            if(!isOverlapVertical) {
+                return false;
+            }
+            return true;
+        };
+        instance.isCollisionOverLapRect = function (rect1, rect2) {
+            var offset = cc.p(-5, -5);
+            //check exist overlap horizontal
+            var isOverlapHorizontal = ((offset.x + rect1.x + rect1.width) >= rect2.x) && ((offset.x + rect2.x + rect2.width) >= rect1.x);
+            if(!isOverlapHorizontal) {
+                return false;
+            }
+            //check exist overlap vertical
+            var isOverlapVertical = ((offset.y + rect1.y + rect1.height) >= rect2.y) && ((offset.y + rect2.y + rect2.height) >= rect1.y);
+            if(!isOverlapVertical) {
+                return false;
+            }
+            return true;
+        };
 
         /**
          * @return

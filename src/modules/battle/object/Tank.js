@@ -113,7 +113,7 @@ var Tank = cc.Sprite.extend({
                 direction = DIRECTION_UP;
                 break;
         }
-        gv.engine.getBattleMgr().spawnBullet(this.getParent(), this.getPosition(), direction, this.getTeam(), this.getType());
+        gv.engine.getBattleMgr().spawnBullet(this.getParent(), this.getPosition(), direction, this.getTeam(), this.getType(), this.getID());
     },
     onEnter: function () {
         this._super();
@@ -262,8 +262,23 @@ var Tank = cc.Sprite.extend({
                 dY = 0;
                 break;
         }
-        this.setPositionX(this.getPositionX() + dX);
-        this.setPositionY(this.getPositionY() + dY);
         this.setAngle(angle);
-    }
+        if(dX != 0 || dY != 0) {
+            //todo check collision
+            //move before
+            this.setPositionX(this.getPositionX() + dX);
+            this.setPositionY(this.getPositionY() + dY);
+            if(gv.engine.getBattleMgr().checkCollisionTankWithBarrier(this.getID())) {
+                //can not move ==> move back
+                this.setPositionX(this.getPositionX() - dX);
+                this.setPositionY(this.getPositionY() - dY);
+                //LogUtils.getInstance().log([this.getClassName(), "can not move because of collision"]);
+                this.setDirection(DIRECTION_IDLE);
+            }
+        }
+    },
+    getWorldPosition: function () {
+        return this.getParent().convertToWorldSpace(this.getPosition());
+    },
+
 });
