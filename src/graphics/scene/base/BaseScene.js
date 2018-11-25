@@ -12,7 +12,7 @@ var BaseScene = cc.Scene.extend({
         this.setContentSize(gv.WIN_SIZE);
         if (jsonPath !== undefined) {
             var json = ccs.load(jsonPath, "res/");
-            this._rootNode = json.node;
+            this.setRootNode(json.node);
             this._rootAction = json.action;
             this._rootNode.setContentSize(gv.WIN_SIZE);
             ccui.Helper.doLayout(this._rootNode);
@@ -28,6 +28,12 @@ var BaseScene = cc.Scene.extend({
             return true;
         }
         gv.engine.getLayerMgr().createLayers(this);
+    },
+    setRootNode: function (r) {
+        this._rootNode = r;
+    },
+    getRootNode: function () {
+        return this._rootNode;
     },
 
     initScene: function () {

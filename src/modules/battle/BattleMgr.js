@@ -19,10 +19,10 @@ var BattleMgr = cc.Class.extend({
     },
 
     update: function (dt) {
-        var tankSprMap = this.getMAPSprites();
-        for (var t in tankSprMap) {
-            if (tankSprMap[t] != null) {
-                tankSprMap[t].update(dt);
+        var spr = this.getMAPSprites();
+        for (var t in spr) {
+            if (spr[t] != null) {
+                spr[t].update(dt);
             }
         }
     },
@@ -73,6 +73,51 @@ var BattleMgr = cc.Class.extend({
         if (this.getMAPSprites()[id] != null) {
             this.getMAPSprites()[id] = null;
             //LogUtils.getInstance().log([this.getClassName(), "removeBullet id", id]);
+        }
+    },
+    getBaseID: function () {
+        return "base_" + (this._autoID++);
+    },
+    updateBase: function (rootNode, team, type) {
+        LogUtils.getInstance().log([this.getClassName(), "updateBase team", team, "type", type]);
+        if (rootNode != null) {
+            var obj = new Base(this.getBaseID(), rootNode, team, type);
+            this.addBase(obj);
+        } else {
+            LogUtils.getInstance().error([this.getClassName(), "updateBase with rootNode null"]);
+        }
+    },
+    addBase: function (spr) {
+        this.getMAPSprites()[spr.getID()] = spr;
+        LogUtils.getInstance().log([this.getClassName(), "addBase with id", spr.getID()]);
+    },
+    removeBase: function (id) {
+        if (this.getMAPSprites()[id] != null) {
+            this.getMAPSprites()[id] = null;
+            LogUtils.getInstance().log([this.getClassName(), "removeBase id", id]);
+        }
+    },
+
+    getObstacleID: function () {
+        return "obstacle_" + (this._autoID++);
+    },
+    updateObstacle: function (rootNode, type) {
+        LogUtils.getInstance().log([this.getClassName(), "updateObstacle type", type]);
+        if (rootNode != null) {
+            var obj = new Obstacle(this.getObstacleID(), rootNode, type);
+            this.addObstacle(obj);
+        } else {
+            LogUtils.getInstance().error([this.getClassName(), "updateObstacle with rootNode null"]);
+        }
+    },
+    addObstacle: function (spr) {
+        this.getMAPSprites()[spr.getID()] = spr;
+        LogUtils.getInstance().log([this.getClassName(), "addObstacle with id", spr.getID()]);
+    },
+    removeObstacle: function (id) {
+        if (this.getMAPSprites()[id] != null) {
+            this.getMAPSprites()[id] = null;
+            LogUtils.getInstance().log([this.getClassName(), "removeObstacle id", id]);
         }
     },
 

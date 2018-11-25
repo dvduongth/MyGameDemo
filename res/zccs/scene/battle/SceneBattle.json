@@ -199,7 +199,7 @@
                   "X": 83.0,
                   "Y": 83.0
                 },
-                "Name": "MainBase_4_4",
+                "Name": "MainBase_0",
                 "ctype": "SpriteObjectData"
               },
               {
@@ -244,7 +244,7 @@
                   "X": 83.0,
                   "Y": 83.0
                 },
-                "Name": "SideBase_5_6",
+                "Name": "SideBase_0",
                 "ctype": "SpriteObjectData"
               },
               {
@@ -289,8 +289,1113 @@
                   "X": 83.0,
                   "Y": 83.0
                 },
-                "Name": "SideBase_6_8",
+                "Name": "SideBase_0",
                 "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/MainBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 454.5068,
+                  "Y": 810.5636
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.505,
+                  "Y": 0.9006
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 413.0068,
+                "RightMargin": 403.9932,
+                "TopMargin": 47.9364,
+                "BottomMargin": 769.0636,
+                "Tag": 159,
+                "ActionTag": -994614455,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "MainBase_1",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 737.3481,
+                  "Y": 719.6957
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8193,
+                  "Y": 0.7997
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 695.8481,
+                "RightMargin": 121.1519,
+                "TopMargin": 138.8043,
+                "BottomMargin": 678.1957,
+                "Tag": 161,
+                "ActionTag": -1416324201,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_1",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 173.5627,
+                  "Y": 716.0532
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1928,
+                  "Y": 0.7956
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 132.0627,
+                "RightMargin": 684.9373,
+                "TopMargin": 142.4468,
+                "BottomMargin": 674.5532,
+                "Tag": 160,
+                "ActionTag": 60264110,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_1",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 392.7753,
+                  "Y": 451.4876
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.4364,
+                  "Y": 0.5017
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 392.7753,
+                "RightMargin": 507.2247,
+                "TopMargin": 448.5124,
+                "BottomMargin": 451.4876,
+                "Tag": 146,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -54.6557,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -76.1557,
+                    "RightMargin": 33.1557,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 149,
+                    "ActionTag": -379693447,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -95.3366,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -116.8366,
+                    "RightMargin": 73.8366,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 151,
+                    "ActionTag": -1170487229,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -138.0418,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -159.5418,
+                    "RightMargin": 116.5418,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 153,
+                    "ActionTag": -1664285418,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -180.7466,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -202.2466,
+                    "RightMargin": 159.2466,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 155,
+                    "ActionTag": -382915355,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -223.4516,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -244.9516,
+                    "RightMargin": 201.9516,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 157,
+                    "ActionTag": -880467136,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -54.6557,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -76.1557,
+                    "RightMargin": 33.1557,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 158,
+                    "ActionTag": -1658147558,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -95.3366,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -116.8366,
+                    "RightMargin": 73.8366,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 159,
+                    "ActionTag": -1588237426,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -138.0418,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -159.5418,
+                    "RightMargin": 116.5418,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 160,
+                    "ActionTag": 2304667,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -180.7466,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -202.2466,
+                    "RightMargin": 159.2466,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 161,
+                    "ActionTag": -2017070898,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -223.4516,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -244.9516,
+                    "RightMargin": 201.9516,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 162,
+                    "ActionTag": 2134643241,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -1865838630,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndWater_0",
+                "ctype": "SingleNodeObjectData"
+              },
+              {
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 792.5371,
+                  "Y": 451.4875
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": true,
+                "PrePosition": {
+                  "X": 0.8806,
+                  "Y": 0.5017
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 792.5371,
+                "RightMargin": 107.4629,
+                "TopMargin": 448.5125,
+                "BottomMargin": 451.4875,
+                "Tag": 163,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -54.6557,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -76.1557,
+                    "RightMargin": 33.1557,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 164,
+                    "ActionTag": 1696002736,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -95.3366,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -116.8366,
+                    "RightMargin": 73.8366,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 165,
+                    "ActionTag": 1640985900,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -138.0418,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -159.5418,
+                    "RightMargin": 116.5418,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 166,
+                    "ActionTag": -1123864318,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -180.7466,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -202.2466,
+                    "RightMargin": 159.2466,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 167,
+                    "ActionTag": 1821780204,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -223.4516,
+                      "Y": -18.47
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -244.9516,
+                    "RightMargin": 201.9516,
+                    "TopMargin": -3.03,
+                    "BottomMargin": -39.97,
+                    "Tag": 168,
+                    "ActionTag": 1902354267,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -54.6557,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -76.1557,
+                    "RightMargin": 33.1557,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 169,
+                    "ActionTag": 1991198377,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -95.3366,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -116.8366,
+                    "RightMargin": 73.8366,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 170,
+                    "ActionTag": 1386888066,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -138.0418,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -159.5418,
+                    "RightMargin": 116.5418,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 171,
+                    "ActionTag": 756634021,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -180.7466,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -202.2466,
+                    "RightMargin": 159.2466,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 172,
+                    "ActionTag": -1909048203,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Water.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -223.4516,
+                      "Y": 18.0544
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -244.9516,
+                    "RightMargin": 201.9516,
+                    "TopMargin": -39.5544,
+                    "BottomMargin": -3.4456,
+                    "Tag": 173,
+                    "ActionTag": -2024013147,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "Water",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -146838675,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "ndWater_1",
+                "ctype": "SingleNodeObjectData"
               },
               {
                 "AnchorPoint": {},
@@ -360,7 +1465,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_10",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -405,7 +1510,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_12",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -450,7 +1555,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_14",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -495,7 +1600,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_16",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -540,7 +1645,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -620,7 +1725,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_13_20",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -665,7 +1770,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_15_22",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -710,7 +1815,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_17_24",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -755,7 +1860,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_19_26",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -800,7 +1905,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_21_28",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -880,7 +1985,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_23_30",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -925,7 +2030,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_25_32",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -970,7 +2075,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_27_34",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1015,7 +2120,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_29_36",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1060,7 +2165,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_31_38",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -1140,7 +2245,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_33_40",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1185,7 +2290,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_35_42",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1230,7 +2335,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_37_44",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1275,7 +2380,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_39_46",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1320,7 +2425,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_41_48",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -1331,141 +2436,6 @@
                 },
                 "Name": "ndConcrete_2_8",
                 "ctype": "SingleNodeObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 2/MainBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 454.5068,
-                  "Y": 810.5636
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.505,
-                  "Y": 0.9006
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 413.0068,
-                "RightMargin": 403.9932,
-                "TopMargin": 47.9364,
-                "BottomMargin": 769.0636,
-                "Tag": 159,
-                "ActionTag": -994614455,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "MainBase_4_0_50",
-                "ctype": "SpriteObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 2/SideBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 173.5627,
-                  "Y": 716.0532
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.1928,
-                  "Y": 0.7956
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 132.0627,
-                "RightMargin": 684.9373,
-                "TopMargin": 142.4468,
-                "BottomMargin": 674.5532,
-                "Tag": 160,
-                "ActionTag": 60264110,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "SideBase_5_0_52",
-                "ctype": "SpriteObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 2/SideBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 737.3481,
-                  "Y": 719.6957
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.8193,
-                  "Y": 0.7997
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 695.8481,
-                "RightMargin": 121.1519,
-                "TopMargin": 138.8043,
-                "BottomMargin": 678.1957,
-                "Tag": 161,
-                "ActionTag": -1416324201,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "SideBase_6_0_54",
-                "ctype": "SpriteObjectData"
               },
               {
                 "AnchorPoint": {},
@@ -1535,7 +2505,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_33_46_56",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1580,7 +2550,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_35_48_58",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1625,7 +2595,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_37_50_60",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1670,7 +2640,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_39_52_62",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1715,7 +2685,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_41_54_64",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1760,7 +2730,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_41_54_0_66",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1805,7 +2775,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_41_54_1_68",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -1885,7 +2855,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_33_46_56_70",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1930,7 +2900,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_35_48_58_72",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -1975,7 +2945,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_37_50_60_74",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2020,7 +2990,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_37_50_60_74_0",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -2100,7 +3070,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_33_46_56_66_78",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2145,7 +3115,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_35_48_58_68_80",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2190,7 +3160,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_37_50_60_70_82",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2235,7 +3205,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_39_52_62_72_84",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -2315,7 +3285,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_33_46_76_86",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2360,7 +3330,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_35_48_78_88",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2405,7 +3375,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_37_50_80_90",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2450,7 +3420,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_39_52_82_92",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2495,7 +3465,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_41_54_84_94",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2540,7 +3510,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_41_54_0_86_96",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2585,7 +3555,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_41_54_1_88_98",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -2665,7 +3635,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_33_46_56_90_100",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2710,7 +3680,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_35_48_58_92_102",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2755,7 +3725,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_37_50_60_94_104",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2800,7 +3770,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_39_52_62_96_106",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -2880,7 +3850,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_33_46_56_66_98_108",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2925,7 +3895,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_35_48_58_68_100_110",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -2970,7 +3940,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_37_50_60_70_102_112",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3015,7 +3985,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_39_52_62_72_104_114",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -3095,7 +4065,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_106_116",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3140,7 +4110,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_108_118",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3185,7 +4155,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_110_120",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3230,7 +4200,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_112_122",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3275,7 +4245,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_114_124",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3320,7 +4290,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_114_0_126",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3365,7 +4335,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_114_1_128",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -3445,7 +4415,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_106_118_130",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3490,7 +4460,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_108_120_132",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3535,7 +4505,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_110_122_134",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3580,7 +4550,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_112_124_136",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3625,7 +4595,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_114_126_138",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3670,7 +4640,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_114_0_128_140",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -3715,7 +4685,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_114_1_130_142",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -4284,7 +5254,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_10",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4329,7 +5299,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_12",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4374,7 +5344,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_14",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4419,7 +5389,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_16",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4464,7 +5434,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4509,7 +5479,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4554,7 +5524,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4599,7 +5569,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_10_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4644,7 +5614,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_12_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4689,7 +5659,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_14_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4734,7 +5704,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_16_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4779,7 +5749,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_2",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4824,7 +5794,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_0_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4869,7 +5839,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_1_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4914,7 +5884,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_10_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4959,7 +5929,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_12_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5004,7 +5974,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_14_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5049,7 +6019,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_16_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5094,7 +6064,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_3",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5139,7 +6109,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_0_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5184,7 +6154,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_1_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5229,7 +6199,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_1_1_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -5309,7 +6279,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_10",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5354,7 +6324,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_12",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5399,7 +6369,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_14",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5444,7 +6414,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_16",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5489,7 +6459,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5534,7 +6504,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5579,7 +6549,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5624,7 +6594,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_10_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5669,7 +6639,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_12_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5714,7 +6684,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_14_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5759,7 +6729,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_16_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5804,7 +6774,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_2",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5849,7 +6819,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_0_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5894,7 +6864,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_1_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5939,7 +6909,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_10_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -5984,7 +6954,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_0_12_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -6029,7 +6999,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_1_14_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -6074,7 +7044,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_2_16_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -6119,7 +7089,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_3",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -6164,7 +7134,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_0_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -6209,7 +7179,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_1_1",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -6254,7 +7224,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "Concrete_7_3_18_1_1_0",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -6500,6 +7470,7 @@
         "../../../resources/textures/Map/Background_1.png",
         "../../../resources/textures/Map/Brick 1.png",
         "../../../resources/textures/Map/Concrete.png",
+        "../../../resources/textures/Map/Water.png",
         "../../../resources/textures/Splash.png",
         "../../../resources/textures/Tank/Team 1/1A.png",
         "../../../resources/textures/Tank/Team 1/2A.png",

@@ -23,15 +23,78 @@ var SceneBattle = BaseScene.extend({
         Utility.getInstance().updateSpriteWithFileName(this.imgTank_2_Team_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1C_PNG);
         Utility.getInstance().updateSpriteWithFileName(this.imgTank_3_Team_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1D_PNG);
         this.createTouchListenerOneByOneTank();
+        this.setMapKeyFindObject({});
+        this.initBase();
+        this.initObstacle();
+
+        this.findAndInitGameObject();
     },
     clearScene: function () {
         this.removeTouchListenerOneByOneTank();
         this._super();
     },
+    initBase: function () {
+        LogUtils.getInstance().log([this.getClassName(), "initBase"]);
+        this.getMapKeyFindObject()["MainBase_0"] = function (child) {
+            gv.engine.getBattleMgr().updateBase(child, TEAM_1, BASE_MAIN);
+        };
+        this.getMapKeyFindObject()["MainBase_1"] = function (child) {
+            gv.engine.getBattleMgr().updateBase(child, TEAM_2, BASE_MAIN);
+        };
+        this.getMapKeyFindObject()["SideBase_0"] = function (child) {
+            gv.engine.getBattleMgr().updateBase(child, TEAM_1, BASE_SIDE);
+        };
+        this.getMapKeyFindObject()["SideBase_1"] = function (child) {
+            gv.engine.getBattleMgr().updateBase(child, TEAM_2, BASE_SIDE);
+        };
+    },
+    initObstacle: function () {
+        LogUtils.getInstance().log([this.getClassName(), "Obstacle"]);
+        this.getMapKeyFindObject()["ObstacleSoft"] = function (child) {
+            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_SOFT_OBSTACLE);
+        };
+        this.getMapKeyFindObject()["ObstacleHard"] = function (child) {
+            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_HARD_OBSTACLE);
+        };
+        this.getMapKeyFindObject()["Water"] = function (child) {
+            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_WATER);
+        };
+    },
     update: function (dt) {
         gv.engine.getBattleMgr().update(dt);
     },
-
+    setMapKeyFindObject: function (m) {
+        this._mapKeyFindObject = m;
+    },
+    getMapKeyFindObject: function () {
+        return this._mapKeyFindObject;
+    },
+    findAndInitGameObject: function () {
+        var _this = this;
+        function findObj (node) {
+            if (node == null) {
+                return false;
+            }
+            var allChildren = node.getChildren();
+            if (allChildren == null || allChildren.length === 0) {
+                return false;
+            }
+            var nameChild;
+            //LogUtils.getInstance().log(["findObj length",allChildren.length]);
+            for (var i = 0; i < allChildren.length; i++) {
+                var child = allChildren[i];
+                nameChild = child.getName();
+                //LogUtils.getInstance().log(["findBase", nameChild]);
+                if(nameChild in _this.getMapKeyFindObject() && _this.getMapKeyFindObject()[nameChild] != null){
+                    _this.getMapKeyFindObject()[nameChild](child);
+                }
+                findObj(child);
+            }
+            return true;
+        }
+        findObj(this.getRootNode());
+    },
+    //touch listener
     createTouchListenerOneByOneTank: function () {
         this.removeTouchListenerOneByOneTank();
         var _this = this;
@@ -101,9 +164,12 @@ var SceneBattle = BaseScene.extend({
     },
 
     onTouchCancelledTank: function (touch, event) {
-        //todo here
+        LogUtils.getInstance().log([this.getClassName(), "touch tank cancelled"]);
+        var target = event.getCurrentTarget();
+        var parent = target.getParent();
+        target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
+        target.setScale(1);
     },
-
 
     onTouchUIEndEvent: function (sender) {
         switch (sender) {

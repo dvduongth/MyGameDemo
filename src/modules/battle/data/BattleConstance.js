@@ -1,5 +1,5 @@
 "use strict";
-
+// game state
 var STATE_WAITING_FOR_PLAYERS = 0;
 var STATE_TANK_PLACEMENT = 1;
 var STATE_ACTION = 2;

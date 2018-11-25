@@ -12,7 +12,7 @@ var BaseGUI = cc.Layer.extend({
         this.setContentSize(gv.WIN_SIZE);
         if (jsonPath !== undefined) {
             var json = ccs.load(jsonPath, "res/");
-            this._rootNode = json.node;
+            this.setRootNode(json.node);
             this._rootAction = json.action;
             ccui.Helper.doLayout(this._rootNode);
             this.addChild(this._rootNode);
@@ -20,6 +20,12 @@ var BaseGUI = cc.Layer.extend({
         }
         this.listListenerOnBaseGui = [];
         this.listBtnOnBaseGui = [];
+    },
+    setRootNode: function (r) {
+        this._rootNode = r;
+    },
+    getRootNode: function () {
+        return this._rootNode;
     },
     initGUI: function () {
         //todo override me
