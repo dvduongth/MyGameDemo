@@ -1,14 +1,14 @@
 <Solution>
-  <PropertyGroup Name="MyGameDemo" Version="2.2.8.0" Type="CocosStudio" />
+  <PropertyGroup Name="MyGameDemo" Version="3.10.0.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="button">
           <Image Name="back_btn.png" />
+          <Image Name="bt_chon.png" />
           <Image Name="btn_blue_0.png" />
           <Image Name="btn_blue_1.png" />
           <Image Name="btn_orange_0.png" />
-          <Image Name="bt_chon.png" />
           <Image Name="button_brown_0.png" />
           <Image Name="button_green_0.png" />
           <Image Name="button_green_1.png" />
@@ -30,15 +30,14 @@
           <Image Name="Button_Disable.png" />
           <Image Name="Button_Normal.png" />
           <Image Name="Button_Press.png" />
-          <Image Name="CheckBoxNode_Disable.png" />
-          <Image Name="CheckBoxNode_Normal.png" />
           <Image Name="CheckBox_Disable.png" />
           <Image Name="CheckBox_Normal.png" />
           <Image Name="CheckBox_Press.png" />
+          <Image Name="CheckBoxNode_Disable.png" />
+          <Image Name="CheckBoxNode_Normal.png" />
           <Image Name="ImageFile.png" />
           <Image Name="Sprite.png" />
         </Folder>
-        <File Name="favicon.ico" />
         <Folder Name="fonts">
           <TTF Name="font_game.ttf" />
           <TTF Name="font_game_bold.ttf" />
@@ -98,8 +97,20 @@
         </Folder>
         <Folder Name="particle">
           <Folder Name="Particle">
+            <Image Name="fx_2.png" />
+            <Image Name="fx_3.png" />
+            <Image Name="fx_4h.png" />
+            <Image Name="fx_4l.png" />
+            <Image Name="fx_4m.png" />
+            <Image Name="fx_4n.png" />
             <PlistParticleFile Name="particle_baybang.plist" />
             <PlistParticleFile Name="particle_rainbow.plist" />
+            <Image Name="particle_texture.png" />
+            <PlistParticleFile Name="particle_texture_blue.plist" />
+            <PlistParticleFile Name="particle_texture_green.plist" />
+            <PlistParticleFile Name="particle_texture_red.plist" />
+            <PlistParticleFile Name="particle_texture_tail1.plist" />
+            <PlistParticleFile Name="particle_texture_yellow.plist" />
             <PlistParticleFile Name="particle_texture1.plist" />
             <PlistParticleFile Name="particle_texture2.plist" />
             <PlistParticleFile Name="particle_texture3.plist" />
@@ -108,19 +119,7 @@
             <PlistParticleFile Name="particle_texture6.plist" />
             <PlistParticleFile Name="particle_texture7.plist" />
             <PlistParticleFile Name="particle_texture8.plist" />
-            <PlistParticleFile Name="particle_texture_blue.plist" />
-            <PlistParticleFile Name="particle_texture_green.plist" />
-            <PlistParticleFile Name="particle_texture_red.plist" />
-            <PlistParticleFile Name="particle_texture_tail1.plist" />
-            <PlistParticleFile Name="particle_texture_yellow.plist" />
             <PlistParticleFile Name="tail_particle1.plist" />
-            <Image Name="fx_2.png" />
-            <Image Name="fx_3.png" />
-            <Image Name="fx_4h.png" />
-            <Image Name="fx_4l.png" />
-            <Image Name="fx_4m.png" />
-            <Image Name="fx_4n.png" />
-            <Image Name="particle_texture.png" />
           </Folder>
           <Folder Name="particle3d">
             <Folder Name="materials">
@@ -153,10 +152,10 @@
               <File Name="Spark_01.material" />
               <File Name="Star_03.material" />
               <File Name="star_05.material" />
-              <File Name="streak01.material" />
               <File Name="streak_02.material" />
               <File Name="streak_03.material" />
               <File Name="Streak_04.material" />
+              <File Name="streak01.material" />
             </Folder>
             <Folder Name="models">
               <File Name="roRing.mesh" />
@@ -177,9 +176,9 @@
               <Pu Name="dice_05.pu" />
               <Pu Name="dice_06.pu" />
               <Pu Name="lineStreak.pu" />
+              <Pu Name="lo_ring.pu" />
               <Pu Name="locxoay.pu" />
               <Pu Name="lotus.pu" />
-              <Pu Name="lo_ring.pu" />
               <Pu Name="psychoBurn.pu" />
               <Pu Name="rainSystem_1.pu" />
               <Pu Name="rainSystem_2.pu" />
@@ -208,6 +207,10 @@
               <Image Name="gold.png" />
               <Image Name="lotus.png" />
               <Image Name="point04.png" />
+              <Image Name="pu_circle.png" />
+              <Image Name="pu_flare.png" />
+              <Image Name="pu_rain.png" />
+              <Image Name="pu_rain_01.png" />
               <Image Name="pump_bubble.png" />
               <Image Name="pump_bubble_blurred.png" />
               <Image Name="pump_flare_04.png" />
@@ -220,10 +223,6 @@
               <Image Name="pump_streak_02.png" />
               <Image Name="pump_streak_03.png" />
               <Image Name="pump_streak_04.png" />
-              <Image Name="pu_circle.png" />
-              <Image Name="pu_flare.png" />
-              <Image Name="pu_rain.png" />
-              <Image Name="pu_rain_01.png" />
               <Image Name="ring2.png" />
               <Image Name="testPU.png" />
             </Folder>
@@ -346,34 +345,35 @@
         </Folder>
         <Folder Name="shadow">
           <File Name="pass.vsh" />
-          <File Name="shadowRender.fsh" />
           <Image Name="shadow1.png" />
+          <File Name="shadowRender.fsh" />
         </Folder>
         <Folder Name="zccs">
           <Folder Name="gui">
-            <Folder Name="login" />
+            <Folder Name="battle" />
             <Folder Name="loading">
               <Project Name="GuiLoading.csd" Type="Scene" />
             </Folder>
             <Folder Name="lobby" />
-            <Folder Name="battle" />
+            <Folder Name="login" />
             <Folder Name="popup" />
           </Folder>
           <Folder Name="scene">
-            <Folder Name="lobby">
-              <Project Name="SceneLobby.csd" Type="Scene" />
-            </Folder>
-            <Folder Name="login">
-              <Project Name="SceneLogin.csd" Type="Scene" />
-            </Folder>
             <Folder Name="battle">
               <Project Name="SceneBattle.csd" Type="Scene" />
             </Folder>
             <Folder Name="loading">
               <Project Name="SceneLoading.csd" Type="Scene" />
             </Folder>
+            <Folder Name="lobby">
+              <Project Name="SceneLobby.csd" Type="Scene" />
+            </Folder>
+            <Folder Name="login">
+              <Project Name="SceneLogin.csd" Type="Scene" />
+            </Folder>
           </Folder>
         </Folder>
+        <File Name="favicon.ico" />
       </RootFolder>
     </Group>
   </SolutionFolder>

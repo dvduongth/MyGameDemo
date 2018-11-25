@@ -1,4 +1,4 @@
-<UserData>
+<UserData Version="3.10.0.0">
   <Properties>
     <Item Key="PackageParamsKey">
       <Value ctype="PackageParams">
@@ -11,6 +11,7 @@
         <iOS_Target Value="MyGameDemo iOS" />
         <iOS_BundleID Value="" />
         <Platform Value="None" />
+        <RunPlatform Value="None" />
         <FrameworkVersion Value="" />
         <IsDebugKeystore Value="True" />
         <KeystorePassword Value="" />
@@ -24,7 +25,15 @@
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
         <IsLastPublish Value="True" />
-        <LastRunType Value="Mac" />
+        <LastRunType Value="Windows" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="zccs/gui/loading/GuiLoading.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="zccs/gui/loading/GuiLoading.csd" />
       </Value>
     </Item>
   </Properties>

@@ -1,5 +1,5 @@
-<GameProjectFile>
-  <PropertyGroup Type="Scene" Name="SceneBattle" ID="25c1be77-dc38-4830-bb22-547c6972815e" Version="2.2.8.0" />
+<GameFile>
+  <PropertyGroup Name="SceneBattle" Type="Scene" ID="25c1be77-dc38-4830-bb22-547c6972815e" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -17,7 +17,7 @@
             <FileData Type="Normal" Path="resources/textures/Splash.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_1" ActionTag="-1929996547" Tag="130" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="BottomEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_1" ActionTag="-1929996547" Tag="130" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="BottomEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1242.0000" Y="2208.0000" />
             <AnchorPoint />
             <Position />
@@ -40,7 +40,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5066" Y="0.0592" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 1/MainBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -51,7 +51,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1965" Y="0.2072" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 1/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -62,12 +62,12 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8207" Y="0.2064" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 1/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndConcrete_2" ActionTag="-163797610" Tag="135" IconVisible="True" LeftMargin="114.6730" RightMargin="785.3270" TopMargin="510.4333" BottomMargin="389.5667" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_10" ActionTag="1028744478" Tag="136" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -76,7 +76,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -87,7 +87,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -98,7 +98,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -109,7 +109,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -120,7 +120,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -130,10 +130,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1274" Y="0.4329" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndConcrete_0_4" ActionTag="-1156185391" Tag="141" IconVisible="True" LeftMargin="118.5352" RightMargin="781.4648" TopMargin="390.0045" BottomMargin="509.9955" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_13_20" ActionTag="2096655628" Tag="142" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -142,7 +142,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -153,7 +153,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -164,7 +164,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -175,7 +175,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -186,7 +186,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -196,10 +196,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1317" Y="0.5667" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndConcrete_1_6" ActionTag="-1877333308" Tag="147" IconVisible="True" LeftMargin="512.8926" RightMargin="387.1074" TopMargin="390.0045" BottomMargin="509.9955" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_23_30" ActionTag="-1586829342" Tag="148" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -208,7 +208,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -219,7 +219,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -230,7 +230,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -241,7 +241,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -252,7 +252,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -262,10 +262,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5699" Y="0.5667" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndConcrete_2_8" ActionTag="1135787831" Tag="153" IconVisible="True" LeftMargin="517.4958" RightMargin="382.5042" TopMargin="511.2264" BottomMargin="388.7736" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_33_40" ActionTag="-184398568" Tag="154" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -274,7 +274,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -285,7 +285,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -296,7 +296,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -307,7 +307,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -318,7 +318,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -328,7 +328,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5750" Y="0.4320" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="MainBase_4_0_50" ActionTag="-994614455" Tag="159" IconVisible="False" LeftMargin="415.2253" RightMargin="401.7747" TopMargin="15.7690" BottomMargin="801.2310" ctype="SpriteObjectData">
                 <Size X="83.0000" Y="83.0000" />
@@ -337,7 +337,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5075" Y="0.9364" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/MainBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -348,7 +348,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1928" Y="0.7956" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -359,12 +359,12 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8193" Y="0.7997" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndBrick_10" ActionTag="784795594" Tag="162" IconVisible="True" LeftMargin="269.1486" RightMargin="630.8514" TopMargin="676.6663" BottomMargin="223.3337" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_33_46_56" ActionTag="-1950446156" Tag="163" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -373,7 +373,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -384,7 +384,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -395,7 +395,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -406,7 +406,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -417,7 +417,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -428,7 +428,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -439,7 +439,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -449,10 +449,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2991" Y="0.2481" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndBrick_0_12" ActionTag="1716654474" Tag="170" IconVisible="True" LeftMargin="60.0875" RightMargin="839.9125" TopMargin="591.1102" BottomMargin="308.8898" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_33_46_56_70" ActionTag="-1785151721" Tag="171" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -461,7 +461,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -472,7 +472,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -483,7 +483,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -494,7 +494,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -504,10 +504,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0668" Y="0.3432" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndBrick_0_0_14" ActionTag="88377848" Tag="175" IconVisible="True" LeftMargin="613.7164" RightMargin="286.2836" TopMargin="589.1071" BottomMargin="310.8929" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_33_46_56_66_78" ActionTag="1908754221" Tag="176" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -516,7 +516,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -527,7 +527,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -538,7 +538,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -549,7 +549,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -559,10 +559,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6819" Y="0.3454" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndBrick_1_16" ActionTag="1645215532" Tag="180" IconVisible="True" LeftMargin="266.6678" RightMargin="633.3322" TopMargin="229.0634" BottomMargin="670.9366" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_33_46_76_86" ActionTag="-164932450" Tag="181" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -571,7 +571,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -582,7 +582,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -593,7 +593,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -604,7 +604,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -615,7 +615,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -626,7 +626,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -637,7 +637,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -647,10 +647,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2963" Y="0.7455" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndBrick_0_1_18" ActionTag="-1939443215" Tag="188" IconVisible="True" LeftMargin="53.8214" RightMargin="846.1786" TopMargin="310.3248" BottomMargin="589.6752" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_33_46_56_90_100" ActionTag="1208734360" Tag="189" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -659,7 +659,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -670,7 +670,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -681,7 +681,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -692,7 +692,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -702,10 +702,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0598" Y="0.6552" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndBrick_0_0_0_20" ActionTag="1996472788" Tag="193" IconVisible="True" LeftMargin="619.6583" RightMargin="280.3417" TopMargin="310.3568" BottomMargin="589.6432" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_33_46_56_66_98_108" ActionTag="11116213" Tag="194" IconVisible="False" LeftMargin="30.1149" RightMargin="-73.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -714,7 +714,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -725,7 +725,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -736,7 +736,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -747,7 +747,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -757,10 +757,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6885" Y="0.6552" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndConcrete_3_22" ActionTag="229970002" Tag="198" IconVisible="True" LeftMargin="270.4809" RightMargin="629.5191" TopMargin="584.1225" BottomMargin="315.8775" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_106_116" ActionTag="-1403228768" Tag="199" IconVisible="False" LeftMargin="24.1148" RightMargin="-67.1148" TopMargin="-21.2000" BottomMargin="-21.8000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -769,7 +769,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -780,7 +780,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -791,7 +791,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -802,7 +802,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -813,7 +813,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -824,7 +824,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -835,7 +835,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -845,10 +845,10 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3005" Y="0.3510" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="ndConcrete_3_0_24" ActionTag="1739070866" Tag="206" IconVisible="True" LeftMargin="270.5839" RightMargin="629.4161" TopMargin="306.3678" BottomMargin="593.6322" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Concrete_7_106_118_130" ActionTag="525757770" Tag="207" IconVisible="False" LeftMargin="24.1148" RightMargin="-67.1148" TopMargin="-21.2000" BottomMargin="-21.8000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
@@ -857,7 +857,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -868,7 +868,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -879,7 +879,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -890,7 +890,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -901,7 +901,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -912,7 +912,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -923,7 +923,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
@@ -933,15 +933,15 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3006" Y="0.6596" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="Node_1_26" ActionTag="-902819725" Tag="214" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="450.0000" RightMargin="450.0000" TopMargin="1105.0000" BottomMargin="-205.0000" ctype="SingleNodeObjectData">
-                <Size />
+                <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Panel_2_11" ActionTag="590409940" Tag="215" IconVisible="False" LeftMargin="-450.0000" RightMargin="-450.0000" TopMargin="-200.0000" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="Panel_2_11" ActionTag="590409940" Tag="215" IconVisible="False" LeftMargin="-450.0000" RightMargin="-450.0000" TopMargin="-200.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="900.0000" Y="200.0000" />
                     <Children>
-                      <AbstractNodeData Name="slotTank_0_Team_1_4" ActionTag="-1690328356" Tag="216" IconVisible="False" LeftMargin="54.1608" RightMargin="685.8392" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="slotTank_0_Team_1_4" ActionTag="-1690328356" Tag="216" IconVisible="False" LeftMargin="54.1608" RightMargin="685.8392" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="160.0000" Y="160.0000" />
                         <Children>
                           <AbstractNodeData Name="imgTank_0_Team_1_2" ActionTag="-1312654583" Tag="217" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
@@ -966,7 +966,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_1_Team_1_6" ActionTag="-746500973" Tag="218" IconVisible="False" LeftMargin="264.6614" RightMargin="475.3386" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="slotTank_1_Team_1_6" ActionTag="-746500973" Tag="218" IconVisible="False" LeftMargin="264.6614" RightMargin="475.3386" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="160.0000" Y="160.0000" />
                         <Children>
                           <AbstractNodeData Name="imgTank_1_Team_1_4" ActionTag="-896057026" Tag="219" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
@@ -991,7 +991,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_2_Team_1_8" ActionTag="-1624680280" Tag="220" IconVisible="False" LeftMargin="475.1620" RightMargin="264.8380" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="slotTank_2_Team_1_8" ActionTag="-1624680280" Tag="220" IconVisible="False" LeftMargin="475.1620" RightMargin="264.8380" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="160.0000" Y="160.0000" />
                         <Children>
                           <AbstractNodeData Name="imgTank_2_Team_1_6" ActionTag="-1808892263" Tag="221" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
@@ -1016,7 +1016,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_3_Team_1_10" ActionTag="618396541" Tag="222" IconVisible="False" LeftMargin="685.6627" RightMargin="54.3373" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="slotTank_3_Team_1_10" ActionTag="618396541" Tag="222" IconVisible="False" LeftMargin="685.6627" RightMargin="54.3373" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="160.0000" Y="160.0000" />
                         <Children>
                           <AbstractNodeData Name="imgTank_3_Team_1_8" ActionTag="989383600" Tag="223" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
@@ -1047,7 +1047,7 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize />
+                    <PreSize X="0.0000" Y="0.0000" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
@@ -1059,7 +1059,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="-0.2278" />
-                <PreSize />
+                <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -1071,10 +1071,10 @@
             <FileData Type="Normal" Path="resources/textures/Map/Background_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnBackToLobby" ActionTag="566998122" Tag="224" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="953.7490" RightMargin="27.2510" TopMargin="32.9434" BottomMargin="2102.0566" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="231" Scale9Height="51" OutlineSize="1" ShadowOffsetX="2" ShadowOffsetY="-2" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnBackToLobby" ActionTag="566998122" Tag="224" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="953.7490" RightMargin="27.2510" TopMargin="32.9434" BottomMargin="2102.0566" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="231" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="261.0000" Y="73.0000" />
             <Children>
-              <AbstractNodeData Name="Text_2_3_3_2" ActionTag="688898436" Tag="225" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="19.5000" RightMargin="19.5000" TopMargin="18.0000" BottomMargin="18.0000" FontSize="24" LabelText="BACK TO LOBBY" OutlineSize="1" OutlineEnabled="True" ShadowOffsetX="2" ShadowOffsetY="-2" ShadowEnabled="True" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_2_3_3_2" ActionTag="688898436" Tag="225" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="19.5000" RightMargin="19.5000" TopMargin="18.0000" BottomMargin="18.0000" FontSize="24" LabelText="BACK TO LOBBY" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
                 <Size X="222.0000" Y="37.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="130.5000" Y="36.5000" />
@@ -1099,7 +1099,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnClose" ActionTag="-1364130738" Tag="356" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="57.9873" RightMargin="984.0127" TopMargin="42.1123" BottomMargin="1965.8877" TouchEnable="True" FontSize="14" LeftEage="13" RightEage="13" TopEage="11" BottomEage="11" Scale9OriginX="13" Scale9OriginY="11" Scale9Width="14" Scale9Height="18" OutlineSize="1" ShadowOffsetX="2" ShadowOffsetY="-2" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnClose" ActionTag="-1364130738" Tag="356" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="57.9873" RightMargin="984.0127" TopMargin="42.1123" BottomMargin="1965.8877" TouchEnable="True" FontSize="14" LeftEage="13" RightEage="13" TopEage="11" BottomEage="11" Scale9OriginX="13" Scale9OriginY="11" Scale9Width="14" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="200.0000" Y="200.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="157.9873" Y="2065.8877" />
@@ -1117,4 +1117,4 @@
       </ObjectData>
     </Content>
   </Content>
-</GameProjectFile>
+</GameFile>
