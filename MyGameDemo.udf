@@ -27,13 +27,5 @@
         <LastRunType Value="Mac" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="zccs/gui/loading/GuiLoading.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="zccs/gui/loading/GuiLoading.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>
