@@ -409,6 +409,15 @@ var Utility = (function () {
             return true;
         };
 
+        instance.createLoadingBar = function (fileName) {
+            var loadingBar = new ccui.LoadingBar();
+            loadingBar.setName("LoadingBar");
+            instance.updateSpriteWithFileName(loadingBar, fileName);
+            loadingBar.setDirection(ccui.LoadingBar.TYPE_RIGHT);
+            loadingBar.setPercent(0);
+            return loadingBar;
+        };
+
         /**
          * @return
          * @public

@@ -9,8 +9,8 @@ var SceneLogin = BaseScene.extend({
     },
     initScene: function () {
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
-        this.createKeyBoardListener();
-        this.createTouchListenerOneByOne();
+        //this.createKeyBoardListener();
+        //this.createTouchListenerOneByOne();
     },
     onKeyPressed: function (keyCode, event) {
         LogUtils.getInstance().log(this.getClassName() + " onKeyPressed: " + keyCode);
@@ -31,23 +31,26 @@ var SceneLogin = BaseScene.extend({
         Utility.getInstance().showTextOnScene(args);
     },
     onTouchBegan: function (touch, event) {
-        LogUtils.getInstance().log(this.getClassName() + " onTouchBegan");
-        gv.engine.getEffectMgr().showExplosion(touch.getLocation());
+        /*LogUtils.getInstance().log(this.getClassName() + " onTouchBegan");
+        var explosion = gv.engine.getEffectMgr().showExplosion(touch.getLocation(), EXPLOSION_BULLET);
+        explosion.setCompleteCallback(function () {
+            explosion.removeFromParent(true);
+        });*/
         return true;
     },
 
     onTouchMoved: function (touch, event) {
-        LogUtils.getInstance().log(this.getClassName() + " onTouchMoved");
+        //LogUtils.getInstance().log(this.getClassName() + " onTouchMoved");
         return true;
     },
 
     onTouchEnded: function (touch, event) {
-        LogUtils.getInstance().log(this.getClassName() + " onTouchEnded");
+        //LogUtils.getInstance().log(this.getClassName() + " onTouchEnded");
         return true;
     },
 
     onTouchCancelled: function (touch, event) {
-        LogUtils.getInstance().log(this.getClassName() + " onTouchCancelled");
+        //LogUtils.getInstance().log(this.getClassName() + " onTouchCancelled");
         return true;
     },
     onTouchUIEndEvent: function (sender) {

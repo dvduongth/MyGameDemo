@@ -40,6 +40,12 @@ var BaseGameObject = cc.Class.extend({
     getHP: function () {
         return this._HP;
     },
+    setHPMax: function (t) {
+        this._HPMax = t;
+    },
+    getHPMax: function () {
+        return this._HPMax;
+    },
     setFlippedObj: function (eff) {
         this._isFlippedObj = eff;
         this.getRootNode().setFlippedX(eff);
@@ -92,6 +98,9 @@ var BaseGameObject = cc.Class.extend({
         }
         return this._scale;
     },
+    addChild: function (child) {
+        this.getRootNode().addChild(child);
+    },
     // Draw
     update: function (dt) {
         //todo override me
@@ -106,5 +115,17 @@ var BaseGameObject = cc.Class.extend({
     },
     getWorldPosition: function () {
         return this.getParent().convertToWorldSpace(this.getPosition());
+    },
+    createHPDisplayProgress: function () {
+        var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_BG_PNG);
+        this.addChild(progressBg);
+        progressBg.setPosition(this.getContentSize().width / 2, this.getContentSize().height + progressBg.getContentSize().height / 2 + 2);
+        this._HPDisplayProgress = Utility.getInstance().createLoadingBar(resImg.RESOURCES__TEXTURES__PROGRESS_BULE_PNG);
+        progressBg.addChild(this._HPDisplayProgress);
+        this._HPDisplayProgress.setPosition(progressBg.getContentSize().width / 2, progressBg.getContentSize().height / 2);
+        this._HPDisplayProgress.setPercent(100);
+    },
+    getHPDisplayProgress: function () {
+        return this._HPDisplayProgress;
     }
 });

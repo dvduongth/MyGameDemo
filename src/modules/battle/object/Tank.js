@@ -13,14 +13,18 @@ var Tank = cc.Sprite.extend({
         switch (type) {
             case TANK_LIGHT:
                 path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1A_PNG);
+                this.setHPMax(Setting.TANK_LIGHT_HP);
                 break;
             case TANK_MEDIUM:
                 path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__TANK__TEAM___1__2A_PNG);
+                this.setHPMax(Setting.TANK_MEDIUM_HP);
                 break;
             case TANK_HEAVY:
                 path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__TANK__TEAM___1__3A_PNG);
+                this.setHPMax(Setting.TANK_HEAVY_HP);
                 break;
             default :
+                this.setHPMax(Setting.TANK_LIGHT_HP);
                 path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1B_PNG);
                 break;
         }
@@ -32,6 +36,23 @@ var Tank = cc.Sprite.extend({
         this.setAngle(0);
         this.setSpeed(Setting.MAX_SPEED / this.getType());
         this.setMapPressAction({});
+        this.createHPDisplayProgress();
+    },
+    resetHP: function () {
+        switch (this.getType()) {
+            case TANK_LIGHT:
+                this.setHP(Setting.TANK_LIGHT_HP);
+                break;
+            case TANK_MEDIUM:
+                this.setHP(Setting.TANK_MEDIUM_HP);
+                break;
+            case TANK_HEAVY:
+                this.setHP(Setting.TANK_HEAVY_HP);
+                break;
+            default :
+                this.setHP(Setting.TANK_LIGHT_HP);
+                break;
+        }
     },
     setID: function (id) {
         this._tankID = id;
@@ -280,5 +301,31 @@ var Tank = cc.Sprite.extend({
     getWorldPosition: function () {
         return this.getParent().convertToWorldSpace(this.getPosition());
     },
+    setHP: function (t) {
+        this._HP = t;
+        var percent = Math.round(100 * t / this.getHPMax());
+        this.getHPDisplayProgress().setPercent(percent);
+    },
+    getHP: function () {
+        return this._HP;
+    },
+    setHPMax: function (t) {
+        this._HPMax = t;
+    },
+    getHPMax: function () {
+        return this._HPMax;
+    },
+    createHPDisplayProgress: function () {
+        var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_BG_PNG);
+        this.addChild(progressBg);
+        progressBg.setPosition(this.getContentSize().width / 2, -progressBg.getContentSize().height / 2 - 2);
+        this._HPDisplayProgress = Utility.getInstance().createLoadingBar(resImg.RESOURCES__TEXTURES__PROGRESS_BULE_PNG);
+        progressBg.addChild(this._HPDisplayProgress);
+        this._HPDisplayProgress.setPosition(progressBg.getContentSize().width / 2, progressBg.getContentSize().height / 2);
+        this._HPDisplayProgress.setPercent(100);
+    },
+    getHPDisplayProgress: function () {
+        return this._HPDisplayProgress;
+    }
 
 });

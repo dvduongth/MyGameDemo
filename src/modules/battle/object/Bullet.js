@@ -132,11 +132,17 @@ var Bullet = cc.Sprite.extend({
         }
         return false;
     },
-    destroy: function (hasExplosion) {
-        gv.engine.getBattleMgr().removeBullet(this.getID());
-        this.removeFromParent(true);
-    },
     getWorldPosition: function () {
         return this.getParent().convertToWorldSpace(this.getPosition());
+    },
+    destroy: function (hasExplosion) {
+        if(hasExplosion) {
+            var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_BULLET);
+            explosion.setCompleteCallback(function () {
+                explosion.removeFromParent(true);
+            });
+        }
+        gv.engine.getBattleMgr().removeBullet(this.getID());
+        this.removeFromParent(true);
     }
 });

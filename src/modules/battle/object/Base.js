@@ -6,9 +6,16 @@ var Base = BaseGameObject.extend({
         this._super(id, rootNode, team, type);
         this.initBase();
     },
+    setHP: function (value) {
+        this._super(value);
+        var percent = Math.round(100 * value / this.getHPMax());
+        this.getHPDisplayProgress().setPercent(percent);
+    },
     initBase: function () {
+        this.createHPDisplayProgress();
         switch (this.getType()){
             case BASE_MAIN:
+                this.setHPMax(Setting.BASE_MAIN_HP);
                 this.setHP(Setting.BASE_MAIN_HP);
                 switch (this.getTeam()){
                     case TEAM_1:
@@ -20,6 +27,7 @@ var Base = BaseGameObject.extend({
                 }
                 break;
             case BASE_SIDE:
+                this.setHPMax(Setting.BASE_SIDE_HP);
                 this.setHP(Setting.BASE_SIDE_HP);
                 switch (this.getTeam()){
                     case TEAM_1:
