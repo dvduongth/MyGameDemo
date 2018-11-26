@@ -5,7 +5,7 @@
     <first key="disable_live_coding" booleanValue="false" />
     <first key="disable_using_upload" booleanValue="false" />
     <first key="argument_map">
-      <second key="macruntime" stringValue="" />
+      <second key="macruntime" stringValue="runtime/mac/MyGameDemo-desktop.app" />
       <second key="win32runtime" stringValue="" />
       <second key="connector_id" stringValue="jsbinding.mac.attach.connector" />
       <second key="remotePlatform" stringValue="Android" />
