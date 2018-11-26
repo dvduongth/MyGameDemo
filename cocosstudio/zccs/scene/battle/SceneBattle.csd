@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="SceneBattle" Type="Scene" ID="25c1be77-dc38-4830-bb22-547c6972815e" Version="2.2.8.0" />
+  <PropertyGroup Name="SceneBattle" Type="Scene" ID="25c1be77-dc38-4830-bb22-547c6972815e" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -347,7 +347,7 @@
                   <AbstractNodeData Name="ObstacleHard" ActionTag="1028744478" Tag="136" IconVisible="False" LeftMargin="29.1149" RightMargin="-72.1149" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="50.6149" Y="0.0000" />
+                    <Position X="50.6149" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -358,7 +358,7 @@
                   <AbstractNodeData Name="ObstacleHard" ActionTag="-1711192657" Tag="137" IconVisible="False" LeftMargin="69.3055" RightMargin="-112.3055" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="90.8055" Y="0.0000" />
+                    <Position X="90.8055" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -369,7 +369,7 @@
                   <AbstractNodeData Name="ObstacleHard" ActionTag="817034742" Tag="138" IconVisible="False" LeftMargin="109.4964" RightMargin="-152.4964" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="130.9964" Y="0.0000" />
+                    <Position X="130.9964" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -413,7 +413,7 @@
                   <AbstractNodeData Name="ObstacleHard" ActionTag="2096655628" Tag="142" IconVisible="False" LeftMargin="36.1148" RightMargin="-79.1148" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="57.6148" Y="0.0000" />
+                    <Position X="57.6148" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -424,7 +424,7 @@
                   <AbstractNodeData Name="ObstacleHard" ActionTag="-577784739" Tag="143" IconVisible="False" LeftMargin="78.3055" RightMargin="-121.3055" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="99.8055" Y="0.0000" />
+                    <Position X="99.8055" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -545,7 +545,7 @@
                   <AbstractNodeData Name="ObstacleHard" ActionTag="-1566555267" Tag="155" IconVisible="False" LeftMargin="69.3053" RightMargin="-112.3053" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="90.8053" Y="0.0000" />
+                    <Position X="90.8053" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -556,7 +556,7 @@
                   <AbstractNodeData Name="ObstacleHard" ActionTag="1244335666" Tag="156" IconVisible="False" LeftMargin="109.4963" RightMargin="-152.4963" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="130.9963" Y="0.0000" />
+                    <Position X="130.9963" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -567,7 +567,7 @@
                   <AbstractNodeData Name="ObstacleHard" ActionTag="-865532717" Tag="157" IconVisible="False" LeftMargin="148.6865" RightMargin="-191.6865" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="170.1865" Y="0.0000" />
+                    <Position X="170.1865" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -1073,7 +1073,7 @@
                   <AbstractNodeData Name="ObstacleSoft" ActionTag="1499418254" Tag="195" IconVisible="False" LeftMargin="70.3053" RightMargin="-113.3053" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="91.8053" Y="0.0000" />
+                    <Position X="91.8053" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -1084,7 +1084,7 @@
                   <AbstractNodeData Name="ObstacleSoft" ActionTag="1791297560" Tag="196" IconVisible="False" LeftMargin="111.4958" RightMargin="-154.4958" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="132.9958" Y="0.0000" />
+                    <Position X="132.9958" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -1095,7 +1095,7 @@
                   <AbstractNodeData Name="ObstacleSoft" ActionTag="-1528325962" Tag="197" IconVisible="False" LeftMargin="151.6865" RightMargin="-194.6865" TopMargin="-21.5000" BottomMargin="-21.5000" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="173.1865" Y="0.0000" />
+                    <Position X="173.1865" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />

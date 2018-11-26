@@ -1,4 +1,4 @@
-<UserData Version="2.2.8.0">
+<UserData Version="3.10.0.0">
   <Properties>
     <Item Key="PackageParamsKey">
       <Value ctype="PackageParams">
@@ -26,14 +26,6 @@
         <LastPublishType Value="Resource" />
         <IsLastPublish Value="True" />
         <LastRunType Value="Windows" />
-      </Value>
-    </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="zccs/scene/battle/SceneBattle.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="zccs/scene/battle/SceneBattle.csd" />
       </Value>
     </Item>
   </Properties>

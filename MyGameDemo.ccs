@@ -1,5 +1,5 @@
 <Solution>
-  <PropertyGroup Name="MyGameDemo" Version="2.2.8.0" Type="CocosStudio" />
+  <PropertyGroup Name="MyGameDemo" Version="3.10.0.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
@@ -249,7 +249,43 @@
               <Image Name="3.png" />
             </Folder>
             <Folder Name="Explosion">
-              <Image Name="1.png" />
+              <Folder Name="explosion_1">
+                <Image Name="ex_0.png" />
+                <Image Name="ex_1.png" />
+                <Image Name="ex_10.png" />
+                <Image Name="ex_11.png" />
+                <Image Name="ex_12.png" />
+                <Image Name="ex_13.png" />
+                <Image Name="ex_14.png" />
+                <Image Name="ex_15.png" />
+                <Image Name="ex_16.png" />
+                <Image Name="ex_17.png" />
+                <Image Name="ex_18.png" />
+                <Image Name="ex_19.png" />
+                <Image Name="ex_2.png" />
+                <Image Name="ex_20.png" />
+                <Image Name="ex_21.png" />
+                <Image Name="ex_22.png" />
+                <Image Name="ex_23.png" />
+                <Image Name="ex_24.png" />
+                <Image Name="ex_25.png" />
+                <Image Name="ex_26.png" />
+                <Image Name="ex_27.png" />
+                <Image Name="ex_28.png" />
+                <Image Name="ex_29.png" />
+                <Image Name="ex_3.png" />
+                <Image Name="ex_30.png" />
+                <Image Name="ex_31.png" />
+                <Image Name="ex_32.png" />
+                <Image Name="ex_33.png" />
+                <Image Name="ex_34.png" />
+                <Image Name="ex_4.png" />
+                <Image Name="ex_5.png" />
+                <Image Name="ex_6.png" />
+                <Image Name="ex_7.png" />
+                <Image Name="ex_8.png" />
+                <Image Name="ex_9.png" />
+              </Folder>
               <Image Name="2.png" />
               <Image Name="3.png" />
               <Image Name="4.png" />

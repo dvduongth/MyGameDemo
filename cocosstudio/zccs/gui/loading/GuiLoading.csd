@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="GuiLoading" Type="Scene" ID="5e5888c9-b121-4205-a294-648c7e7ce835" Version="2.2.8.0" />
+  <PropertyGroup Name="GuiLoading" Type="Scene" ID="5e5888c9-b121-4205-a294-648c7e7ce835" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
