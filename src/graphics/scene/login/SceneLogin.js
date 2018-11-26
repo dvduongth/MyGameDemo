@@ -32,6 +32,7 @@ var SceneLogin = BaseScene.extend({
     },
     onTouchBegan: function (touch, event) {
         LogUtils.getInstance().log(this.getClassName() + " onTouchBegan");
+        gv.engine.getEffectMgr().showExplosion(touch.getLocation());
         return true;
     },
 

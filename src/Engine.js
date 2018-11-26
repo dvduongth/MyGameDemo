@@ -16,6 +16,7 @@ var Engine = cc.Class.extend({
         this.setSceneMgr(new BaseSceneMgr());
         this.getSceneMgr().setSceneFactory(new SceneFactory());
         this.getLayerMgr().setGUIFactory(new GUIFactory());
+        this.setEffectMgr(new EffectMgr());
         this.setLoginMgr(new LoginMgr());
         this.setLobbyMgr(new LobbyMgr());
         this.setBattleMgr(new BattleMgr());
@@ -34,6 +35,12 @@ var Engine = cc.Class.extend({
     },
     getLayerMgr: function(){
         return this._layerMgr;
+    },
+    setEffectMgr: function(mgr){
+        this._effectMgr = mgr;
+    },
+    getEffectMgr: function(){
+        return this._effectMgr;
     },
     setLoginMgr: function(mgr){
         this._loginMgr = mgr;
