@@ -39,5 +39,9 @@ var Base = BaseGameObject.extend({
                 }
                 break;
         }
+    },
+    createHPDisplayProgress: function () {
+        var progressBg = this._super();
+        progressBg.setScale(0.4);
     }
 });

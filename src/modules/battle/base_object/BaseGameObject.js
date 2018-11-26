@@ -119,11 +119,12 @@ var BaseGameObject = cc.Class.extend({
     createHPDisplayProgress: function () {
         var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_BG_PNG);
         this.addChild(progressBg);
-        progressBg.setPosition(this.getContentSize().width / 2, this.getContentSize().height + progressBg.getContentSize().height / 2 + 2);
+        progressBg.setPosition(this.getContentSize().width / 2, this.getContentSize().height);
         this._HPDisplayProgress = Utility.getInstance().createLoadingBar(resImg.RESOURCES__TEXTURES__PROGRESS_BULE_PNG);
         progressBg.addChild(this._HPDisplayProgress);
         this._HPDisplayProgress.setPosition(progressBg.getContentSize().width / 2, progressBg.getContentSize().height / 2);
         this._HPDisplayProgress.setPercent(100);
+        return progressBg;
     },
     getHPDisplayProgress: function () {
         return this._HPDisplayProgress;

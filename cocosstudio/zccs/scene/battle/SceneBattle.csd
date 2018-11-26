@@ -33,72 +33,6 @@
           <AbstractNodeData Name="sprMapBackground" ActionTag="1326271976" Tag="131" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="171.0000" RightMargin="171.0000" TopMargin="654.0000" BottomMargin="654.0000" ctype="SpriteObjectData">
             <Size X="900.0000" Y="900.0000" />
             <Children>
-              <AbstractNodeData Name="MainBase_0" ActionTag="259790017" Tag="132" IconVisible="False" LeftMargin="409.1319" RightMargin="407.8681" TopMargin="767.0280" BottomMargin="49.9721" ctype="SpriteObjectData">
-                <Size X="83.0000" Y="83.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="450.6319" Y="91.4721" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5007" Y="0.1016" />
-                <PreSize X="0.0922" Y="0.0922" />
-                <FileData Type="Normal" Path="resources/textures/Base/Team 1/MainBase.png" Plist="" />
-                <BlendFunc Src="1" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="SideBase_0" ActionTag="-86037252" Tag="133" IconVisible="False" LeftMargin="131.7998" RightMargin="685.2002" TopMargin="684.1326" BottomMargin="132.8674" ctype="SpriteObjectData">
-                <Size X="83.0000" Y="83.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="173.2998" Y="174.3674" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1926" Y="0.1937" />
-                <PreSize X="0.0922" Y="0.0922" />
-                <FileData Type="Normal" Path="resources/textures/Base/Team 1/SideBase.png" Plist="" />
-                <BlendFunc Src="1" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="SideBase_0" ActionTag="-2056528781" Tag="134" IconVisible="False" LeftMargin="687.3678" RightMargin="129.6322" TopMargin="683.0787" BottomMargin="133.9213" ctype="SpriteObjectData">
-                <Size X="83.0000" Y="83.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="728.8678" Y="175.4213" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8099" Y="0.1949" />
-                <PreSize X="0.0922" Y="0.0922" />
-                <FileData Type="Normal" Path="resources/textures/Base/Team 1/SideBase.png" Plist="" />
-                <BlendFunc Src="1" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="MainBase_1" ActionTag="-994614455" Tag="159" IconVisible="False" LeftMargin="413.0068" RightMargin="403.9932" TopMargin="47.9364" BottomMargin="769.0636" ctype="SpriteObjectData">
-                <Size X="83.0000" Y="83.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="454.5068" Y="810.5636" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5050" Y="0.9006" />
-                <PreSize X="0.0922" Y="0.0922" />
-                <FileData Type="Normal" Path="resources/textures/Base/Team 2/MainBase.png" Plist="" />
-                <BlendFunc Src="1" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="SideBase_1" ActionTag="-1416324201" Tag="161" IconVisible="False" LeftMargin="683.6532" RightMargin="133.3468" TopMargin="133.7827" BottomMargin="683.2173" ctype="SpriteObjectData">
-                <Size X="83.0000" Y="83.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="725.1532" Y="724.7173" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8057" Y="0.8052" />
-                <PreSize X="0.0922" Y="0.0922" />
-                <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
-                <BlendFunc Src="1" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="SideBase_1" ActionTag="60264110" Tag="160" IconVisible="False" LeftMargin="134.3559" RightMargin="682.6441" TopMargin="132.6641" BottomMargin="684.3359" ctype="SpriteObjectData">
-                <Size X="83.0000" Y="83.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="175.8559" Y="725.8359" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1954" Y="0.8065" />
-                <PreSize X="0.0922" Y="0.0922" />
-                <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
-                <BlendFunc Src="1" Dst="771" />
-              </AbstractNodeData>
               <AbstractNodeData Name="ndWater_0" ActionTag="-1865838630" Tag="146" IconVisible="True" LeftMargin="392.7753" RightMargin="507.2247" TopMargin="448.5124" BottomMargin="451.4876" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
@@ -751,7 +685,7 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Brick 1.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="ObstacleSoft" ActionTag="956892031" Tag="214" IconVisible="False" LeftMargin="27.9822" RightMargin="-70.9821" TopMargin="20.2482" BottomMargin="-63.2482" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="ObstacleSoft" ActionTag="956892031" Tag="214" IconVisible="False" LeftMargin="27.9822" RightMargin="-70.9822" TopMargin="20.2482" BottomMargin="-63.2482" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="49.4822" Y="-41.7482" />
@@ -2098,7 +2032,7 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="ObstacleHard" ActionTag="-438842163" Tag="181" IconVisible="False" LeftMargin="91.4454" RightMargin="-134.4453" TopMargin="-281.9602" BottomMargin="238.9602" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="ObstacleHard" ActionTag="-438842163" Tag="181" IconVisible="False" LeftMargin="91.4454" RightMargin="-134.4454" TopMargin="-281.9602" BottomMargin="238.9602" ctype="SpriteObjectData">
                     <Size X="43.0000" Y="43.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="112.9454" Y="260.4602" />
@@ -2183,7 +2117,7 @@
                 <PrePosition X="-0.1059" Y="0.3550" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ndConcrete_2_0_1_0" ActionTag="647269811" Tag="191" IconVisible="True" LeftMargin="984.7403" RightMargin="-84.7403" TopMargin="522.5433" BottomMargin="377.4566" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="ndConcrete_2_0_1_0" ActionTag="647269811" Tag="191" IconVisible="True" LeftMargin="984.7403" RightMargin="-84.7403" TopMargin="522.5434" BottomMargin="377.4566" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="ObstacleHard" ActionTag="1016775469" Tag="192" IconVisible="False" LeftMargin="-119.9956" RightMargin="76.9956" TopMargin="284.8297" BottomMargin="-327.8297" ctype="SpriteObjectData">
@@ -2402,6 +2336,72 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="1.0942" Y="0.4194" />
                 <PreSize X="0.0000" Y="0.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="MainBase_0" ActionTag="1872307175" Tag="222" IconVisible="False" LeftMargin="409.1319" RightMargin="407.8681" TopMargin="767.0279" BottomMargin="49.9721" ctype="SpriteObjectData">
+                <Size X="83.0000" Y="83.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="450.6319" Y="91.4721" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5007" Y="0.1016" />
+                <PreSize X="0.0922" Y="0.0922" />
+                <FileData Type="Normal" Path="resources/textures/Base/Team 1/MainBase.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="SideBase_0" ActionTag="2005050520" Tag="223" IconVisible="False" LeftMargin="131.7998" RightMargin="685.2002" TopMargin="684.1326" BottomMargin="132.8674" ctype="SpriteObjectData">
+                <Size X="83.0000" Y="83.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="173.2998" Y="174.3674" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1926" Y="0.1937" />
+                <PreSize X="0.0922" Y="0.0922" />
+                <FileData Type="Normal" Path="resources/textures/Base/Team 1/SideBase.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="SideBase_0" ActionTag="1966601682" Tag="224" IconVisible="False" LeftMargin="687.3678" RightMargin="129.6322" TopMargin="683.0787" BottomMargin="133.9213" ctype="SpriteObjectData">
+                <Size X="83.0000" Y="83.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="728.8678" Y="175.4213" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.8099" Y="0.1949" />
+                <PreSize X="0.0922" Y="0.0922" />
+                <FileData Type="Normal" Path="resources/textures/Base/Team 1/SideBase.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="MainBase_1" ActionTag="155533536" Tag="225" IconVisible="False" LeftMargin="413.0068" RightMargin="403.9932" TopMargin="47.9364" BottomMargin="769.0636" ctype="SpriteObjectData">
+                <Size X="83.0000" Y="83.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="454.5068" Y="810.5636" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5050" Y="0.9006" />
+                <PreSize X="0.0922" Y="0.0922" />
+                <FileData Type="Normal" Path="resources/textures/Base/Team 2/MainBase.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="SideBase_1" ActionTag="-171802721" Tag="226" IconVisible="False" LeftMargin="683.6532" RightMargin="133.3468" TopMargin="133.7827" BottomMargin="683.2173" ctype="SpriteObjectData">
+                <Size X="83.0000" Y="83.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="725.1532" Y="724.7173" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.8057" Y="0.8052" />
+                <PreSize X="0.0922" Y="0.0922" />
+                <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="SideBase_1" ActionTag="-1142639075" Tag="227" IconVisible="False" LeftMargin="134.3559" RightMargin="682.6441" TopMargin="132.6641" BottomMargin="684.3359" ctype="SpriteObjectData">
+                <Size X="83.0000" Y="83.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="175.8559" Y="725.8359" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1954" Y="0.8065" />
+                <PreSize X="0.0922" Y="0.0922" />
+                <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

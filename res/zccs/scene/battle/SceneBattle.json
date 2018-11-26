@@ -158,276 +158,6 @@
             "Tag": 131,
             "Children": [
               {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 1/MainBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 450.6319,
-                  "Y": 91.4721
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.5007,
-                  "Y": 0.1016
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 409.1319,
-                "RightMargin": 407.8681,
-                "TopMargin": 767.028,
-                "BottomMargin": 49.9721,
-                "Tag": 132,
-                "ActionTag": 259790017,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "MainBase_0",
-                "ctype": "SpriteObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 1/SideBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 173.2998,
-                  "Y": 174.3674
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.1926,
-                  "Y": 0.1937
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 131.7998,
-                "RightMargin": 685.2002,
-                "TopMargin": 684.1326,
-                "BottomMargin": 132.8674,
-                "Tag": 133,
-                "ActionTag": -86037252,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "SideBase_0",
-                "ctype": "SpriteObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 1/SideBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 728.8678,
-                  "Y": 175.4213
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.8099,
-                  "Y": 0.1949
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 687.3678,
-                "RightMargin": 129.6322,
-                "TopMargin": 683.0787,
-                "BottomMargin": 133.9213,
-                "Tag": 134,
-                "ActionTag": -2056528781,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "SideBase_0",
-                "ctype": "SpriteObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 2/MainBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 454.5068,
-                  "Y": 810.5636
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.505,
-                  "Y": 0.9006
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 413.0068,
-                "RightMargin": 403.9932,
-                "TopMargin": 47.9364,
-                "BottomMargin": 769.0636,
-                "Tag": 159,
-                "ActionTag": -994614455,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "MainBase_1",
-                "ctype": "SpriteObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 2/SideBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 725.1532,
-                  "Y": 724.7173
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.8057,
-                  "Y": 0.8052
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 683.6532,
-                "RightMargin": 133.3468,
-                "TopMargin": 133.7827,
-                "BottomMargin": 683.2173,
-                "Tag": 161,
-                "ActionTag": -1416324201,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "SideBase_1",
-                "ctype": "SpriteObjectData"
-              },
-              {
-                "FileData": {
-                  "Type": "Normal",
-                  "Path": "resources/textures/Base/Team 2/SideBase.png",
-                  "Plist": ""
-                },
-                "BlendFunc": {
-                  "Src": 1,
-                  "Dst": 771
-                },
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 175.8559,
-                  "Y": 725.8359
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PrePosition": {
-                  "X": 0.1954,
-                  "Y": 0.8065
-                },
-                "PreSize": {
-                  "X": 0.0922,
-                  "Y": 0.0922
-                },
-                "LeftMargin": 134.3559,
-                "RightMargin": 682.6441,
-                "TopMargin": 132.6641,
-                "BottomMargin": 684.3359,
-                "Tag": 160,
-                "ActionTag": 60264110,
-                "Size": {
-                  "X": 83.0,
-                  "Y": 83.0
-                },
-                "Name": "SideBase_1",
-                "ctype": "SpriteObjectData"
-              },
-              {
                 "AnchorPoint": {},
                 "Position": {
                   "X": 392.7753,
@@ -3071,7 +2801,7 @@
                       "Y": 0.0
                     },
                     "LeftMargin": 27.9822,
-                    "RightMargin": -70.9821,
+                    "RightMargin": -70.9822,
                     "TopMargin": 20.2482,
                     "BottomMargin": -63.2482,
                     "Tag": 214,
@@ -8465,7 +8195,7 @@
                       "Y": 0.0
                     },
                     "LeftMargin": 91.4454,
-                    "RightMargin": -134.4453,
+                    "RightMargin": -134.4454,
                     "TopMargin": -281.9602,
                     "BottomMargin": 238.9602,
                     "Tag": 181,
@@ -8778,7 +8508,7 @@
                 },
                 "LeftMargin": 984.7403,
                 "RightMargin": -84.7403,
-                "TopMargin": 522.5433,
+                "TopMargin": 522.5434,
                 "BottomMargin": 377.4566,
                 "Tag": 191,
                 "Children": [
@@ -9645,6 +9375,276 @@
                 },
                 "Name": "ndConcrete_2_0_1_0",
                 "ctype": "SingleNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 1/MainBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 450.6319,
+                  "Y": 91.4721
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5007,
+                  "Y": 0.1016
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 409.1319,
+                "RightMargin": 407.8681,
+                "TopMargin": 767.0279,
+                "BottomMargin": 49.9721,
+                "Tag": 222,
+                "ActionTag": 1872307175,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "MainBase_0",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 1/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 173.2998,
+                  "Y": 174.3674
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1926,
+                  "Y": 0.1937
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 131.7998,
+                "RightMargin": 685.2002,
+                "TopMargin": 684.1326,
+                "BottomMargin": 132.8674,
+                "Tag": 223,
+                "ActionTag": 2005050520,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_0",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 1/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 728.8678,
+                  "Y": 175.4213
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8099,
+                  "Y": 0.1949
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 687.3678,
+                "RightMargin": 129.6322,
+                "TopMargin": 683.0787,
+                "BottomMargin": 133.9213,
+                "Tag": 224,
+                "ActionTag": 1966601682,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_0",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/MainBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 454.5068,
+                  "Y": 810.5636
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.505,
+                  "Y": 0.9006
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 413.0068,
+                "RightMargin": 403.9932,
+                "TopMargin": 47.9364,
+                "BottomMargin": 769.0636,
+                "Tag": 225,
+                "ActionTag": 155533536,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "MainBase_1",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 725.1532,
+                  "Y": 724.7173
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8057,
+                  "Y": 0.8052
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 683.6532,
+                "RightMargin": 133.3468,
+                "TopMargin": 133.7827,
+                "BottomMargin": 683.2173,
+                "Tag": 226,
+                "ActionTag": -171802721,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_1",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "resources/textures/Base/Team 2/SideBase.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 175.8559,
+                  "Y": 725.8359
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1954,
+                  "Y": 0.8065
+                },
+                "PreSize": {
+                  "X": 0.0922,
+                  "Y": 0.0922
+                },
+                "LeftMargin": 134.3559,
+                "RightMargin": 682.6441,
+                "TopMargin": 132.6641,
+                "BottomMargin": 684.3359,
+                "Tag": 227,
+                "ActionTag": -1142639075,
+                "Size": {
+                  "X": 83.0,
+                  "Y": 83.0
+                },
+                "Name": "SideBase_1",
+                "ctype": "SpriteObjectData"
               }
             ],
             "ActionTag": 1326271976,

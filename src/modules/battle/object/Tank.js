@@ -97,12 +97,15 @@ var Tank = cc.Sprite.extend({
     getMapPressAction: function () {
         return this._mapPressAction;
     },
+    getDelayTimeSpawnBullet: function () {
+        return Setting.MAX_DELAY_SPAWN_BULLET / this.getType();
+    },
 
     createActionHIT: function () {
         this.removeActionHIT();
         this._actionTankHIT = cc.sequence(
             cc.callFunc(this.spawnBullet.bind(this)),
-            cc.delayTime(Setting.MAX_DELAY_SPAWN_BULLET / this.getType())
+            cc.delayTime(this.getDelayTimeSpawnBullet())
         ).repeatForever();
         this.runAction(this._actionTankHIT);
     },
@@ -113,6 +116,7 @@ var Tank = cc.Sprite.extend({
         }
     },
     spawnBullet: function () {
+        var _this = this;
         var direction;
         //LogUtils.getInstance().log([this.getClassName(), "spawnBullet angle", this.getAngle()]);
         switch (this.getAngle()) {
@@ -135,6 +139,13 @@ var Tank = cc.Sprite.extend({
                 break;
         }
         gv.engine.getBattleMgr().spawnBullet(this.getParent(), this.getPosition(), direction, this.getTeam(), this.getType(), this.getID());
+        this.setBlockHit(true);
+        this.runAction(cc.sequence(
+            cc.delayTime(this.getDelayTimeSpawnBullet()),
+            cc.callFunc(function () {
+                _this.setBlockHit(false);
+            })
+        ));
     },
     onEnter: function () {
         this._super();
@@ -245,10 +256,20 @@ var Tank = cc.Sprite.extend({
             this.setDirection(DIRECTION_IDLE);
         }
     },
+    setBlockHit: function (eff) {
+        this._blockHit = eff;
+    },
+    isBlockHit: function () {
+        return this._blockHit;
+    },
 
     Hit: function () {
-        LogUtils.getInstance().log([this.getClassName(), "start HIT"]);
-        this.createActionHIT();
+        if (!this.isBlockHit()) {
+            LogUtils.getInstance().log([this.getClassName(), "start HIT"]);
+            this.createActionHIT();
+        } else {
+            LogUtils.getInstance().log([this.getClassName(), "can not HIT because of blocking"]);
+        }
     },
     stopHit: function () {
         LogUtils.getInstance().log([this.getClassName(), "STOP HIT"]);
@@ -284,12 +305,12 @@ var Tank = cc.Sprite.extend({
                 break;
         }
         this.setAngle(angle);
-        if(dX != 0 || dY != 0) {
+        if (dX != 0 || dY != 0) {
             //todo check collision
             //move before
             this.setPositionX(this.getPositionX() + dX);
             this.setPositionY(this.getPositionY() + dY);
-            if(gv.engine.getBattleMgr().checkCollisionTankWithBarrier(this.getID())) {
+            if (gv.engine.getBattleMgr().checkCollisionTankWithBarrier(this.getID())) {
                 //can not move ==> move back
                 this.setPositionX(this.getPositionX() - dX);
                 this.setPositionY(this.getPositionY() - dY);
@@ -318,11 +339,12 @@ var Tank = cc.Sprite.extend({
     createHPDisplayProgress: function () {
         var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_BG_PNG);
         this.addChild(progressBg);
-        progressBg.setPosition(this.getContentSize().width / 2, -progressBg.getContentSize().height / 2 - 2);
+        progressBg.setPosition(this.getContentSize().width / 2, -2);
         this._HPDisplayProgress = Utility.getInstance().createLoadingBar(resImg.RESOURCES__TEXTURES__PROGRESS_BULE_PNG);
         progressBg.addChild(this._HPDisplayProgress);
         this._HPDisplayProgress.setPosition(progressBg.getContentSize().width / 2, progressBg.getContentSize().height / 2);
         this._HPDisplayProgress.setPercent(100);
+        progressBg.setScale(0.25);
     },
     getHPDisplayProgress: function () {
         return this._HPDisplayProgress;

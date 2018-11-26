@@ -24,8 +24,18 @@
       <file leaf-file-name="EffectMgr.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphics/effect/EffectMgr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.310345">
-              <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseGameObject.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/battle/base_object/BaseGameObject.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="121" column="92" selection-start-line="121" selection-start-column="92" selection-end-line="121" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -41,11 +51,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SceneLogin.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SceneLogin.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphics/scene/login/SceneLogin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35849056">
+            <state vertical-scroll-proportion="0.0">
               <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tank.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/battle/object/Tank.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5451977">
+              <caret line="341" column="66" selection-start-line="341" selection-start-column="66" selection-end-line="341" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Base.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/battle/object/Base.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -128,13 +158,13 @@
         <option value="$PROJECT_DIR$/src/modules/battle/object/Obstacle.js" />
         <option value="$PROJECT_DIR$/src/modules/battle/BattleMgr.js" />
         <option value="$PROJECT_DIR$/src/utilities/Utility.js" />
-        <option value="$PROJECT_DIR$/src/modules/battle/base_object/BaseGameObject.js" />
-        <option value="$PROJECT_DIR$/src/modules/battle/object/Base.js" />
         <option value="$PROJECT_DIR$/src/Setting.js" />
-        <option value="$PROJECT_DIR$/src/modules/battle/object/Tank.js" />
         <option value="$PROJECT_DIR$/src/modules/battle/object/Bullet.js" />
-        <option value="$PROJECT_DIR$/src/graphics/effect/EffectMgr.js" />
         <option value="$PROJECT_DIR$/src/graphics/scene/login/SceneLogin.js" />
+        <option value="$PROJECT_DIR$/src/modules/battle/object/Base.js" />
+        <option value="$PROJECT_DIR$/src/graphics/effect/EffectMgr.js" />
+        <option value="$PROJECT_DIR$/src/modules/battle/base_object/BaseGameObject.js" />
+        <option value="$PROJECT_DIR$/src/modules/battle/object/Tank.js" />
       </list>
     </option>
   </component>
@@ -157,10 +187,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -201,8 +230,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -395,32 +425,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SuperFun" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyGameDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="battle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="base_object" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -445,7 +449,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -502,7 +505,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JSBinding.WIN32">
+  <component name="RunManager" selected="JSBinding.MAC">
     <configuration default="true" type="#org.ccdt.lua.launch.CocosJSConfigurationType" factoryName="JSBinding">
       <first key="runtime_arguments" stringValue="" />
       <first key="force_update_entry_file" booleanValue="true" />
@@ -786,7 +789,7 @@
       <first key="disable_using_upload" booleanValue="false" />
       <first key="argument_map">
         <second key="macruntime" stringValue="" />
-        <second key="win32runtime" stringValue="simulator\win32\ClientDemo.exe" />
+        <second key="win32runtime" stringValue="" />
         <second key="connector_id" stringValue="jsbinding.win32.attach.connector" />
         <second key="remotePlatform" stringValue="Android" />
         <second key="host" stringValue="127.0.0.1" />
@@ -870,11 +873,12 @@
       <workItem from="1543215070098" duration="633000" />
       <workItem from="1543216197782" duration="3481000" />
       <workItem from="1543228191515" duration="4621000" />
+      <workItem from="1543249608591" duration="979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175763000" />
+    <option name="totallyTimeSpent" value="176742000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -886,27 +890,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32765958" sideWeight="0.48575604" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4376392" sideWeight="0.554371" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43740794" sideWeight="0.55722463" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45655876" sideWeight="0.40695915" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35523385" sideWeight="0.5426439" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13486141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1602289" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.46481878" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23600605" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4376392" sideWeight="0.445629" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43740794" sideWeight="0.4427754" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -915,6 +918,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.46481878" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1231,7 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="409" column="10" selection-start-line="409" selection-start-column="10" selection-end-line="409" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,7 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="14" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,31 +1249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29038113">
           <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/battle/base_object/BaseGameObject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="6" selection-start-line="36" selection-start-column="4" selection-end-line="41" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/battle/object/Base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="56" selection-start-line="10" selection-start-column="8" selection-end-line="11" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/battle/object/Tank.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="326" column="39" selection-start-line="326" selection-start-column="39" selection-end-line="326" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,15 +1256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25786164">
           <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphics/effect/EffectMgr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.310345">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1301,8 +1269,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphics/scene/login/SceneLogin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35849056">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/battle/object/Base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphics/effect/EffectMgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/battle/base_object/BaseGameObject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="121" column="92" selection-start-line="121" selection-start-column="92" selection-end-line="121" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/battle/object/Tank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5451977">
+          <caret line="341" column="66" selection-start-line="341" selection-start-column="66" selection-end-line="341" selection-end-column="66" />
           <folding />
         </state>
       </provider>

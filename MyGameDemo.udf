@@ -7,7 +7,7 @@
         <LuaEncryptSign Value="" />
         <Android_PackageName Value="org.cocos.MyGameDemo" />
         <AndroidkeyStore Value="" />
-        <AndroidVersion Value="" />
+        <AndroidVersion Value="android-28" />
         <iOS_Target Value="MyGameDemo iOS" />
         <iOS_BundleID Value="" />
         <Platform Value="None" />
@@ -25,15 +25,7 @@
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
         <IsLastPublish Value="True" />
-        <LastRunType Value="Windows" />
-      </Value>
-    </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="zccs/scene/battle/SceneBattle.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="zccs/scene/battle/SceneBattle.csd" />
+        <LastRunType Value="Mac" />
       </Value>
     </Item>
   </Properties>
