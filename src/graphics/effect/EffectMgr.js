@@ -109,7 +109,6 @@ var EffectMgr = cc.Class.extend({
         var explosion = this.createAnimation(arr, false);
         explosion.setPosition(worldPos);
         gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT).addChild(explosion);
-        explosion.setScale(0.4);
         return explosion;
     }
 

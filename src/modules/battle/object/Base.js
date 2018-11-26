@@ -43,5 +43,34 @@ var Base = BaseGameObject.extend({
     createHPDisplayProgress: function () {
         var progressBg = this._super();
         progressBg.setScale(0.4);
+    },
+    destroy: function () {
+        gv.engine.getBattleMgr().removeBase(this.getID());
+        var path = null;
+        switch (this.getType()){
+            case BASE_MAIN:
+                switch (this.getTeam()){
+                    case TEAM_1:
+                        path = resImg.RESOURCES__TEXTURES__BASE__TEAM___1__MAINBASED_PNG;
+                        break;
+                    case TEAM_2:
+                        path = resImg.RESOURCES__TEXTURES__BASE__TEAM___2__MAINBASED_PNG;
+                        break;
+                }
+                break;
+            case BASE_SIDE:
+                switch (this.getTeam()){
+                    case TEAM_1:
+                        path = resImg.RESOURCES__TEXTURES__BASE__TEAM___1__SIDEBASED_PNG;
+                        break;
+                    case TEAM_2:
+                        path = resImg.RESOURCES__TEXTURES__BASE__TEAM___2__SIDEBASED_PNG;
+                        break;
+                }
+                break;
+        }
+        if(path != null) {
+            Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), path);
+        }
     }
 });

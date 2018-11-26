@@ -135,9 +135,40 @@ var Bullet = cc.Sprite.extend({
     getWorldPosition: function () {
         return this.getParent().convertToWorldSpace(this.getPosition());
     },
+    getDamageValue: function () {
+        switch (this.getType()){
+            case TANK_LIGHT:
+                return Setting.BULLET_TANK_LIGHT_DAMAGE;
+            case TANK_MEDIUM:
+                return Setting.BULLET_TANK_MEDIUM_DAMAGE;
+            case TANK_HEAVY:
+                return Setting.BULLET_TANK_HEAVY_DAMAGE;
+            default :
+                return 0;
+        }
+    },
     destroy: function (hasExplosion) {
         if(hasExplosion) {
-            var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_BULLET);
+            var worldPos = this.getWorldPosition();
+            var offset = 20;
+            switch (this.getDirection()) {
+                case DIRECTION_UP:
+                    worldPos.y += offset;
+                    break;
+                case DIRECTION_DOWN:
+                    worldPos.y -= offset;
+                    break;
+                case DIRECTION_LEFT:
+                    worldPos.x -= offset;
+                    break;
+                case DIRECTION_RIGHT:
+                    worldPos.x += offset;
+                    break;
+                default :
+                    break;
+            }
+            var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_BULLET);
+            explosion.setScale(0.4);
             explosion.setCompleteCallback(function () {
                 explosion.removeFromParent(true);
             });

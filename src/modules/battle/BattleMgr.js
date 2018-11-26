@@ -158,6 +158,7 @@ var BattleMgr = cc.Class.extend({
         var curSpr = m[id];
         var tankGunID = curSpr.getTankGunID();
         var sprObj, _id;
+        var isCollision = false;
         for (var i in m) {
             _id = i + "";
             sprObj = m[_id];
@@ -165,24 +166,27 @@ var BattleMgr = cc.Class.extend({
                 //check collision with obstacle
                 if(_id.indexOf("obstacle") != -1 && sprObj.isBarrier()) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        return true;
+                        sprObj.hitBullet(curSpr.getDamageValue());
+                        isCollision = true;
                     }
                 }
                 //check collision with base
                 if(_id.indexOf("base") != -1) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        return true;
+                        sprObj.hitBullet(curSpr.getDamageValue());
+                        isCollision = true;
                     }
                 }
                 //other tank
                 if(_id.indexOf("tank") != -1) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        return true;
+                        sprObj.hitBullet(curSpr.getDamageValue());
+                        isCollision = true;
                     }
                 }
             }
         }
-        return false;
+        return isCollision;
     }
 
 });

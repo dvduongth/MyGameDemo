@@ -10,14 +10,15 @@ var Obstacle = BaseGameObject.extend({
 		switch (this.getType()){
 			case BLOCK_SOFT_OBSTACLE:
 				this.setHP(Setting.OBSTACLE_HP);
+				this.getRootNode().setOpacity(255);
 				Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___1_PNG);
 				break;
 			case BLOCK_HARD_OBSTACLE:
-				this.setHP(0);
+				this.getRootNode().setOpacity(255);
 				Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__CONCRETE_PNG);
 				break;
 			case BLOCK_WATER:
-				this.setHP(0);
+				this.getRootNode().setOpacity(Math.round(255 * MAP_WATER_ALPHA));
 				this._countdownUpdateWater = 0;
 				Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__WATER_PNG);
 				break;
@@ -49,6 +50,20 @@ var Obstacle = BaseGameObject.extend({
 				break;
 		}
 	},
+	hitBullet: function (damage) {
+		if(this.getType() == BLOCK_SOFT_OBSTACLE) {
+			this._super(damage);
+			if(this.getHP() > 0) {
+				if(this.getHP() < 30){
+					Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___4_PNG);
+				}else if(this.getHP() < 60){
+					Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___3_PNG);
+				}else if(this.getHP() < 90){
+					Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___2_PNG);
+				}
+			}
+		}
+	},
 	isBarrier: function () {
 		if(this.getType() == BLOCK_SOFT_OBSTACLE) {
 			return true;
@@ -57,5 +72,9 @@ var Obstacle = BaseGameObject.extend({
 			return true;
 		}
 		return false;
+	},
+	destroy: function () {
+		gv.engine.getBattleMgr().removeObstacle(this.getID());
+		Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___5_PNG);
 	}
 });
