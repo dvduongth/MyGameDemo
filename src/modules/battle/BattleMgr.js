@@ -11,7 +11,7 @@ var BattleMgr = cc.Class.extend({
         return this._className;
     },
     ctor: function () {
-        this.setMatchMgr(new MatchManager());
+        this.setMatchMgr(new MatchMgr());
         this.setBattleFactory(new BattleFactory());
         this.setPlayerMgr(new PlayerMgr());
         LogUtils.getInstance().log([this.getClassName(), "create success"]);

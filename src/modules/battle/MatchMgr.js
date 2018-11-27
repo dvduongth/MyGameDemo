@@ -1,9 +1,9 @@
 "use strict";
 /**
-* MatchManager manage game logic
+* MatchMgr manage game logic
 * */
-var MatchManager = cc.Class.extend({
-    _className: "MatchManager",
+var MatchMgr = cc.Class.extend({
+    _className: "MatchMgr",
     getClassName: function () {
         return this._className;
     },
