@@ -1,3 +1,5 @@
 frameworks/
 simulator/
 runtime/
+idea/
+.idea/workspace.xml
