@@ -106,9 +106,7 @@ var BaseGameObject = cc.Class.extend({
         //todo override me
     },
     destroy: function () {
-        if(this.getRootNode() != null) {
-            this.getRootNode().removeFromParent(true);
-        }
+
     },
     getParent: function () {
         return this.getRootNode().getParent();
@@ -117,9 +115,9 @@ var BaseGameObject = cc.Class.extend({
         return this.getParent().convertToWorldSpace(this.getPosition());
     },
     createHPDisplayProgress: function () {
-        var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_BG_PNG);
+        var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_RED_PNG);
         this.addChild(progressBg);
-        progressBg.setPosition(this.getContentSize().width / 2, this.getContentSize().height);
+        progressBg.setPosition(this.getContentSize().width / 2, this.getContentSize().height + 2);
         this._HPDisplayProgress = Utility.getInstance().createLoadingBar(resImg.RESOURCES__TEXTURES__PROGRESS_BULE_PNG);
         progressBg.addChild(this._HPDisplayProgress);
         this._HPDisplayProgress.setPosition(progressBg.getContentSize().width / 2, progressBg.getContentSize().height / 2);
@@ -128,5 +126,12 @@ var BaseGameObject = cc.Class.extend({
     },
     getHPDisplayProgress: function () {
         return this._HPDisplayProgress;
+    },
+    hitBullet: function (damage) {
+        this.setHP(Math.max(this.getHP() - damage, 0));
+        if(this.getHP() == 0){
+            //todo die
+            this.destroy();
+        }
     }
 });

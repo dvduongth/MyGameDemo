@@ -29,13 +29,15 @@ var SceneLogin = BaseScene.extend({
             moveOffset: cc.p(Math.random() > 0.5 ? 200 : -200, 500)
         };
         Utility.getInstance().showTextOnScene(args);
+        gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(TEAM_1);
+        gv.engine.getBattleMgr().showWinGame();
     },
     onTouchBegan: function (touch, event) {
-        /*LogUtils.getInstance().log(this.getClassName() + " onTouchBegan");
-        var explosion = gv.engine.getEffectMgr().showExplosion(touch.getLocation(), EXPLOSION_BULLET);
+        LogUtils.getInstance().log(this.getClassName() + " onTouchBegan");
+        var explosion = gv.engine.getEffectMgr().showExplosion(touch.getLocation(), EXPLOSION_CANNON);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
-        });*/
+        });
         return true;
     },
 

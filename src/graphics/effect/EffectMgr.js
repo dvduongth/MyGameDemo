@@ -13,7 +13,10 @@ var EffectMgr = cc.Class.extend({
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
-    createAnimation: function (listFileName, isLoop) {
+    createAnimation: function (listFileName, isLoop, duration) {
+        if(duration === undefined) {
+            duration = 1;
+        }
         if (!listFileName || listFileName.length == 0) {
             throw LogUtils.getInstance().error([this.getClassName(), "createAnimation with invalid param listFileName"]);
         }
@@ -31,7 +34,7 @@ var EffectMgr = cc.Class.extend({
             var frameName = listFileName[i];
             animation.addSpriteFrameWithFile(frameName);
         }
-        animation.setDelayPerUnit(1 / 30);
+        animation.setDelayPerUnit(duration / len);
         if (isLoop) {
             animation.setRestoreOriginalFrame(true);
         } else {
@@ -49,68 +52,103 @@ var EffectMgr = cc.Class.extend({
         }
         return ccNode;
     },
-    showExplosion: function (worldPos, type) {
-        var arr = [
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_0_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_1_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_2_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_3_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_4_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_5_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_6_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_7_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_8_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_9_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_10_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_11_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_12_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_13_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_14_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_15_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_16_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_17_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_18_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_19_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_20_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_21_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_22_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_23_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_24_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_25_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_26_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_27_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_28_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_29_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_3_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_30_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_31_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_32_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_33_PNG,
-            resImg.RESOURCES__TEXTURES__EXPLOSION__EXPLOSION_1__EX_34_PNG
-        ];
+    showExplosion: function (worldPos, type, duration) {
+        var arr = [];
         switch (type) {
             case EXPLOSION_TANK:
+                arr = this.getListResourceForExplosionTank();
                 break;
             case EXPLOSION_CANNON:
+                arr = this.getListResourceForExplosionCannon();
                 break;
             case EXPLOSION_OBSTACLE:
+                arr = this.getListResourceForExplosionObstacle();
                 break;
             case EXPLOSION_EMP:
+                arr = this.getListResourceForExplosionEMP();
                 break;
             case EXPLOSION_CANNON_MUZZLE:
+                arr = this.getListResourceForExplosionCannonMuzzle();
                 break;
             case EXPLOSION_GUN_MUZZLE:
+                arr = this.getListResourceForExplosionGunMuzzle();
                 break;
             case EXPLOSION_BULLET:
+                arr = this.getListResourceForExplosionBullet();
+                break;
+            case EXPLOSION_BULLET_6:
+                arr = this.getListResourceForExplosionBullet6();
                 break;
             default :
                 break;
         }
-        var explosion = this.createAnimation(arr, false);
+        var explosion = this.createAnimation(arr, false, duration);
         explosion.setPosition(worldPos);
         gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT).addChild(explosion);
-        explosion.setScale(0.4);
         return explosion;
+    },
+    getListResourceForExplosionTank: function () {
+        var arr = [];
+        for (var i = 1; i <= 35; ++i) {
+            var id = i < 10 ? "0" + i : i;
+            arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX1__EX_" + id + "_PNG"]);
+        }
+        return arr;
+    },
+    getListResourceForExplosionCannon: function () {
+        var arr = [];
+        for (var i = 1; i <= 45; ++i) {
+            var id = i < 10 ? "0" + i : i;
+            arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX2__EX_" + id + "_PNG"]);
+        }
+        return arr;
+    },
+    getListResourceForExplosionObstacle: function () {
+        var arr = [];
+        for (var i = 1; i <= 16; ++i) {
+            var id = i < 10 ? "0" + i : i;
+            arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX3__EX_" + id + "_PNG"]);
+        }
+        return arr;
+    },
+    getListResourceForExplosionEMP: function () {
+        var arr = [];
+        for (var i = 1; i <= 39; ++i) {
+            var id = i < 10 ? "0" + i : i;
+            arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX4__EX_" + id + "_PNG"]);
+        }
+        return arr;
+    },
+    getListResourceForExplosionCannonMuzzle: function () {
+        var arr = [];
+        for (var i = 1; i <= 32; ++i) {
+            var id = i < 10 ? "0" + i : i;
+            arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX7__EX_" + id + "_PNG"]);
+        }
+        return arr;
+    },
+    getListResourceForExplosionGunMuzzle: function () {
+        var arr = [];
+        for (var i = 1; i <= 24; ++i) {
+            var id = i < 10 ? "0" + i : i;
+            arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX8__EX_" + id + "_PNG"]);
+        }
+        return arr;
+    },
+    getListResourceForExplosionBullet: function () {
+        var arr = [];
+        for (var i = 1; i <= 32; ++i) {
+            var id = i < 10 ? "0" + i : i;
+            arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX5__EX_" + id + "_PNG"]);
+        }
+        return arr;
+    },
+    getListResourceForExplosionBullet6: function () {
+        var arr = [];
+        for (var i = 1; i <= 32; ++i) {
+            var id = i < 10 ? "0" + i : i;
+            arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX6__EX_" + id + "_PNG"]);
+        }
+        return arr;
     }
-
 });

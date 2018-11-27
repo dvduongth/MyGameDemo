@@ -1,188 +1,121 @@
 'use strict';
-
+/**
+ * BattleMgr quan ly viec phan bo nhiem vu cho mgr thich hop
+ * MatchMgr quan ly logic game
+ * PlayerMgr quan ly thong tin nguoi choi
+ * BattleFactory quan ly tai nguyen, du lieu, va doi tuong trong battle
+ * */
 var BattleMgr = cc.Class.extend({
     _className: "BattleMgr",
-    _autoID: 0,
     getClassName: function () {
         return this._className;
     },
     ctor: function () {
-        this.setMAPTankSpr({});
+        this.setMatchMgr(new MatchMgr());
+        this.setBattleFactory(new BattleFactory());
+        this.setBattleDataModel(new BattleDataModel());
+        this.setPlayerMgr(new PlayerMgr());
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
+        this.getPlayerMgr().setMyTeam(TEAM_1);
         return true;
     },
-    setMAPTankSpr: function (m) {
-        this._mapTankSpr = m;
+    setBattleFactory: function (m) {
+        this._battleFactory = m;
     },
-    getMAPSprites: function () {
-        return this._mapTankSpr;
+    getBattleFactory: function () {
+        return this._battleFactory;
+    },
+    setBattleDataModel: function (m) {
+        this._battleDataModel = m;
+    },
+    getBattleDataModel: function () {
+        return this._battleDataModel;
+    },
+    setMatchMgr: function (m) {
+        this._matchMgr = m;
+    },
+    getMatchMgr: function () {
+        return this._matchMgr;
+    },
+    setPlayerMgr: function (m) {
+        this._playerMgr = m;
+    },
+    getPlayerMgr: function () {
+        return this._playerMgr;
     },
 
     update: function (dt) {
-        var m = this.getMAPSprites();
+        if (this.getMatchMgr().isPauseGame()) {
+            return false;//todo during pause
+        }
+        var m = this.getBattleFactory().getMAPSprites();
         for (var t in m) {
             if (m[t] != null) {
                 m[t].update(dt);
             }
         }
     },
-    getTankID: function () {
-        return "tank_" + (this._autoID++);
-    },
-    getBulletID: function () {
-        return "bullet_" + (this._autoID++);
+    getCurrentSelectedTank: function () {
+        return this.getBattleFactory().getGameObjectByID(this.getBattleDataModel().getCurrentSelectedTankID());
     },
     throwTank: function (parent, position, team, type) {
-        LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);
-        if (parent != null) {
-            var tank = new Tank(this.getTankID(), team, type);
-            parent.addChild(tank);
-            tank.setPosition(position);
-            this.addTank(tank);
+        var maxNumTank = Setting.NUMBER_OF_TANK;
+        var numberPicked = this.getBattleDataModel().getNumberPickedTank();
+        if (numberPicked >= maxNumTank) {
+            Utility.getInstance().showTextOnScene("RICK MAX NUMBER TANK CAN PICK " + Setting.NUMBER_OF_TANK);
         } else {
-            LogUtils.getInstance().error([this.getClassName(), "throwTank with parent null"]);
+            LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);
+            var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
+            if (tank != null) {
+                this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam(), tank.getType());
+                this.getBattleDataModel().addPickedTankID(tank.getID());
+                this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
+            }
         }
-    },
-    addTank: function (tank) {
-        this.getMAPSprites()[tank.getID()] = tank;
-        LogUtils.getInstance().log([this.getClassName(), "addTank with id", tank.getID()]);
     },
     removeTank: function (id) {
-        if (this.getMAPSprites()[id] != null) {
-            this.getMAPSprites()[id] = null;
-            LogUtils.getInstance().log([this.getClassName(), "removeTank id", id]);
-        }
+        this.getBattleFactory().removeTank(id);
     },
-
     spawnBullet: function (parent, position, direction, team, type, tankGunId) {
-        //LogUtils.getInstance().log([this.getClassName(), "spawnBullet direction", direction]);
-        if (parent != null) {
-            var bullet = new Bullet(this.getBulletID(), direction, team, type, tankGunId);
-            parent.addChild(bullet);
-            bullet.setPosition(position);
-            this.addBullet(bullet);
-        } else {
-            LogUtils.getInstance().error([this.getClassName(), "spawnBullet with parent null"]);
-        }
-    },
-    addBullet: function (bullet) {
-        this.getMAPSprites()[bullet.getID()] = bullet;
-        //LogUtils.getInstance().log([this.getClassName(), "addBullet with id", bullet.getID()]);
+        var bullet = this.getBattleFactory().spawnBulletFactory(parent, position, direction, team, type, tankGunId);
     },
     removeBullet: function (id) {
-        if (this.getMAPSprites()[id] != null) {
-            this.getMAPSprites()[id] = null;
-            //LogUtils.getInstance().log([this.getClassName(), "removeBullet id", id]);
-        }
-    },
-    getBaseID: function () {
-        return "base_" + (this._autoID++);
+        this.getBattleFactory().removeBullet(id);
     },
     updateBase: function (rootNode, team, type) {
         LogUtils.getInstance().log([this.getClassName(), "updateBase team", team, "type", type]);
-        if (rootNode != null) {
-            var obj = new Base(this.getBaseID(), rootNode, team, type);
-            this.addBase(obj);
-        } else {
-            LogUtils.getInstance().error([this.getClassName(), "updateBase with rootNode null"]);
+        var base = this.getBattleFactory().updateBaseFactory(rootNode, team, type);
+        if (base != null) {
+            this.getPlayerMgr().addBaseIDForTeam(base.getID(), base.getTeam(), base.getType());
         }
-    },
-    addBase: function (spr) {
-        this.getMAPSprites()[spr.getID()] = spr;
-        LogUtils.getInstance().log([this.getClassName(), "addBase with id", spr.getID()]);
     },
     removeBase: function (id) {
-        if (this.getMAPSprites()[id] != null) {
-            this.getMAPSprites()[id] = null;
-            LogUtils.getInstance().log([this.getClassName(), "removeBase id", id]);
-        }
-    },
-
-    getObstacleID: function () {
-        return "obstacle_" + (this._autoID++);
+        this.getBattleFactory().removeBase(id);
     },
     updateObstacle: function (rootNode, type) {
         LogUtils.getInstance().log([this.getClassName(), "updateObstacle type", type]);
-        if (rootNode != null) {
-            var obj = new Obstacle(this.getObstacleID(), rootNode, type);
-            this.addObstacle(obj);
-        } else {
-            LogUtils.getInstance().error([this.getClassName(), "updateObstacle with rootNode null"]);
-        }
-    },
-    addObstacle: function (spr) {
-        this.getMAPSprites()[spr.getID()] = spr;
-        LogUtils.getInstance().log([this.getClassName(), "addObstacle with id", spr.getID()]);
+        var obstacle = this.getBattleFactory().updateObstacleFactory(rootNode, type);
     },
     removeObstacle: function (id) {
-        if (this.getMAPSprites()[id] != null) {
-            this.getMAPSprites()[id] = null;
-            LogUtils.getInstance().log([this.getClassName(), "removeObstacle id", id]);
-        }
+        this.getBattleFactory().removeObstacle(id);
     },
+
     checkCollisionTankWithBarrier: function (id) {
-        var m = this.getMAPSprites();
-        var curSpr = m[id];
-        var sprObj, _id;
-        for (var i in m) {
-            _id = i + "";
-            sprObj = m[_id];
-            if (sprObj != null && _id != id) {
-                //check collision with obstacle
-                if(_id.indexOf("obstacle") != -1) {
-                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with obstacle"]);
-                        return true;
-                    }
-                }
-                //check collision with base
-                if(_id.indexOf("base") != -1) {
-                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with base"]);
-                        return true;
-                    }
-                }
-                //other tank
-                if(_id.indexOf("tank") != -1) {
-                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with other tank"]);
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
+        return this.getMatchMgr().checkLogicCollisionTankWithBarrier(id);
     },
     checkCollisionBulletWithTarget: function (id) {
-        var m = this.getMAPSprites();
-        var curSpr = m[id];
-        var tankGunID = curSpr.getTankGunID();
-        var sprObj, _id;
-        for (var i in m) {
-            _id = i + "";
-            sprObj = m[_id];
-            if (sprObj != null && _id != id && _id != tankGunID) {
-                //check collision with obstacle
-                if(_id.indexOf("obstacle") != -1 && sprObj.isBarrier()) {
-                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        return true;
-                    }
-                }
-                //check collision with base
-                if(_id.indexOf("base") != -1) {
-                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        return true;
-                    }
-                }
-                //other tank
-                if(_id.indexOf("tank") != -1) {
-                    if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
+        return this.getMatchMgr().checkLogicCollisionBulletWithTarget(id);
+    },
 
+    checkWinKnockoutKillMainBase: function (id, team) {
+        this.getMatchMgr().checkLogicWinKnockoutKillMainBase(id, team);
+    },
+
+    checkWinKnockoutKillAllTank: function (id, team) {
+        this.getMatchMgr().checkLogicWinKnockoutKillAllTank(id, team);
+    },
+
+    showWinGame: function () {
+        this.getBattleFactory().showTextWinGame(this.getPlayerMgr().getTeamWin());
+    }
 });

@@ -1375,7 +1375,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "ObstacleHard ",
+                    "Name": "ObstacleHard",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -3162,6 +3162,186 @@
                     },
                     "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -167.1488,
+                      "Y": -34.5692
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -188.6488,
+                    "RightMargin": 145.6488,
+                    "TopMargin": 13.0692,
+                    "BottomMargin": -56.0692,
+                    "Tag": 222,
+                    "ActionTag": 841791315,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -126.9584,
+                      "Y": -34.5692
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -148.4584,
+                    "RightMargin": 105.4584,
+                    "TopMargin": 13.0692,
+                    "BottomMargin": -56.0692,
+                    "Tag": 223,
+                    "ActionTag": -1008260179,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -86.7674,
+                      "Y": -34.5692
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -108.2674,
+                    "RightMargin": 65.2674,
+                    "TopMargin": 13.0692,
+                    "BottomMargin": -56.0692,
+                    "Tag": 224,
+                    "ActionTag": -1832603931,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "resources/textures/Map/Brick 1.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 1,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": -46.5777,
+                      "Y": -34.5692
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -68.0777,
+                    "RightMargin": 25.0777,
+                    "TopMargin": 13.0692,
+                    "BottomMargin": -56.0692,
+                    "Tag": 225,
+                    "ActionTag": 281066486,
+                    "Size": {
+                      "X": 43.0,
+                      "Y": 43.0
+                    },
+                    "Name": "ObstacleSoft",
+                    "ctype": "SpriteObjectData"
                   }
                 ],
                 "ActionTag": 88377848,
@@ -3555,7 +3735,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "ObstacleSoft ",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   }
                 ],
@@ -4210,7 +4390,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "ObstacleSoft_0",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4255,7 +4435,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "ObstacleSoft_1",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4300,7 +4480,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "ObstacleSoft_2",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   },
                   {
@@ -4345,7 +4525,7 @@
                       "X": 43.0,
                       "Y": 43.0
                     },
-                    "Name": "ObstacleSoft_3",
+                    "Name": "ObstacleSoft",
                     "ctype": "SpriteObjectData"
                   }
                 ],
