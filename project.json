@@ -58,6 +58,7 @@
         "src/modules/battle/base_object/BaseGameObject.js",
         "src/modules/battle/BattleFactory.js",
         "src/modules/battle/BattleMgr.js",
+        "src/modules/battle/data/BattleDataModel.js",
         "src/modules/battle/MatchMgr.js",
         "src/modules/battle/object/Base.js",
         "src/modules/battle/object/Bullet.js",

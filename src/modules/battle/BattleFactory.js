@@ -31,6 +31,9 @@ var BattleFactory = cc.Class.extend({
     getObstacleID: function () {
         return "obstacle_" + (this._autoID++);
     },
+    getGameObjectByID: function (id) {
+        return this.getMAPSprites()[id];
+    },
 
     throwTankFactory: function (parent, position, team, type) {
         LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);

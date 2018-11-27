@@ -210,115 +210,6 @@ var Tank = cc.Sprite.extend({
             })
         ));
     },
-    onEnter: function () {
-        this._super();
-        this.createKeyBoardListener();
-    },
-    onExit: function () {
-        this.removeKeyBoardListener();
-        this._super();
-    },
-    createKeyBoardListener: function () {
-        this.removeKeyBoardListener();
-        LogUtils.getInstance().log(this.getClassName() + " createKeyBoardListener");
-        if ('keyboard' in cc.sys.capabilities) {
-            var _this = this;
-            this._keyboardListener = cc.EventListener.create({
-                event: cc.EventListener.KEYBOARD,
-                onKeyFlagsChanged: _this.onKeyFlagsChanged.bind(_this),
-                onKeyPressed: _this.onKeyPressed.bind(_this),
-                onKeyReleased: _this.onKeyReleased.bind(_this)
-            });
-            cc.eventManager.addListener(this._keyboardListener, this);
-        } else {
-            LogUtils.getInstance().error([this.getClassName(), "createKeyBoardListener not supported keyboard"]);
-        }
-    },
-    removeKeyBoardListener: function () {
-        if (this._keyboardListener != null) {
-            LogUtils.getInstance().log(this.getClassName() + " removeKeyBoardListener");
-            cc.eventManager.removeListener(this._keyboardListener);
-        }
-        this._keyboardListener = null;
-    },
-    // this callback is only available on JSB + OS X
-    // Not supported on cocos2d-html5
-    onKeyFlagsChanged: function (key) {
-        LogUtils.getInstance().log([this.getClassName(), "Key flags changed:" + key]);
-    },
-    onKeyPressed: function (keyCode, event) {
-        //todo override me
-        //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed keyCode", keyCode]);
-        switch (keyCode) {
-            case cc.KEY.up:
-                //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed UP", keyCode]);
-                this.setDirection(DIRECTION_UP);
-                this.getMapPressAction()["up"] = true;
-                break;
-            case cc.KEY.down:
-                //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed DOWN", keyCode]);
-                this.setDirection(DIRECTION_DOWN);
-                this.getMapPressAction()["down"] = true;
-                break;
-            case cc.KEY.left:
-                //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed LEFT", keyCode]);
-                this.setDirection(DIRECTION_LEFT);
-                this.getMapPressAction()["left"] = true;
-                break;
-            case cc.KEY.right:
-                //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed RIGHT", keyCode]);
-                this.setDirection(DIRECTION_RIGHT);
-                this.getMapPressAction()["right"] = true;
-                break;
-            case cc.KEY.enter:
-            case cc.KEY.space:
-                if (!this._isHunting) {
-                    this._isHunting = true;
-                    this.Hunt();
-                } else {
-                    this._isHunting = false;
-                    this.stopHunt();
-                }
-                break;
-        }
-    },
-    onKeyReleased: function (keyCode, event) {
-        var isDuringPress;
-        //LogUtils.getInstance().log([this.getClassName(), "onKeyReleased keyCode", keyCode]);
-        switch (keyCode) {
-            case cc.KEY.up:
-                //LogUtils.getInstance().log([this.getClassName(), "onKeyReleased UP", keyCode]);
-                this.getMapPressAction()["up"] = false;
-                break;
-            case cc.KEY.down:
-                //LogUtils.getInstance().log([this.getClassName(), "onKeyReleased DOWN", keyCode]);
-                this.getMapPressAction()["down"] = false;
-                break;
-            case cc.KEY.left:
-                //LogUtils.getInstance().log([this.getClassName(), "onKeyReleased LEFT", keyCode]);
-                this.getMapPressAction()["left"] = false;
-                break;
-            case cc.KEY.right:
-                //LogUtils.getInstance().log([this.getClassName(), "onKeyReleased RIGHT", keyCode]);
-                this.getMapPressAction()["right"] = false;
-                break;
-        }
-        isDuringPress = this.getMapPressAction()["left"] || this.getMapPressAction()["right"];
-        isDuringPress = isDuringPress || this.getMapPressAction()["up"] || this.getMapPressAction()["down"];
-        if (isDuringPress) {
-            if (this.getMapPressAction()["up"]) {
-                this.onKeyPressed(cc.KEY.up, event);
-            } else if (this.getMapPressAction()["down"]) {
-                this.onKeyPressed(cc.KEY.down, event);
-            } else if (this.getMapPressAction()["left"]) {
-                this.onKeyPressed(cc.KEY.left, event);
-            } else if (this.getMapPressAction()["right"]) {
-                this.onKeyPressed(cc.KEY.right, event);
-            }
-        } else {
-            this.setDirection(DIRECTION_IDLE);
-        }
-    },
     setBlockGun: function (eff) {
         this._blockGun = eff;
     },
@@ -387,6 +278,9 @@ var Tank = cc.Sprite.extend({
     setHP: function (t) {
         this._HP = t;
         var percent = Math.round(100 * t / this.getHPMax());
+        if(_.isNaN(percent) || percent < 0) {
+            percent = 0;
+        }
         this.getHPDisplayProgress().setPercent(percent);
     },
     getHP: function () {

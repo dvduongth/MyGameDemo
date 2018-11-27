@@ -19,6 +19,15 @@ var PlayerMgr = cc.Class.extend({
     getMAPGameObjectID: function () {
         return this._mapGameObjectID;
     },
+    setMyTeam: function (m) {
+        this._myTeam = m;
+    },
+    getMyTeam: function () {
+        return this._myTeam;
+    },
+    isMyTeam: function (m) {
+        return m === this.getMyTeam();
+    },
     addTankIDForTeam: function (id, team, type) {
         this.getMAPGameObjectID()[id] = {team: team, type: type};
     },

@@ -13,8 +13,10 @@ var BattleMgr = cc.Class.extend({
     ctor: function () {
         this.setMatchMgr(new MatchMgr());
         this.setBattleFactory(new BattleFactory());
+        this.setBattleDataModel(new BattleDataModel());
         this.setPlayerMgr(new PlayerMgr());
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
+        this.getPlayerMgr().setMyTeam(TEAM_1);
         return true;
     },
     setBattleFactory: function (m) {
@@ -22,6 +24,12 @@ var BattleMgr = cc.Class.extend({
     },
     getBattleFactory: function () {
         return this._battleFactory;
+    },
+    setBattleDataModel: function (m) {
+        this._battleDataModel = m;
+    },
+    getBattleDataModel: function () {
+        return this._battleDataModel;
     },
     setMatchMgr: function (m) {
         this._matchMgr = m;
@@ -37,7 +45,7 @@ var BattleMgr = cc.Class.extend({
     },
 
     update: function (dt) {
-        if(this.getMatchMgr().isPauseGame()) {
+        if (this.getMatchMgr().isPauseGame()) {
             return false;//todo during pause
         }
         var m = this.getBattleFactory().getMAPSprites();
@@ -47,12 +55,22 @@ var BattleMgr = cc.Class.extend({
             }
         }
     },
-
+    getCurrentSelectedTank: function () {
+        return this.getBattleFactory().getGameObjectByID(this.getBattleDataModel().getCurrentSelectedTankID());
+    },
     throwTank: function (parent, position, team, type) {
-        LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);
-        var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
-        if(tank != null) {
-            this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam(), tank.getType());
+        var maxNumTank = Setting.NUMBER_OF_TANK;
+        var numberPicked = this.getBattleDataModel().getNumberPickedTank();
+        if (numberPicked >= maxNumTank) {
+            Utility.getInstance().showTextOnScene("RICK MAX NUMBER TANK CAN PICK " + Setting.NUMBER_OF_TANK);
+        } else {
+            LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);
+            var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
+            if (tank != null) {
+                this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam(), tank.getType());
+                this.getBattleDataModel().addPickedTankID(tank.getID());
+                this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
+            }
         }
     },
     removeTank: function (id) {
@@ -67,7 +85,7 @@ var BattleMgr = cc.Class.extend({
     updateBase: function (rootNode, team, type) {
         LogUtils.getInstance().log([this.getClassName(), "updateBase team", team, "type", type]);
         var base = this.getBattleFactory().updateBaseFactory(rootNode, team, type);
-        if(base != null){
+        if (base != null) {
             this.getPlayerMgr().addBaseIDForTeam(base.getID(), base.getTeam(), base.getType());
         }
     },
