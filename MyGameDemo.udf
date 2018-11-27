@@ -30,11 +30,6 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <ActiveDocument />
-      </Value>
-    </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
         <OpenedDocuments>
           <FilePathData Path="zccs/scene/battle/SceneBattle.csd" />
         </OpenedDocuments>

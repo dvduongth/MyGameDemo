@@ -5,38 +5,43 @@ var SceneBattle = BaseScene.extend({
         this.btnBackToLobby = null;
         this.btnClose = null;
         this.sprMapBackground = null;
-        this.slotTank_0_Team_1 = null;
-        this.slotTank_1_Team_1 = null;
-        this.slotTank_2_Team_1 = null;
-        this.imgTank_0_Team_1 = null;
-        this.imgTank_1_Team_1 = null;
-        this.imgTank_2_Team_1 = null;
-        this.imgTank_3_Team_1 = null;
+        this.sprClock = null;
+        this.lbCountdownTime = null;
+        this.imgTank_0 = null;
+        this.imgTank_1 = null;
+        this.imgTank_2 = null;
+        this.btnTank_0 = null;
+        this.btnTank_1 = null;
+        this.btnTank_2 = null;
+        this.btnTank_3 = null;
+        this.btnNextTank = null;
+        this.btnTankHunt = null;
 
         this._super(resJson.ZCCS__SCENE__BATTLE__SCENEBATTLE);
     },
     initScene: function () {
         this.setMapDisplayPickTank({});
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
-        this.createTouchListenerOneByOneTank();
         this.setMapKeyFindObject({});
         this.initBase();
         this.initObstacle();
         this.findAndInitGameObject();
         this.initDisplayPickTankSlot();
         this.createKeyBoardListener();
+        this.createTouchListenerOneByOne();
+        this.createTouchListenerOneByOneTank();
     },
     initDisplayPickTankSlot: function () {
         switch (gv.engine.getBattleMgr().getPlayerMgr().getMyTeam()){
             case TEAM_1:
-                Utility.getInstance().updateSpriteWithFileName(this.imgTank_0_Team_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1A_PNG);
-                Utility.getInstance().updateSpriteWithFileName(this.imgTank_1_Team_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__2A_PNG);
-                Utility.getInstance().updateSpriteWithFileName(this.imgTank_2_Team_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__3A_PNG);
+                Utility.getInstance().updateSpriteWithFileName(this.imgTank_0, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1A_PNG);
+                Utility.getInstance().updateSpriteWithFileName(this.imgTank_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__2A_PNG);
+                Utility.getInstance().updateSpriteWithFileName(this.imgTank_2, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__3A_PNG);
                 break;
             case TEAM_2:
-                Utility.getInstance().updateSpriteWithFileName(this.imgTank_0_Team_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___2__1A_PNG);
-                Utility.getInstance().updateSpriteWithFileName(this.imgTank_1_Team_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___2__2A_PNG);
-                Utility.getInstance().updateSpriteWithFileName(this.imgTank_2_Team_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___2__3A_PNG);
+                Utility.getInstance().updateSpriteWithFileName(this.imgTank_0, resImg.RESOURCES__TEXTURES__TANK__TEAM___2__1A_PNG);
+                Utility.getInstance().updateSpriteWithFileName(this.imgTank_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___2__2A_PNG);
+                Utility.getInstance().updateSpriteWithFileName(this.imgTank_2, resImg.RESOURCES__TEXTURES__TANK__TEAM___2__3A_PNG);
                 break;
         }
     },
@@ -51,7 +56,6 @@ var SceneBattle = BaseScene.extend({
     },
     clearScene: function () {
         this.removeTouchListenerOneByOneTank();
-        this.removeKeyBoardListener();
         this._super();
     },
     updateDisplayPickTankSlot: function () {
@@ -59,13 +63,13 @@ var SceneBattle = BaseScene.extend({
         var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank();
         if(numberPicked >= maxNumTank) {
             this.removeTouchListenerOneByOneTank();
-            this.imgTank_0_Team_1.setVisible(false);
-            this.imgTank_1_Team_1.setVisible(false);
-            this.imgTank_2_Team_1.setVisible(false);
+            this.imgTank_0.setVisible(false);
+            this.imgTank_1.setVisible(false);
+            this.imgTank_2.setVisible(false);
         }else{
-            this.imgTank_0_Team_1.setVisible(true);
-            this.imgTank_1_Team_1.setVisible(true);
-            this.imgTank_2_Team_1.setVisible(true);
+            this.imgTank_0.setVisible(true);
+            this.imgTank_1.setVisible(true);
+            this.imgTank_2.setVisible(true);
 
         }
     },
@@ -158,9 +162,9 @@ var SceneBattle = BaseScene.extend({
             onTouchEnded: _this.onTouchEndedTank.bind(_this),
             onTouchCancelled: _this.onTouchCancelledTank.bind(_this)
         });
-        cc.eventManager.addListener(this._touchListenerBaseOneByOneTank_0, this.imgTank_0_Team_1);
-        cc.eventManager.addListener(this._touchListenerBaseOneByOneTank_1, this.imgTank_1_Team_1);
-        cc.eventManager.addListener(this._touchListenerBaseOneByOneTank_2, this.imgTank_2_Team_1);
+        cc.eventManager.addListener(this._touchListenerBaseOneByOneTank_0, this.imgTank_0);
+        cc.eventManager.addListener(this._touchListenerBaseOneByOneTank_1, this.imgTank_1);
+        cc.eventManager.addListener(this._touchListenerBaseOneByOneTank_2, this.imgTank_2);
     },
     removeTouchListenerOneByOneTank: function () {
         if (this._touchListenerBaseOneByOneTank_0 != null) {
@@ -185,13 +189,13 @@ var SceneBattle = BaseScene.extend({
         if (isCorrect) {
             LogUtils.getInstance().log([this.getClassName(), "touch tank began"]);
             Utility.getInstance().showTextOnScene(this.getClassName() + " touch tank began");
+            gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(true);
             return true;
         } else {
             //LogUtils.getInstance().log([this.getClassName(), "touch not correct"]);
             return false;
         }
     },
-
     onTouchMovedTank: function (touch, event) {
         var target = event.getCurrentTarget();
         var parent = target.getParent();
@@ -209,8 +213,8 @@ var SceneBattle = BaseScene.extend({
         }
         return true;
     },
-
     onTouchEndedTank: function (touch, event) {
+        gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(false);
         LogUtils.getInstance().log([this.getClassName(), "touch tank ended"]);
         var target = event.getCurrentTarget();
         var parent = target.getParent();
@@ -221,13 +225,13 @@ var SceneBattle = BaseScene.extend({
         if (cc.rectContainsPoint(rect, nPos)) {
             var type;
             switch (target) {
-                case this.imgTank_0_Team_1:
+                case this.imgTank_0:
                     type = TANK_LIGHT;
                     break;
-                case this.imgTank_1_Team_1:
+                case this.imgTank_1:
                     type = TANK_MEDIUM;
                     break;
-                case this.imgTank_2_Team_1:
+                case this.imgTank_2:
                     type = TANK_HEAVY;
                     break;
                 default :
@@ -240,8 +244,8 @@ var SceneBattle = BaseScene.extend({
         target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
         target.setScale(1);
     },
-
     onTouchCancelledTank: function (touch, event) {
+        gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(false);
         LogUtils.getInstance().log([this.getClassName(), "touch tank cancelled"]);
         var target = event.getCurrentTarget();
         var parent = target.getParent();
@@ -249,33 +253,64 @@ var SceneBattle = BaseScene.extend({
         target.setScale(1);
     },
 
-    createKeyBoardListener: function () {
-        this.removeKeyBoardListener();
-        LogUtils.getInstance().log(this.getClassName() + " createKeyBoardListener");
-        if ('keyboard' in cc.sys.capabilities) {
-            var _this = this;
-            this._keyboardListener = cc.EventListener.create({
-                event: cc.EventListener.KEYBOARD,
-                onKeyFlagsChanged: _this.onKeyFlagsChanged.bind(_this),
-                onKeyPressed: _this.onKeyPressed.bind(_this),
-                onKeyReleased: _this.onKeyReleased.bind(_this)
-            });
-            cc.eventManager.addListener(this._keyboardListener, this);
-        } else {
-            LogUtils.getInstance().error([this.getClassName(), "createKeyBoardListener not supported keyboard"]);
+    checkTankAction: function (touch) {
+        var tank = gv.engine.getBattleMgr().getCurrentSelectedTank();
+        if(!tank) {
+            LogUtils.getInstance().error([this.getClassName(), "checkTankAction not yet select tank"]);
+            return false;
+        }
+        var parent = tank.getParent();
+        var worldPos = parent.convertToWorldSpace(tank.getPosition());
+        var touchPos = touch.getLocation();
+        var delta = cc.pSub(touchPos, worldPos);
+        if(Math.abs(delta.x) > Math.abs(delta.y)){
+            if(delta.x > 0) {
+                //move to right
+                tank.tankAction(cc.KEY.right);
+            }else{
+                tank.tankAction(cc.KEY.left);
+            }
+        }else{
+            if(delta.y > 0) {
+                //move to top
+                tank.tankAction(cc.KEY.up);
+            }else{
+                tank.tankAction(cc.KEY.down);
+            }
         }
     },
-    removeKeyBoardListener: function () {
-        if (this._keyboardListener != null) {
-            LogUtils.getInstance().log(this.getClassName() + " removeKeyBoardListener");
-            cc.eventManager.removeListener(this._keyboardListener);
+    onTouchBegan: function (touch, event) {
+        if(gv.engine.getBattleMgr().getMatchMgr().isLockTankAction()){
+            LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action"]);
+            return false;
         }
-        this._keyboardListener = null;
+        LogUtils.getInstance().log([this.getClassName(), "onTouchBegan check tank action"]);
+        this.checkTankAction(touch);
+        return true;
     },
-    // this callback is only available on JSB + OS X
-    // Not supported on cocos2d-html5
-    onKeyFlagsChanged: function (key) {
-        LogUtils.getInstance().log([this.getClassName(), "Key flags changed:" + key]);
+    onTouchMoved: function (touch, event) {
+        if(gv.engine.getBattleMgr().getMatchMgr().isLockTankAction()){
+            LogUtils.getInstance().log([this.getClassName(), "onTouchMoved is during lock tank action"]);
+            return false;
+        }
+        this.checkTankAction(touch);
+        return true;
+    },
+    onTouchEnded: function (touch, event) {
+        var tank = gv.engine.getBattleMgr().getCurrentSelectedTank();
+        if(!tank) {
+            LogUtils.getInstance().error([this.getClassName(), "onTouchEnded not yet select tank"]);
+            return false;
+        }
+        tank.tankAction(null);
+    },
+    onTouchCancelled: function (touch, event) {
+        var tank = gv.engine.getBattleMgr().getCurrentSelectedTank();
+        if(!tank) {
+            LogUtils.getInstance().error([this.getClassName(), "onTouchCancelled not yet select tank"]);
+            return false;
+        }
+        tank.tankAction(null);
     },
     onKeyPressed: function (keyCode, event) {
         //todo override me

@@ -4,9 +4,9 @@ var Setting = {};
 // ====================================================================================================
 // Other stuff
 Setting.NUMBER_OF_TANK = 4;
-Setting.TANK_HEAVY_HP = 60;
-Setting.TANK_MEDIUM_HP = 40;
-Setting.TANK_LIGHT_HP = 20;
+Setting.TANK_HEAVY_HP = 150;
+Setting.TANK_MEDIUM_HP = 100;
+Setting.TANK_LIGHT_HP = 50;
 Setting.BASE_MAIN_HP = 300;
 Setting.BASE_SIDE_HP = 200;
 Setting.OBSTACLE_HP = 100;

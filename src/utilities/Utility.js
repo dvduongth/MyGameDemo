@@ -102,6 +102,9 @@ var Utility = (function () {
         };
 
         instance.getSpriteFileName = function (fileName) {
+            if(fileName == null) {
+                return "";
+            }
             if (cc.spriteFrameCache.getSpriteFrame(fileName)) {
                 return "#" + fileName;
             } else {
@@ -122,6 +125,11 @@ var Utility = (function () {
                 LogUtils.getInstance().error([getName(), "updateSpriteWithFileName with sprite null fileName", fileName]);
                 return false;
             }
+            if(fileName == null) {
+                LogUtils.getInstance().error([getName(), "updateSpriteWithFileName with fileName null", fileName]);
+                return false;
+            }
+
             if (cc.spriteFrameCache.getSpriteFrame(fileName)) {
                 //todo cached
                 if (spr.loadTexture) {

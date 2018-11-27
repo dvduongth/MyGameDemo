@@ -1315,101 +1315,76 @@
                   <AbstractNodeData Name="Panel_2_11" ActionTag="590409940" Tag="215" IconVisible="False" LeftMargin="-450.0000" RightMargin="-450.0000" TopMargin="-200.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="900.0000" Y="200.0000" />
                     <Children>
-                      <AbstractNodeData Name="slotTank_0_Team_1" ActionTag="-1690328356" Tag="216" IconVisible="False" LeftMargin="54.1608" RightMargin="685.8392" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                        <Size X="160.0000" Y="160.0000" />
+                      <AbstractNodeData Name="slotTank_0" ActionTag="-1690328356" Tag="216" IconVisible="False" LeftMargin="145.6103" RightMargin="574.3898" TopMargin="12.7952" BottomMargin="7.2048" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                        <Size X="180.0000" Y="180.0000" />
                         <Children>
-                          <AbstractNodeData Name="imgTank_0_Team_1" ActionTag="-1312654583" Tag="217" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="imgTank_0" ActionTag="-1312654583" Tag="217" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="15.0000" BottomMargin="15.0000" LeftEage="13" RightEage="13" TopEage="13" BottomEage="13" Scale9OriginX="13" Scale9OriginY="13" Scale9Width="14" Scale9Height="14" ctype="ImageViewObjectData">
                             <Size X="150.0000" Y="150.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="80.0000" Y="80.0000" />
+                            <Position X="90.0000" Y="90.0000" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5000" Y="0.5000" />
-                            <PreSize X="0.9375" Y="0.9375" />
+                            <PreSize X="0.8333" Y="0.8333" />
                             <FileData Type="Normal" Path="resources/textures/Tank/Team 1/1A.png" Plist="" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint />
-                        <Position X="54.1608" Y="21.8905" />
+                        <Position X="145.6103" Y="7.2048" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.0602" Y="0.1095" />
-                        <PreSize X="0.1778" Y="0.8000" />
+                        <PrePosition X="0.1618" Y="0.0360" />
+                        <PreSize X="0.2000" Y="0.9000" />
                         <SingleColor A="255" R="128" G="0" B="128" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_1_Team_1" ActionTag="-746500973" Tag="218" IconVisible="False" LeftMargin="264.6614" RightMargin="475.3386" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                        <Size X="160.0000" Y="160.0000" />
+                      <AbstractNodeData Name="slotTank_1" ActionTag="-746500973" Tag="218" IconVisible="False" LeftMargin="356.1107" RightMargin="363.8893" TopMargin="12.7952" BottomMargin="7.2048" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                        <Size X="180.0000" Y="180.0000" />
                         <Children>
-                          <AbstractNodeData Name="imgTank_1_Team_1" ActionTag="-896057026" Tag="219" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="imgTank_1" ActionTag="-896057026" Tag="219" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="15.0000" BottomMargin="15.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
                             <Size X="150.0000" Y="150.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="80.0000" Y="80.0000" />
+                            <Position X="90.0000" Y="90.0000" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5000" Y="0.5000" />
-                            <PreSize X="0.9375" Y="0.9375" />
+                            <PreSize X="0.8333" Y="0.8333" />
                             <FileData Type="Normal" Path="resources/textures/Tank/Team 1/2A.png" Plist="" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint />
-                        <Position X="264.6614" Y="21.8904" />
+                        <Position X="356.1107" Y="7.2048" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.2941" Y="0.1095" />
-                        <PreSize X="0.1778" Y="0.8000" />
+                        <PrePosition X="0.3957" Y="0.0360" />
+                        <PreSize X="0.2000" Y="0.9000" />
                         <SingleColor A="255" R="128" G="0" B="128" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_2_Team_1" ActionTag="-1624680280" Tag="220" IconVisible="False" LeftMargin="475.1620" RightMargin="264.8380" TopMargin="18.1095" BottomMargin="21.8905" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                        <Size X="160.0000" Y="160.0000" />
+                      <AbstractNodeData Name="slotTank_2" ActionTag="-1624680280" Tag="220" IconVisible="False" LeftMargin="566.6125" RightMargin="153.3875" TopMargin="12.7952" BottomMargin="7.2048" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                        <Size X="180.0000" Y="180.0000" />
                         <Children>
-                          <AbstractNodeData Name="imgTank_2_Team_1" ActionTag="-1808892263" Tag="221" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
+                          <AbstractNodeData Name="imgTank_2" ActionTag="-1808892263" Tag="221" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="15.0000" RightMargin="15.0000" TopMargin="15.0000" BottomMargin="15.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
                             <Size X="150.0000" Y="150.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="80.0000" Y="80.0000" />
+                            <Position X="90.0000" Y="90.0000" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5000" Y="0.5000" />
-                            <PreSize X="0.9375" Y="0.9375" />
+                            <PreSize X="0.8333" Y="0.8333" />
                             <FileData Type="Normal" Path="resources/textures/Tank/Team 1/3A.png" Plist="" />
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint />
-                        <Position X="475.1620" Y="21.8905" />
+                        <Position X="566.6125" Y="7.2048" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5280" Y="0.1095" />
-                        <PreSize X="0.1778" Y="0.8000" />
-                        <SingleColor A="255" R="128" G="0" B="128" />
-                        <FirstColor A="255" R="150" G="200" B="255" />
-                        <EndColor A="255" R="255" G="255" B="255" />
-                        <ColorVector ScaleY="1.0000" />
-                      </AbstractNodeData>
-                      <AbstractNodeData Name="slotTank_3_Team_1" ActionTag="618396541" Tag="222" IconVisible="False" LeftMargin="685.6627" RightMargin="54.3373" TopMargin="18.1096" BottomMargin="21.8904" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                        <Size X="160.0000" Y="160.0000" />
-                        <Children>
-                          <AbstractNodeData Name="imgTank_3_Team_1" ActionTag="989383600" Tag="223" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="5.0000" BottomMargin="5.0000" Scale9Width="40" Scale9Height="40" ctype="ImageViewObjectData">
-                            <Size X="150.0000" Y="150.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="80.0000" Y="80.0000" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5000" Y="0.5000" />
-                            <PreSize X="0.9375" Y="0.9375" />
-                            <FileData Type="Normal" Path="resources/textures/Tank/Team 1/3A.png" Plist="" />
-                          </AbstractNodeData>
-                        </Children>
-                        <AnchorPoint />
-                        <Position X="685.6627" Y="21.8904" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.7618" Y="0.1095" />
-                        <PreSize X="0.1778" Y="0.8000" />
+                        <PrePosition X="0.6296" Y="0.0360" />
+                        <PreSize X="0.2000" Y="0.9000" />
                         <SingleColor A="255" R="128" G="0" B="128" />
                         <FirstColor A="255" R="150" G="200" B="255" />
                         <EndColor A="255" R="255" G="255" B="255" />
@@ -1423,6 +1398,109 @@
                     <PrePosition />
                     <PreSize X="0.0000" Y="0.0000" />
                     <SingleColor A="255" R="150" G="200" B="255" />
+                    <FirstColor A="255" R="150" G="200" B="255" />
+                    <EndColor A="255" R="255" G="255" B="255" />
+                    <ColorVector ScaleY="1.0000" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Panel_2" ActionTag="-449252719" Tag="226" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" BottomMargin="-60.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+                    <Size X="300.0000" Y="60.0000" />
+                    <Children>
+                      <AbstractNodeData Name="btnTank_0" ActionTag="-4446768" Tag="227" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="35.8330" RightMargin="224.1670" TopMargin="9.1888" BottomMargin="10.8112" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="10" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="40.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="55.8330" Y="30.8112" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.1861" Y="0.5135" />
+                        <PreSize X="0.1333" Y="0.6667" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <DisabledFileData Type="Normal" Path="resources/textures/Tank/Team 1/1D.png" Plist="" />
+                        <PressedFileData Type="Normal" Path="resources/textures/Tank/Team 1/1S.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="resources/textures/Tank/Team 1/1A.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="btnTank_1" ActionTag="1620880654" Tag="228" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="98.3973" RightMargin="161.6027" TopMargin="9.1888" BottomMargin="10.8112" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="10" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="40.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="118.3973" Y="30.8112" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.3947" Y="0.5135" />
+                        <PreSize X="0.1333" Y="0.6667" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <DisabledFileData Type="Normal" Path="resources/textures/Tank/Team 1/2D.png" Plist="" />
+                        <PressedFileData Type="Normal" Path="resources/textures/Tank/Team 1/2S.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="resources/textures/Tank/Team 1/2A.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="btnTank_2" ActionTag="-1503233003" Tag="229" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="160.9587" RightMargin="99.0413" TopMargin="9.1888" BottomMargin="10.8112" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="10" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="40.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="180.9587" Y="30.8112" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.6032" Y="0.5135" />
+                        <PreSize X="0.1333" Y="0.6667" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <DisabledFileData Type="Normal" Path="resources/textures/Tank/Team 1/3D.png" Plist="" />
+                        <PressedFileData Type="Normal" Path="resources/textures/Tank/Team 1/3S.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="resources/textures/Tank/Team 1/3A.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="btnTank_3" ActionTag="717946046" Tag="230" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="223.5239" RightMargin="36.4761" TopMargin="9.1888" BottomMargin="10.8112" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="10" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="40.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="243.5239" Y="30.8112" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.8117" Y="0.5135" />
+                        <PreSize X="0.1333" Y="0.6667" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <DisabledFileData Type="Normal" Path="resources/textures/Tank/Team 1/1D.png" Plist="" />
+                        <PressedFileData Type="Normal" Path="resources/textures/Tank/Team 1/1S.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="resources/textures/Tank/Team 1/1A.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="btnNextTank" ActionTag="-297719958" Tag="233" IconVisible="False" LeftMargin="295.1830" RightMargin="-72.1830" TopMargin="-1.1098" BottomMargin="-14.8902" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="47" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="77.0000" Y="76.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="333.6830" Y="23.1098" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.1123" Y="0.3852" />
+                        <PreSize X="0.2567" Y="1.2667" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <PressedFileData Type="Normal" Path="button/back_btn.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="button/back_btn.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                      <AbstractNodeData Name="btnTankHunt" ActionTag="1492256921" Tag="234" IconVisible="False" LeftMargin="381.5833" RightMargin="-121.5833" TopMargin="12.0523" BottomMargin="7.9477" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="10" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="40.0000" Y="40.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="401.5833" Y="27.9477" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.3386" Y="0.4658" />
+                        <PreSize X="0.1333" Y="0.6667" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <PressedFileData Type="Normal" Path="resources/textures/PowerUp/Airstrike.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="resources/textures/PowerUp/Airstrike.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
+                    </Children>
+                    <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <SingleColor A="255" R="128" G="0" B="128" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
@@ -2455,6 +2533,31 @@
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="0.7246" Y="0.4076" />
             <FileData Type="Normal" Path="resources/textures/Map/Background_1.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="sprClock" ActionTag="-1236766851" Tag="231" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="BothEdge" LeftMargin="187.5721" RightMargin="947.4279" TopMargin="530.0618" BottomMargin="1572.9382" ctype="SpriteObjectData">
+            <Size X="107.0000" Y="105.0000" />
+            <Children>
+              <AbstractNodeData Name="lbCountdownTime" ActionTag="1126955779" Tag="232" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="23.9999" RightMargin="24.0001" TopMargin="30.0009" BottomMargin="43.9991" FontSize="20" LabelText="03:59" OutlineEnabled="True" ShadowOffsetX="0.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="59.0000" Y="31.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="53.4999" Y="59.4991" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5667" />
+                <PreSize X="0.5421" Y="0.2762" />
+                <FontResource Type="Normal" Path="fonts/font_game_bold.ttf" Plist="" />
+                <OutlineColor A="255" R="12" G="55" B="118" />
+                <ShadowColor A="255" R="64" G="87" B="121" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="241.0721" Y="1625.4382" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1941" Y="0.7362" />
+            <PreSize X="0.0862" Y="0.0476" />
+            <FileData Type="Normal" Path="resources/textures/clock.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="btnBackToLobby" ActionTag="566998122" Tag="224" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="953.7490" RightMargin="27.2510" TopMargin="32.9434" BottomMargin="2102.0566" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="231" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

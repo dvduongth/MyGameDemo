@@ -57,6 +57,7 @@ var Tank = cc.Sprite.extend({
         this.setMapPressAction({});
         this.createTankSprite();
         this.createHPDisplayProgress();
+        this.createTouchListenerOneByOneTank();
     },
     createTankSprite: function () {
         var path;
@@ -96,11 +97,110 @@ var Tank = cc.Sprite.extend({
         }
         this._tankSprite = Utility.getInstance().createSpriteFromFileName(path);
         this.addChild(this._tankSprite);
-        this._tankSprite.setPosition(this.getContentSize().width / 2, this.getContentSize().height / 2);
+        var shadowOffset = cc.p(-2, -2);
+        this._tankSprite.setPosition(this.getContentSize().width / 2 - shadowOffset.x, this.getContentSize().height / 2 - shadowOffset.y);
     },
     getTankSprite: function () {
         return this._tankSprite;
     },
+    createTouchListenerOneByOneTank: function () {
+        this.removeTouchListenerOneByOneTank();
+        var _this = this;
+        this._touchListenerBaseOneByOne = cc.EventListener.create({
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: true,
+            onTouchBegan: _this.onTouchBeganTank.bind(_this),
+            onTouchMoved: _this.onTouchMovedTank.bind(_this),
+            onTouchEnded: _this.onTouchEndedTank.bind(_this),
+            onTouchCancelled: _this.onTouchCancelledTank.bind(_this)
+        });
+        cc.eventManager.addListener(this._touchListenerBaseOneByOne, this.getTankSprite());
+    },
+    removeTouchListenerOneByOneTank: function () {
+        if (this._touchListenerBaseOneByOne != null) {
+            cc.eventManager.removeListener(this._touchListenerBaseOneByOne);
+        }
+        this._touchListenerBaseOneByOne = null;
+    },
+    onTouchBeganTank: function (touch, event) {
+        var target = event.getCurrentTarget();
+        var locationInNode = target.convertToNodeSpace(touch.getLocation());
+        var s = target.getContentSize();
+        var rect = cc.rect(0, 0, s.width, s.height);
+        var isCorrect = cc.rectContainsPoint(rect, locationInNode);
+        if (isCorrect) {
+            gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(true);
+            LogUtils.getInstance().log([this.getClassName(), "touch tank began"]);
+            Utility.getInstance().showTextOnScene(this.getClassName() + " touch tank began");
+            this.tankAction(cc.KEY.enter);
+            gv.engine.getBattleMgr().getBattleDataModel().setCurrentSelectedTankID(this.getID());
+            return true;
+        } else {
+            //LogUtils.getInstance().log([this.getClassName(), "touch not correct"]);
+            return false;
+        }
+    },
+    onTouchMovedTank: function (touch, event) {
+        var target = event.getCurrentTarget();
+        var parent = target.getParent();
+        var worldPos = parent.convertToWorldSpace(target.getPosition());
+        var touchPos = touch.getLocation();
+        var delta = cc.pSub(touchPos, worldPos);
+        if(Math.abs(delta.x) > Math.abs(delta.y)){
+            if(delta.x > 0) {
+                //move to right
+                this.tankAction(cc.KEY.right);
+            }else{
+                this.tankAction(cc.KEY.left);
+            }
+        }else{
+            if(delta.y > 0) {
+                //move to top
+                this.tankAction(cc.KEY.up);
+            }else{
+                this.tankAction(cc.KEY.down);
+            }
+        }
+        return true;
+    },
+    onTouchEndedTank: function (touch, event) {
+        gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(false);
+        this.tankAction(null);
+    },
+    onTouchCancelledTank: function (touch, event) {
+        gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(false);
+        this.tankAction(null);
+    },
+    tankAction: function (keyCode) {
+        var tank = this;
+        switch (keyCode) {
+            case cc.KEY.up:
+                tank.setDirection(DIRECTION_UP);
+                break;
+            case cc.KEY.down:
+                tank.setDirection(DIRECTION_DOWN);
+                break;
+            case cc.KEY.left:
+                tank.setDirection(DIRECTION_LEFT);
+                break;
+            case cc.KEY.right:
+                tank.setDirection(DIRECTION_RIGHT);
+                break;
+            case cc.KEY.enter:
+                if (!tank._isHunting) {
+                    tank._isHunting = true;
+                    tank.Hunt();
+                } else {
+                    tank._isHunting = false;
+                    tank.stopHunt();
+                }
+                break;
+            default :
+                tank.setDirection(DIRECTION_IDLE);
+                break;
+        }
+    },
+
     resetHP: function () {
         switch (this.getType()) {
             case TANK_LIGHT:
@@ -308,6 +408,7 @@ var Tank = cc.Sprite.extend({
         this._HPDisplayProgress.setPercent(100);
         progressBg.setScale(0.25);
         this.setObjectProgressDisplay(progressBg);
+        this.resetHP();
     },
     getHPDisplayProgress: function () {
         return this._HPDisplayProgress;
@@ -380,6 +481,7 @@ var Tank = cc.Sprite.extend({
         }
     },
     destroy: function () {
+        this.stopHunt();
         var path;
         switch (this.getType()) {
             case TANK_LIGHT:
@@ -421,6 +523,7 @@ var Tank = cc.Sprite.extend({
         });
         Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
         this.getObjectProgressDisplay().setVisible(false);
+        this.removeTouchListenerOneByOneTank();
         gv.engine.getBattleMgr().checkWinKnockoutKillAllTank(this.getID(), this.getTeam());
         gv.engine.getBattleMgr().removeTank(this.getID());
     }

@@ -9,8 +9,16 @@ var MatchMgr = cc.Class.extend({
     },
     ctor: function () {
         this.setPauseGame(false);
+        this.setLockTankAction(false);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
+    },
+    setLockTankAction: function (eff) {
+        LogUtils.getInstance().log([this.getClassName(), "setLockTankAction", eff]);
+        this._isLockTankAction = eff;
+    },
+    isLockTankAction: function () {
+        return this._isLockTankAction;
     },
     setPauseGame: function (eff) {
         this._isPauseGame = eff;
