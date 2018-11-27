@@ -398,6 +398,12 @@ var Tank = cc.Sprite.extend({
     getHPMax: function () {
         return this._HPMax;
     },
+    setObjectProgressDisplay: function (o) {
+        this._objectProgressDisplay = o;
+    },
+    getObjectProgressDisplay: function () {
+        return this._objectProgressDisplay;
+    },
     createHPDisplayProgress: function () {
         var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_RED_PNG);
         this.addChild(progressBg);
@@ -407,6 +413,7 @@ var Tank = cc.Sprite.extend({
         this._HPDisplayProgress.setPosition(progressBg.getContentSize().width / 2, progressBg.getContentSize().height / 2);
         this._HPDisplayProgress.setPercent(100);
         progressBg.setScale(0.25);
+        this.setObjectProgressDisplay(progressBg);
     },
     getHPDisplayProgress: function () {
         return this._HPDisplayProgress;
@@ -418,16 +425,16 @@ var Tank = cc.Sprite.extend({
             case TANK_LIGHT:
                 switch (this.getTeam()) {
                     case TEAM_1:
-                        if(this.getHP() < 40){
+                        if (this.getHP() < 40) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1C_PNG;
-                        }else if(this.getHP() < 80){
+                        } else if (this.getHP() < 80) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1B_PNG;
                         }
                         break;
                     case TEAM_2:
-                        if(this.getHP() < 40){
+                        if (this.getHP() < 40) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___2__1C_PNG;
-                        }else if(this.getHP() < 80){
+                        } else if (this.getHP() < 80) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___2__1B_PNG;
                         }
                         break;
@@ -436,16 +443,16 @@ var Tank = cc.Sprite.extend({
             case TANK_MEDIUM:
                 switch (this.getTeam()) {
                     case TEAM_1:
-                        if(this.getHP() < 40){
+                        if (this.getHP() < 40) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___1__2C_PNG;
-                        }else if(this.getHP() < 80){
+                        } else if (this.getHP() < 80) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___1__2B_PNG;
                         }
                         break;
                     case TEAM_2:
-                        if(this.getHP() < 40){
+                        if (this.getHP() < 40) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___2__2C_PNG;
-                        }else if(this.getHP() < 80){
+                        } else if (this.getHP() < 80) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___2__2B_PNG;
                         }
                         break;
@@ -454,16 +461,16 @@ var Tank = cc.Sprite.extend({
             case TANK_HEAVY:
                 switch (this.getTeam()) {
                     case TEAM_1:
-                        if(this.getHP() < 40){
+                        if (this.getHP() < 40) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___1__3C_PNG;
-                        }else if(this.getHP() < 80){
+                        } else if (this.getHP() < 80) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___1__3B_PNG;
                         }
                         break;
                     case TEAM_2:
-                        if(this.getHP() < 40){
+                        if (this.getHP() < 40) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___2__3C_PNG;
-                        }else if(this.getHP() < 80){
+                        } else if (this.getHP() < 80) {
                             path = resImg.RESOURCES__TEXTURES__TANK__TEAM___2__3B_PNG;
                         }
                         break;
@@ -479,7 +486,6 @@ var Tank = cc.Sprite.extend({
         }
     },
     destroy: function () {
-        gv.engine.getBattleMgr().removeTank(this.getID());
         var path;
         switch (this.getType()) {
             case TANK_LIGHT:
@@ -515,6 +521,13 @@ var Tank = cc.Sprite.extend({
             default :
                 break;
         }
+        var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_TANK);
+        explosion.setCompleteCallback(function () {
+            explosion.removeFromParent(true);
+        });
         Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
+        this.getObjectProgressDisplay().setVisible(false);
+        gv.engine.getBattleMgr().checkWinKnockoutKillAllTank(this.getID(), this.getTeam());
+        gv.engine.getBattleMgr().removeTank(this.getID());
     }
 });

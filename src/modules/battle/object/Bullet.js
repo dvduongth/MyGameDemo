@@ -167,7 +167,7 @@ var Bullet = cc.Sprite.extend({
                 default :
                     break;
             }
-            var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_BULLET);
+            var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_CANNON);
             explosion.setScale(0.4);
             explosion.setCompleteCallback(function () {
                 explosion.removeFromParent(true);

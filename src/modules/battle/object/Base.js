@@ -13,11 +13,11 @@ var Base = BaseGameObject.extend({
     },
     initBase: function () {
         this.createHPDisplayProgress();
-        switch (this.getType()){
+        switch (this.getType()) {
             case BASE_MAIN:
                 this.setHPMax(Setting.BASE_MAIN_HP);
                 this.setHP(Setting.BASE_MAIN_HP);
-                switch (this.getTeam()){
+                switch (this.getTeam()) {
                     case TEAM_1:
                         Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__BASE__TEAM___1__MAINBASE_PNG);
                         break;
@@ -29,7 +29,7 @@ var Base = BaseGameObject.extend({
             case BASE_SIDE:
                 this.setHPMax(Setting.BASE_SIDE_HP);
                 this.setHP(Setting.BASE_SIDE_HP);
-                switch (this.getTeam()){
+                switch (this.getTeam()) {
                     case TEAM_1:
                         Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__BASE__TEAM___1__SIDEBASE_PNG);
                         break;
@@ -40,16 +40,22 @@ var Base = BaseGameObject.extend({
                 break;
         }
     },
+    setObjectProgressDisplay: function (o) {
+        this._objectProgressDisplay = o;
+    },
+    getObjectProgressDisplay: function () {
+        return this._objectProgressDisplay;
+    },
     createHPDisplayProgress: function () {
         var progressBg = this._super();
         progressBg.setScale(0.4);
+        this.setObjectProgressDisplay(progressBg);
     },
     destroy: function () {
-        gv.engine.getBattleMgr().removeBase(this.getID());
         var path = null;
-        switch (this.getType()){
+        switch (this.getType()) {
             case BASE_MAIN:
-                switch (this.getTeam()){
+                switch (this.getTeam()) {
                     case TEAM_1:
                         path = resImg.RESOURCES__TEXTURES__BASE__TEAM___1__MAINBASED_PNG;
                         break;
@@ -59,7 +65,7 @@ var Base = BaseGameObject.extend({
                 }
                 break;
             case BASE_SIDE:
-                switch (this.getTeam()){
+                switch (this.getTeam()) {
                     case TEAM_1:
                         path = resImg.RESOURCES__TEXTURES__BASE__TEAM___1__SIDEBASED_PNG;
                         break;
@@ -69,8 +75,13 @@ var Base = BaseGameObject.extend({
                 }
                 break;
         }
-        if(path != null) {
+        if (path != null) {
             Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), path);
+            this.getObjectProgressDisplay().setVisible(false);
         }
+        if (this.getType() == BASE_MAIN) {
+            gv.engine.getBattleMgr().checkWinKnockoutKillMainBase(this.getID(), this.getTeam());
+        }
+        gv.engine.getBattleMgr().removeBase(this.getID());
     }
 });

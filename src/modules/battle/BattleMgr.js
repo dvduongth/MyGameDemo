@@ -1,5 +1,10 @@
 'use strict';
-
+/**
+ * BattleMgr quan ly viec phan bo nhiem vu cho mgr thich hop
+ * MatchMgr quan ly logic game
+ * PlayerMgr quan ly thong tin nguoi choi
+ * BattleFactory quan ly tai nguyen, du lieu, va doi tuong trong battle
+ * */
 var BattleMgr = cc.Class.extend({
     _className: "BattleMgr",
     _autoID: 0,
@@ -8,8 +13,16 @@ var BattleMgr = cc.Class.extend({
     },
     ctor: function () {
         this.setMAPTankSpr({});
+        this.setPauseGame(false);
+        this.setPlayerMgr(new PlayerMgr());
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
+    },
+    setPlayerMgr: function (m) {
+        this._playerMgr = m;
+    },
+    getPlayerMgr: function () {
+        return this._playerMgr;
     },
     setMAPTankSpr: function (m) {
         this._mapTankSpr = m;
@@ -17,8 +30,17 @@ var BattleMgr = cc.Class.extend({
     getMAPSprites: function () {
         return this._mapTankSpr;
     },
+    setPauseGame: function (eff) {
+        this._isPauseGame = eff;
+    },
+    isPauseGame: function () {
+        return this._isPauseGame;
+    },
 
     update: function (dt) {
+        if(this.isPauseGame()) {
+            return false;//todo during pause
+        }
         var m = this.getMAPSprites();
         for (var t in m) {
             if (m[t] != null) {
@@ -39,6 +61,7 @@ var BattleMgr = cc.Class.extend({
             parent.addChild(tank);
             tank.setPosition(position);
             this.addTank(tank);
+            this.getPlayerMgr().addTankIDForTeam(tank.getID(), team, type);
         } else {
             LogUtils.getInstance().error([this.getClassName(), "throwTank with parent null"]);
         }
@@ -83,6 +106,7 @@ var BattleMgr = cc.Class.extend({
         if (rootNode != null) {
             var obj = new Base(this.getBaseID(), rootNode, team, type);
             this.addBase(obj);
+            this.getPlayerMgr().addBaseIDForTeam(obj.getID(), team, type);
         } else {
             LogUtils.getInstance().error([this.getClassName(), "updateBase with rootNode null"]);
         }
@@ -187,6 +211,43 @@ var BattleMgr = cc.Class.extend({
             }
         }
         return isCollision;
-    }
+    },
 
+    checkWinKnockoutKillMainBase: function (id, team) {
+        if(this.getPlayerMgr().isKnockoutKillMainBase(id)){
+            var teamWin = team == TEAM_1 ? TEAM_2 : TEAM_1;
+            this.getPlayerMgr().setTeamWin(teamWin);
+            //todo show win
+            this.setPauseGame(true);
+            this.showWinGame();
+        }
+        this.getPlayerMgr().removeBaseID(id);
+    },
+
+    checkWinKnockoutKillAllTank: function (id, team) {
+        if(this.getPlayerMgr().isKnockoutKillAllTank(id)){
+            var teamWin = team == TEAM_1 ? TEAM_2 : TEAM_1;
+            this.getPlayerMgr().setTeamWin(teamWin);
+            //todo show win
+            this.setPauseGame(true);
+            this.showWinGame();
+        }
+        this.getPlayerMgr().removeTankID(id);
+    },
+
+    showWinGame: function () {
+        var path;
+        switch (this.getPlayerMgr().getTeamWin()){
+            case TEAM_1:
+                path = resImg.RESOURCES__TEXTURES__STRINGS__TEAM1WIN_PNG;
+                break;
+            case TEAM_2:
+                path = resImg.RESOURCES__TEXTURES__STRINGS__TEAM2WIN_PNG;
+                break;
+
+        }
+        var sprText = Utility.getInstance().createSpriteFromFileName(path);
+        gv.engine.getLayerMgr().getLayerById(LAYER_ID.POPUP).addChild(sprText);
+        sprText.setPosition(gv.WIN_SIZE.width / 2, gv.WIN_SIZE.height / 2);
+    }
 });
