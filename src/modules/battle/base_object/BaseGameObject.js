@@ -114,6 +114,9 @@ var BaseGameObject = cc.Class.extend({
     getWorldPosition: function () {
         return this.getParent().convertToWorldSpace(this.getPosition());
     },
+    convertToNodeSpace: function (worldPos) {
+        return this.getRootNode().convertToNodeSpace(worldPos);
+    },
     createHPDisplayProgress: function () {
         var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_RED_PNG);
         this.addChild(progressBg);

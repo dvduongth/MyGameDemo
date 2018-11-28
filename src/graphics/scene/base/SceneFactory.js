@@ -15,6 +15,7 @@ var SceneFactory = cc.Class.extend({
      * @param id
      */
     createSceneById: function (id) {
+        cc.pool.drainAllPools();
         var s = null;
         switch (id) {
             case SCENE_ID.LOADING:

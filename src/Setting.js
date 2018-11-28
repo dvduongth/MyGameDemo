@@ -18,6 +18,9 @@ Setting.BULLET_TANK_HEAVY_DAMAGE = 5;
 Setting.BULLET_TANK_MEDIUM_DAMAGE = 10;
 Setting.BULLET_TANK_LIGHT_DAMAGE = 20;
 // ====================================================================================================
+Setting.TIME_LOOP = 0.033;
+Setting.TIME_LOOP_FRAME_RATE = 0.02;
+Setting.TIME_LOOP_RENDER = 0.05;
 // Map data 22x22, each block have the enum BLOCK_ in Enum.js
 Setting.MAP_W = 22;
 Setting.MAP_H = 22;

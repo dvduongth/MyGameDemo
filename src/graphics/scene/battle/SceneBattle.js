@@ -189,7 +189,6 @@ var SceneBattle = BaseScene.extend({
         if (isCorrect) {
             LogUtils.getInstance().log([this.getClassName(), "touch tank began"]);
             Utility.getInstance().showTextOnScene(this.getClassName() + " touch tank began");
-            gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(true);
             return true;
         } else {
             //LogUtils.getInstance().log([this.getClassName(), "touch not correct"]);
@@ -214,7 +213,6 @@ var SceneBattle = BaseScene.extend({
         return true;
     },
     onTouchEndedTank: function (touch, event) {
-        gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(false);
         LogUtils.getInstance().log([this.getClassName(), "touch tank ended"]);
         var target = event.getCurrentTarget();
         var parent = target.getParent();
@@ -245,7 +243,6 @@ var SceneBattle = BaseScene.extend({
         target.setScale(1);
     },
     onTouchCancelledTank: function (touch, event) {
-        gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(false);
         LogUtils.getInstance().log([this.getClassName(), "touch tank cancelled"]);
         var target = event.getCurrentTarget();
         var parent = target.getParent();
@@ -279,20 +276,49 @@ var SceneBattle = BaseScene.extend({
             }
         }
     },
+    checkTouchPickTank: function (touch) {
+        var worldPos = touch.getLocation();
+        var list = [this.imgTank_0, this.imgTank_1, this.imgTank_2];
+        var target;
+        for(var i = 0; i < list.length; ++i) {
+            target = list[i];
+            if (target != null) {
+                var locationInNode = target.convertToNodeSpace(worldPos);
+                var s = target.getContentSize();
+                var rect = cc.rect(0, 0, s.width, s.height);
+                var isCorrect = cc.rectContainsPoint(rect, locationInNode);
+                if (isCorrect) {
+                    return {
+                        ID: target.getName(),
+                        type: target.getName(),
+                        gameObject: target
+                    };
+                }
+            }
+        }
+        return null;
+    },
     onTouchBegan: function (touch, event) {
-        if(gv.engine.getBattleMgr().getMatchMgr().isLockTankAction()){
-            LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action"]);
+        var worldPos = touch.getLocation();
+        var gameObjectInfo = gv.engine.getBattleMgr().getMatchMgr().getGameObjectInfoByWorldPosition(worldPos);
+        if(gameObjectInfo != null){
+            LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action", gameObjectInfo.ID, gameObjectInfo.type]);
             return false;
         }
+        //check during pick tank
+        var maxNumTank = Setting.NUMBER_OF_TANK;
+        var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank();
+        gameObjectInfo = this.checkTouchPickTank(touch);
+        if ((numberPicked < maxNumTank) && (gameObjectInfo != null)) {
+            LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action THROW TANK", gameObjectInfo.ID, gameObjectInfo.type]);
+            return false;
+        }
+
         LogUtils.getInstance().log([this.getClassName(), "onTouchBegan check tank action"]);
         this.checkTankAction(touch);
         return true;
     },
     onTouchMoved: function (touch, event) {
-        if(gv.engine.getBattleMgr().getMatchMgr().isLockTankAction()){
-            LogUtils.getInstance().log([this.getClassName(), "onTouchMoved is during lock tank action"]);
-            return false;
-        }
         this.checkTankAction(touch);
         return true;
     },

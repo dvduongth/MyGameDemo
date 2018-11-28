@@ -20,16 +20,16 @@ var BattleFactory = cc.Class.extend({
         return this._mapSpr;
     },
     getTankID: function () {
-        return "tank_" + (this._autoID++);
+        return STRING_TANK + "_" + (this._autoID++);
     },
     getBulletID: function () {
-        return "bullet_" + (this._autoID++);
+        return STRING_BULLET + "_" + (this._autoID++);
     },
     getBaseID: function () {
-        return "base_" + (this._autoID++);
+        return STRING_BASE + "_" + (this._autoID++);
     },
     getObstacleID: function () {
-        return "obstacle_" + (this._autoID++);
+        return STRING_OBSTACLE + "_" + (this._autoID++);
     },
     getGameObjectByID: function (id) {
         return this.getMAPSprites()[id];
@@ -62,7 +62,7 @@ var BattleFactory = cc.Class.extend({
     spawnBulletFactory: function (parent, position, direction, team, type, tankGunId) {
         //LogUtils.getInstance().log([this.getClassName(), "spawnBullet direction", direction]);
         if (parent != null) {
-            var bullet = new Bullet(this.getBulletID(), direction, team, type, tankGunId);
+            var bullet = Bullet.create(this.getBulletID(), direction, team, type, tankGunId);
             parent.addChild(bullet);
             bullet.setPosition(position);
             this.addBullet(bullet);
@@ -126,7 +126,7 @@ var BattleFactory = cc.Class.extend({
     },
     showTextWinGame: function (teamWin) {
         var path;
-        switch (teamWin){
+        switch (teamWin) {
             case TEAM_1:
                 path = resImg.RESOURCES__TEXTURES__STRINGS__TEAM1WIN_PNG;
                 break;

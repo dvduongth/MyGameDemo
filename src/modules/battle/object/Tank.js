@@ -129,7 +129,6 @@ var Tank = cc.Sprite.extend({
         var rect = cc.rect(0, 0, s.width, s.height);
         var isCorrect = cc.rectContainsPoint(rect, locationInNode);
         if (isCorrect) {
-            gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(true);
             LogUtils.getInstance().log([this.getClassName(), "touch tank began"]);
             Utility.getInstance().showTextOnScene(this.getClassName() + " touch tank began");
             this.tankAction(cc.KEY.enter);
@@ -164,11 +163,9 @@ var Tank = cc.Sprite.extend({
         return true;
     },
     onTouchEndedTank: function (touch, event) {
-        gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(false);
         this.tankAction(null);
     },
     onTouchCancelledTank: function (touch, event) {
-        gv.engine.getBattleMgr().getMatchMgr().setLockTankAction(false);
         this.tankAction(null);
     },
     tankAction: function (keyCode) {

@@ -5,12 +5,19 @@ var Bullet = cc.Sprite.extend({
         return this._className;
     },
     ctor: function (id, direction, team, type, tankGunId) {
+        this.updateInfo(id, direction, team, type, tankGunId);
+        //super
+        this._super(this.getPathTextResourceByType(type));
+        this.initBullet();
+    },
+    updateInfo: function (id, direction, team, type, tankGunId) {
         this.setID(id);
         this.setTeam(team);
         this.setType(type);
         this.setDirection(direction);
         this.setTankGunID(tankGunId);
-        //super
+    },
+    getPathTextResourceByType: function (type) {
         var path;
         switch (type) {
             case TANK_LIGHT:
@@ -26,8 +33,10 @@ var Bullet = cc.Sprite.extend({
                 path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__BULLET__1_PNG);
                 break;
         }
-        this._super(path);
-        this.initBullet();
+        return path;
+    },
+    resetInfo: function () {
+        this.updateInfo(-1, -1, -1, -1, -1);
     },
     initBullet: function () {
         this.setSpeed(Setting.BULLET_SPEED);
@@ -98,15 +107,15 @@ var Bullet = cc.Sprite.extend({
                 break;
         }
         this.setRotation(angle);
-        if(dX != 0 || dY != 0) {
+        if (dX != 0 || dY != 0) {
             //move before
             this.setPositionX(this.getPositionX() + dX);
             this.setPositionY(this.getPositionY() + dY);
             //todo check collision
-            if(gv.engine.getBattleMgr().checkCollisionBulletWithTarget(this.getID())) {
+            if (gv.engine.getBattleMgr().checkCollisionBulletWithTarget(this.getID())) {
                 //destroy
                 this.destroy(true);
-            }else{
+            } else {
                 this.checkOutOfBoundingScreen();
             }
         }
@@ -136,7 +145,7 @@ var Bullet = cc.Sprite.extend({
         return this.getParent().convertToWorldSpace(this.getPosition());
     },
     getDamageValue: function () {
-        switch (this.getType()){
+        switch (this.getType()) {
             case TANK_LIGHT:
                 return Setting.BULLET_TANK_LIGHT_DAMAGE;
             case TANK_MEDIUM:
@@ -148,7 +157,7 @@ var Bullet = cc.Sprite.extend({
         }
     },
     destroy: function (hasExplosion) {
-        if(hasExplosion) {
+        if (hasExplosion) {
             var worldPos = this.getWorldPosition();
             var offset = 20;
             switch (this.getDirection()) {
@@ -174,6 +183,26 @@ var Bullet = cc.Sprite.extend({
             });
         }
         gv.engine.getBattleMgr().removeBullet(this.getID());
+        cc.pool.putInPool(this);
+    },
+    unuse: function () {
+        this.resetInfo();
+        this.retain();//if in jsb
+        this.setVisible(false);
         this.removeFromParent(true);
+    },
+    reuse: function (id, direction, team, type, tankGunId) {
+        this.updateInfo(id, direction, team, type, tankGunId);
+        this.setVisible(true);
+        Utility.getInstance().updateSpriteWithFileName(this, this.getPathTextResourceByType(type));
     }
 });
+
+Bullet.createCtor = function (id, direction, team, type, tankGunId) {
+    return new Bullet(id, direction, team, type, tankGunId);
+};
+Bullet.create = function (id, direction, team, type, tankGunId) {
+    var pool = cc.pool;
+    if (pool.hasObject(Bullet)) return pool.getFromPool(Bullet, id, direction, team, type, tankGunId);
+    return Bullet.createCtor(id, direction, team, type, tankGunId);
+};

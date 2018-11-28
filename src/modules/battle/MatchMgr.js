@@ -9,16 +9,8 @@ var MatchMgr = cc.Class.extend({
     },
     ctor: function () {
         this.setPauseGame(false);
-        this.setLockTankAction(false);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
-    },
-    setLockTankAction: function (eff) {
-        LogUtils.getInstance().log([this.getClassName(), "setLockTankAction", eff]);
-        this._isLockTankAction = eff;
-    },
-    isLockTankAction: function () {
-        return this._isLockTankAction;
     },
     setPauseGame: function (eff) {
         this._isPauseGame = eff;
@@ -56,21 +48,21 @@ var MatchMgr = cc.Class.extend({
             sprObj = m[_id];
             if (sprObj != null && _id != id) {
                 //check collision with obstacle
-                if(_id.indexOf("obstacle") != -1) {
+                if(_id.indexOf(STRING_OBSTACLE) != -1) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
                         //LogUtils.getInstance().log([this.getClassName(), "tank collision with obstacle"]);
                         return true;
                     }
                 }
                 //check collision with base
-                if(_id.indexOf("base") != -1) {
+                if(_id.indexOf(STRING_BASE) != -1) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
                         //LogUtils.getInstance().log([this.getClassName(), "tank collision with base"]);
                         return true;
                     }
                 }
                 //other tank
-                if(_id.indexOf("tank") != -1) {
+                if(_id.indexOf(STRING_TANK) != -1) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
                         //LogUtils.getInstance().log([this.getClassName(), "tank collision with other tank"]);
                         return true;
@@ -91,21 +83,21 @@ var MatchMgr = cc.Class.extend({
             sprObj = m[_id];
             if (sprObj != null && _id != id && _id != tankGunID) {
                 //check collision with obstacle
-                if(_id.indexOf("obstacle") != -1 && sprObj.isBarrier()) {
+                if(_id.indexOf(STRING_OBSTACLE) != -1 && sprObj.isBarrier()) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
                         sprObj.hitBullet(curSpr.getDamageValue());
                         isCollision = true;
                     }
                 }
                 //check collision with base
-                if(_id.indexOf("base") != -1) {
+                if(_id.indexOf(STRING_BASE) != -1) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
                         sprObj.hitBullet(curSpr.getDamageValue());
                         isCollision = true;
                     }
                 }
                 //other tank
-                if(_id.indexOf("tank") != -1) {
+                if(_id.indexOf(STRING_TANK) != -1) {
                     if(Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)){
                         sprObj.hitBullet(curSpr.getDamageValue());
                         isCollision = true;
@@ -114,5 +106,27 @@ var MatchMgr = cc.Class.extend({
             }
         }
         return isCollision;
+    },
+    getGameObjectInfoByWorldPosition: function (worldPos) {
+        var m = gv.engine.getBattleMgr().getBattleFactory().getMAPSprites();
+        var target, _id;
+        for (var i in m) {
+            _id = i + "";
+            target = m[_id];
+            if (target != null) {
+                var locationInNode = target.convertToNodeSpace(worldPos);
+                var s = target.getContentSize();
+                var rect = cc.rect(0, 0, s.width, s.height);
+                var isCorrect = cc.rectContainsPoint(rect, locationInNode);
+                if (isCorrect) {
+                    return {
+                        ID: target.getID(),
+                        type: target.getType(),
+                        gameObject: target
+                    };
+                }
+            }
+        }
+        return null;
     }
 });

@@ -99,7 +99,7 @@ var GuiLoading = BaseGUI.extend({
         var percent = Math.floor((this.getNumberOfLoadedSprites() / this.getNumberOfSprites()) * 100);
         this.lbLoadingPercent.setString(percent + '%');
         this.ldbPercent.setPercent(percent);
-        LogUtils.getInstance().log([this.getClassName(), "loadingCallBack percent", percent, "%"]);
+        //LogUtils.getInstance().log([this.getClassName(), "loadingCallBack percent", percent, "%"]);
         if (this.getNumberOfLoadedSprites() == this.getNumberOfSprites()) {
             this.loadTexturesDone();
         }
@@ -132,14 +132,14 @@ var GuiLoading = BaseGUI.extend({
         var arr = [];
         for(var v in plistPathObj) {
             arr.push(cc.callFunc(function (sender, path) {
-                LogUtils.getInstance().log([_this.getClassName(), "loadPlistTextures path:", path]);
+                //LogUtils.getInstance().log([_this.getClassName(), "loadPlistTextures path:", path]);
                 cc.spriteFrameCache.addSpriteFrames(path);
                 _this.setNumberOfLoadedPlist(_this.getNumberOfLoadedPlist() + 1);
                 var percent = Math.floor((_this.getNumberOfLoadedPlist() / _this.getNumberOfPlist()) * 100);
                 _this.lbLoadingPercent.setString(percent + '%');
                 _this.ldbPercent.setPercent(percent);
             }, null, plistPathObj[v]));
-            arr.push(cc.delayTime(0.01));
+            arr.push(cc.delayTime(Setting.TIME_LOOP_RENDER));
         }
         arr.push(cc.callFunc(function () {
             Utility.getInstance().executeFunction(callback);
@@ -157,13 +157,13 @@ var GuiLoading = BaseGUI.extend({
         for(var v in soundMusicPathObj) {
             arr.push(cc.callFunc(function (sender, path) {
                 cc.audioEngine.preloadEffect(path);
-                LogUtils.getInstance().log([_this.getClassName(), "loadSoundMusic path:", path]);
+                //LogUtils.getInstance().log([_this.getClassName(), "loadSoundMusic path:", path]);
                 _this.setNumberOfLoadedSoundMusic(_this.getNumberOfLoadedSoundMusic() + 1);
                 var percent = Math.floor((_this.getNumberOfLoadedSoundMusic() / _this.getNumberOfSoundMusic()) * 100);
                 _this.lbLoadingPercent.setString(percent + '%');
                 _this.ldbPercent.setPercent(percent);
             }, null, soundMusicPathObj[v]));
-            arr.push(cc.delayTime(0.05));
+            arr.push(cc.delayTime(Setting.TIME_LOOP_RENDER));
         }
         arr.push(cc.callFunc(function () {
             Utility.getInstance().executeFunction(callback);
