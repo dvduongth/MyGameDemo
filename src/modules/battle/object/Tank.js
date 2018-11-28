@@ -52,9 +52,9 @@ var Tank = cc.Sprite.extend({
     },
     initTank: function () {
         this.setDirection(DIRECTION_IDLE);
-        if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())) {
+        if (gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())) {
             this.setAngle(0);//up
-        }else{
+        } else {
             this.setAngle(180);//down
         }
         this.setSpeed(Setting.MAX_SPEED / this.getType());
@@ -149,18 +149,18 @@ var Tank = cc.Sprite.extend({
         var worldPos = parent.convertToWorldSpace(target.getPosition());
         var touchPos = touch.getLocation();
         var delta = cc.pSub(touchPos, worldPos);
-        if(Math.abs(delta.x) > Math.abs(delta.y)){
-            if(delta.x > 0) {
+        if (Math.abs(delta.x) > Math.abs(delta.y)) {
+            if (delta.x > 0) {
                 //move to right
                 this.tankAction(cc.KEY.right);
-            }else{
+            } else {
                 this.tankAction(cc.KEY.left);
             }
-        }else{
-            if(delta.y > 0) {
+        } else {
+            if (delta.y > 0) {
                 //move to top
                 this.tankAction(cc.KEY.up);
-            }else{
+            } else {
                 this.tankAction(cc.KEY.down);
             }
         }
@@ -379,7 +379,7 @@ var Tank = cc.Sprite.extend({
     setHP: function (t) {
         this._HP = t;
         var percent = Math.round(100 * t / this.getHPMax());
-        if(_.isNaN(percent) || percent < 0) {
+        if (_.isNaN(percent) || percent < 0) {
             percent = 0;
         }
         this.getHPDisplayProgress().setPercent(percent);
@@ -416,7 +416,7 @@ var Tank = cc.Sprite.extend({
     },
     hitBullet: function (damage) {
         this.setHP(Math.max(this.getHP() - damage, 0));
-        var path;
+        var path = null;
         switch (this.getType()) {
             case TANK_LIGHT:
                 switch (this.getTeam()) {
@@ -475,7 +475,9 @@ var Tank = cc.Sprite.extend({
             default :
                 break;
         }
-        Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
+        if (path != null) {
+            Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
+        }
         if (this.getHP() == 0) {
             //todo die
             this.destroy();
