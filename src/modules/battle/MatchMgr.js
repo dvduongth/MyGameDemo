@@ -137,6 +137,7 @@ var MatchMgr = cc.Class.extend({
         var tankSize = tank.getContentSize();
         if (!existedObj) {
             //available
+            LogUtils.getInstance().log([this.getClassName(), "findSuitableLocationForThrowTank available"]);
             //check tank collision with barrier and move tank to road
             if (this.checkLogicCollisionTankWithBarrier(tank.getID())) {
                 var wCollisionPos, wPos;
@@ -144,7 +145,7 @@ var MatchMgr = cc.Class.extend({
                 var upPos = cc.p(nPos.x, nPos.y + tankSize.height / 2);
                 var wUpPos = parent.convertToWorldSpace(upPos);
                 var objCollisionUp = this.getGameObjectInfoByWorldPosition(wUpPos, tank.getID());
-                if(objCollisionUp != null) {
+                if (objCollisionUp != null) {
                     //move down
                     wCollisionPos = objCollisionUp.gameObject.getWorldPosition();
                     wPos = cc.p(wCollisionPos.x, wCollisionPos.y - objCollisionUp.gameObject.getContentSize().height / 2 - tankSize.height / 2);
@@ -154,7 +155,7 @@ var MatchMgr = cc.Class.extend({
                 var downPos = cc.p(nPos.x, nPos.y - tankSize.height / 2);
                 var wdownPos = parent.convertToWorldSpace(downPos);
                 var objCollisiondown = this.getGameObjectInfoByWorldPosition(wdownPos, tank.getID());
-                if(objCollisiondown != null) {
+                if (objCollisiondown != null) {
                     //move up
                     wCollisionPos = objCollisiondown.gameObject.getWorldPosition();
                     wPos = cc.p(wCollisionPos.x, wCollisionPos.y + objCollisiondown.gameObject.getContentSize().height / 2 + tankSize.height / 2);
@@ -164,7 +165,7 @@ var MatchMgr = cc.Class.extend({
                 var leftPos = cc.p(nPos.x - tankSize.width / 2, nPos.y);
                 var wleftPos = parent.convertToWorldSpace(leftPos);
                 var objCollisionleft = this.getGameObjectInfoByWorldPosition(wleftPos, tank.getID());
-                if(objCollisionleft != null) {
+                if (objCollisionleft != null) {
                     //move right
                     wCollisionPos = objCollisionleft.gameObject.getWorldPosition();
                     wPos = cc.p(wCollisionPos.x + objCollisionleft.gameObject.getContentSize().width / 2 + tankSize.width / 2, wCollisionPos.y);
@@ -174,7 +175,7 @@ var MatchMgr = cc.Class.extend({
                 var rightPos = cc.p(nPos.x + tankSize.width / 2, nPos.y);
                 var wrightPos = parent.convertToWorldSpace(rightPos);
                 var objCollisionright = this.getGameObjectInfoByWorldPosition(wrightPos, tank.getID());
-                if(objCollisionright != null) {
+                if (objCollisionright != null) {
                     //move left
                     wCollisionPos = objCollisionright.gameObject.getWorldPosition();
                     wPos = cc.p(wCollisionPos.x - objCollisionright.gameObject.getContentSize().width / 2 - tankSize.width / 2, wCollisionPos.y);
@@ -190,14 +191,16 @@ var MatchMgr = cc.Class.extend({
         }
     },
     breadthFirstSearch: function (currentNode, tank) {
+        LogUtils.getInstance().log([this.getClassName(), "breadthFirstSearch"]);
         var _this = this;
         var size = tank.getContentSize();
         var MAX = 100;
+        var queue = [];
         var seen = {};//mang danh dau da xem
         var result = [];//mang ket qua
         var count = 0;
         var nResult = 4;
-        var finish = (result.length >= nResult) || (count >= MAX);
+        var finish = false;
         var costInfo = {
             up: {cost: 0, found: false},
             down: {cost: 0, found: false},
@@ -250,10 +253,12 @@ var MatchMgr = cc.Class.extend({
         }
 
         function BFSAlgorithm(current) {
-            seen[current.getID()] = true;
+            //seen[current.getID()] = true;
+            //todo check
             //up
+            var up;
             if (!costInfo.up.found) {
-                var up = getUp(current);
+                up = getUp(current);
                 if (up.obj == null) {
                     costInfo.up.found = true;
                     result.push({
@@ -263,14 +268,13 @@ var MatchMgr = cc.Class.extend({
                 } else {
                     costInfo.up.cost++;
                     count++;
-                    if (!finish) {
-                        BFSAlgorithm(up.obj.gameObject);
-                    }
+                    queue.push(up.obj.gameObject);
                 }
             }
             //down
+            var down;
             if (!costInfo.down.found) {
-                var down = getDown(current);
+                down = getDown(current);
                 if (down.obj == null) {
                     costInfo.down.found = true;
                     result.push({
@@ -280,14 +284,13 @@ var MatchMgr = cc.Class.extend({
                 } else {
                     costInfo.down.cost++;
                     count++;
-                    if (!finish) {
-                        BFSAlgorithm(down.obj.gameObject);
-                    }
+                    queue.push(down.obj.gameObject);
                 }
             }
             //left
+            var left;
             if (!costInfo.left.found) {
-                var left = getLeft(current);
+                left = getLeft(current);
                 if (left.obj == null) {
                     costInfo.left.found = true;
                     result.push({
@@ -297,14 +300,13 @@ var MatchMgr = cc.Class.extend({
                 } else {
                     costInfo.left.cost++;
                     count++;
-                    if (!finish) {
-                        BFSAlgorithm(left.obj.gameObject);
-                    }
+                    queue.push(left.obj.gameObject);
                 }
             }
             //right
+            var right;
             if (!costInfo.right.found) {
-                var right = getRight(current);
+                right = getRight(current);
                 if (right.obj == null) {
                     costInfo.right.found = true;
                     result.push({
@@ -314,15 +316,17 @@ var MatchMgr = cc.Class.extend({
                 } else {
                     costInfo.right.cost++;
                     count++;
-                    if (!finish) {
-                        BFSAlgorithm(right.obj.gameObject);
-                    }
+                    queue.push(right.obj.gameObject);
                 }
             }
         }
-
         //start
         BFSAlgorithm(currentNode);
+        while (!finish && queue.length > 0) {
+            var curNode = queue.shift();
+            BFSAlgorithm(curNode);
+            finish = (result.length >= nResult) || (count >= MAX);
+        }
         var worldPos = cc.POINT_ZERO;
         var cost = MAX;
         result.forEach(function (r) {

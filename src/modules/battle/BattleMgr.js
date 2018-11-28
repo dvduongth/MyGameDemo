@@ -2,6 +2,7 @@
 /**
  * BattleMgr quan ly viec phan bo nhiem vu cho mgr thich hop
  * MatchMgr quan ly logic game
+ * MapMgr quan ly map game
  * PlayerMgr quan ly thong tin nguoi choi
  * BattleFactory quan ly tai nguyen, du lieu, va doi tuong trong battle
  * */
@@ -12,6 +13,7 @@ var BattleMgr = cc.Class.extend({
     },
     ctor: function () {
         this.setMatchMgr(new MatchMgr());
+        this.setMapMgr(new MapMgr());
         this.setBattleFactory(new BattleFactory());
         this.setBattleDataModel(new BattleDataModel());
         this.setPlayerMgr(new PlayerMgr());
@@ -36,6 +38,12 @@ var BattleMgr = cc.Class.extend({
     },
     getMatchMgr: function () {
         return this._matchMgr;
+    },
+    setMapMgr: function (m) {
+        this._mapMgr = m;
+    },
+    getMapMgr: function () {
+        return this._mapMgr;
     },
     setPlayerMgr: function (m) {
         this._playerMgr = m;
@@ -107,7 +115,6 @@ var BattleMgr = cc.Class.extend({
         return this.getMatchMgr().checkLogicCollisionTankWithBarrier(id);
     },
     checkCollisionBulletWithTarget: function (id) {
-        return false;//todo test edit after
         return this.getMatchMgr().checkLogicCollisionBulletWithTarget(id);
     },
 
