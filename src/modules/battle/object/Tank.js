@@ -52,7 +52,11 @@ var Tank = cc.Sprite.extend({
     },
     initTank: function () {
         this.setDirection(DIRECTION_IDLE);
-        this.setAngle(0);
+        if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())) {
+            this.setAngle(0);//up
+        }else{
+            this.setAngle(180);//down
+        }
         this.setSpeed(Setting.MAX_SPEED / this.getType());
         this.setMapPressAction({});
         this.createTankSprite();

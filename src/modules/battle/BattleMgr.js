@@ -70,6 +70,9 @@ var BattleMgr = cc.Class.extend({
                 this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam(), tank.getType());
                 this.getBattleDataModel().addPickedTankID(tank.getID());
                 this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
+                //matchMgr find suitable location and update position
+                var suitablePosition = this.getMatchMgr().findSuitableLocationForThrowTank(tank);
+                tank.setPosition(suitablePosition);
             }
         }
     },
@@ -104,6 +107,7 @@ var BattleMgr = cc.Class.extend({
         return this.getMatchMgr().checkLogicCollisionTankWithBarrier(id);
     },
     checkCollisionBulletWithTarget: function (id) {
+        return false;//todo test edit after
         return this.getMatchMgr().checkLogicCollisionBulletWithTarget(id);
     },
 
