@@ -9,7 +9,7 @@ var TileLogic = cc.Class.extend({
     },
     ctor: function () {
         this.setListIDOnTile([]);
-        LogUtils.getInstance().log([this.getClassName(), "create success"]);
+        //LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
     setListIDOnTile: function (m) {
@@ -66,4 +66,7 @@ var TileLogic = cc.Class.extend({
     getTileTypeValue: function () {
         return this._tileTypeValue;
     },
+    toString: function () {
+        return this.getTileTypeValue() + "";
+    }
 });

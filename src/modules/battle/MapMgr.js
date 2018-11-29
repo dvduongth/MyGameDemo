@@ -10,7 +10,7 @@ var MapMgr = cc.Class.extend({
     ctor: function () {
         this.setTileMatrix([]);
         var len = this.getNumberTileMapHeight();
-        for(var i = 0; i < len; ++i) {
+        for (var i = 0; i < len; ++i) {
             this.getTileMatrix()[i] = [];
         }
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
@@ -44,8 +44,8 @@ var MapMgr = cc.Class.extend({
         var dw = this.getMapContentSize().width / w;
         var dh = this.getMapContentSize().height / h;
         var x = 0, y = 0;
-        for(var i = 0; i < w; ++i) {
-            for(var j = 0; j < h; ++j) {
+        for (var i = 0; i < w; ++i) {
+            for (var j = 0; j < h; ++j) {
                 var tileLogic = new TileLogic();
                 var pos = cc.p(x, y);
                 var size = cc.size(dw, dh);
@@ -77,14 +77,21 @@ var MapMgr = cc.Class.extend({
     },
     mapToString: function () {
         LogUtils.getInstance().log([this.getClassName(), "mapToString"]);
-        this.getTileMatrix().forEach(function (list) {
+        var m = this.getTileMatrix();
+        for (var i = 0; i < Setting.MAP_W; ++i) {
             LogUtils.getInstance().log("-----------------------------------------------");
             var arr = [];
-            list.forEach(function (t) {
-                arr.push(t.getTileTypeValue());
-            });
-            LogUtils.getInstance().log(arr.join(" | "));
-        });
+            for (var j = 0; j < Setting.MAP_W; ++j) {
+                var tileIdx = this.convertMapIndexPointToStartTileIndexPoint(cc.p(i, j));
+                var t = m[tileIdx.x][tileIdx.y];
+                if (t != null) {
+                    arr.push(t.toString());
+                } else {
+                    LogUtils.getInstance().log('oh no ' + tileIdx.x + " " + tileIdx.y);
+                }
+            }
+            LogUtils.getInstance().log(arr.join("|"));
+        }
         LogUtils.getInstance().log("-----------------------------------------------");
     }
 });
