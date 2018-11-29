@@ -151,16 +151,6 @@ var MatchMgr = cc.Class.extend({
                     wPos = cc.p(wCollisionPos.x, wCollisionPos.y - objCollisionUp.gameObject.getContentSize().height / 2 - tankSize.height / 2);
                     nPos = parent.convertToNodeSpace(wPos);
                 }
-                //check collision down
-                var downPos = cc.p(nPos.x, nPos.y - tankSize.height / 2);
-                var wdownPos = parent.convertToWorldSpace(downPos);
-                var objCollisiondown = this.getGameObjectInfoByWorldPosition(wdownPos, tank.getID());
-                if (objCollisiondown != null) {
-                    //move up
-                    wCollisionPos = objCollisiondown.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x, wCollisionPos.y + objCollisiondown.gameObject.getContentSize().height / 2 + tankSize.height / 2);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
                 //check collision left
                 var leftPos = cc.p(nPos.x - tankSize.width / 2, nPos.y);
                 var wleftPos = parent.convertToWorldSpace(leftPos);
@@ -181,7 +171,63 @@ var MatchMgr = cc.Class.extend({
                     wPos = cc.p(wCollisionPos.x - objCollisionright.gameObject.getContentSize().width / 2 - tankSize.width / 2, wCollisionPos.y);
                     nPos = parent.convertToNodeSpace(wPos);
                 }
+                //todo check conner top
+                // top left
+                var topLeftPos = cc.p(nPos.x - tankSize.width / 2, nPos.y + tankSize.height / 2);
+                var wtopLeftPos = parent.convertToWorldSpace(topLeftPos);
+                var objCollisiontopLeft = this.getGameObjectInfoByWorldPosition(wtopLeftPos, tank.getID());
+                if (objCollisiontopLeft != null) {
+                    //move bottom right
+                    wCollisionPos = objCollisiontopLeft.gameObject.getWorldPosition();
+                    wPos = cc.p(wCollisionPos.x + objCollisiontopLeft.gameObject.getContentSize().width / 2 + tankSize.width / 2, wCollisionPos.y - objCollisiontopLeft.gameObject.getContentSize().height / 2 - tankSize.height / 2);
+                    nPos = parent.convertToNodeSpace(wPos);
+                }
+                // top right
+                var topRightPos = cc.p(nPos.x + tankSize.width / 2, nPos.y + tankSize.height / 2);
+                var wtopRightPos = parent.convertToWorldSpace(topRightPos);
+                var objCollisiontopRight = this.getGameObjectInfoByWorldPosition(wtopRightPos, tank.getID());
+                if (objCollisiontopRight != null) {
+                    //move bottom left
+                    wCollisionPos = objCollisiontopRight.gameObject.getWorldPosition();
+                    wPos = cc.p(wCollisionPos.x - objCollisiontopRight.gameObject.getContentSize().width / 2 - tankSize.width / 2, wCollisionPos.y - objCollisiontopRight.gameObject.getContentSize().height / 2 - tankSize.height / 2);
+                    nPos = parent.convertToNodeSpace(wPos);
+                }
+
+                //check collision down
+                var downPos = cc.p(nPos.x, nPos.y - tankSize.height / 2);
+                var wdownPos = parent.convertToWorldSpace(downPos);
+                var objCollisiondown = this.getGameObjectInfoByWorldPosition(wdownPos, tank.getID());
+                if (objCollisiondown != null) {
+                    //move up
+                    wCollisionPos = objCollisiondown.gameObject.getWorldPosition();
+                    wPos = cc.p(wCollisionPos.x, wCollisionPos.y + objCollisiondown.gameObject.getContentSize().height / 2 + tankSize.height / 2);
+                    nPos = parent.convertToNodeSpace(wPos);
+                }
+
+                //todo check conner bottom
+                // bottom left
+                var bottomLeftPos = cc.p(nPos.x - tankSize.width / 2, nPos.y - tankSize.height / 2);
+                var wbottomLeftPos = parent.convertToWorldSpace(bottomLeftPos);
+                var objCollisionbottomLeft = this.getGameObjectInfoByWorldPosition(wbottomLeftPos, tank.getID());
+                if (objCollisionbottomLeft != null) {
+                    //move top right
+                    wCollisionPos = objCollisionbottomLeft.gameObject.getWorldPosition();
+                    wPos = cc.p(wCollisionPos.x + objCollisionbottomLeft.gameObject.getContentSize().width / 2 + tankSize.width / 2, wCollisionPos.y + objCollisionbottomLeft.gameObject.getContentSize().height / 2 + tankSize.height / 2);
+                    nPos = parent.convertToNodeSpace(wPos);
+                }
+                // bottom right
+                var bottomRightPos = cc.p(nPos.x + tankSize.width / 2, nPos.y - tankSize.height / 2);
+                var wbottomRightPos = parent.convertToWorldSpace(bottomRightPos);
+                var objCollisionbottomRight = this.getGameObjectInfoByWorldPosition(wbottomRightPos, tank.getID());
+                if (objCollisionbottomRight != null) {
+                    //move top left
+                    wCollisionPos = objCollisionbottomRight.gameObject.getWorldPosition();
+                    wPos = cc.p(wCollisionPos.x - objCollisionbottomRight.gameObject.getContentSize().width / 2 - tankSize.width / 2, wCollisionPos.y + objCollisionbottomRight.gameObject.getContentSize().height / 2 + tankSize.height / 2);
+                    nPos = parent.convertToNodeSpace(wPos);
+                }
+                //todo return
                 return nPos;
+
             } else {
                 return nPos;
             }
@@ -196,7 +242,6 @@ var MatchMgr = cc.Class.extend({
         var size = tank.getContentSize();
         var MAX = 100;
         var queue = [];
-        var seen = {};//mang danh dau da xem
         var result = [];//mang ket qua
         var count = 0;
         var nResult = 4;
@@ -253,8 +298,6 @@ var MatchMgr = cc.Class.extend({
         }
 
         function BFSAlgorithm(current) {
-            //seen[current.getID()] = true;
-            //todo check
             //up
             var up;
             if (!costInfo.up.found) {
