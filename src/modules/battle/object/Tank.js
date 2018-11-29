@@ -62,6 +62,7 @@ var Tank = cc.Sprite.extend({
         this.createTankSprite();
         this.createHPDisplayProgress();
         this.createTouchListenerOneByOneTank();
+        this.setListTileLogic([]);
     },
     createTankSprite: function () {
         var path;
@@ -529,5 +530,25 @@ var Tank = cc.Sprite.extend({
         this.removeTouchListenerOneByOneTank();
         gv.engine.getBattleMgr().checkWinKnockoutKillAllTank(this.getID(), this.getTeam());
         gv.engine.getBattleMgr().removeTank(this.getID());
+    },
+    setGameObjectString: function (l) {
+        this._gameObjectString = l;
+    },
+    getGameObjectString: function () {
+        return this._gameObjectString;
+    },
+    setListTileLogic: function (l) {
+        this._listTileLogic = l;
+    },
+    getListTileLogic: function () {
+        return this._listTileLogic;
+    },
+    pushTileLogicForGameObject: function (t) {
+        this.getListTileLogic().push(t);
+    },
+    updateLocationByWorldPosition: function (wPos) {
+        var parent = this.getParent();
+        var nPos = parent.convertToNodeSpace(wPos);
+        this.setPosition(nPos);
     }
 });

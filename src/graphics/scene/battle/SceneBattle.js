@@ -219,9 +219,10 @@ var SceneBattle = BaseScene.extend({
         var target = event.getCurrentTarget();
         var parent = target.getParent();
         var worldPos = parent.convertToWorldSpace(target.getPosition());
-        var nPos = this.sprMapBackground.convertToNodeSpace(worldPos);
+        var mapBg = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
+        var nPos = mapBg.convertToNodeSpace(worldPos);
 
-        var rect = cc.rect(0, 0, this.sprMapBackground.getContentSize().width, this.sprMapBackground.getContentSize().height);
+        var rect = cc.rect(0, 0, mapBg.getContentSize().width, mapBg.getContentSize().height);
         if (cc.rectContainsPoint(rect, nPos)) {
             var type;
             switch (target) {
@@ -238,7 +239,7 @@ var SceneBattle = BaseScene.extend({
                     type = TANK_LIGHT;
                     break;
             }
-            gv.engine.getBattleMgr().throwTank(this.sprMapBackground, nPos, gv.engine.getBattleMgr().getPlayerMgr().getMyTeam(), type);
+            gv.engine.getBattleMgr().throwTank(mapBg, nPos, gv.engine.getBattleMgr().getPlayerMgr().getMyTeam(), type);
             this.updateDisplayPickTankSlot();
         }
         target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
@@ -303,7 +304,7 @@ var SceneBattle = BaseScene.extend({
     onTouchBegan: function (touch, event) {
         var worldPos = touch.getLocation();
         var gameObjectInfo = gv.engine.getBattleMgr().getMatchMgr().getGameObjectInfoByWorldPosition(worldPos);
-        if(gameObjectInfo != null){
+        if(gameObjectInfo != null && gameObjectInfo.gameObject.getGameObjectString() == STRING_TANK){
             LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action", gameObjectInfo.ID, gameObjectInfo.type]);
             return false;
         }

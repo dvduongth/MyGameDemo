@@ -98,6 +98,7 @@ var BattleMgr = cc.Class.extend({
         var base = this.getBattleFactory().updateBaseFactory(rootNode, team, type);
         if (base != null) {
             this.getPlayerMgr().addBaseIDForTeam(base.getID(), base.getTeam(), base.getType());
+            this.getMapMgr().updateGameObjectIDForTileLogic(base.getID(), base);
         }
     },
     removeBase: function (id) {
@@ -106,6 +107,9 @@ var BattleMgr = cc.Class.extend({
     updateObstacle: function (rootNode, type) {
         LogUtils.getInstance().log([this.getClassName(), "updateObstacle type", type]);
         var obstacle = this.getBattleFactory().updateObstacleFactory(rootNode, type);
+        if(obstacle != null) {
+            this.getMapMgr().updateGameObjectIDForTileLogic(obstacle.getID(), obstacle);
+        }
     },
     removeObstacle: function (id) {
         this.getBattleFactory().removeObstacle(id);

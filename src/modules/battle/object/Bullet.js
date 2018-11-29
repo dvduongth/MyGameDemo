@@ -16,6 +16,7 @@ var Bullet = cc.Sprite.extend({
         this.setType(type);
         this.setDirection(direction);
         this.setTankGunID(tankGunId);
+        this.setListTileLogic([]);
     },
     getPathTextResourceByType: function (type) {
         var path;
@@ -184,6 +185,26 @@ var Bullet = cc.Sprite.extend({
         }
         gv.engine.getBattleMgr().removeBullet(this.getID());
         cc.pool.putInPool(this);
+    },
+    setGameObjectString: function (l) {
+        this._gameObjectString = l;
+    },
+    getGameObjectString: function () {
+        return this._gameObjectString;
+    },
+    setListTileLogic: function (l) {
+        this._listTileLogic = l;
+    },
+    getListTileLogic: function () {
+        return this._listTileLogic;
+    },
+    pushTileLogicForGameObject: function (t) {
+        this.getListTileLogic().push(t);
+    },
+    updateLocationByWorldPosition: function (wPos) {
+        var parent = this.getParent();
+        var nPos = parent.convertToNodeSpace(wPos);
+        this.setPosition(nPos);
     },
     unuse: function () {
         this.resetInfo();

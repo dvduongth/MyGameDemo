@@ -68,5 +68,8 @@ var TileLogic = cc.Class.extend({
     },
     toString: function () {
         return this.getTileTypeValue() + "";
+    },
+    pushGameObjectIDOnTile: function (id) {
+        this.getListIDOnTile().push(id);
     }
 });

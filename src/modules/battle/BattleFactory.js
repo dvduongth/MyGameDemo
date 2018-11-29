@@ -39,6 +39,7 @@ var BattleFactory = cc.Class.extend({
         LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);
         if (parent != null) {
             var tank = new Tank(this.getTankID(), team, type);
+            tank.setGameObjectString(STRING_TANK);
             parent.addChild(tank);
             tank.setPosition(position);
             this.addTank(tank);
@@ -63,6 +64,7 @@ var BattleFactory = cc.Class.extend({
         //LogUtils.getInstance().log([this.getClassName(), "spawnBullet direction", direction]);
         if (parent != null) {
             var bullet = Bullet.create(this.getBulletID(), direction, team, type, tankGunId);
+            bullet.setGameObjectString(STRING_BULLET);
             parent.addChild(bullet);
             bullet.setPosition(position);
             this.addBullet(bullet);
@@ -86,6 +88,7 @@ var BattleFactory = cc.Class.extend({
         LogUtils.getInstance().log([this.getClassName(), "updateBase team", team, "type", type]);
         if (rootNode != null) {
             var obj = new Base(this.getBaseID(), rootNode, team, type);
+            obj.setGameObjectString(STRING_BASE);
             this.addBase(obj);
             return obj;
         } else {
@@ -107,6 +110,7 @@ var BattleFactory = cc.Class.extend({
         LogUtils.getInstance().log([this.getClassName(), "updateObstacle type", type]);
         if (rootNode != null) {
             var obj = new Obstacle(this.getObstacleID(), rootNode, type);
+            obj.setGameObjectString(STRING_OBSTACLE);
             this.addObstacle(obj);
             return obj;
         } else {

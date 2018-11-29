@@ -9,6 +9,7 @@ var BaseGameObject = cc.Class.extend({
         this.setRootNode(rootNode);
         this.setTeam(team);
         this.setType(type);
+        this.setListTileLogic([]);
     },
     setID: function (id) {
         this._ID = id;
@@ -136,5 +137,25 @@ var BaseGameObject = cc.Class.extend({
             //todo die
             this.destroy();
         }
+    },
+    setGameObjectString: function (l) {
+        this._gameObjectString = l;
+    },
+    getGameObjectString: function () {
+        return this._gameObjectString;
+    },
+    setListTileLogic: function (l) {
+        this._listTileLogic = l;
+    },
+    getListTileLogic: function () {
+        return this._listTileLogic;
+    },
+    pushTileLogicForGameObject: function (t) {
+        this.getListTileLogic().push(t);
+    },
+    updateLocationByWorldPosition: function (wPos) {
+        var parent = this.getParent();
+        var nPos = parent.convertToNodeSpace(wPos);
+        this.setPosition(nPos);
     }
 });

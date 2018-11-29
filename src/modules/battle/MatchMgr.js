@@ -73,6 +73,7 @@ var MatchMgr = cc.Class.extend({
         return false;
     },
     checkLogicCollisionBulletWithTarget: function (id) {
+        return false;//todo test edit after
         var m = gv.engine.getBattleMgr().getBattleFactory().getMAPSprites();
         var curSpr = m[id];
         var tankGunID = curSpr.getTankGunID();
