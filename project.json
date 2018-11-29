@@ -56,6 +56,7 @@
         "src/libs/signals.js",
         "src/libs/underscore.js",
         "src/modules/battle/base_object/BaseGameObject.js",
+        "src/modules/battle/base_object/TileLogic.js",
         "src/modules/battle/BattleFactory.js",
         "src/modules/battle/BattleMgr.js",
         "src/modules/battle/data/BattleDataModel.js",
