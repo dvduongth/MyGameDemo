@@ -20,8 +20,9 @@ var SceneBattle = BaseScene.extend({
         this._super(resJson.ZCCS__SCENE__BATTLE__SCENEBATTLE);
     },
     initScene: function () {
+        gv.engine.getBattleMgr().getMapMgr().setMapBackgroundObj(this.sprMapBackground);
+        gv.engine.getBattleMgr().getMapMgr().initMap();
         this.setMapDisplayPickTank({});
-        LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
         this.setMapKeyFindObject({});
         this.initBase();
         this.initObstacle();
@@ -30,6 +31,7 @@ var SceneBattle = BaseScene.extend({
         this.createKeyBoardListener();
         this.createTouchListenerOneByOne();
         this.createTouchListenerOneByOneTank();
+        LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
     },
     initDisplayPickTankSlot: function () {
         switch (gv.engine.getBattleMgr().getPlayerMgr().getMyTeam()){
