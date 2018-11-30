@@ -16,7 +16,7 @@ var Bullet = cc.Sprite.extend({
         this.setType(type);
         this.setDirection(direction);
         this.setTankGunID(tankGunId);
-        this.setListTileLogic([]);
+        this.setListTileLogicPointIndex([]);
     },
     getPathTextResourceByType: function (type) {
         var path;
@@ -192,18 +192,25 @@ var Bullet = cc.Sprite.extend({
     getGameObjectString: function () {
         return this._gameObjectString;
     },
-    setListTileLogic: function (l) {
-        this._listTileLogic = l;
+    setStartTileLogicPointIndex: function (l) {
+        this._startTileLogicPointIndex = l;
     },
-    getListTileLogic: function () {
-        return this._listTileLogic;
+    getStartTileLogicPointIndex: function () {
+        return this._startTileLogicPointIndex;
     },
-    pushTileLogicForGameObject: function (t) {
-        this.getListTileLogic().push(t);
+    setListTileLogicPointIndex: function (l) {
+        this._listTileLogicPointIndex = l;
+    },
+    getListTileLogicPointIndex: function () {
+        return this._listTileLogicPointIndex;
+    },
+    pushTileLogicPointIndex: function (t) {
+        this.getListTileLogicPointIndex().push(t);
     },
     updateLocationByWorldPosition: function (wPos) {
         var parent = this.getParent();
         var nPos = parent.convertToNodeSpace(wPos);
+        this.setAnchorPoint(cc.p(0.5, 0.5));
         this.setPosition(nPos);
     },
     unuse: function () {

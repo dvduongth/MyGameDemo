@@ -23,9 +23,6 @@ var SceneBattle = BaseScene.extend({
         gv.engine.getBattleMgr().getMapMgr().setMapBackgroundObj(this.sprMapBackground);
         gv.engine.getBattleMgr().getMapMgr().initMap();
         this.setMapDisplayPickTank({});
-        this.setMapKeyFindObject({});
-        this.initBase();
-        this.initObstacle();
         this.findAndInitGameObject();
         this.initDisplayPickTankSlot();
         this.createKeyBoardListener();
@@ -75,44 +72,15 @@ var SceneBattle = BaseScene.extend({
 
         }
     },
-    initBase: function () {
-        LogUtils.getInstance().log([this.getClassName(), "initBase"]);
-        this.getMapKeyFindObject()["MainBase_0"] = function (child) {
-            gv.engine.getBattleMgr().updateBase(child, TEAM_1, BASE_MAIN);
-        };
-        this.getMapKeyFindObject()["MainBase_1"] = function (child) {
-            gv.engine.getBattleMgr().updateBase(child, TEAM_2, BASE_MAIN);
-        };
-        this.getMapKeyFindObject()["SideBase_0"] = function (child) {
-            gv.engine.getBattleMgr().updateBase(child, TEAM_1, BASE_SIDE);
-        };
-        this.getMapKeyFindObject()["SideBase_1"] = function (child) {
-            gv.engine.getBattleMgr().updateBase(child, TEAM_2, BASE_SIDE);
-        };
-    },
-    initObstacle: function () {
-        LogUtils.getInstance().log([this.getClassName(), "Obstacle"]);
-        this.getMapKeyFindObject()["ObstacleSoft"] = function (child) {
-            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_SOFT_OBSTACLE);
-        };
-        this.getMapKeyFindObject()["ObstacleHard"] = function (child) {
-            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_HARD_OBSTACLE);
-        };
-        this.getMapKeyFindObject()["Water"] = function (child) {
-            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_WATER);
-        };
-    },
     update: function (dt) {
         gv.engine.getBattleMgr().update(dt);
     },
-    setMapKeyFindObject: function (m) {
-        this._mapKeyFindObject = m;
-    },
-    getMapKeyFindObject: function () {
-        return this._mapKeyFindObject;
-    },
     findAndInitGameObject: function () {
-        var _this = this;
+        var MainBase = "MainBase";
+        var SideBase = "SideBase";
+        var ObstacleSoft = "ObstacleSoft";
+        var ObstacleHard = "ObstacleHard";
+        var Water = "Water";
         function findObj (node) {
             if (node == null) {
                 return false;
@@ -127,8 +95,25 @@ var SceneBattle = BaseScene.extend({
                 var child = allChildren[i];
                 nameChild = child.getName();
                 //LogUtils.getInstance().log(["findBase", nameChild]);
-                if(nameChild in _this.getMapKeyFindObject() && _this.getMapKeyFindObject()[nameChild] != null){
-                    _this.getMapKeyFindObject()[nameChild](child);
+                if(nameChild != null) {
+                    var arr = nameChild.split("_");
+                    switch (arr[0]){
+                        case MainBase:
+                            gv.engine.getBattleMgr().updateBase(child, BASE_MAIN, cc.p(arr[1], arr[2]), arr[3]);
+                            break;
+                        case SideBase:
+                            gv.engine.getBattleMgr().updateBase(child, BASE_SIDE, cc.p(arr[1], arr[2]), arr[3]);
+                            break;
+                        case ObstacleSoft:
+                            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_SOFT_OBSTACLE, cc.p(arr[1], arr[2]));
+                            break;
+                        case ObstacleHard:
+                            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_HARD_OBSTACLE, cc.p(arr[1], arr[2]));
+                            break;
+                        case Water:
+                            gv.engine.getBattleMgr().updateObstacle(child, BLOCK_WATER, cc.p(arr[1], arr[2]));
+                            break;
+                    }
                 }
                 findObj(child);
             }

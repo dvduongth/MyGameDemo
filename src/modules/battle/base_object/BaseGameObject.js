@@ -9,7 +9,7 @@ var BaseGameObject = cc.Class.extend({
         this.setRootNode(rootNode);
         this.setTeam(team);
         this.setType(type);
-        this.setListTileLogic([]);
+        this.setListTileLogicPointIndex([]);
     },
     setID: function (id) {
         this._ID = id;
@@ -55,6 +55,9 @@ var BaseGameObject = cc.Class.extend({
     isFlippedObj: function () {
         return this._isFlippedObj;
     },
+    setVisible: function (eff) {
+        this.getRootNode().setVisible(eff);
+    },
     setPosition: function (p, y) {
         if(y !== undefined) {
             this._position = cc.p(p, y);
@@ -70,6 +73,22 @@ var BaseGameObject = cc.Class.extend({
             return this.getRootNode().getPosition();
         }
         return this._position;
+    },
+    setAnchorPoint: function (p, y) {
+        if(y !== undefined) {
+            this._anchorPoint = cc.p(p, y);
+        }else{
+            this._anchorPoint = p;
+        }
+        if(this.getRootNode() != null) {
+            this.getRootNode().setAnchorPoint(this._anchorPoint);
+        }
+    },
+    getAnchorPoint: function () {
+        if(this.getRootNode() != null) {
+            return this.getRootNode().getAnchorPoint();
+        }
+        return this._anchorPoint;
     },
     setContentSize: function (s, height) {
         if(height !== undefined) {
@@ -144,18 +163,25 @@ var BaseGameObject = cc.Class.extend({
     getGameObjectString: function () {
         return this._gameObjectString;
     },
-    setListTileLogic: function (l) {
-        this._listTileLogic = l;
+    setStartTileLogicPointIndex: function (l) {
+        this._startTileLogicPointIndex = l;
     },
-    getListTileLogic: function () {
-        return this._listTileLogic;
+    getStartTileLogicPointIndex: function () {
+        return this._startTileLogicPointIndex;
     },
-    pushTileLogicForGameObject: function (t) {
-        this.getListTileLogic().push(t);
+    setListTileLogicPointIndex: function (l) {
+        this._listTileLogicPointIndex = l;
+    },
+    getListTileLogicPointIndex: function () {
+        return this._listTileLogicPointIndex;
+    },
+    pushTileLogicPointIndex: function (t) {
+        this.getListTileLogicPointIndex().push(t);
     },
     updateLocationByWorldPosition: function (wPos) {
         var parent = this.getParent();
         var nPos = parent.convertToNodeSpace(wPos);
+        this.setAnchorPoint(cc.p(0.5, 0.5));
         this.setPosition(nPos);
     }
 });
