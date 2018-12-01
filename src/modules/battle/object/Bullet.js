@@ -85,19 +85,19 @@ var Bullet = cc.Sprite.extend({
         switch (this.getDirection()) {
             case DIRECTION_UP:
                 angle = 0;
-                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, 0, this.getSpeed());
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, this.getSpeed(), 0, true);
                 break;
             case DIRECTION_DOWN:
                 angle = 180;
-                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, 0, -this.getSpeed());
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, -this.getSpeed(), 0, true);
                 break;
             case DIRECTION_LEFT:
                 angle = 270;
-                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, -this.getSpeed(), 0);
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, 0, -this.getSpeed(), true);
                 break;
             case DIRECTION_RIGHT:
                 angle = 90;
-                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, this.getSpeed(), 0);
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, 0, this.getSpeed(), true);
                 break;
         }
         this.setRotation(angle);

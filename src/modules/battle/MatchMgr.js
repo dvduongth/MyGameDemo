@@ -342,43 +342,60 @@ var MatchMgr = cc.Class.extend({
         });
         return worldPos;
     },
-    moveGameObject: function (obj, dRow, dCol) {
-        return false;//todo test edit after
+    isBarrierGameObjectByID: function (id) {
+        var obj = gv.engine.getBattleMgr().getGameObjectByID(id);
+        if(obj != null) {
+            var str = obj.getGameObjectString();
+            switch (str) {
+                case STRING_BASE:
+                case STRING_OBSTACLE:
+                case STRING_TANK:
+                    return true;
+                default :
+                    return false;
+            }
+        }
+        return false;
+    },
+    moveGameObject: function (obj, dRow, dCol, skipCheckEmpty) {
         var sizeNumberPoint = obj.getGameObjectSizeNumberPoint();
         var isChangeVertical = Math.abs(dRow) > Math.abs(dCol);
         var numTile = isChangeVertical ? Math.abs(dRow) : Math.abs(dCol);
         var curStartTileLogicPointIdx = obj.getStartTileLogicPointIndex();
         var up, down, left, right, startLookingIdx;
         if (isChangeVertical) {
-            if (isChangeVertical) {
-                if (dRow > 0) {
-                    //up
-                    up = true;
-                    startLookingIdx = cc.p(curStartTileLogicPointIdx.x + sizeNumberPoint.row - 1, curStartTileLogicPointIdx.y);
-                } else {
-                    //down
-                    down = true;
-                    startLookingIdx = curStartTileLogicPointIdx;
-                }
+            if (dRow > 0) {
+                //up
+                up = true;
+                startLookingIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, sizeNumberPoint.row - 1, 0);
+                //LogUtils.getInstance().log([this.getClassName(), "moveGameObject up"]);
             } else {
-                if (dCol > 0) {
-                    //right
-                    right = true;
-                    startLookingIdx = cc.p(curStartTileLogicPointIdx.x, curStartTileLogicPointIdx.y + sizeNumberPoint.col - 1);
-                } else {
-                    //left
-                    left = true;
-                    startLookingIdx = cc.p(curStartTileLogicPointIdx.x, curStartTileLogicPointIdx.y - sizeNumberPoint.col + 1);
-                }
+                //down
+                down = true;
+                startLookingIdx = curStartTileLogicPointIdx;
+                //LogUtils.getInstance().log([this.getClassName(), "moveGameObject down"]);
+            }
+        } else {
+            if (dCol > 0) {
+                //right
+                right = true;
+                startLookingIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, 0, sizeNumberPoint.col - 1);
+                //LogUtils.getInstance().log([this.getClassName(), "moveGameObject right"]);
+            } else {
+                //left
+                left = true;
+                startLookingIdx = curStartTileLogicPointIdx;
+                //LogUtils.getInstance().log([this.getClassName(), "moveGameObject left"]);
             }
         }
+        //LogUtils.getInstance().log([this.getClassName(), "moveGameObject curStartTileLogicPointIdx", curStartTileLogicPointIdx.x, curStartTileLogicPointIdx.y, startLookingIdx.x, startLookingIdx.y]);
         function isEqualPoint(p1, p2) {
             return p1.x == p2.x && p1.y == p2.y;
         }
-
         function findNexIdxEmpty(tilePointIdx) {
             var nextIdx = null;
-            for (var i = numTile; i > 0; --i) {
+            var foundedIdx = null;
+            for (var i = 1; i <= numTile; ++i) {
                 var dx = 0;
                 var dy = 0;
                 if(up) {
@@ -392,13 +409,28 @@ var MatchMgr = cc.Class.extend({
                 }
                 nextIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(tilePointIdx, dx, dy);
                 if (!isEqualPoint(nextIdx, tilePointIdx)) {
-                    var isEmpty = !gv.engine.getBattleMgr().getMapMgr().isExistedGameObjectOnTileAtTilePointIndex(nextIdx);
-                    if (isEmpty) {
-                        return nextIdx;
+                    if(skipCheckEmpty) {
+                        foundedIdx = nextIdx;
+                    }else{
+                        var existedListId = gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(nextIdx);
+                        if (!existedListId) {
+                            foundedIdx = nextIdx;
+                        }else{
+                            var listBarrierID = existedListId.filter(function (id) {
+                                return gv.engine.getBattleMgr().getMatchMgr().isBarrierGameObjectByID(id);
+                            });
+                            if(listBarrierID.length > 0) {
+                                //stop search
+                                return foundedIdx;
+                            }else{
+                                //can move
+                                foundedIdx = nextIdx;
+                            }
+                        }
                     }
                 }
             }
-            return nextIdx;
+            return foundedIdx;
         }
 
         var i, len, startTileLogicPointIdx, listNextIdx = [];
@@ -421,32 +453,37 @@ var MatchMgr = cc.Class.extend({
                 }
             }
         }
+
         if (listNextIdx.length == len) {
-            var exited, isNoMove, delta, mapPointIdx, tileIdx;
+            var exited, isNoMove, delta, desStartTileIdx;
             if (up || down) {
                 exited = listNextIdx.findIndex(function (p) {
                     return p.x == startLookingIdx.x;
                 });
                 isNoMove = exited != -1;
                 if (isNoMove) {
+                    //LogUtils.getInstance().log([this.getClassName(), "no move"]);
                     return false;
                 }
                 if (up) {
                     var minRow = listNextIdx[0].x;
                     listNextIdx.forEach(function (p) {
+                        //LogUtils.getInstance().log(["listNextIdx", p.x, p.y]);
                         minRow = Math.min(minRow, p.x);
                     });
                     delta = minRow - startLookingIdx.x;
                 } else {
                     var maxRow = listNextIdx[0].x;
                     listNextIdx.forEach(function (p) {
+                        //LogUtils.getInstance().log(["listNextIdx", p.x, p.y]);
                         maxRow = Math.max(maxRow, p.x);
                     });
-                    delta = startLookingIdx.x - maxRow;
+                    delta = maxRow - startLookingIdx.x;
                 }
-                tileIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, delta, 0);
-                mapPointIdx = gv.engine.getBattleMgr().getMapMgr().convertTileIndexPointToMapIndexPoint(tileIdx);
-                gv.engine.getBattleMgr().getMapMgr().updateGameObjectIDForTileLogic(obj.getID(), obj, mapPointIdx);
+                //LogUtils.getInstance().log([this.getClassName(), "isChangeVertical delta",delta]);
+                desStartTileIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, delta, 0);
+                //LogUtils.getInstance().log([this.getClassName(), "isChangeVertical desStartTileIdx",desStartTileIdx.x, desStartTileIdx.y]);
+                gv.engine.getBattleMgr().getMapMgr().pushGameObjectForTileLogic(obj.getID(), obj, desStartTileIdx);
                 return false;
             }
             if (left || right) {
@@ -455,24 +492,28 @@ var MatchMgr = cc.Class.extend({
                 });
                 isNoMove = exited != -1;
                 if (isNoMove) {
+                    //LogUtils.getInstance().log([this.getClassName(), "no move"]);
                     return false;
                 }
                 if (right) {
                     var minCol = listNextIdx[0].y;
                     listNextIdx.forEach(function (p) {
+                        //LogUtils.getInstance().log(["listNextIdx", p.x, p.y]);
                         minCol = Math.min(minCol, p.y);
                     });
                     delta = minCol - startLookingIdx.y;
                 } else {
                     var maxRowCol = listNextIdx[0].y;
                     listNextIdx.forEach(function (p) {
+                        //LogUtils.getInstance().log(["listNextIdx", p.x, p.y]);
                         maxRowCol = Math.max(maxRowCol, p.y);
                     });
-                    delta = startLookingIdx.y - maxRowCol;
+                    delta = maxRowCol - startLookingIdx.y;
                 }
-                tileIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, 0, delta);
-                mapPointIdx = gv.engine.getBattleMgr().getMapMgr().convertTileIndexPointToMapIndexPoint(tileIdx);
-                gv.engine.getBattleMgr().getMapMgr().updateGameObjectIDForTileLogic(obj.getID(), obj, mapPointIdx);
+                //LogUtils.getInstance().log([this.getClassName(), "delta",delta]);
+                desStartTileIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, 0, delta);
+                //LogUtils.getInstance().log([this.getClassName(), "desStartTileIdx",desStartTileIdx.x, desStartTileIdx.y]);
+                gv.engine.getBattleMgr().getMapMgr().pushGameObjectForTileLogic(obj.getID(), obj, desStartTileIdx);
             }
         }
     }

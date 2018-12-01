@@ -101,8 +101,12 @@ var MapMgr = cc.Class.extend({
         }
         LogUtils.getInstance().log("-----------------------------------------------");
     },
-    getTileLogicByTilePointIndex: function (tilePointIdx) {
-        return this.getTileMatrix()[tilePointIdx.x][tilePointIdx.y];
+    getTileLogicByTilePointIndex: function (tilePointIdx, colIdx) {
+        if(colIdx !== undefined) {
+            return this.getTileMatrix()[tilePointIdx][colIdx];
+        }else{
+            return this.getTileMatrix()[tilePointIdx.x][tilePointIdx.y];
+        }
     },
     getMapPointIndexByWorldPosition: function (worldPos) {
         var tilePointIdx = this.getTilePointIndexFromWorldPosition(worldPos);
@@ -113,37 +117,46 @@ var MapMgr = cc.Class.extend({
         return this.getTileLogicByTilePointIndex(tilePointIdx);
     },
     updateGameObjectIDForTileLogic: function (id, obj, mapPointIdx) {
-        var h, w;
-        if(obj.getGameObjectString() == STRING_BASE) {
-            h = Setting.GAME_OBJECT_SIZE_H * 2;
-            w = Setting.GAME_OBJECT_SIZE_W * 2;
-        }else{
-            h = Setting.GAME_OBJECT_SIZE_H;
-            w = Setting.GAME_OBJECT_SIZE_W;
-        }
         var startTileIdxPoint = this.convertMapIndexPointToStartTileIndexPoint(mapPointIdx);
+        this.pushGameObjectForTileLogic(id, obj, startTileIdxPoint);
+    },
+    pushGameObjectForTileLogic: function (id, gObject, startTileIdxPoint) {
+        var numRow, numCol;
+        if(gObject.getGameObjectSizeNumberPoint() == null){
+            var h, w;
+            if(gObject.getGameObjectString() == STRING_BASE) {
+                h = Setting.GAME_OBJECT_SIZE_H * 2;
+                w = Setting.GAME_OBJECT_SIZE_W * 2;
+            }else{
+                h = Setting.GAME_OBJECT_SIZE_H;
+                w = Setting.GAME_OBJECT_SIZE_W;
+            }
+            gObject.setGameObjectSizeNumberPoint(GameObjectPointIndex(h, w));
+        }
+        numRow = gObject.getGameObjectSizeNumberPoint().row;
+        numCol = gObject.getGameObjectSizeNumberPoint().col;
         var startTileLogic = this.getTileLogicByTilePointIndex(startTileIdxPoint);
         if(startTileLogic != null) {
             //LogUtils.getInstance().log([this.getClassName(), "YEAH YEAH tileLogic add ID", id]);
             var tWorldPos = startTileLogic.getTileWorldPosition();
             var tSize = startTileLogic.getTileSize();
-            var centerPos = cc.p(tWorldPos.x + w * tSize.width / 2, tWorldPos.y + h * tSize.height / 2);
-            obj.updateLocationByWorldPosition(centerPos);
-            obj.setStartTileLogicPointIndex(startTileIdxPoint);
-            obj.setGameObjectSizeNumberPoint(GameObjectPointIndex(h, w));
-            obj.clearListTileLogicPointIndex();
+            var centerPos = cc.p(tWorldPos.x + numCol * tSize.width / 2, tWorldPos.y + numRow * tSize.height / 2);
+            gObject.updateLocationByWorldPosition(centerPos);
+            gObject.setStartTileLogicPointIndex(startTileIdxPoint);
+            gObject.clearListTileLogicPointIndex();
             //push game object into other tileLogic
-            var m = this.getTileMatrix();
-            for(var row = 0; row < h; ++row) {
-                for(var col = 0; col < w; ++col) {
-                    var curTile = m[startTileIdxPoint.x + row][startTileIdxPoint.y + col];
+            for(var row = 0; row < numRow; ++row) {
+                for(var col = 0; col < numCol; ++col) {
+                    var curTile = this.getTileLogicByTilePointIndex(startTileIdxPoint.x + row,startTileIdxPoint.y + col);
                     if(curTile != null) {
                         //LogUtils.getInstance().log([this.getClassName(), "updateGameObjectIDForTileLogic HERE", tileStartIdx.x + i, tileStartIdx.y + j]);
                         curTile.pushGameObjectIDOnTile(id);
-                        obj.pushTileLogicPointIndex(curTile.getTileIndexPoint());
+                        gObject.pushTileLogicPointIndex(curTile.getTileIndexPoint());
                     }
                 }
             }
+        }else{
+            LogUtils.getInstance().error([this.getClassName(), "pushGameObjectForTileLogic startTileLogic null"]);
         }
     },
     getTilePointIndexFromWorldPosition: function (worldPos) {
@@ -168,17 +181,21 @@ var MapMgr = cc.Class.extend({
         var nextRow = curPIdx.x + dx;
         var nextCol = curPIdx.y + dy;
         nextRow = Math.max(nextRow, 0);
-        nextRow = Math.min(nextRow, this.getNumberTileMapVertical());
+        nextRow = Math.min(nextRow, this.getNumberTileMapVertical() - 1);
         nextCol = Math.max(nextCol, 0);
-        nextCol = Math.min(nextCol, this.getNumberTileMapHorizontal());
+        nextCol = Math.min(nextCol, this.getNumberTileMapHorizontal() - 1);
         return cc.p(nextRow, nextCol);
     },
-    isExistedGameObjectOnTileAtTilePointIndex: function (p, skipId) {
+    existedGameObjectOnTileAtTilePointIndex: function (p, skipId) {
         var tileLogic = this.getTileLogicByTilePointIndex(p);
         var listId = tileLogic.getListIDOnTile().filter(function (id) {
             return id != skipId;
         });
-        return listId.length > 0;
+        if(listId.length > 0) {
+            return listId;
+        }else{
+            return false;
+        }
     }
 });
 function GameObjectPointIndex (row, col){

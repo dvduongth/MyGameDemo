@@ -42,7 +42,7 @@ var BaseScene = cc.Scene.extend({
 
     onEnter: function () {
         this._super();
-        this.schedule(this.update, Setting.TIME_LOOP_FRAME_RATE);
+        this.schedule(this.update, Setting.TIME_LOOP_RENDER);
     },
     update: function (dt) {
         //todo override me

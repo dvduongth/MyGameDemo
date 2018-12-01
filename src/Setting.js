@@ -10,7 +10,7 @@ Setting.TANK_LIGHT_HP = 50;
 Setting.BASE_MAIN_HP = 300;
 Setting.BASE_SIDE_HP = 200;
 Setting.OBSTACLE_HP = 100;
-Setting.MAX_SPEED = 12;
+Setting.MAX_SPEED = 3;
 Setting.MAX_DELAY_SPAWN_BULLET = 1.5;
 Setting.BULLET_SPEED = 8;
 Setting.AIRSTRIKE_COUNTDOWN = 10;
@@ -20,7 +20,7 @@ Setting.BULLET_TANK_LIGHT_DAMAGE = 20;
 // ====================================================================================================
 Setting.TIME_LOOP = 0.033;
 Setting.TIME_LOOP_FRAME_RATE = 0.02;
-Setting.TIME_LOOP_RENDER = 0.05;
+Setting.TIME_LOOP_RENDER = 1/12;
 // Map data 22x22, each block have the enum BLOCK_ in Enum.js
 Setting.GAME_OBJECT_SIZE_W = 5;
 Setting.GAME_OBJECT_SIZE_H = 5;

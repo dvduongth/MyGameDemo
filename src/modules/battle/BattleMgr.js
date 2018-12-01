@@ -89,8 +89,8 @@ var BattleMgr = cc.Class.extend({
     spawnBullet: function (parent, position, direction, team, type, tankGunId) {
         var bullet = this.getBattleFactory().spawnBulletFactory(parent, position, direction, team, type, tankGunId);
         if(bullet != null) {
-            var mapPointIdx = this.getMapMgr().getMapPointIndexByWorldPosition(bullet.getWorldPosition());
-            this.getMapMgr().updateGameObjectIDForTileLogic(bullet.getID(), bullet, mapPointIdx);
+            var startTilePointIdx = this.getGameObjectByID(tankGunId).getStartTileLogicPointIndex();
+            this.getMapMgr().pushGameObjectForTileLogic(bullet.getID(), bullet, startTilePointIdx);
             this.getMatchMgr().pushBulletID(bullet.getID());
         }
     },
