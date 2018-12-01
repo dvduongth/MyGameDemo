@@ -163,6 +163,12 @@ var BaseGameObject = cc.Class.extend({
     getGameObjectString: function () {
         return this._gameObjectString;
     },
+    setGameObjectSizeNumberPoint: function (l) {
+        this._gameObjectSizeNumberPoint = l;
+    },
+    getGameObjectSizeNumberPoint: function () {
+        return this._gameObjectSizeNumberPoint;
+    },
     setStartTileLogicPointIndex: function (l) {
         this._startTileLogicPointIndex = l;
     },
@@ -183,5 +189,16 @@ var BaseGameObject = cc.Class.extend({
         var nPos = parent.convertToNodeSpace(wPos);
         this.setAnchorPoint(cc.p(0.5, 0.5));
         this.setPosition(nPos);
+    },
+    clearListTileLogicPointIndex: function () {
+        var id = this.getID();
+        var list = this.getListTileLogicPointIndex();
+        list.forEach(function (c) {
+            var tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicByTilePointIndex(c);
+            if(tileLogic != null) {
+                tileLogic.removeGameObjectIDOnTile(id);
+            }
+        });
+        this.setListTileLogicPointIndex([]);
     }
 });

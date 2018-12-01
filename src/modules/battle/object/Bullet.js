@@ -82,44 +82,26 @@ var Bullet = cc.Sprite.extend({
     // Draw
     update: function (dt) {
         var angle = 0;
-        var dX = 0;
-        var dY = 0;
         switch (this.getDirection()) {
             case DIRECTION_UP:
                 angle = 0;
-                dY = this.getSpeed();
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, 0, this.getSpeed());
                 break;
             case DIRECTION_DOWN:
                 angle = 180;
-                dY = -this.getSpeed();
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, 0, -this.getSpeed());
                 break;
             case DIRECTION_LEFT:
                 angle = 270;
-                dX = -this.getSpeed();
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, -this.getSpeed(), 0);
                 break;
             case DIRECTION_RIGHT:
                 angle = 90;
-                dX = this.getSpeed();
-                break;
-            default :
-                //DIRECTION_UP
-                angle = 0;
-                dY = this.getSpeed();
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, this.getSpeed(), 0);
                 break;
         }
         this.setRotation(angle);
-        if (dX != 0 || dY != 0) {
-            //move before
-            this.setPositionX(this.getPositionX() + dX);
-            this.setPositionY(this.getPositionY() + dY);
-            //todo check collision
-            if (gv.engine.getBattleMgr().checkCollisionBulletWithTarget(this.getID())) {
-                //destroy
-                this.destroy(true);
-            } else {
-                this.checkOutOfBoundingScreen();
-            }
-        }
+        this.checkOutOfBoundingScreen();
     },
     checkOutOfBoundingScreen: function () {
         var parent = this.getParent();
@@ -192,6 +174,12 @@ var Bullet = cc.Sprite.extend({
     getGameObjectString: function () {
         return this._gameObjectString;
     },
+    setGameObjectSizeNumberPoint: function (l) {
+        this._gameObjectSizeNumberPoint = l;
+    },
+    getGameObjectSizeNumberPoint: function () {
+        return this._gameObjectSizeNumberPoint;
+    },
     setStartTileLogicPointIndex: function (l) {
         this._startTileLogicPointIndex = l;
     },
@@ -212,6 +200,17 @@ var Bullet = cc.Sprite.extend({
         var nPos = parent.convertToNodeSpace(wPos);
         this.setAnchorPoint(cc.p(0.5, 0.5));
         this.setPosition(nPos);
+    },
+    clearListTileLogicPointIndex: function () {
+        var id = this.getID();
+        var list = this.getListTileLogicPointIndex();
+        list.forEach(function (c) {
+            var tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicByTilePointIndex(c);
+            if(tileLogic != null) {
+                tileLogic.removeGameObjectIDOnTile(id);
+            }
+        });
+        this.setListTileLogicPointIndex([]);
     },
     unuse: function () {
         this.resetInfo();

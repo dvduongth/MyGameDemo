@@ -31,7 +31,7 @@ var BattleFactory = cc.Class.extend({
     getObstacleID: function () {
         return STRING_OBSTACLE + "_" + (this._autoID++);
     },
-    getGameObjectByID: function (id) {
+    getGameObjectByIDFactory: function (id) {
         return this.getMAPSprites()[id];
     },
 

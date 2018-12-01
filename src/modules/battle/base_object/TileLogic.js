@@ -70,6 +70,16 @@ var TileLogic = cc.Class.extend({
         return this.getTileTypeValue() + "";
     },
     pushGameObjectIDOnTile: function (id) {
-        this.getListIDOnTile().push(id);
+        var existedIdx = this.getListIDOnTile().findIndex(function (e) {
+            return e == id;
+        });
+        if(existedIdx == -1) {
+            this.getListIDOnTile().push(id);
+        }
+    },
+    removeGameObjectIDOnTile: function (id) {
+        this.setListIDOnTile(this.getListIDOnTile().filter(function (e) {
+            return e != id;
+        }));
     }
 });

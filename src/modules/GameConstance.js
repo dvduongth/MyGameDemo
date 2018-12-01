@@ -85,7 +85,7 @@ var RESULT_BOARD_H = 200;
 
 var SUDDEN_DEATH_DURATION = 30;
 
-var STRING_OBSTACLE = "obstacle";
-var STRING_BASE = "base";
-var STRING_TANK = "tank";
-var STRING_BULLET = "bullet";
+var STRING_OBSTACLE = "0";
+var STRING_BASE = "1";
+var STRING_TANK = "2";
+var STRING_BULLET = "3";

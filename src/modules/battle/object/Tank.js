@@ -57,7 +57,7 @@ var Tank = cc.Sprite.extend({
         } else {
             this.setAngle(180);//down
         }
-        this.setSpeed(Setting.MAX_SPEED / this.getType());
+        this.setSpeed(Math.floor(Setting.MAX_SPEED / this.getType()));
         this.setMapPressAction({});
         this.createTankSprite();
         this.createHPDisplayProgress();
@@ -332,47 +332,29 @@ var Tank = cc.Sprite.extend({
     },
     // Draw - obvious comment is obvious
     update: function (dt) {
+        if(this.getDirection() == DIRECTION_IDLE) {
+            return false;
+        }
         var angle = 0;
-        var dX = 0;
-        var dY = 0;
         switch (this.getDirection()) {
             case DIRECTION_UP:
                 angle = 0;
-                dY = this.getSpeed();
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, 0, this.getSpeed());
                 break;
             case DIRECTION_DOWN:
                 angle = 180;
-                dY = -this.getSpeed();
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, 0, -this.getSpeed());
                 break;
             case DIRECTION_LEFT:
                 angle = 270;
-                dX = -this.getSpeed();
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, -this.getSpeed(), 0);
                 break;
             case DIRECTION_RIGHT:
                 angle = 90;
-                dX = this.getSpeed();
-                break;
-
-            case DIRECTION_IDLE:
-                angle = this.getRotation();
-                dX = 0;
-                dY = 0;
+                gv.engine.getBattleMgr().getMatchMgr().moveGameObject(this, this.getSpeed(), 0);
                 break;
         }
         this.setAngle(angle);
-        if (dX != 0 || dY != 0) {
-            //todo check collision
-            //move before
-            this.setPositionX(this.getPositionX() + dX);
-            this.setPositionY(this.getPositionY() + dY);
-            if (gv.engine.getBattleMgr().checkCollisionTankWithBarrier(this.getID())) {
-                //can not move ==> move back
-                this.setPositionX(this.getPositionX() - dX);
-                this.setPositionY(this.getPositionY() - dY);
-                //LogUtils.getInstance().log([this.getClassName(), "can not move because of collision"]);
-                this.setDirection(DIRECTION_IDLE);
-            }
-        }
     },
     getWorldPosition: function () {
         return this.getParent().convertToWorldSpace(this.getPosition());
@@ -537,6 +519,12 @@ var Tank = cc.Sprite.extend({
     getGameObjectString: function () {
         return this._gameObjectString;
     },
+    setGameObjectSizeNumberPoint: function (l) {
+        this._gameObjectSizeNumberPoint = l;
+    },
+    getGameObjectSizeNumberPoint: function () {
+        return this._gameObjectSizeNumberPoint;
+    },
     setStartTileLogicPointIndex: function (l) {
         this._startTileLogicPointIndex = l;
     },
@@ -557,5 +545,16 @@ var Tank = cc.Sprite.extend({
         var nPos = parent.convertToNodeSpace(wPos);
         this.setAnchorPoint(cc.p(0.5, 0.5));
         this.setPosition(nPos);
+    },
+    clearListTileLogicPointIndex: function () {
+        var id = this.getID();
+        var list = this.getListTileLogicPointIndex();
+        list.forEach(function (c) {
+            var tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicByTilePointIndex(c);
+            if(tileLogic != null) {
+                tileLogic.removeGameObjectIDOnTile(id);
+            }
+        });
+        this.setListTileLogicPointIndex([]);
     }
 });

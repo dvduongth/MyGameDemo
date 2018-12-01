@@ -9,17 +9,17 @@ var MapMgr = cc.Class.extend({
     },
     ctor: function () {
         this.setTileMatrix([]);
-        var len = this.getNumberTileMapHeight();
+        var len = this.getNumberTileMapVertical();
         for (var i = 0; i < len; ++i) {
             this.getTileMatrix()[i] = [];
         }
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
-    getNumberTileMapWidth: function () {
+    getNumberTileMapHorizontal: function () {
         return Setting.MAP_W * Setting.GAME_OBJECT_SIZE_W;
     },
-    getNumberTileMapHeight: function () {
+    getNumberTileMapVertical: function () {
         return Setting.MAP_H * Setting.GAME_OBJECT_SIZE_H;
     },
     setTileMatrix: function (m) {
@@ -44,8 +44,8 @@ var MapMgr = cc.Class.extend({
         return this._tileLogicSize;
     },
     initMap: function () {
-        var numCol = this.getNumberTileMapWidth();
-        var numRow = this.getNumberTileMapHeight();
+        var numCol = this.getNumberTileMapHorizontal();
+        var numRow = this.getNumberTileMapVertical();
         var dw = this.getMapContentSize().width / numCol;
         var dh = this.getMapContentSize().height / numRow;
         var x = 0, y = 0;
@@ -104,6 +104,10 @@ var MapMgr = cc.Class.extend({
     getTileLogicByTilePointIndex: function (tilePointIdx) {
         return this.getTileMatrix()[tilePointIdx.x][tilePointIdx.y];
     },
+    getMapPointIndexByWorldPosition: function (worldPos) {
+        var tilePointIdx = this.getTilePointIndexFromWorldPosition(worldPos);
+        return this.convertTileIndexPointToMapIndexPoint(tilePointIdx);
+    },
     getTileLogicStartByWorldPosition: function (worldPos) {
         var tilePointIdx = this.getTilePointIndexFromWorldPosition(worldPos);
         return this.getTileLogicByTilePointIndex(tilePointIdx);
@@ -126,6 +130,8 @@ var MapMgr = cc.Class.extend({
             var centerPos = cc.p(tWorldPos.x + w * tSize.width / 2, tWorldPos.y + h * tSize.height / 2);
             obj.updateLocationByWorldPosition(centerPos);
             obj.setStartTileLogicPointIndex(startTileIdxPoint);
+            obj.setGameObjectSizeNumberPoint(GameObjectPointIndex(h, w));
+            obj.clearListTileLogicPointIndex();
             //push game object into other tileLogic
             var m = this.getTileMatrix();
             for(var row = 0; row < h; ++row) {
@@ -145,17 +151,41 @@ var MapMgr = cc.Class.extend({
         var mSize = this.getMapBackgroundObj().getContentSize();
         if(nPos.x < 0) {
             nPos.x = 0;
-        }else if(nPos.x > mSize.width) {
-            nPos.x = mSize.width;
+        }else if(nPos.x >= mSize.width) {
+            nPos.x = mSize.width - 1;
         }
         if(nPos.y < 0) {
             nPos.y = 0;
-        }else if(nPos.y > mSize.height) {
-            nPos.y = mSize.height;
+        }else if(nPos.y >= mSize.height) {
+            nPos.y = mSize.height - 1;
         }
         var tileSize = this.getTileLogicSize();
         var row = Math.floor(nPos.y / tileSize.height);
         var col = Math.floor(nPos.x / tileSize.width);
         return cc.p(row, col);
+    },
+    getNextTileLogicPointIndexByDelta: function (curPIdx, dx, dy) {
+        var nextRow = curPIdx.x + dx;
+        var nextCol = curPIdx.y + dy;
+        nextRow = Math.max(nextRow, 0);
+        nextRow = Math.min(nextRow, this.getNumberTileMapVertical());
+        nextCol = Math.max(nextCol, 0);
+        nextCol = Math.min(nextCol, this.getNumberTileMapHorizontal());
+        return cc.p(nextRow, nextCol);
+    },
+    isExistedGameObjectOnTileAtTilePointIndex: function (p, skipId) {
+        var tileLogic = this.getTileLogicByTilePointIndex(p);
+        var listId = tileLogic.getListIDOnTile().filter(function (id) {
+            return id != skipId;
+        });
+        return listId.length > 0;
     }
 });
+function GameObjectPointIndex (row, col){
+    return {
+        row: row,
+        col: col,
+        x: row,
+        y: col
+    };
+}

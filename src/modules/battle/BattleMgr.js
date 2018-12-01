@@ -56,15 +56,14 @@ var BattleMgr = cc.Class.extend({
         if (this.getMatchMgr().isPauseGame()) {
             return false;//todo during pause
         }
-        var m = this.getBattleFactory().getMAPSprites();
-        for (var t in m) {
-            if (m[t] != null) {
-                m[t].update(dt);
-            }
-        }
+        this.getMatchMgr().runUpdateTank(dt);
+        this.getMatchMgr().runUpdateBullet(dt);
+    },
+    getGameObjectByID: function (id) {
+        return this.getBattleFactory().getGameObjectByIDFactory(id);
     },
     getCurrentSelectedTank: function () {
-        return this.getBattleFactory().getGameObjectByID(this.getBattleDataModel().getCurrentSelectedTankID());
+        return this.getBattleFactory().getGameObjectByIDFactory(this.getBattleDataModel().getCurrentSelectedTankID());
     },
     throwTank: function (parent, position, team, type) {
         var maxNumTank = Setting.NUMBER_OF_TANK;
@@ -78,9 +77,9 @@ var BattleMgr = cc.Class.extend({
                 this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam(), tank.getType());
                 this.getBattleDataModel().addPickedTankID(tank.getID());
                 this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
+                this.getMatchMgr().pushTankID(tank.getID());
                 //matchMgr find suitable location and update position
-                var suitablePosition = this.getMatchMgr().findSuitableLocationForThrowTank(tank);
-                tank.setPosition(suitablePosition);
+                this.getMatchMgr().findSuitableLocationForThrowTank(tank);
             }
         }
     },
@@ -89,6 +88,11 @@ var BattleMgr = cc.Class.extend({
     },
     spawnBullet: function (parent, position, direction, team, type, tankGunId) {
         var bullet = this.getBattleFactory().spawnBulletFactory(parent, position, direction, team, type, tankGunId);
+        if(bullet != null) {
+            var mapPointIdx = this.getMapMgr().getMapPointIndexByWorldPosition(bullet.getWorldPosition());
+            this.getMapMgr().updateGameObjectIDForTileLogic(bullet.getID(), bullet, mapPointIdx);
+            this.getMatchMgr().pushBulletID(bullet.getID());
+        }
     },
     removeBullet: function (id) {
         this.getBattleFactory().removeBullet(id);
@@ -100,6 +104,7 @@ var BattleMgr = cc.Class.extend({
         if (base != null) {
             this.getPlayerMgr().addBaseIDForTeam(base.getID(), base.getTeam(), base.getType());
             this.getMapMgr().updateGameObjectIDForTileLogic(base.getID(), base, mapPointIdx);
+            this.getMatchMgr().pushBaseID(base.getID());
         }
     },
     removeBase: function (id) {
@@ -110,6 +115,7 @@ var BattleMgr = cc.Class.extend({
         var obstacle = this.getBattleFactory().updateObstacleFactory(rootNode, type);
         if(obstacle != null) {
             this.getMapMgr().updateGameObjectIDForTileLogic(obstacle.getID(), obstacle, mapPointIdx);
+            this.getMatchMgr().pushObstacleID(obstacle.getID());
         }
     },
     removeObstacle: function (id) {

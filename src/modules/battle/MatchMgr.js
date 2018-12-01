@@ -9,6 +9,10 @@ var MatchMgr = cc.Class.extend({
     },
     ctor: function () {
         this.setPauseGame(false);
+        this.setListBaseID([]);
+        this.setListObstacleID([]);
+        this.setListTankID([]);
+        this.setListBulletID([]);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
@@ -17,6 +21,58 @@ var MatchMgr = cc.Class.extend({
     },
     isPauseGame: function () {
         return this._isPauseGame;
+    },
+    setListBaseID: function (l) {
+        this._listBaseID = l;
+    },
+    getListBaseID: function () {
+        return this._listBaseID;
+    },
+    setListObstacleID: function (l) {
+        this._listObstacleID = l;
+    },
+    getListObstacleID: function () {
+        return this._listObstacleID;
+    },
+    setListTankID: function (l) {
+        this._listTankID = l;
+    },
+    getListTankID: function () {
+        return this._listTankID;
+    },
+    setListBulletID: function (l) {
+        this._listBulletID = l;
+    },
+    getListBulletID: function () {
+        return this._listBulletID;
+    },
+    pushBaseID: function (id) {
+        this.getListBaseID().push(id);
+    },
+    pushObstacleID: function (id) {
+        this.getListObstacleID().push(id);
+    },
+    pushTankID: function (id) {
+        this.getListTankID().push(id);
+    },
+    pushBulletID: function (id) {
+        this.getListBulletID().push(id);
+    },
+    runUpdateTank: function (dt) {
+        this.getListTankID().forEach(function (id) {
+            var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (tank != null) {
+                tank.update(dt);
+            }
+        });
+    },
+    runUpdateBullet: function (dt) {
+        this.getListBulletID().forEach(function (id) {
+            var bullet = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (bullet != null) {
+                bullet.update(dt);
+            }
+        });
     },
     checkLogicWinKnockoutKillAllTank: function (id, team) {
         if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillAllTank(id)) {
@@ -109,19 +165,18 @@ var MatchMgr = cc.Class.extend({
         return isCollision;
     },
     getGameObjectInfoByWorldPosition: function (worldPos, skipObjectID) {
-        var m = gv.engine.getBattleMgr().getBattleFactory().getMAPSprites();
-        var target, _id;
-        for (var i in m) {
-            _id = i + "";
-            target = m[_id];
-            if (target != null && target.getID() != skipObjectID) {
-                var locationInNode = target.convertToNodeSpace(worldPos);
-                var s = target.getContentSize();
-                var rect = cc.rect(0, 0, s.width, s.height);
-                var isCorrect = cc.rectContainsPoint(rect, locationInNode);
-                if (isCorrect) {
+        var tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicStartByWorldPosition(worldPos);
+        if (tileLogic != null) {
+            var list = tileLogic.getListIDOnTile().filter(function (e) {
+                return e != skipObjectID;
+            });
+            if (list.length > 0) {
+                var id = list[0];
+                var target = gv.engine.getBattleMgr().getGameObjectByID(id);
+                if (target != null) {
                     return {
-                        ID: target.getID(),
+                        ID: id,
+                        listID: list,
                         type: target.getType(),
                         gameObject: target
                     };
@@ -135,107 +190,12 @@ var MatchMgr = cc.Class.extend({
         var nPos = tank.getPosition();
         var worldPos = parent.convertToWorldSpace(nPos);
         var existedObj = this.getGameObjectInfoByWorldPosition(worldPos, tank.getID());
-        var tankSize = tank.getContentSize();
-        if (!existedObj) {
-            //available
-            LogUtils.getInstance().log([this.getClassName(), "findSuitableLocationForThrowTank available"]);
-            //check tank collision with barrier and move tank to road
-            if (this.checkLogicCollisionTankWithBarrier(tank.getID())) {
-                var wCollisionPos, wPos;
-                //check collision up
-                var upPos = cc.p(nPos.x, nPos.y + tankSize.height / 2);
-                var wUpPos = parent.convertToWorldSpace(upPos);
-                var objCollisionUp = this.getGameObjectInfoByWorldPosition(wUpPos, tank.getID());
-                if (objCollisionUp != null) {
-                    //move down
-                    wCollisionPos = objCollisionUp.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x, wCollisionPos.y - objCollisionUp.gameObject.getContentSize().height / 2 - tankSize.height / 2);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
-                //check collision left
-                var leftPos = cc.p(nPos.x - tankSize.width / 2, nPos.y);
-                var wleftPos = parent.convertToWorldSpace(leftPos);
-                var objCollisionleft = this.getGameObjectInfoByWorldPosition(wleftPos, tank.getID());
-                if (objCollisionleft != null) {
-                    //move right
-                    wCollisionPos = objCollisionleft.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x + objCollisionleft.gameObject.getContentSize().width / 2 + tankSize.width / 2, wCollisionPos.y);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
-                //check collision right
-                var rightPos = cc.p(nPos.x + tankSize.width / 2, nPos.y);
-                var wrightPos = parent.convertToWorldSpace(rightPos);
-                var objCollisionright = this.getGameObjectInfoByWorldPosition(wrightPos, tank.getID());
-                if (objCollisionright != null) {
-                    //move left
-                    wCollisionPos = objCollisionright.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x - objCollisionright.gameObject.getContentSize().width / 2 - tankSize.width / 2, wCollisionPos.y);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
-                //todo check conner top
-                // top left
-                var topLeftPos = cc.p(nPos.x - tankSize.width / 2, nPos.y + tankSize.height / 2);
-                var wtopLeftPos = parent.convertToWorldSpace(topLeftPos);
-                var objCollisiontopLeft = this.getGameObjectInfoByWorldPosition(wtopLeftPos, tank.getID());
-                if (objCollisiontopLeft != null) {
-                    //move bottom right
-                    wCollisionPos = objCollisiontopLeft.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x + objCollisiontopLeft.gameObject.getContentSize().width / 2 + tankSize.width / 2, wCollisionPos.y - objCollisiontopLeft.gameObject.getContentSize().height / 2 - tankSize.height / 2);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
-                // top right
-                var topRightPos = cc.p(nPos.x + tankSize.width / 2, nPos.y + tankSize.height / 2);
-                var wtopRightPos = parent.convertToWorldSpace(topRightPos);
-                var objCollisiontopRight = this.getGameObjectInfoByWorldPosition(wtopRightPos, tank.getID());
-                if (objCollisiontopRight != null) {
-                    //move bottom left
-                    wCollisionPos = objCollisiontopRight.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x - objCollisiontopRight.gameObject.getContentSize().width / 2 - tankSize.width / 2, wCollisionPos.y - objCollisiontopRight.gameObject.getContentSize().height / 2 - tankSize.height / 2);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
-
-                //check collision down
-                var downPos = cc.p(nPos.x, nPos.y - tankSize.height / 2);
-                var wdownPos = parent.convertToWorldSpace(downPos);
-                var objCollisiondown = this.getGameObjectInfoByWorldPosition(wdownPos, tank.getID());
-                if (objCollisiondown != null) {
-                    //move up
-                    wCollisionPos = objCollisiondown.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x, wCollisionPos.y + objCollisiondown.gameObject.getContentSize().height / 2 + tankSize.height / 2);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
-
-                //todo check conner bottom
-                // bottom left
-                var bottomLeftPos = cc.p(nPos.x - tankSize.width / 2, nPos.y - tankSize.height / 2);
-                var wbottomLeftPos = parent.convertToWorldSpace(bottomLeftPos);
-                var objCollisionbottomLeft = this.getGameObjectInfoByWorldPosition(wbottomLeftPos, tank.getID());
-                if (objCollisionbottomLeft != null) {
-                    //move top right
-                    wCollisionPos = objCollisionbottomLeft.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x + objCollisionbottomLeft.gameObject.getContentSize().width / 2 + tankSize.width / 2, wCollisionPos.y + objCollisionbottomLeft.gameObject.getContentSize().height / 2 + tankSize.height / 2);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
-                // bottom right
-                var bottomRightPos = cc.p(nPos.x + tankSize.width / 2, nPos.y - tankSize.height / 2);
-                var wbottomRightPos = parent.convertToWorldSpace(bottomRightPos);
-                var objCollisionbottomRight = this.getGameObjectInfoByWorldPosition(wbottomRightPos, tank.getID());
-                if (objCollisionbottomRight != null) {
-                    //move top left
-                    wCollisionPos = objCollisionbottomRight.gameObject.getWorldPosition();
-                    wPos = cc.p(wCollisionPos.x - objCollisionbottomRight.gameObject.getContentSize().width / 2 - tankSize.width / 2, wCollisionPos.y + objCollisionbottomRight.gameObject.getContentSize().height / 2 + tankSize.height / 2);
-                    nPos = parent.convertToNodeSpace(wPos);
-                }
-                //todo return
-                return nPos;
-
-            } else {
-                return nPos;
-            }
-        } else {
+        if (existedObj != null) {
+            //todo find other position
             worldPos = this.breadthFirstSearch(existedObj.gameObject, tank);
-            return parent.convertToNodeSpace(worldPos);
         }
+        var mapPointIdx = gv.engine.getBattleMgr().getMapMgr().getMapPointIndexByWorldPosition(worldPos);
+        gv.engine.getBattleMgr().getMapMgr().updateGameObjectIDForTileLogic(tank.getID(), tank, mapPointIdx);
     },
     breadthFirstSearch: function (currentNode, tank) {
         LogUtils.getInstance().log([this.getClassName(), "breadthFirstSearch"]);
@@ -364,6 +324,7 @@ var MatchMgr = cc.Class.extend({
                 }
             }
         }
+
         //start
         BFSAlgorithm(currentNode);
         while (!finish && queue.length > 0) {
@@ -381,4 +342,138 @@ var MatchMgr = cc.Class.extend({
         });
         return worldPos;
     },
+    moveGameObject: function (obj, dRow, dCol) {
+        return false;//todo test edit after
+        var sizeNumberPoint = obj.getGameObjectSizeNumberPoint();
+        var isChangeVertical = Math.abs(dRow) > Math.abs(dCol);
+        var numTile = isChangeVertical ? Math.abs(dRow) : Math.abs(dCol);
+        var curStartTileLogicPointIdx = obj.getStartTileLogicPointIndex();
+        var up, down, left, right, startLookingIdx;
+        if (isChangeVertical) {
+            if (isChangeVertical) {
+                if (dRow > 0) {
+                    //up
+                    up = true;
+                    startLookingIdx = cc.p(curStartTileLogicPointIdx.x + sizeNumberPoint.row - 1, curStartTileLogicPointIdx.y);
+                } else {
+                    //down
+                    down = true;
+                    startLookingIdx = curStartTileLogicPointIdx;
+                }
+            } else {
+                if (dCol > 0) {
+                    //right
+                    right = true;
+                    startLookingIdx = cc.p(curStartTileLogicPointIdx.x, curStartTileLogicPointIdx.y + sizeNumberPoint.col - 1);
+                } else {
+                    //left
+                    left = true;
+                    startLookingIdx = cc.p(curStartTileLogicPointIdx.x, curStartTileLogicPointIdx.y - sizeNumberPoint.col + 1);
+                }
+            }
+        }
+        function isEqualPoint(p1, p2) {
+            return p1.x == p2.x && p1.y == p2.y;
+        }
+
+        function findNexIdxEmpty(tilePointIdx) {
+            var nextIdx = null;
+            for (var i = numTile; i > 0; --i) {
+                var dx = 0;
+                var dy = 0;
+                if(up) {
+                    dx = i;
+                }else if(down) {
+                    dx = -i;
+                }else if(left) {
+                    dy = -i;
+                }else if(right) {
+                    dy = i;
+                }
+                nextIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(tilePointIdx, dx, dy);
+                if (!isEqualPoint(nextIdx, tilePointIdx)) {
+                    var isEmpty = !gv.engine.getBattleMgr().getMapMgr().isExistedGameObjectOnTileAtTilePointIndex(nextIdx);
+                    if (isEmpty) {
+                        return nextIdx;
+                    }
+                }
+            }
+            return nextIdx;
+        }
+
+        var i, len, startTileLogicPointIdx, listNextIdx = [];
+        len = isChangeVertical ? sizeNumberPoint.col : sizeNumberPoint.row;
+        for (i = 0; i < len; ++i) {
+            var dx = isChangeVertical ? 0 : i;
+            var dy = isChangeVertical ? i : 0;
+            startTileLogicPointIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(startLookingIdx, dx, dy);
+            var nextIdx = findNexIdxEmpty(startTileLogicPointIdx, 0, numTile);
+            if (nextIdx != null) {
+                if (listNextIdx.length > 0) {
+                    var existedIdx = listNextIdx.findIndex(function (p) {
+                        return isEqualPoint(nextIdx, p);
+                    });
+                    if (existedIdx == -1) {
+                        listNextIdx.push(nextIdx);
+                    }
+                } else {
+                    listNextIdx.push(nextIdx);
+                }
+            }
+        }
+        if (listNextIdx.length == len) {
+            var exited, isNoMove, delta, mapPointIdx, tileIdx;
+            if (up || down) {
+                exited = listNextIdx.findIndex(function (p) {
+                    return p.x == startLookingIdx.x;
+                });
+                isNoMove = exited != -1;
+                if (isNoMove) {
+                    return false;
+                }
+                if (up) {
+                    var minRow = listNextIdx[0].x;
+                    listNextIdx.forEach(function (p) {
+                        minRow = Math.min(minRow, p.x);
+                    });
+                    delta = minRow - startLookingIdx.x;
+                } else {
+                    var maxRow = listNextIdx[0].x;
+                    listNextIdx.forEach(function (p) {
+                        maxRow = Math.max(maxRow, p.x);
+                    });
+                    delta = startLookingIdx.x - maxRow;
+                }
+                tileIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, delta, 0);
+                mapPointIdx = gv.engine.getBattleMgr().getMapMgr().convertTileIndexPointToMapIndexPoint(tileIdx);
+                gv.engine.getBattleMgr().getMapMgr().updateGameObjectIDForTileLogic(obj.getID(), obj, mapPointIdx);
+                return false;
+            }
+            if (left || right) {
+                exited = listNextIdx.findIndex(function (p) {
+                    return p.y == startLookingIdx.y;
+                });
+                isNoMove = exited != -1;
+                if (isNoMove) {
+                    return false;
+                }
+                if (right) {
+                    var minCol = listNextIdx[0].y;
+                    listNextIdx.forEach(function (p) {
+                        minCol = Math.min(minCol, p.y);
+                    });
+                    delta = minCol - startLookingIdx.y;
+                } else {
+                    var maxRowCol = listNextIdx[0].y;
+                    listNextIdx.forEach(function (p) {
+                        maxRowCol = Math.max(maxRowCol, p.y);
+                    });
+                    delta = startLookingIdx.y - maxRowCol;
+                }
+                tileIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, 0, delta);
+                mapPointIdx = gv.engine.getBattleMgr().getMapMgr().convertTileIndexPointToMapIndexPoint(tileIdx);
+                gv.engine.getBattleMgr().getMapMgr().updateGameObjectIDForTileLogic(obj.getID(), obj, mapPointIdx);
+            }
+        }
+    }
 });
