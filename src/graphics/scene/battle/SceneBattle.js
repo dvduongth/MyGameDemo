@@ -22,7 +22,6 @@ var SceneBattle = BaseScene.extend({
     initScene: function () {
         gv.engine.getBattleMgr().getMapMgr().setMapBackgroundObj(this.sprMapBackground);
         gv.engine.getBattleMgr().getMapMgr().initMap();
-        this.setMapDisplayPickTank({});
         this.findAndInitGameObject();
         this.initDisplayPickTankSlot();
         this.createKeyBoardListener();
@@ -44,14 +43,11 @@ var SceneBattle = BaseScene.extend({
                 break;
         }
     },
-    getListEnableTankType: function () {
-        return [TANK_LIGHT, TANK_MEDIUM, TANK_HEAVY];
-    },
-    setMapDisplayPickTank: function (m) {
-        this._mapDisplayPickTank = m;
-    },
-    getMapDisplayPickTank: function () {
-        return this._mapDisplayPickTank;
+    onEnter: function () {
+        this._super();
+        Utility.getInstance().callFunctionWithDelay(0.4, function () {
+            gv.engine.getBattleMgr().getPlayerMgr().throwEnemyTank();
+        });
     },
     clearScene: function () {
         this.removeTouchListenerOneByOneTank();
@@ -224,7 +220,7 @@ var SceneBattle = BaseScene.extend({
                     type = TANK_LIGHT;
                     break;
             }
-            gv.engine.getBattleMgr().throwTank(mapBg, nPos, gv.engine.getBattleMgr().getPlayerMgr().getMyTeam(), type);
+            gv.engine.getBattleMgr().throwTank(worldPos, gv.engine.getBattleMgr().getPlayerMgr().getMyTeam(), type);
             this.updateDisplayPickTankSlot();
         }
         target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
@@ -289,7 +285,9 @@ var SceneBattle = BaseScene.extend({
     onTouchBegan: function (touch, event) {
         var worldPos = touch.getLocation();
         var gameObjectInfo = gv.engine.getBattleMgr().getMatchMgr().getGameObjectInfoByWorldPosition(worldPos);
-        if(gameObjectInfo != null && gameObjectInfo.gameObject.getGameObjectString() == STRING_TANK){
+        if(gameObjectInfo != null
+        && gameObjectInfo.gameObject.getGameObjectString() == STRING_TANK
+        && gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(gameObjectInfo.gameObject.getTeam())){
             LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action", gameObjectInfo.ID, gameObjectInfo.type]);
             return false;
         }

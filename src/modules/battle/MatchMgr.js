@@ -103,16 +103,17 @@ var MatchMgr = cc.Class.extend({
         }));
     },
     checkLogicWinKnockoutKillAllTank: function (id, team) {
-        if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillAllTank(id)) {
+        gv.engine.getBattleMgr().getPlayerMgr().removeTankID(id);
+        if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillAllTank(team)) {
             var teamWin = team == TEAM_1 ? TEAM_2 : TEAM_1;
             gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
             //todo show win
             this.setPauseGame(true);
             gv.engine.getBattleMgr().showWinGame();
         }
-        gv.engine.getBattleMgr().getPlayerMgr().removeTankID(id);
     },
     checkLogicWinKnockoutKillMainBase: function (id, team) {
+        gv.engine.getBattleMgr().getPlayerMgr().removeBaseID(id);
         if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillMainBase(id)) {
             var teamWin = team == TEAM_1 ? TEAM_2 : TEAM_1;
             gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
@@ -120,7 +121,6 @@ var MatchMgr = cc.Class.extend({
             this.setPauseGame(true);
             gv.engine.getBattleMgr().showWinGame();
         }
-        gv.engine.getBattleMgr().getPlayerMgr().removeBaseID(id);
     },
     checkLogicCollisionBulletWithTarget: function () {
         this.getListBulletID().forEach(function (id) {

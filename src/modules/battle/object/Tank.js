@@ -133,7 +133,7 @@ var Tank = cc.Sprite.extend({
         var s = target.getContentSize();
         var rect = cc.rect(0, 0, s.width, s.height);
         var isCorrect = cc.rectContainsPoint(rect, locationInNode);
-        if (isCorrect) {
+        if (isCorrect && gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())) {
             LogUtils.getInstance().log([this.getClassName(), "touch tank began"]);
             Utility.getInstance().showTextOnScene(this.getClassName() + " touch tank began");
             this.tankAction(cc.KEY.enter);
@@ -202,7 +202,12 @@ var Tank = cc.Sprite.extend({
                 break;
         }
     },
-
+    setIsBot: function (eff) {
+        this._isBot = eff;
+    },
+    isBot: function () {
+        return this._isBot;
+    },
     resetHP: function () {
         switch (this.getType()) {
             case TANK_LIGHT:
@@ -330,8 +335,15 @@ var Tank = cc.Sprite.extend({
         LogUtils.getInstance().log([this.getClassName(), "STOP Hunt"]);
         this.removeActionHunt();
     },
+    randomBotTankAction: function () {
+        var actionKey = [cc.KEY.up, cc.KEY.down, cc.KEY.right, cc.KEY.left, null];
+        this.tankAction(actionKey[Utility.getInstance().randomBetweenRound(0, 4)]);
+    },
     // Draw - obvious comment is obvious
     update: function (dt) {
+        if(this.isBot()) {
+            this.randomBotTankAction();
+        }
         if(this.getDirection() == DIRECTION_IDLE) {
             return false;
         }

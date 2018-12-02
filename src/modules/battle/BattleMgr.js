@@ -66,7 +66,9 @@ var BattleMgr = cc.Class.extend({
     getCurrentSelectedTank: function () {
         return this.getBattleFactory().getGameObjectByIDFactory(this.getBattleDataModel().getCurrentSelectedTankID());
     },
-    throwTank: function (parent, position, team, type) {
+    throwTank: function (worldPos, team, type) {
+        var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
+        var position = parent.convertToNodeSpace(worldPos);
         var maxNumTank = Setting.NUMBER_OF_TANK;
         var numberPicked = this.getBattleDataModel().getNumberPickedTank();
         if (numberPicked >= maxNumTank) {
@@ -76,14 +78,18 @@ var BattleMgr = cc.Class.extend({
             var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
             if (tank != null) {
                 this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam(), tank.getType());
-                this.getBattleDataModel().addPickedTankID(tank.getID());
-                this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
+                if(this.getPlayerMgr().isMyTeam(tank.getTeam())) {
+                    this.getBattleDataModel().addPickedTankID(tank.getID());
+                    this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
+                }
                 this.getMatchMgr().pushTankID(tank.getID());
                 //matchMgr find suitable location and update position
                 this.getMatchMgr().findSuitableLocationForThrowTank(tank);
                 tank.runEffectAppearThrowDown();
+                return tank;
             }
         }
+        return null;
     },
     removeTank: function (id) {
         //this.getBattleFactory().removeTank(id);//remove all logic

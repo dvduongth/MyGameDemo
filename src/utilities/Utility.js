@@ -452,6 +452,20 @@ var Utility = (function () {
             }
             object.listAnimationLoaded = {};
         };
+        instance.callFunctionWithDelay = function (time, cbFunc) {
+            gv.engine.getSceneMgr().getCurrentScene().runAction(cc.sequence(
+                cc.delayTime(time),
+                cc.callFunc(function () {
+                    instance.executeFunction(cbFunc);
+                })
+            ));
+        };
+        instance.randomBetween = function(min, max){
+            return (Math.random() * (max - min)) + min;
+        };
+        instance.randomBetweenRound = function(min, max){
+            return Math.round(instance.randomBetween(min, max));
+        };
         /**
          * @return
          * @public

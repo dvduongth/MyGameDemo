@@ -25,6 +25,12 @@ var PlayerMgr = cc.Class.extend({
     getMyTeam: function () {
         return this._myTeam;
     },
+    setEnemyTeam: function (m) {
+        this._enemyTeam = m;
+    },
+    getEnemyTeam: function () {
+        return this._enemyTeam;
+    },
     isMyTeam: function (m) {
         return m === this.getMyTeam();
     },
@@ -51,18 +57,18 @@ var PlayerMgr = cc.Class.extend({
         delete this.getMAPGameObjectID()[id];
     },
     isKnockoutKillMainBase: function (id) {
-        //var team = this.getTeamOfBaseID(id);
         return true;
     },
-    isKnockoutKillAllTank: function (id) {
-        var info = this.getInfoOfTankID(id);
+    isKnockoutKillAllTank: function (team) {
         var map = this.getMAPGameObjectID();
-        for(var _id in map) {
-            var _info = map[_id];
-            if(_info != null) {
-                var isTankType = _info.type == TANK_LIGHT || _info.type == TANK_MEDIUM || _info.type == TANK_HEAVY;
-                if((_id != id) && isTankType &&  _info.team == info.team){
-                    //existed other tank alive
+        for (var _id in map) {
+            var id = _id + "";
+            var _info = map[id];
+            if (_info != null && _info.team == team) {
+                //existed other tank alive
+                var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
+                if(gObj.getGameObjectString() == STRING_TANK) {
+                    LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank existed tank alive", id]);
                     return false;
                 }
             }
@@ -74,5 +80,37 @@ var PlayerMgr = cc.Class.extend({
     },
     getTeamWin: function () {
         return this._teamWin;
+    },
+    throwEnemyTank: function () {
+        var _this = this;
+        this.setEnemyTeam(TEAM_2);
+        for(var i = 0; i < Setting.NUMBER_OF_TANK; ++i) {
+            Utility.getInstance().callFunctionWithDelay(i * 0.3, function () {
+                _this.randomThrowBotTank();
+            });
+        }
+    },
+    randomThrowBotTank: function () {
+        var worldPos;
+        var mapIdx;
+        var type;
+        var tilePointIdx;
+        var tileLogic;
+        var team = this.getEnemyTeam();
+        type = Utility.getInstance().randomBetweenRound(1, 3);
+        mapIdx = this.getRandomMapIndexThrowBotTank();
+        tilePointIdx = gv.engine.getBattleMgr().getMapMgr().convertMapIndexPointToStartTileIndexPoint(mapIdx);
+        tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicByTilePointIndex(tilePointIdx);
+        worldPos = tileLogic.getTileWorldPosition();
+        var tank = gv.engine.getBattleMgr().throwTank(worldPos, team, type);
+        if(tank != null) {
+            tank.tankAction(cc.KEY.enter);
+            tank.setIsBot(true);
+        }
+    },
+    getRandomMapIndexThrowBotTank: function () {
+        var row = Utility.getInstance().randomBetweenRound(15, 20);
+        var col = Utility.getInstance().randomBetweenRound(1, 20);
+        return cc.p(row, col);
     }
 });
