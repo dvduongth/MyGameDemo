@@ -42,17 +42,21 @@ var BaseGameObject = cc.Class.extend({
         return this._HP;
     },
     setHPMax: function (t) {
+        //todo children used
         this._HPMax = t;
     },
     getHPMax: function () {
+        //todo children used
         return this._HPMax;
     },
     setFlippedObj: function (eff) {
+        //todo children used
         this._isFlippedObj = eff;
         this.getRootNode().setFlippedX(eff);
         this.getRootNode().setFlippedY(eff);
     },
     isFlippedObj: function () {
+        //todo children used
         return this._isFlippedObj;
     },
     setVisible: function (eff) {
@@ -138,6 +142,7 @@ var BaseGameObject = cc.Class.extend({
         return this.getRootNode().convertToNodeSpace(worldPos);
     },
     createHPDisplayProgress: function () {
+        //todo children used
         var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_RED_PNG);
         this.addChild(progressBg);
         progressBg.setPosition(this.getContentSize().width / 2, this.getContentSize().height + 2);
@@ -148,11 +153,15 @@ var BaseGameObject = cc.Class.extend({
         return progressBg;
     },
     getHPDisplayProgress: function () {
+        //todo children used
         return this._HPDisplayProgress;
+    },
+    isAlive: function () {
+        return this.getHP() > 0;
     },
     hitBullet: function (damage) {
         this.setHP(Math.max(this.getHP() - damage, 0));
-        if(this.getHP() == 0){
+        if(!this.isAlive()){
             //todo die
             this.destroy();
         }

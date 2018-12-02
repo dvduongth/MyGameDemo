@@ -12,10 +12,10 @@ Setting.BASE_SIDE_HP = 200;
 Setting.OBSTACLE_HP = 100;
 Setting.MAX_SPEED = 3;
 Setting.MAX_DELAY_SPAWN_BULLET = 1.5;
-Setting.BULLET_SPEED = 8;
+Setting.BULLET_SPEED = 4;
 Setting.AIRSTRIKE_COUNTDOWN = 10;
-Setting.BULLET_TANK_HEAVY_DAMAGE = 5;
-Setting.BULLET_TANK_MEDIUM_DAMAGE = 10;
+Setting.BULLET_TANK_HEAVY_DAMAGE = 2;
+Setting.BULLET_TANK_MEDIUM_DAMAGE = 12;
 Setting.BULLET_TANK_LIGHT_DAMAGE = 20;
 // ====================================================================================================
 Setting.TIME_LOOP = 0.033;

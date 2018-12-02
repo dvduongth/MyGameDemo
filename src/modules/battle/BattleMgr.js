@@ -58,6 +58,7 @@ var BattleMgr = cc.Class.extend({
         }
         this.getMatchMgr().runUpdateTank(dt);
         this.getMatchMgr().runUpdateBullet(dt);
+        this.getMatchMgr().checkLogicCollisionBulletWithTarget();
     },
     getGameObjectByID: function (id) {
         return this.getBattleFactory().getGameObjectByIDFactory(id);
@@ -84,7 +85,8 @@ var BattleMgr = cc.Class.extend({
         }
     },
     removeTank: function (id) {
-        this.getBattleFactory().removeTank(id);
+        //this.getBattleFactory().removeTank(id);//remove all logic
+        this.getMatchMgr().removeTankID(id);
     },
     spawnBullet: function (parent, position, direction, team, type, tankGunId) {
         var bullet = this.getBattleFactory().spawnBulletFactory(parent, position, direction, team, type, tankGunId);
@@ -96,6 +98,7 @@ var BattleMgr = cc.Class.extend({
     },
     removeBullet: function (id) {
         this.getBattleFactory().removeBullet(id);
+        this.getMatchMgr().removeBulletID(id);
     },
     updateBase: function (rootNode, type, mapPointIdx, idx) {
         var team = idx == 0 ? TEAM_1 : TEAM_2;
@@ -108,7 +111,8 @@ var BattleMgr = cc.Class.extend({
         }
     },
     removeBase: function (id) {
-        this.getBattleFactory().removeBase(id);
+        //this.getBattleFactory().removeBase(id);//remove all logic
+        this.getMatchMgr().removeBaseID(id);
     },
     updateObstacle: function (rootNode, type, mapPointIdx) {
         LogUtils.getInstance().log([this.getClassName(), "updateObstacle type", type]);
@@ -119,16 +123,9 @@ var BattleMgr = cc.Class.extend({
         }
     },
     removeObstacle: function (id) {
-        this.getBattleFactory().removeObstacle(id);
+        this.getBattleFactory().removeObstacle(id);//remove all logic
+        this.getMatchMgr().removeObstacleID(id);
     },
-
-    checkCollisionTankWithBarrier: function (id) {
-        return this.getMatchMgr().checkLogicCollisionTankWithBarrier(id);
-    },
-    checkCollisionBulletWithTarget: function (id) {
-        return this.getMatchMgr().checkLogicCollisionBulletWithTarget(id);
-    },
-
     checkWinKnockoutKillMainBase: function (id, team) {
         this.getMatchMgr().checkLogicWinKnockoutKillMainBase(id, team);
     },

@@ -1,6 +1,6 @@
 "use strict";
 /**
- * BattleDataModel
+ * BattleDataModel save all data from battleMgr and matchMgr
  * */
 var BattleDataModel = cc.Class.extend({
     _className: "BattleDataModel",

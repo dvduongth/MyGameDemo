@@ -74,6 +74,26 @@ var MatchMgr = cc.Class.extend({
             }
         });
     },
+    removeBulletID: function (id) {
+        this.setListBulletID(this.getListBulletID().filter(function (_id) {
+            return _id != id;
+        }));
+    },
+    removeTankID: function (id) {
+        this.setListTankID(this.getListTankID().filter(function (_id) {
+            return _id != id;
+        }));
+    },
+    removeBaseID: function (id) {
+        this.setListBaseID(this.getListBaseID().filter(function (_id) {
+            return _id != id;
+        }));
+    },
+    removeObstacleID: function (id) {
+        this.setListObstacleID(this.getListObstacleID().filter(function (_id) {
+            return _id != id;
+        }));
+    },
     checkLogicWinKnockoutKillAllTank: function (id, team) {
         if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillAllTank(id)) {
             var teamWin = team == TEAM_1 ? TEAM_2 : TEAM_1;
@@ -94,75 +114,13 @@ var MatchMgr = cc.Class.extend({
         }
         gv.engine.getBattleMgr().getPlayerMgr().removeBaseID(id);
     },
-
-    checkLogicCollisionTankWithBarrier: function (id) {
-        var m = gv.engine.getBattleMgr().getBattleFactory().getMAPSprites();
-        var curSpr = m[id];
-        var sprObj, _id;
-        for (var i in m) {
-            _id = i + "";
-            sprObj = m[_id];
-            if (sprObj != null && _id != id) {
-                //check collision with obstacle
-                if (_id.indexOf(STRING_OBSTACLE) != -1) {
-                    if (Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)) {
-                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with obstacle"]);
-                        return true;
-                    }
-                }
-                //check collision with base
-                if (_id.indexOf(STRING_BASE) != -1) {
-                    if (Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)) {
-                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with base"]);
-                        return true;
-                    }
-                }
-                //other tank
-                if (_id.indexOf(STRING_TANK) != -1) {
-                    if (Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)) {
-                        //LogUtils.getInstance().log([this.getClassName(), "tank collision with other tank"]);
-                        return true;
-                    }
-                }
+    checkLogicCollisionBulletWithTarget: function () {
+        this.getListBulletID().forEach(function (id) {
+            var bullet = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (bullet != null) {
+                bullet.checkCollision();
             }
-        }
-        return false;
-    },
-    checkLogicCollisionBulletWithTarget: function (id) {
-        return false;//todo test edit after
-        var m = gv.engine.getBattleMgr().getBattleFactory().getMAPSprites();
-        var curSpr = m[id];
-        var tankGunID = curSpr.getTankGunID();
-        var sprObj, _id;
-        var isCollision = false;
-        for (var i in m) {
-            _id = i + "";
-            sprObj = m[_id];
-            if (sprObj != null && _id != id && _id != tankGunID) {
-                //check collision with obstacle
-                if (_id.indexOf(STRING_OBSTACLE) != -1 && sprObj.isBarrier()) {
-                    if (Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)) {
-                        sprObj.hitBullet(curSpr.getDamageValue());
-                        isCollision = true;
-                    }
-                }
-                //check collision with base
-                if (_id.indexOf(STRING_BASE) != -1) {
-                    if (Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)) {
-                        sprObj.hitBullet(curSpr.getDamageValue());
-                        isCollision = true;
-                    }
-                }
-                //other tank
-                if (_id.indexOf(STRING_TANK) != -1) {
-                    if (Utility.getInstance().isCollisionOverLapObjectNode(sprObj, curSpr)) {
-                        sprObj.hitBullet(curSpr.getDamageValue());
-                        isCollision = true;
-                    }
-                }
-            }
-        }
-        return isCollision;
+        });
     },
     getGameObjectInfoByWorldPosition: function (worldPos, skipObjectID) {
         var tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicStartByWorldPosition(worldPos);

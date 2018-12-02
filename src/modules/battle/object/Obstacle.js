@@ -50,10 +50,26 @@ var Obstacle = BaseGameObject.extend({
                 break;
         }
     },
+    isBarrier: function () {
+        if (this.getType() == BLOCK_SOFT_OBSTACLE) {
+            return true;
+        }
+        if (this.getType() == BLOCK_HARD_OBSTACLE) {
+            return true;
+        }
+        return false;
+    },
+    isAlive: function () {
+        if (this.getType() == BLOCK_SOFT_OBSTACLE) {
+            return this._super();
+        } else {
+            return true;
+        }
+    },
     hitBullet: function (damage) {
         if (this.getType() == BLOCK_SOFT_OBSTACLE) {
             this._super(damage);
-            if (this.getHP() > 0) {
+            if (this.isAlive()) {
                 if (this.getHP() < 30) {
                     Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___4_PNG);
                 } else if (this.getHP() < 60) {
@@ -64,21 +80,13 @@ var Obstacle = BaseGameObject.extend({
             }
         }
     },
-    isBarrier: function () {
-        if (this.getType() == BLOCK_SOFT_OBSTACLE) {
-            return true;
-        }
-        if (this.getType() == BLOCK_HARD_OBSTACLE) {
-            return true;
-        }
-        return false;
-    },
     destroy: function () {
         var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_OBSTACLE);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });
         Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___5_PNG);
+        this.clearListTileLogicPointIndex();//remove all logic
         gv.engine.getBattleMgr().removeObstacle(this.getID());
     }
 });

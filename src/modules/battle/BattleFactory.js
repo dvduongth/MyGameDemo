@@ -1,6 +1,6 @@
 "use strict";
 /**
- * BattleFactory manage generate game resource, save data
+ * BattleFactory manage generate game resource, save data display
  * */
 var BattleFactory = cc.Class.extend({
     _className: "BattleFactory",

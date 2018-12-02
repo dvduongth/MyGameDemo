@@ -397,6 +397,9 @@ var Tank = cc.Sprite.extend({
     getHPDisplayProgress: function () {
         return this._HPDisplayProgress;
     },
+    isAlive: function () {
+        return this.getHP() > 0;
+    },
     hitBullet: function (damage) {
         this.setHP(Math.max(this.getHP() - damage, 0));
         var path = null;
@@ -461,7 +464,7 @@ var Tank = cc.Sprite.extend({
         if (path != null) {
             Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
         }
-        if (this.getHP() == 0) {
+        if (!this.isAlive()) {
             //todo die
             this.destroy();
         }
@@ -556,83 +559,5 @@ var Tank = cc.Sprite.extend({
             }
         });
         this.setListTileLogicPointIndex([]);
-    },
-    moveUp: function () {
-        var sizeNumberPoint = this.getGameObjectSizeNumberPoint();
-        var numTile = this.getSpeed();
-        var curStartTileLogicPointIdx = this.getStartTileLogicPointIndex();
-        var startMapPointIdx = gv.engine.getBattleMgr().getMapMgr().convertTileIndexPointToMapIndexPoint(curStartTileLogicPointIdx);
-        LogUtils.getInstance().log([this.getClassName(), "startMapPointIdx",startMapPointIdx.x, startMapPointIdx.y]);
-        var startLookingIdx;
-        startLookingIdx = cc.p(curStartTileLogicPointIdx.x + sizeNumberPoint.row - 1, curStartTileLogicPointIdx.y);
-        LogUtils.getInstance().log([this.getClassName(), "moveUP curStartTileLogicPointIdx", curStartTileLogicPointIdx.x, curStartTileLogicPointIdx.y, startLookingIdx.x, startLookingIdx.y]);
-        function isEqualPoint(p1, p2) {
-            return p1.x == p2.x && p1.y == p2.y;
-        }
-        function findNexIdxEmpty(tilePointIdx) {
-            var nextIdx = null;
-            var foundedIdx = null;
-            for (var i = 1; i <= numTile; ++i) {
-                var dx = 0;
-                var dy = 0;
-                dx = i;
-                nextIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(tilePointIdx, dx, dy);
-                if (!isEqualPoint(nextIdx, tilePointIdx)) {
-                    var isEmpty = !gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(nextIdx);
-                    if (isEmpty) {
-                        foundedIdx = nextIdx;
-                    }else{
-                        //stop search
-                        return foundedIdx;
-                    }
-                }
-            }
-            return foundedIdx;
-        }
-
-        var i, len, startTileLogicPointIdx, listNextIdx = [];
-        len = sizeNumberPoint.col;
-        for (i = 0; i < len; ++i) {
-            var dx = 0;
-            var dy = i;
-            startTileLogicPointIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(startLookingIdx, dx, dy);
-            var nextIdx = findNexIdxEmpty(startTileLogicPointIdx, numTile, 0);
-            if (nextIdx != null) {
-                if (listNextIdx.length > 0) {
-                    var existedIdx = listNextIdx.findIndex(function (p) {
-                        return isEqualPoint(nextIdx, p);
-                    });
-                    if (existedIdx == -1) {
-                        listNextIdx.push(nextIdx);
-                    }
-                } else {
-                    listNextIdx.push(nextIdx);
-                }
-            }
-        }
-        LogUtils.getInstance().log([this.getClassName(), "listNextIdx length", listNextIdx.length]);
-        if (listNextIdx.length == len) {
-            var exited, isNoMove, delta, desStartTileIdx;
-            exited = listNextIdx.findIndex(function (p) {
-                return p.x == startLookingIdx.x;
-            });
-            isNoMove = exited != -1;
-            if (isNoMove) {
-                LogUtils.getInstance().log([this.getClassName(), "no move"]);
-                return false;
-            }
-            var minRow = listNextIdx[0].x;
-            listNextIdx.forEach(function (p) {
-                LogUtils.getInstance().log(["listNextIdx", p.x, p.y]);
-                minRow = Math.min(minRow, p.x);
-            });
-            delta = minRow - startLookingIdx.x;
-            LogUtils.getInstance().log([this.getClassName(), "delta",delta]);
-            desStartTileIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, delta, 0);
-            LogUtils.getInstance().log([this.getClassName(), "desStartTileIdx",desStartTileIdx.x, desStartTileIdx.y]);
-            gv.engine.getBattleMgr().getMapMgr().pushGameObjectForTileLogic(this.getID(), this, desStartTileIdx);
-        }else{
-            LogUtils.getInstance().log([this.getClassName(), "no move length",listNextIdx.length]);
-        }
     }
 });

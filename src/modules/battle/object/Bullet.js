@@ -165,8 +165,62 @@ var Bullet = cc.Sprite.extend({
                 explosion.removeFromParent(true);
             });
         }
+        this.clearListTileLogicPointIndex();
         gv.engine.getBattleMgr().removeBullet(this.getID());
         cc.pool.putInPool(this);
+    },
+    checkCollision: function () {
+        var _this = this;
+        var collision = false;
+        var skipID = this.getID();
+        var skipTankID = this.getTankGunID();
+        var skipTankTeam = this.getTeam();
+        var listTilePointIdx = this.getListTileLogicPointIndex();
+        listTilePointIdx.forEach(function (p) {
+            var existedListId = gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(p, skipID);
+            if(existedListId) {
+                existedListId.forEach(function (id) {
+                    if(id == skipTankID) {
+                        return false;
+                    }
+                    var gameObj = gv.engine.getBattleMgr().getGameObjectByID(id);
+                    if(gameObj != null) {
+                        var str = gameObj.getGameObjectString();
+                        switch (str) {
+                            case STRING_BASE:
+                                if(!gameObj.isAlive()) {
+                                    return false;
+                                }
+                                collision = true;
+                                gameObj.hitBullet(_this.getDamageValue());
+                                break;
+                            case STRING_TANK:
+                                if(!gameObj.isAlive()) {
+                                    return false;
+                                }
+                                if(gameObj.getTeam() == skipTankTeam) {
+                                    //LogUtils.getInstance().log([_this.getClassName(), "checkCollision got skipTankTeam", skipTankTeam]);
+                                    return false;
+                                }
+                                collision = true;
+                                gameObj.hitBullet(_this.getDamageValue());
+                                break;
+                            case STRING_OBSTACLE:
+                                if(gameObj.isBarrier()){
+                                    collision = true;
+                                    gameObj.hitBullet(_this.getDamageValue());
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                });
+            }
+        });
+        if(collision) {
+            this.destroy(true);
+        }
     },
     setGameObjectString: function (l) {
         this._gameObjectString = l;
