@@ -74,6 +74,14 @@ var MatchMgr = cc.Class.extend({
             }
         });
     },
+    destroyAllObstacle: function () {
+        this.getListObstacleID().forEach(function (id) {
+            var obstacle = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (obstacle != null) {
+                obstacle.selfDestruct();
+            }
+        });
+    },
     removeBulletID: function (id) {
         this.setListBulletID(this.getListBulletID().filter(function (_id) {
             return _id != id;

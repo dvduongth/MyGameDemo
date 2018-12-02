@@ -66,6 +66,11 @@ var Obstacle = BaseGameObject.extend({
             return true;
         }
     },
+    selfDestruct: function () {
+      if(this.isAlive()) {
+          this.hitBullet(this.getHP());
+      }
+    },
     hitBullet: function (damage) {
         if (this.getType() == BLOCK_SOFT_OBSTACLE) {
             this._super(damage);
