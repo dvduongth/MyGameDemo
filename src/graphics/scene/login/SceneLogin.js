@@ -20,6 +20,7 @@ var SceneLogin = BaseScene.extend({
             moveOffset: cc.p(Math.random() > 0.5 ? 200 : -200, 500)
         };
         Utility.getInstance().showTextOnScene(args);
+        var eff = gv.engine.getEffectMgr().playEffectDragonBones("eff_appear_fall_down");
     },
     onKeyReleased: function (keyCode, event) {
         LogUtils.getInstance().log(this.getClassName() + " onKeyReleased: " + keyCode);
@@ -29,8 +30,8 @@ var SceneLogin = BaseScene.extend({
             moveOffset: cc.p(Math.random() > 0.5 ? 200 : -200, 500)
         };
         Utility.getInstance().showTextOnScene(args);
-        gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(TEAM_1);
-        gv.engine.getBattleMgr().showWinGame();
+        //gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(TEAM_1);
+        //gv.engine.getBattleMgr().showWinGame();
     },
     onTouchBegan: function (touch, event) {
         LogUtils.getInstance().log(this.getClassName() + " onTouchBegan");

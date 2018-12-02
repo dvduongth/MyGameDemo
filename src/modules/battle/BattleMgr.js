@@ -81,6 +81,7 @@ var BattleMgr = cc.Class.extend({
                 this.getMatchMgr().pushTankID(tank.getID());
                 //matchMgr find suitable location and update position
                 this.getMatchMgr().findSuitableLocationForThrowTank(tank);
+                tank.runEffectAppearThrowDown();
             }
         }
     },

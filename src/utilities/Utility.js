@@ -102,7 +102,7 @@ var Utility = (function () {
         };
 
         instance.getSpriteFileName = function (fileName) {
-            if(fileName == null) {
+            if (fileName == null) {
                 return "";
             }
             if (cc.spriteFrameCache.getSpriteFrame(fileName)) {
@@ -121,11 +121,11 @@ var Utility = (function () {
         };
 
         instance.updateSpriteWithFileName = function (spr, fileName) {
-            if(spr == null) {
+            if (spr == null) {
                 LogUtils.getInstance().error([getName(), "updateSpriteWithFileName with sprite null fileName", fileName]);
                 return false;
             }
-            if(fileName == null) {
+            if (fileName == null) {
                 LogUtils.getInstance().error([getName(), "updateSpriteWithFileName with fileName null", fileName]);
                 return false;
             }
@@ -196,7 +196,7 @@ var Utility = (function () {
             var actionTime = args["actionTime"];
             var localZOder = args["localZOder"] || 0;
 
-            if(!parent) {
+            if (!parent) {
                 parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
             }
 
@@ -217,15 +217,15 @@ var Utility = (function () {
                 color = cc.WHITE;
             }
             moveOffset = moveOffset || {x: 0, y: 50};
-            if(!actionTime) {
+            if (!actionTime) {
                 actionTime = instance.calculateTimeMove(cc.p(0, 0), moveOffset);
             }
             isSkipRetain = isSkipRetain !== undefined ? isSkipRetain : false;
             if (!this._lbText || isSkipRetain) {
                 if (this._lbText && this._lbText._isActiveRetain) {
-                    try{
+                    try {
                         this._lbText.release();
-                    }catch(e){
+                    } catch (e) {
                         throw LogUtils.getInstance().error([getName(), "showTextOnScene error release label text", e]);
                     }
                     this._lbText = null;
@@ -239,17 +239,17 @@ var Utility = (function () {
                 textArgs["horizontalAlignment"] = cc.TEXT_ALIGNMENT_CENTER;
                 textArgs["verticalAlignment"] = cc.VERTICAL_TEXT_ALIGNMENT_CENTER;
                 this._lbText = instance.getLabel(textArgs);
-                if(!isSkipRetain) {
-                    try{
+                if (!isSkipRetain) {
+                    try {
                         this._lbText.retain();
                         this._lbText._isActiveRetain = true;
-                    }catch(e){
+                    } catch (e) {
                         throw LogUtils.getInstance().error([getName(), "showTextOnScene error retain label text", e]);
                     }
                 }
             } else {
                 this._lbText.stopAllActions();
-                if(this._lbText._isActiveRetain){
+                if (this._lbText._isActiveRetain) {
                     this._lbText.removeFromParent(false);
                 }
                 this._lbText.setString(text);
@@ -297,7 +297,7 @@ var Utility = (function () {
          * fixedSize
          * */
         instance.getLabel = function (args) {
-            if(!args) {
+            if (!args) {
                 args = {};
             }
             var fontName = args["fontName"];
@@ -314,7 +314,7 @@ var Utility = (function () {
             var horizontalAlignment = args["horizontalAlignment"];
             var verticalAlignment = args["verticalAlignment"];
             var fixedSize = args["fixedSize"];
-            if(!text && !fontName){
+            if (!text && !fontName) {
                 //todo args is string text
                 text = args;
             }
@@ -333,7 +333,7 @@ var Utility = (function () {
             if (!strokeColor) {
                 strokeColor = instance.getColorByName("stroke");
             }
-            if(!shadowOffset) {
+            if (!shadowOffset) {
                 shadowOffset = {width: 0, height: -1};
             }
             isHasShadow = isHasShadow === undefined ? true : isHasShadow;
@@ -345,17 +345,17 @@ var Utility = (function () {
             label.color = color;
             label.setTextHorizontalAlignment(horizontalAlignment !== undefined ? horizontalAlignment : cc.TEXT_ALIGNMENT_LEFT);
             label.setTextVerticalAlignment(verticalAlignment !== undefined ? verticalAlignment : cc.VERTICAL_TEXT_ALIGNMENT_CENTER);
-            if(isHasShadow) {
+            if (isHasShadow) {
                 label.enableShadow(shadowColor, shadowOffset, shadowSize);
             }
             if (isHasStroke) {
                 label.enableOutline(strokeColor, strokeSize);
             }
-            if(!!fixedSize){
-                if(fixedSize.width !== undefined && fixedSize.height !== undefined) {
+            if (!!fixedSize) {
+                if (fixedSize.width !== undefined && fixedSize.height !== undefined) {
                     label.setTextAreaSize(fixedSize);
-                }else{
-                    if(!_.isNaN(fixedSize)){
+                } else {
+                    if (!_.isNaN(fixedSize)) {
                         label.setTextAreaSize(cc.size(fixedSize, 0));
                     }
                 }
@@ -392,12 +392,12 @@ var Utility = (function () {
             var position2 = node2.getParent().convertToWorldSpace(node2.getPosition());
             //check exist overlap horizontal
             var isOverlapHorizontal = ((offset.x + position1.x + size1.width * anchor.x) >= (position2.x - size2.width * anchor.x)) && ((offset.x + position2.x + size2.width * anchor.x) >= (position1.x - size1.width * anchor.x));
-            if(!isOverlapHorizontal) {
+            if (!isOverlapHorizontal) {
                 return false;
             }
             //check exist overlap vertical
             var isOverlapVertical = ((offset.y + position1.y + size1.height * anchor.y) >= (position2.y - size2.height * anchor.y)) && ((offset.y + position2.y + size2.height * anchor.y) >= (position1.y - size1.height * anchor.y));
-            if(!isOverlapVertical) {
+            if (!isOverlapVertical) {
                 return false;
             }
             return true;
@@ -406,12 +406,12 @@ var Utility = (function () {
             var offset = cc.p(-5, -5);
             //check exist overlap horizontal
             var isOverlapHorizontal = ((offset.x + rect1.x + rect1.width) >= rect2.x) && ((offset.x + rect2.x + rect2.width) >= rect1.x);
-            if(!isOverlapHorizontal) {
+            if (!isOverlapHorizontal) {
                 return false;
             }
             //check exist overlap vertical
             var isOverlapVertical = ((offset.y + rect1.y + rect1.height) >= rect2.y) && ((offset.y + rect2.y + rect2.height) >= rect1.y);
-            if(!isOverlapVertical) {
+            if (!isOverlapVertical) {
                 return false;
             }
             return true;
@@ -425,7 +425,33 @@ var Utility = (function () {
             loadingBar.setPercent(0);
             return loadingBar;
         };
+        /**
+         * Animation
+         * */
+        instance.ResourceLoaded = {};
+        instance.createAnimationDragonBones = function (key, folderPath) {
+            instance.loadAnimationResource(key, folderPath);
+            return db.DBCCFactory.getInstance().buildArmatureNode(key);
+        };
+        instance.loadAnimationResource = function (key, folderPath) {
+            folderPath = folderPath !== undefined ? folderPath : "res/plist/" + key;
+            if (instance.ResourceLoaded[key] === undefined) {
+                LogUtils.getInstance().log("Load Effect: " + key);
+                instance.ResourceLoaded[key] = true;
+                db.DBCCFactory.getInstance().loadTextureAtlas(folderPath + "/texture.plist", key);
+                db.DBCCFactory.getInstance().loadDragonBonesData(folderPath + "/skeleton.xml", key);
+            }
+        };
+        instance.unloadAllAnimationData = function (object) {
+            if (object.listAnimationLoaded == undefined) {
+                return false;
+            }
 
+            for (var keyStored in object.listAnimationLoaded) {
+                db.DBCCFactory.getInstance().removeTextureAtlas(keyStored + "", false);
+            }
+            object.listAnimationLoaded = {};
+        };
         /**
          * @return
          * @public

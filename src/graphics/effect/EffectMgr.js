@@ -14,7 +14,7 @@ var EffectMgr = cc.Class.extend({
         return true;
     },
     createAnimation: function (listFileName, isLoop, duration) {
-        if(duration === undefined) {
+        if (duration === undefined) {
             duration = 1;
         }
         if (!listFileName || listFileName.length == 0) {
@@ -150,5 +150,111 @@ var EffectMgr = cc.Class.extend({
             arr.push(resImg["RESOURCES__TEXTURES__EXPLOSION__EX6__EX_" + id + "_PNG"]);
         }
         return arr;
-    }
+    },
+    /**
+     * animationName || args, animationRun, parent, pos, delay, durationTo, loop, zOder, autoRemove, funCall, isDelayVisibleTime
+     * */
+    playEffectDragonBones: function (animationName/*or args Object*/, animationRun, parent, pos, delay, durationTo, loop, zOder, autoRemove, funCall, isDelayVisibleTime) {
+        if(animationName["animationName"] !== undefined) {
+            //animationName is args object
+            this.playEffectDragonBonesByObjectArgument(animationName);
+        }else{
+            var args = {};
+            args["animationName"] = animationName;
+            args["animationRun"] = animationRun;
+            args["parent"] = parent;
+            args["pos"] = pos;
+            args["delay"] = delay;
+            args["durationTo"] = durationTo;
+            args["loop"] = loop;
+            args["zOder"] = zOder;
+            args["autoRemove"] = autoRemove;
+            args["funCall"] = funCall;
+            args["isDelayVisibleTime"] = isDelayVisibleTime;
+            this.playEffectDragonBonesByObjectArgument(args);
+        }
+    },
+    playEffectDragonBonesByObjectArgument: function (args) {
+        var animationName, animationRun, parent, pos, delay, durationTo, loop, zOder, autoRemove, funCall, isDelayVisibleTime;
+        animationName = args["animationName"];
+        animationRun = args["animationRun"];
+        parent = args["parent"];
+        pos = args["pos"];
+        delay = args["delay"];
+        durationTo = args["durationTo"];
+        loop = args["loop"];
+        zOder = args["zOder"];
+        autoRemove = args["autoRemove"];
+        funCall = args["funCall"];
+        isDelayVisibleTime = args["isDelayVisibleTime"];
+        if (isDelayVisibleTime === undefined) {
+            isDelayVisibleTime = false;
+        }
+        var effect = Utility.getInstance().createAnimationDragonBones(animationName);
+        if (effect == null) {
+            LogUtils.getInstance().log("fail effect " + animationName);
+            return null;
+        }
+        if (pos === undefined) {
+            pos = cc.p(gv.WIN_SIZE.width / 2, gv.WIN_SIZE.height / 2);
+        }
+        effect.setPosition(pos.x, pos.y);
+        if (zOder === undefined) {
+            zOder = 100;
+        }
+        if (parent === undefined) {
+            parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
+        }
+        parent.addChild(effect, zOder);
+        if (isDelayVisibleTime) {
+            effect.visible = false;
+            setTimeout(function () {
+                if (effect) {
+                    try {
+                        if (!effect.removed) {
+                            effect.visible = true;
+                        }
+                    } catch (exp) {
+                        cc.error("can not set visible is true for effect");
+                    }
+                }
+            }, 5);
+        }
+        if (animationRun === undefined) {
+            animationRun = "run";
+        }
+        if (delay === undefined) {
+            delay = -1;
+        }
+        if (durationTo === undefined) {
+            durationTo = -1;
+        }
+        if (loop === undefined) {
+            loop = 1;
+        }
+        effect.gotoAndPlay(animationRun, delay, durationTo, loop);
+        if (funCall !== undefined && funCall !== null) {
+            effect._funCall = funCall;
+        }
+        effect._autoRemove = autoRemove;
+        if (autoRemove === undefined) {
+            effect._autoRemove = true;
+        }
+        effect.setCompleteListener(this.onFinishEffect);
+        return effect;
+    },
+    onFinishEffect: function (effect) {
+        LogUtils.getInstance().log("End Effect");
+        if (effect._funCall !== undefined) {
+            var cbFunc = effect._funCall;
+            if (cbFunc != null) {
+                Utility.getInstance().executeFunction(cbFunc);
+            }
+        }
+        if (effect._autoRemove) {
+            LogUtils.getInstance().log(["oidm", effect._autoRemove]);
+            effect.removeFromParent(true);
+            effect.removed = true;
+        }
+    },
 });

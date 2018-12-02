@@ -559,5 +559,13 @@ var Tank = cc.Sprite.extend({
             }
         });
         this.setListTileLogicPointIndex([]);
+    },
+    runEffectAppearThrowDown: function () {
+        var args = {};
+        args["animationName"] = "eff_appear_fall_down";
+        args["animationRun"] = "run";
+        args["pos"] = this.getWorldPosition();
+        args["pos"].y += this.getContentSize().height;
+        var eff = gv.engine.getEffectMgr().playEffectDragonBones(args);
     }
 });
