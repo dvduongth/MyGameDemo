@@ -7,6 +7,7 @@ var SceneBattle = BaseScene.extend({
         this.sprMapBackground = null;
         this.sprClock = null;
         this.lbCountdownTime = null;
+        this.ndSlotPickTank = null;
         this.imgTank_0 = null;
         this.imgTank_1 = null;
         this.imgTank_2 = null;
@@ -20,6 +21,12 @@ var SceneBattle = BaseScene.extend({
         this._super(resJson.ZCCS__SCENE__BATTLE__SCENEBATTLE);
     },
     initScene: function () {
+        //local zorder
+        this.sprMapBackground.setLocalZOrder(ZORDER_BACK_GROUND);
+        this.sprClock.setLocalZOrder(ZORDER_SKY);
+        this.btnBackToLobby.setLocalZOrder(ZORDER_FORCE_GROUND);
+        this.btnClose.setLocalZOrder(ZORDER_FORCE_GROUND);
+        this.ndSlotPickTank.setLocalZOrder(ZORDER_SKY);
         gv.engine.getBattleMgr().getMapMgr().setMapBackgroundObj(this.sprMapBackground);
         gv.engine.getBattleMgr().getMapMgr().initMap();
         this.findAndInitGameObject();
@@ -30,7 +37,7 @@ var SceneBattle = BaseScene.extend({
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
     },
     initDisplayPickTankSlot: function () {
-        switch (gv.engine.getBattleMgr().getPlayerMgr().getMyTeam()){
+        switch (gv.engine.getBattleMgr().getPlayerMgr().getMyTeam()) {
             case TEAM_1:
                 Utility.getInstance().updateSpriteWithFileName(this.imgTank_0, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__1A_PNG);
                 Utility.getInstance().updateSpriteWithFileName(this.imgTank_1, resImg.RESOURCES__TEXTURES__TANK__TEAM___1__2A_PNG);
@@ -54,14 +61,12 @@ var SceneBattle = BaseScene.extend({
         this._super();
     },
     updateDisplayPickTankSlot: function () {
-        var maxNumTank = Setting.NUMBER_OF_TANK;
-        var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank();
-        if(numberPicked >= maxNumTank) {
+        if (gv.engine.getBattleMgr().getPlayerMgr().isAlreadyDoneThrowAllTank()) {
             this.removeTouchListenerOneByOneTank();
             this.imgTank_0.setVisible(false);
             this.imgTank_1.setVisible(false);
             this.imgTank_2.setVisible(false);
-        }else{
+        } else {
             this.imgTank_0.setVisible(true);
             this.imgTank_1.setVisible(true);
             this.imgTank_2.setVisible(true);
@@ -77,7 +82,9 @@ var SceneBattle = BaseScene.extend({
         var ObstacleSoft = "ObstacleSoft";
         var ObstacleHard = "ObstacleHard";
         var Water = "Water";
-        function findObj (node) {
+        var listNodeGround = ["ndWater", "ndConcrete", "ndBrick"];
+
+        function findObj(node) {
             if (node == null) {
                 return false;
             }
@@ -91,14 +98,16 @@ var SceneBattle = BaseScene.extend({
                 var child = allChildren[i];
                 nameChild = child.getName();
                 //LogUtils.getInstance().log(["findBase", nameChild]);
-                if(nameChild != null) {
+                if (nameChild != null) {
                     var arr = nameChild.split("_");
-                    switch (arr[0]){
+                    switch (arr[0]) {
                         case MainBase:
                             gv.engine.getBattleMgr().updateBase(child, BASE_MAIN, cc.p(arr[1], arr[2]), arr[3]);
+                            child.setLocalZOrder(ZORDER_GROUND);
                             break;
                         case SideBase:
                             gv.engine.getBattleMgr().updateBase(child, BASE_SIDE, cc.p(arr[1], arr[2]), arr[3]);
+                            child.setLocalZOrder(ZORDER_GROUND);
                             break;
                         case ObstacleSoft:
                             gv.engine.getBattleMgr().updateObstacle(child, BLOCK_SOFT_OBSTACLE, cc.p(arr[1], arr[2]));
@@ -109,13 +118,72 @@ var SceneBattle = BaseScene.extend({
                         case Water:
                             gv.engine.getBattleMgr().updateObstacle(child, BLOCK_WATER, cc.p(arr[1], arr[2]));
                             break;
+                        default :
+                            var existedGroundIdx = listNodeGround.findIndex(function (str) {
+                                return str == arr[0];
+                            });
+                            if (existedGroundIdx != -1) {
+                                child.setLocalZOrder(ZORDER_GROUND);
+                            }
+                            break;
                     }
                 }
                 findObj(child);
             }
             return true;
         }
+
         findObj(this.getRootNode());
+    },
+    createLayerRedLimitThrowTank: function () {
+        var parentSize = this.sprMapBackground.getContentSize();
+        var cSize = cc.size(gv.WIN_SIZE.width, gv.WIN_SIZE.height);
+        this._layerRedLimitThrowTank = new cc.LayerColor(cc.color.RED, cSize.width, cSize.height);
+        this._layerRedLimitThrowTank.setOpacity(80);
+        this.sprMapBackground.addChild(this._layerRedLimitThrowTank, 0);
+        this._layerRedLimitThrowTank.setLocalZOrder(ZORDER_MID_GROUND);
+        this._layerRedLimitThrowTank.attr({
+            anchorX: 0,
+            anchorY: 0,
+            x: parentSize.width / 2 - cSize.width / 2,
+            y: parentSize.height / 2 - cSize.height / 2
+        });
+    },
+    getLayerRedLimitThrowTank: function () {
+        if (!this._layerRedLimitThrowTank) {
+            this.createLayerRedLimitThrowTank();
+        }
+        return this._layerRedLimitThrowTank;
+    },
+    removeLayerRedLimitThrowTank: function () {
+        if (this._layerRedLimitThrowTank != null) {
+            this._layerRedLimitThrowTank.removeFromParent(true);
+            this._layerRedLimitThrowTank = null;
+        }
+    },
+    createLayerGreenLimitThrowTank: function () {
+        var size = cc.size();
+        var tileLogicSize = gv.engine.getBattleMgr().getMapMgr().getTileLogicSize();
+        var tileMapSize = cc.size(tileLogicSize.width * Setting.GAME_OBJECT_SIZE_W, tileLogicSize.height * Setting.GAME_OBJECT_SIZE_H);
+        size.width = tileMapSize.width * (Setting.MAP_W - 2);
+        size.height = tileMapSize.height * Setting.MAP_LIMIT_ROW_THROW_TANK;
+        this._layerGreenLimitThrowTank = new cc.LayerColor(cc.color.GREEN, size.width, size.height);
+        this._layerGreenLimitThrowTank.setOpacity(100);
+        this.sprMapBackground.addChild(this._layerGreenLimitThrowTank, 0);
+        this._layerGreenLimitThrowTank.setPosition(tileMapSize.width, tileMapSize.height);
+        this._layerGreenLimitThrowTank.setLocalZOrder(ZORDER_MID_GROUND);
+    },
+    getLayerGreenLimitThrowTank: function () {
+        if (!this._layerGreenLimitThrowTank) {
+            this.createLayerGreenLimitThrowTank();
+        }
+        return this._layerGreenLimitThrowTank;
+    },
+    removeLayerGreenLimitThrowTank: function () {
+        if (this._layerGreenLimitThrowTank != null) {
+            this._layerGreenLimitThrowTank.removeFromParent(true);
+            this._layerGreenLimitThrowTank = null;
+        }
     },
     //touch listener
     createTouchListenerOneByOneTank: function () {
@@ -172,6 +240,8 @@ var SceneBattle = BaseScene.extend({
         if (isCorrect) {
             LogUtils.getInstance().log([this.getClassName(), "touch tank began"]);
             Utility.getInstance().showTextOnScene(this.getClassName() + " touch tank began");
+            this.getLayerRedLimitThrowTank().setVisible(true);
+            this.getLayerGreenLimitThrowTank().setVisible(true);
             return true;
         } else {
             //LogUtils.getInstance().log([this.getClassName(), "touch not correct"]);
@@ -185,9 +255,9 @@ var SceneBattle = BaseScene.extend({
         target.x += touch.getDelta().x;
         target.y += touch.getDelta().y;
         var worldPos = parent.convertToWorldSpace(target.getPosition());
-        var nPos = this.sprMapBackground.convertToNodeSpace(worldPos);
+        var nPos = this.getLayerGreenLimitThrowTank().convertToNodeSpace(worldPos);
 
-        var rect = cc.rect(0, 0, this.sprMapBackground.getContentSize().width, this.sprMapBackground.getContentSize().height);
+        var rect = cc.rect(0, 0, this.getLayerGreenLimitThrowTank().getContentSize().width, this.getLayerGreenLimitThrowTank().getContentSize().height);
         if (cc.rectContainsPoint(rect, nPos)) {
             target.setScale(0.3);
         } else {
@@ -200,10 +270,10 @@ var SceneBattle = BaseScene.extend({
         var target = event.getCurrentTarget();
         var parent = target.getParent();
         var worldPos = parent.convertToWorldSpace(target.getPosition());
-        var mapBg = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
-        var nPos = mapBg.convertToNodeSpace(worldPos);
+        var validArea = this.getLayerGreenLimitThrowTank();
+        var nPos = validArea.convertToNodeSpace(worldPos);
 
-        var rect = cc.rect(0, 0, mapBg.getContentSize().width, mapBg.getContentSize().height);
+        var rect = cc.rect(0, 0, validArea.getContentSize().width, validArea.getContentSize().height);
         if (cc.rectContainsPoint(rect, nPos)) {
             var type;
             switch (target) {
@@ -225,6 +295,8 @@ var SceneBattle = BaseScene.extend({
         }
         target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
         target.setScale(1);
+        this.removeLayerRedLimitThrowTank();
+        this.removeLayerGreenLimitThrowTank();
     },
     onTouchCancelledTank: function (touch, event) {
         LogUtils.getInstance().log([this.getClassName(), "touch tank cancelled"]);
@@ -232,11 +304,13 @@ var SceneBattle = BaseScene.extend({
         var parent = target.getParent();
         target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
         target.setScale(1);
+        this.removeLayerRedLimitThrowTank();
+        this.removeLayerGreenLimitThrowTank();
     },
 
     checkTankAction: function (touch) {
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank();
-        if(!tank) {
+        if (!tank) {
             LogUtils.getInstance().error([this.getClassName(), "checkTankAction not yet select tank"]);
             return false;
         }
@@ -244,18 +318,18 @@ var SceneBattle = BaseScene.extend({
         var worldPos = parent.convertToWorldSpace(tank.getPosition());
         var touchPos = touch.getLocation();
         var delta = cc.pSub(touchPos, worldPos);
-        if(Math.abs(delta.x) > Math.abs(delta.y)){
-            if(delta.x > 0) {
+        if (Math.abs(delta.x) > Math.abs(delta.y)) {
+            if (delta.x > 0) {
                 //move to right
                 tank.tankAction(cc.KEY.right);
-            }else{
+            } else {
                 tank.tankAction(cc.KEY.left);
             }
-        }else{
-            if(delta.y > 0) {
+        } else {
+            if (delta.y > 0) {
                 //move to top
                 tank.tankAction(cc.KEY.up);
-            }else{
+            } else {
                 tank.tankAction(cc.KEY.down);
             }
         }
@@ -264,7 +338,7 @@ var SceneBattle = BaseScene.extend({
         var worldPos = touch.getLocation();
         var list = [this.imgTank_0, this.imgTank_1, this.imgTank_2];
         var target;
-        for(var i = 0; i < list.length; ++i) {
+        for (var i = 0; i < list.length; ++i) {
             target = list[i];
             if (target != null) {
                 var locationInNode = target.convertToNodeSpace(worldPos);
@@ -285,17 +359,15 @@ var SceneBattle = BaseScene.extend({
     onTouchBegan: function (touch, event) {
         var worldPos = touch.getLocation();
         var gameObjectInfo = gv.engine.getBattleMgr().getMatchMgr().getGameObjectInfoByWorldPosition(worldPos);
-        if(gameObjectInfo != null
-        && gameObjectInfo.gameObject.getGameObjectString() == STRING_TANK
-        && gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(gameObjectInfo.gameObject.getTeam())){
+        if (gameObjectInfo != null
+            && gameObjectInfo.gameObject.getGameObjectString() == STRING_TANK
+            && gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(gameObjectInfo.gameObject.getTeam())) {
             LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action", gameObjectInfo.ID, gameObjectInfo.type]);
             return false;
         }
         //check during pick tank
-        var maxNumTank = Setting.NUMBER_OF_TANK;
-        var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank();
         gameObjectInfo = this.checkTouchPickTank(touch);
-        if ((numberPicked < maxNumTank) && (gameObjectInfo != null)) {
+        if ((!gv.engine.getBattleMgr().getPlayerMgr().isAlreadyDoneThrowAllTank()) && (gameObjectInfo != null)) {
             LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action THROW TANK", gameObjectInfo.ID, gameObjectInfo.type]);
             return false;
         }
@@ -310,7 +382,7 @@ var SceneBattle = BaseScene.extend({
     },
     onTouchEnded: function (touch, event) {
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank();
-        if(!tank) {
+        if (!tank) {
             LogUtils.getInstance().error([this.getClassName(), "onTouchEnded not yet select tank"]);
             return false;
         }
@@ -318,7 +390,7 @@ var SceneBattle = BaseScene.extend({
     },
     onTouchCancelled: function (touch, event) {
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank();
-        if(!tank) {
+        if (!tank) {
             LogUtils.getInstance().error([this.getClassName(), "onTouchCancelled not yet select tank"]);
             return false;
         }
@@ -328,7 +400,7 @@ var SceneBattle = BaseScene.extend({
         //todo override me
         //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed keyCode", keyCode]);
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank();
-        if(!tank) {
+        if (!tank) {
             LogUtils.getInstance().error([this.getClassName(), "onKeyPressed not yet select tank"]);
             return false;
         }
@@ -369,7 +441,7 @@ var SceneBattle = BaseScene.extend({
         var isDuringPress;
         //LogUtils.getInstance().log([this.getClassName(), "onKeyReleased keyCode", keyCode]);
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank();
-        if(!tank) {
+        if (!tank) {
             LogUtils.getInstance().error([this.getClassName(), "onKeyReleased not yet select tank"]);
             return false;
         }

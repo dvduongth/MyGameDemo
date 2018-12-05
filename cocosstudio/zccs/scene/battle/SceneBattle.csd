@@ -2629,7 +2629,7 @@
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Node_1_26" ActionTag="-902819725" Tag="214" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="450.0000" RightMargin="450.0000" TopMargin="1105.0000" BottomMargin="-205.0000" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="ndSlotPickTank" ActionTag="-902819725" Tag="214" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="450.0000" RightMargin="450.0000" TopMargin="1105.0000" BottomMargin="-205.0000" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Panel_2_11" ActionTag="590409940" Tag="215" IconVisible="False" LeftMargin="-450.0000" RightMargin="-450.0000" TopMargin="-200.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">

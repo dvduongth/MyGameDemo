@@ -125,6 +125,9 @@ var BaseGameObject = cc.Class.extend({
     addChild: function (child) {
         this.getRootNode().addChild(child);
     },
+    setLocalZOrder: function (z) {
+        this.getRootNode().setLocalZOrder(z);
+    },
     // Draw
     update: function (dt) {
         //todo override me

@@ -69,9 +69,7 @@ var BattleMgr = cc.Class.extend({
     throwTank: function (worldPos, team, type) {
         var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
         var position = parent.convertToNodeSpace(worldPos);
-        var maxNumTank = Setting.NUMBER_OF_TANK;
-        var numberPicked = this.getBattleDataModel().getNumberPickedTank();
-        if (numberPicked >= maxNumTank) {
+        if (this.getPlayerMgr().isAlreadyDoneThrowAllTank()) {
             Utility.getInstance().showTextOnScene("RICK MAX NUMBER TANK CAN PICK " + Setting.NUMBER_OF_TANK);
         } else {
             LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);

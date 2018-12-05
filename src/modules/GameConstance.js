@@ -11,17 +11,10 @@ var PACKET_PROCESS_INTERVAL = 100;
 // ========================================================
 // ========================================================
 // Maps
-var MAP_OFFSET_X = -100; // Reserved for screenshake
-var MAP_OFFSET_Y = -100; // Reserved for screenshake
-
 var MAP_WATER_FRAME_NUMBER = 30;
 var MAP_WATER_FRAME_DURATION = 60;
 var MAP_WATER_SPRITE_W = 6;
 var MAP_WATER_ALPHA = 0.3;
-
-var BLOCK_SIZE = 40;
-var MAP_W = 22;
-var MAP_H = 22;
 
 var BLOCK_GROUND = 0;
 var BLOCK_WATER = 1;
@@ -89,3 +82,10 @@ var STRING_OBSTACLE = "0";
 var STRING_BASE = "1";
 var STRING_TANK = "2";
 var STRING_BULLET = "3";
+// ========================================================
+// Scene Battle ZOrder
+var ZORDER_BACK_GROUND = 0;
+var ZORDER_MID_GROUND = 1;
+var ZORDER_GROUND = 2;
+var ZORDER_FORCE_GROUND = 3;
+var ZORDER_SKY = 4;

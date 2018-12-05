@@ -60,6 +60,10 @@ var PlayerMgr = cc.Class.extend({
         return true;
     },
     isKnockoutKillAllTank: function (team) {
+        if(!this.isAlreadyDoneThrowAllTank()) {
+            LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank"]);
+            return false;
+        }
         var map = this.getMAPGameObjectID();
         for (var _id in map) {
             var id = _id + "";
@@ -112,5 +116,10 @@ var PlayerMgr = cc.Class.extend({
         var row = Utility.getInstance().randomBetweenRound(15, 20);
         var col = Utility.getInstance().randomBetweenRound(1, 20);
         return cc.p(row, col);
+    },
+    isAlreadyDoneThrowAllTank: function () {
+        var maxNumTank = Setting.NUMBER_OF_TANK;
+        var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank();
+        return numberPicked >= maxNumTank;
     }
 });

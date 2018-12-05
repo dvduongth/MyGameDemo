@@ -24,6 +24,9 @@ Setting.TIME_LOOP_RENDER = 1/12;
 // Map data 22x22, each block have the enum BLOCK_ in Enum.js
 Setting.GAME_OBJECT_SIZE_W = 5;
 Setting.GAME_OBJECT_SIZE_H = 5;
+Setting.MAP_LIMIT_ROW_THROW_TANK = 6;
+Setting.MAP_OFFSET_X = -100; // Reserved for screenshake
+Setting.MAP_OFFSET_Y = -100; // Reserved for screenshake
 Setting.MAP_W = 22;
 Setting.MAP_H = 22;
 Setting.MAP = [

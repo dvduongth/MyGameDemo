@@ -106,19 +106,19 @@ var Bullet = cc.Sprite.extend({
     checkOutOfBoundingScreen: function () {
         var parent = this.getParent();
         var worldPos = parent.convertToWorldSpace(this.getPosition());
-        if (worldPos.x >= (gv.WIN_SIZE.width + MAP_OFFSET_X)) {
+        if (worldPos.x >= (gv.WIN_SIZE.width + Setting.MAP_OFFSET_X)) {
             this.destroy();
             return true;
         }
-        if (worldPos.y >= (gv.WIN_SIZE.height + MAP_OFFSET_Y)) {
+        if (worldPos.y >= (gv.WIN_SIZE.height + Setting.MAP_OFFSET_Y)) {
             this.destroy();
             return true;
         }
-        if (worldPos.x <= -MAP_OFFSET_Y) {
+        if (worldPos.x <= -Setting.MAP_OFFSET_Y) {
             this.destroy();
             return true;
         }
-        if (worldPos.y <= -MAP_OFFSET_Y) {
+        if (worldPos.y <= -Setting.MAP_OFFSET_Y) {
             this.destroy();
             return true;
         }
