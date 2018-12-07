@@ -39,5 +39,17 @@ var BattleDataModel = cc.Class.extend({
     },
     autoIncreaseTimeCountdownBattle: function () {
         this.setTimeCountdownBattle(this.getTimeCountdownBattle() + 1);
-    }
+    },
+    setBattleState: function (t) {
+        this._battleState = t;
+    },
+    getBattleState: function () {
+        return this._battleState;
+    },
+    setBattleResult: function (t) {
+        this._battleResult = t;
+    },
+    getBattleResult: function () {
+        return this._battleResult;
+    },
 });

@@ -42,7 +42,7 @@ var BaseScene = cc.Scene.extend({
 
     onEnter: function () {
         this._super();
-        this.schedule(this.update, Setting.TIME_LOOP_RENDER);
+        this.schedule(this.update, Setting.TIME_UPDATE_INTERVAL);
         this.schedule(this.updatePerSecond, 1);
     },
     update: function (dt) {

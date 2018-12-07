@@ -8,7 +8,6 @@ var MatchMgr = cc.Class.extend({
         return this._className;
     },
     ctor: function () {
-        this.setPauseGame(false);
         this.setListBaseID([]);
         this.setListObstacleID([]);
         this.setListTankID([]);
@@ -16,11 +15,16 @@ var MatchMgr = cc.Class.extend({
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
-    setPauseGame: function (eff) {
-        this._isPauseGame = eff;
-    },
     isPauseGame: function () {
-        return this._isPauseGame;
+        //STATE_SUDDEN_DEATH
+        var state = gv.engine.getBattleMgr().getBattleDataModel().getBattleState();
+        if (state == STATE_ACTION) {
+            return false;
+        }
+        if (state == STATE_SUDDEN_DEATH) {
+            return false;
+        }
+        return true;
     },
     setListBaseID: function (l) {
         this._listBaseID = l;
@@ -102,24 +106,53 @@ var MatchMgr = cc.Class.extend({
             return _id != id;
         }));
     },
+    startActionBattle: function () {
+        gv.engine.getBattleMgr().getBattleDataModel().setBattleState(STATE_ACTION);
+    },
+    finishBattle: function () {
+        gv.engine.getBattleMgr().getBattleDataModel().setBattleState(STATE_FINISHED);
+    },
+    startSuddenDeadBattle: function () {
+        gv.engine.getBattleMgr().getBattleDataModel().setBattleState(STATE_SUDDEN_DEATH);
+        this.destroyAllObstacle();
+    },
+    isDuringSuddenDeadBattle: function () {
+        return gv.engine.getBattleMgr().getBattleDataModel().getBattleState() == STATE_SUDDEN_DEATH;
+    },
+    setMatchResult: function (t) {
+        gv.engine.getBattleMgr().getBattleDataModel().setBattleResult(t);
+    },
+    checkLogicSuddenDead: function () {
+        var curState = gv.engine.getBattleMgr().getBattleDataModel().getBattleState();
+        if(curState == STATE_ACTION) {
+            var curT = gv.engine.getBattleMgr().getBattleDataModel().getTimeCountdownBattle();
+            if (curT >= Setting.LOOPS_MATCH_END) {
+                this.startSuddenDeadBattle();
+            }
+        }
+
+    },
     checkLogicWinTimeUp: function () {
         var curT = gv.engine.getBattleMgr().getBattleDataModel().getTimeCountdownBattle();
-        if(curT >= Setting.BATTLE_DURATION) {
-            if(curT >= (Setting.BATTLE_DURATION + Setting.SUDDEN_DEATH_DURATION)) {
+        if (curT >= Setting.LOOPS_MATCH_END) {
+            if (curT >= (Setting.LOOPS_MATCH_END + Setting.LOOPS_SUDDEN_DEATH)) {
                 //todo show draw
-                this.setPauseGame(true);
+                this.finishBattle();
                 gv.engine.getBattleMgr().showDrawGame();
-            }else{
+                this.setMatchResult(MATCH_RESULT_DRAW);
+            } else {
                 //check win lose base on number baseSide alive
                 var num1 = gv.engine.getBattleMgr().getPlayerMgr().getNumberBaseAliveByTeam(TEAM_1);
                 var num2 = gv.engine.getBattleMgr().getPlayerMgr().getNumberBaseAliveByTeam(TEAM_2);
-                if(num1 != num2) {
+                if (num1 != num2) {
                     var teamWin = num1 > num2 ? TEAM_1 : TEAM_2;
                     gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
                     //todo show win
-                    this.setPauseGame(true);
+                    this.finishBattle();
+                    this.setMatchResult(num1 > num2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
                     gv.engine.getBattleMgr().showWinGame();
-                }else{
+                } else {
+                    this.setMatchResult(MATCH_RESULT_NOT_FINISH);
                     LogUtils.getInstance().log([this.getClassName(), "checkLogicWinTimeUp", num1, num2]);
                 }
             }
@@ -128,20 +161,22 @@ var MatchMgr = cc.Class.extend({
     checkLogicWinKnockoutKillAllTank: function (id, team) {
         gv.engine.getBattleMgr().getPlayerMgr().removeTankID(id);
         if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillAllTank(team)) {
-            var teamWin = team == TEAM_1 ? TEAM_2 : TEAM_1;
+            var teamWin = team == TEAM_2 ? TEAM_1 : TEAM_2;
             gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
             //todo show win
-            this.setPauseGame(true);
+            this.finishBattle();
+            this.setMatchResult(team == TEAM_2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
             gv.engine.getBattleMgr().showWinGame();
         }
     },
     checkLogicWinKnockoutKillMainBase: function (id, team) {
         gv.engine.getBattleMgr().getPlayerMgr().removeBaseID(id);
         if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillMainBase(id)) {
-            var teamWin = team == TEAM_1 ? TEAM_2 : TEAM_1;
+            var teamWin = team == TEAM_2 ? TEAM_1 : TEAM_2;
             gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
             //todo show win
-            this.setPauseGame(true);
+            this.finishBattle();
+            this.setMatchResult(team == TEAM_2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
             gv.engine.getBattleMgr().showWinGame();
         }
     },
@@ -192,7 +227,7 @@ var MatchMgr = cc.Class.extend({
         var size = tank.getContentSize();
         var MAX = 100;
         var queue = [];
-        var result = [];//mang ket qua
+        var result = [];
         var count = 0;
         var nResult = 4;
         var finish = false;
@@ -333,7 +368,7 @@ var MatchMgr = cc.Class.extend({
     },
     isBarrierGameObjectByID: function (id) {
         var obj = gv.engine.getBattleMgr().getGameObjectByID(id);
-        if(obj != null) {
+        if (obj != null) {
             var str = obj.getGameObjectString();
             switch (str) {
                 case STRING_BASE:
@@ -381,37 +416,38 @@ var MatchMgr = cc.Class.extend({
         function isEqualPoint(p1, p2) {
             return p1.x == p2.x && p1.y == p2.y;
         }
+
         function findNexIdxEmpty(tilePointIdx) {
             var nextIdx = null;
             var foundedIdx = null;
             for (var i = 1; i <= numTile; ++i) {
                 var dx = 0;
                 var dy = 0;
-                if(up) {
+                if (up) {
                     dx = i;
-                }else if(down) {
+                } else if (down) {
                     dx = -i;
-                }else if(left) {
+                } else if (left) {
                     dy = -i;
-                }else if(right) {
+                } else if (right) {
                     dy = i;
                 }
                 nextIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(tilePointIdx, dx, dy);
                 if (!isEqualPoint(nextIdx, tilePointIdx)) {
-                    if(skipCheckEmpty) {
+                    if (skipCheckEmpty) {
                         foundedIdx = nextIdx;
-                    }else{
+                    } else {
                         var existedListId = gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(nextIdx);
                         if (!existedListId) {
                             foundedIdx = nextIdx;
-                        }else{
+                        } else {
                             var listBarrierID = existedListId.filter(function (id) {
                                 return gv.engine.getBattleMgr().getMatchMgr().isBarrierGameObjectByID(id);
                             });
-                            if(listBarrierID.length > 0) {
+                            if (listBarrierID.length > 0) {
                                 //stop search
                                 return foundedIdx;
-                            }else{
+                            } else {
                                 //can move
                                 foundedIdx = nextIdx;
                             }

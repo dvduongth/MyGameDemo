@@ -40,7 +40,17 @@ var Bullet = cc.Sprite.extend({
         this.updateInfo(-1, -1, -1, -1, -1);
     },
     initBullet: function () {
-        this.setSpeed(Setting.BULLET_SPEED);
+        switch (this.getType()) {
+            case TANK_LIGHT:
+                this.setSpeed(Setting.BULLET_TANK_LIGHT_SPEED);
+                break;
+            case TANK_MEDIUM:
+                this.setSpeed(Setting.BULLET_TANK_MEDIUM_SPEED);
+                break;
+            case TANK_HEAVY:
+                this.setSpeed(Setting.BULLET_TANK_HEAVY_SPEED);
+                break;
+        }
     },
     setID: function (id) {
         this._bulletID = id;

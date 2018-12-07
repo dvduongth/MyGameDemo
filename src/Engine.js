@@ -71,6 +71,7 @@ var Engine = cc.Class.extend({
     },
     viewSceneBattle: function () {
         this.getSceneMgr().viewSceneById(SCENE_ID.BATTLE);
+        this.getBattleMgr().startBattle();
     },
     isCurrentSceneBattle: function () {
         return this.getSceneMgr().isCurrentSceneById(SCENE_ID.BATTLE);

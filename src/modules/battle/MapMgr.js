@@ -17,10 +17,10 @@ var MapMgr = cc.Class.extend({
         return true;
     },
     getNumberTileMapHorizontal: function () {
-        return Setting.MAP_W * Setting.GAME_OBJECT_SIZE_W;
+        return Setting.MAP_W * Setting.GAME_OBJECT_SIZE;
     },
     getNumberTileMapVertical: function () {
-        return Setting.MAP_H * Setting.GAME_OBJECT_SIZE_H;
+        return Setting.MAP_H * Setting.GAME_OBJECT_SIZE;
     },
     setTileMatrix: function (m) {
         this._tileMatrix = m;
@@ -77,10 +77,10 @@ var MapMgr = cc.Class.extend({
         LogUtils.getInstance().log([this.getClassName(), "init map success"]);
     },
     convertTileIndexPointToMapIndexPoint: function (p) {
-        return cc.p(Math.floor(p.x / Setting.GAME_OBJECT_SIZE_H), Math.floor(p.y / Setting.GAME_OBJECT_SIZE_W));
+        return cc.p(Math.floor(p.x / Setting.GAME_OBJECT_SIZE), Math.floor(p.y / Setting.GAME_OBJECT_SIZE));
     },
     convertMapIndexPointToStartTileIndexPoint: function (p) {
-        return cc.p(p.x * Setting.GAME_OBJECT_SIZE_H, p.y * Setting.GAME_OBJECT_SIZE_W);
+        return cc.p(p.x * Setting.GAME_OBJECT_SIZE, p.y * Setting.GAME_OBJECT_SIZE);
     },
     mapToString: function () {
         LogUtils.getInstance().log([this.getClassName(), "mapToString"]);
@@ -125,11 +125,11 @@ var MapMgr = cc.Class.extend({
         if(gObject.getGameObjectSizeNumberPoint() == null){
             var h, w;
             if(gObject.getGameObjectString() == STRING_BASE) {
-                h = Setting.GAME_OBJECT_SIZE_H * 2;
-                w = Setting.GAME_OBJECT_SIZE_W * 2;
+                h = Setting.GAME_OBJECT_SIZE * Setting.BASE_SIZE;
+                w = Setting.GAME_OBJECT_SIZE * Setting.BASE_SIZE;
             }else{
-                h = Setting.GAME_OBJECT_SIZE_H;
-                w = Setting.GAME_OBJECT_SIZE_W;
+                h = Setting.GAME_OBJECT_SIZE;
+                w = Setting.GAME_OBJECT_SIZE;
             }
             gObject.setGameObjectSizeNumberPoint(GameObjectPointIndex(h, w));
         }

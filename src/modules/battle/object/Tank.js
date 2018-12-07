@@ -57,7 +57,17 @@ var Tank = cc.Sprite.extend({
         } else {
             this.setAngle(180);//down
         }
-        this.setSpeed(Math.floor(Setting.MAX_SPEED / this.getType()));
+        switch (this.getType()) {
+            case TANK_LIGHT:
+                this.setSpeed(Setting.TANK_LIGHT_SPEED);
+                break;
+            case TANK_MEDIUM:
+                this.setSpeed(Setting.TANK_MEDIUM_SPEED);
+                break;
+            case TANK_HEAVY:
+                this.setSpeed(Setting.TANK_HEAVY_SPEED);
+                break;
+        }
         this.setMapPressAction({});
         this.createTankSprite();
         this.createHPDisplayProgress();
@@ -268,7 +278,14 @@ var Tank = cc.Sprite.extend({
         return this._mapPressAction;
     },
     getDelayTimeSpawnBullet: function () {
-        return Setting.MAX_DELAY_SPAWN_BULLET / this.getType();
+        switch (this.getType()) {
+            case TANK_LIGHT:
+                return Setting.TANK_LIGHT_ROF;
+            case TANK_MEDIUM:
+                return Setting.TANK_MEDIUM_ROF;
+            case TANK_HEAVY:
+                return Setting.TANK_HEAVY_ROF;
+        }
     },
 
     createActionHunt: function () {

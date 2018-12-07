@@ -51,6 +51,12 @@ var BattleMgr = cc.Class.extend({
     getPlayerMgr: function () {
         return this._playerMgr;
     },
+    startBattle: function () {
+        this.getMatchMgr().startActionBattle();
+        Utility.getInstance().callFunctionWithDelay(1, function () {
+            gv.engine.getBattleMgr().getPlayerMgr().throwEnemyTank();
+        });
+    },
 
     update: function (dt) {
         if (this.getMatchMgr().isPauseGame()) {
@@ -69,6 +75,7 @@ var BattleMgr = cc.Class.extend({
         if (sceneBattle != null) {
             sceneBattle.countDownTimeUp();
         }
+        this.getMatchMgr().checkLogicSuddenDead();
         this.getMatchMgr().checkLogicWinTimeUp();
     },
     getGameObjectByID: function (id) {
@@ -151,10 +158,10 @@ var BattleMgr = cc.Class.extend({
     },
 
     showWinGame: function () {
-        this.getBattleFactory().showTextEndBattle(this.getPlayerMgr().getTeamWin());
+        this.getBattleFactory().showTextEndBattle();
     },
 
     showDrawGame: function () {
-        this.getBattleFactory().showTextEndBattle(-1);
-    },
+        this.getBattleFactory().showTextEndBattle();
+    }
 });

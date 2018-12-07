@@ -50,12 +50,6 @@ var SceneBattle = BaseScene.extend({
                 break;
         }
     },
-    onEnter: function () {
-        this._super();
-        Utility.getInstance().callFunctionWithDelay(0.4, function () {
-            gv.engine.getBattleMgr().getPlayerMgr().throwEnemyTank();
-        });
-    },
     clearScene: function () {
         this.removeTouchListenerOneByOneTank();
         this._super();
@@ -81,7 +75,11 @@ var SceneBattle = BaseScene.extend({
     },
     countDownTimeUp: function () {
         var t = gv.engine.getBattleMgr().getBattleDataModel().getTimeCountdownBattle();
-        t = Setting.BATTLE_DURATION - t;
+        if (gv.engine.getBattleMgr().getMatchMgr().isDuringSuddenDeadBattle()) {
+            t = Setting.LOOPS_MATCH_END + Setting.LOOPS_SUDDEN_DEATH - t;
+        } else {
+            t = Setting.LOOPS_MATCH_END - t;
+        }
         this.lbCountdownTime.setString(Utility.getInstance().numberToStringGlobal(t));
     },
     findAndInitGameObject: function () {
@@ -172,7 +170,7 @@ var SceneBattle = BaseScene.extend({
     createLayerGreenLimitThrowTank: function () {
         var size = cc.size();
         var tileLogicSize = gv.engine.getBattleMgr().getMapMgr().getTileLogicSize();
-        var tileMapSize = cc.size(tileLogicSize.width * Setting.GAME_OBJECT_SIZE_W, tileLogicSize.height * Setting.GAME_OBJECT_SIZE_H);
+        var tileMapSize = cc.size(tileLogicSize.width * Setting.GAME_OBJECT_SIZE, tileLogicSize.height * Setting.GAME_OBJECT_SIZE);
         size.width = tileMapSize.width * (Setting.MAP_W - 2);
         size.height = tileMapSize.height * Setting.MAP_LIMIT_ROW_THROW_TANK;
         this._layerGreenLimitThrowTank = new cc.LayerColor(cc.color.GREEN, size.width, size.height);

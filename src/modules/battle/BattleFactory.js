@@ -132,17 +132,27 @@ var BattleFactory = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "removeObstacle id", id]);
         }
     },
-    showTextEndBattle: function (teamWin) {
+    showTextEndBattle: function () {
         var path;
-        switch (teamWin) {
-            case TEAM_1:
+        var matchResult = gv.engine.getBattleMgr().getBattleDataModel().getBattleResult();
+        switch (matchResult) {
+            case MATCH_RESULT_TEAM_1_WIN:
                 path = resImg.RESOURCES__TEXTURES__STRINGS__TEAM1WIN_PNG;
                 break;
-            case TEAM_2:
+            case MATCH_RESULT_TEAM_2_WIN:
                 path = resImg.RESOURCES__TEXTURES__STRINGS__TEAM2WIN_PNG;
                 break;
-            default :
+            case MATCH_RESULT_DRAW:
                 path = resImg.RESOURCES__TEXTURES__STRINGS__DRAW_PNG;
+                break;
+            case MATCH_RESULT_BAD_DRAW:
+                path = resImg.RESOURCES__TEXTURES__STRINGS__BADDRAW_PNG;
+                break;
+            case MATCH_RESULT_NOT_FINISH:
+                path = resImg.RESOURCES__TEXTURES__STRINGS__BADDRAW_PNG;
+                break;
+            default :
+                path = resImg.RESOURCES__TEXTURES__STRINGS__BADDRAW_PNG;
                 break;
         }
         var sprText = Utility.getInstance().createSpriteFromFileName(path);
