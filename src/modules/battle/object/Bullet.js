@@ -151,6 +151,7 @@ var Bullet = cc.Sprite.extend({
     },
     destroy: function (hasExplosion) {
         if (hasExplosion) {
+            this.playSoundDestroy();
             var worldPos = this.getWorldPosition();
             var offset = 20;
             switch (this.getDirection()) {
@@ -178,6 +179,19 @@ var Bullet = cc.Sprite.extend({
         this.clearListTileLogicPointIndex();
         gv.engine.getBattleMgr().removeBullet(this.getID());
         cc.pool.putInPool(this);
+    },
+    playSoundDestroy: function () {
+        switch (this.getType()){
+            case TANK_LIGHT:
+                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_2);
+                break;
+            case TANK_MEDIUM:
+                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_2);
+                break;
+            case TANK_HEAVY:
+                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_4);
+                break;
+        }
     },
     checkCollision: function () {
         var _this = this;

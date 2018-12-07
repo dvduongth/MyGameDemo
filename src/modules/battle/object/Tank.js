@@ -303,6 +303,7 @@ var Tank = cc.Sprite.extend({
         }
     },
     spawnBullet: function () {
+        this.playSoundGunShot();
         var _this = this;
         var direction;
         //LogUtils.getInstance().log([this.getClassName(), "spawnBullet angle", this.getAngle()]);
@@ -334,6 +335,19 @@ var Tank = cc.Sprite.extend({
             })
         ));
     },
+    playSoundGunShot: function () {
+        switch (this.getType()){
+            case TANK_LIGHT:
+                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_CANNONSHOT);
+                break;
+            case TANK_MEDIUM:
+                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_CANNONSHOT);
+                break;
+            case TANK_HEAVY:
+                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_GUNSHOT);
+                break;
+        }
+    },
     setBlockGun: function (eff) {
         this._blockGun = eff;
     },
@@ -341,6 +355,10 @@ var Tank = cc.Sprite.extend({
         return this._blockGun;
     },
     Hunt: function () {
+        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
+            LogUtils.getInstance().log([this.getClassName(), "can not Hunt because of pause game"]);
+            return;
+        }
         if (!this.isBlockGun()) {
             LogUtils.getInstance().log([this.getClassName(), "start Hunt"]);
             this.createActionHunt();
@@ -499,6 +517,7 @@ var Tank = cc.Sprite.extend({
         }
     },
     destroy: function () {
+        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_1);
         this.stopHunt();
         var path;
         switch (this.getType()) {
@@ -590,6 +609,7 @@ var Tank = cc.Sprite.extend({
         this.setListTileLogicPointIndex([]);
     },
     runEffectAppearThrowDown: function () {
+        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_BULLETIMPACT);
         var args = {};
         args["animationName"] = "eff_appear_fall_down";
         args["animationRun"] = "run";

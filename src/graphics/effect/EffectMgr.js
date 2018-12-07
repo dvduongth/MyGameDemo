@@ -252,7 +252,7 @@ var EffectMgr = cc.Class.extend({
             }
         }
         if (effect._autoRemove) {
-            LogUtils.getInstance().log(["oidm", effect._autoRemove]);
+            //LogUtils.getInstance().log(["oidm", effect._autoRemove]);
             effect.removeFromParent(true);
             effect.removed = true;
         }

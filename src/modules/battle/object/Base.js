@@ -52,6 +52,7 @@ var Base = BaseGameObject.extend({
         this.setObjectProgressDisplay(progressBg);
     },
     destroy: function () {
+        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_3);
         var path = null;
         switch (this.getType()) {
             case BASE_MAIN:

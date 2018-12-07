@@ -14,8 +14,6 @@ var PACKET_PROCESS_INTERVAL = 100;
 // Maps
 var MAP_WATER_FRAME_NUMBER = 30;
 var MAP_WATER_FRAME_DURATION = 60;
-var MAP_WATER_SPRITE_W = 6;
-var MAP_WATER_ALPHA = 0.3;
 // Type
 var BLOCK_GROUND = 0;
 var BLOCK_WATER = 1;
@@ -55,6 +53,16 @@ var EXPLOSION_CANNON_MUZZLE = 7;
 var EXPLOSION_GUN_MUZZLE = 8;
 
 // ========================================================
+// Sound music
+var SOUND_AIRSTRIKE = 1;
+var SOUND_EMP = 2;
+var SOUND_BULLETIMPACT = 3;
+var SOUND_CANNONSHOT = 4;
+var SOUND_GUNSHOT = 5;
+var SOUND_EXPLOSION_1 = 6;
+var SOUND_EXPLOSION_2 = 7;
+var SOUND_EXPLOSION_3 = 8;
+var SOUND_EXPLOSION_4 = 9;
 // ========================================================
 // ========================================================
 // Match result

@@ -65,7 +65,7 @@ var MatchMgr = cc.Class.extend({
     runUpdateTank: function (dt) {
         this.getListTankID().forEach(function (id) {
             var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
-            if (tank != null) {
+            if (tank != null && tank.isAlive()) {
                 tank.update(dt);
             }
         });
@@ -75,6 +75,22 @@ var MatchMgr = cc.Class.extend({
             var bullet = gv.engine.getBattleMgr().getGameObjectByID(id);
             if (bullet != null) {
                 bullet.update(dt);
+            }
+        });
+    },
+    stopGunAllTank: function () {
+        this.getListTankID().forEach(function (id) {
+            var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (tank != null && tank.isAlive()) {
+                tank.stopHunt();
+            }
+        });
+    },
+    destroyAllBullet: function () {
+        this.getListBulletID().forEach(function (id) {
+            var bullet = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (bullet != null) {
+                bullet.destroy();
             }
         });
     },
@@ -138,7 +154,7 @@ var MatchMgr = cc.Class.extend({
             if (curT >= (Setting.LOOPS_MATCH_END + Setting.LOOPS_SUDDEN_DEATH)) {
                 //todo show draw
                 this.finishBattle();
-                gv.engine.getBattleMgr().showDrawGame();
+                gv.engine.getBattleMgr().endBattle();
                 this.setMatchResult(MATCH_RESULT_DRAW);
             } else {
                 //check win lose base on number baseSide alive
@@ -150,7 +166,7 @@ var MatchMgr = cc.Class.extend({
                     //todo show win
                     this.finishBattle();
                     this.setMatchResult(num1 > num2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
-                    gv.engine.getBattleMgr().showWinGame();
+                    gv.engine.getBattleMgr().endBattle();
                 } else {
                     this.setMatchResult(MATCH_RESULT_NOT_FINISH);
                     LogUtils.getInstance().log([this.getClassName(), "checkLogicWinTimeUp", num1, num2]);
@@ -166,7 +182,7 @@ var MatchMgr = cc.Class.extend({
             //todo show win
             this.finishBattle();
             this.setMatchResult(team == TEAM_2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
-            gv.engine.getBattleMgr().showWinGame();
+            gv.engine.getBattleMgr().endBattle();
         }
     },
     checkLogicWinKnockoutKillMainBase: function (id, team) {
@@ -177,7 +193,7 @@ var MatchMgr = cc.Class.extend({
             //todo show win
             this.finishBattle();
             this.setMatchResult(team == TEAM_2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
-            gv.engine.getBattleMgr().showWinGame();
+            gv.engine.getBattleMgr().endBattle();
         }
     },
     checkLogicCollisionBulletWithTarget: function () {

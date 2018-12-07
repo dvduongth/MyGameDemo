@@ -53,7 +53,7 @@ var BattleMgr = cc.Class.extend({
     },
     startBattle: function () {
         this.getMatchMgr().startActionBattle();
-        Utility.getInstance().callFunctionWithDelay(1, function () {
+        Utility.getInstance().callFunctionWithDelay(3, function () {
             gv.engine.getBattleMgr().getPlayerMgr().throwEnemyTank();
         });
     },
@@ -157,11 +157,12 @@ var BattleMgr = cc.Class.extend({
         this.getMatchMgr().checkLogicWinKnockoutKillAllTank(id, team);
     },
 
-    showWinGame: function () {
+    endBattle: function () {
+        var _this = this;
+        this.getMatchMgr().stopGunAllTank();
         this.getBattleFactory().showTextEndBattle();
-    },
-
-    showDrawGame: function () {
-        this.getBattleFactory().showTextEndBattle();
+        Utility.getInstance().callFunctionWithDelay(1, function () {
+            _this.getMatchMgr().destroyAllBullet();
+        });
     }
 });

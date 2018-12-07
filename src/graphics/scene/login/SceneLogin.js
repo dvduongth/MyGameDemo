@@ -31,7 +31,7 @@ var SceneLogin = BaseScene.extend({
         };
         Utility.getInstance().showTextOnScene(args);
         //gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(TEAM_1);
-        //gv.engine.getBattleMgr().showWinGame();
+        //gv.engine.getBattleMgr().endBattle();
     },
     onTouchBegan: function (touch, event) {
         LogUtils.getInstance().log(this.getClassName() + " onTouchBegan");

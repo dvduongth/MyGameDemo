@@ -71,7 +71,7 @@ var PlayerMgr = cc.Class.extend({
             if (_info != null && _info.team == team) {
                 //existed other tank alive
                 var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
-                if(gObj.getGameObjectString() == STRING_TANK) {
+                if(gObj.getGameObjectString() == STRING_TANK && gObj.isAlive()) {
                     LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank existed tank alive", id]);
                     return false;
                 }
@@ -106,7 +106,7 @@ var PlayerMgr = cc.Class.extend({
         var _this = this;
         this.setEnemyTeam(TEAM_2);
         for(var i = 0; i < Setting.NUMBER_OF_TANK; ++i) {
-            Utility.getInstance().callFunctionWithDelay(i * 0.3, function () {
+            Utility.getInstance().callFunctionWithDelay(i * 0.9, function () {
                 _this.randomThrowBotTank();
             });
         }

@@ -156,7 +156,7 @@ var GuiLoading = BaseGUI.extend({
         var arr = [];
         for(var v in soundMusicPathObj) {
             arr.push(cc.callFunc(function (sender, path) {
-                cc.audioEngine.preloadEffect(path);
+                gv.engine.getSoundMusicMgr().preloadEffect(path);
                 //LogUtils.getInstance().log([_this.getClassName(), "loadSoundMusic path:", path]);
                 _this.setNumberOfLoadedSoundMusic(_this.getNumberOfLoadedSoundMusic() + 1);
                 var percent = Math.floor((_this.getNumberOfLoadedSoundMusic() / _this.getNumberOfSoundMusic()) * 100);

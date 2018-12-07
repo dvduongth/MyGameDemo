@@ -33,6 +33,7 @@
         "src/graphics/custom/CustomRichText.js",
         "src/graphics/custom/CustomTableView.js",
         "src/graphics/effect/EffectMgr.js",
+        "src/graphics/effect/SoundMusicMgr.js",
         "src/graphics/gui/base/BaseGUI.js",
         "src/graphics/gui/base/GUIFactory.js",
         "src/graphics/gui/loading/GuiLoading.js",

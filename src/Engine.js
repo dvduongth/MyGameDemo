@@ -17,6 +17,7 @@ var Engine = cc.Class.extend({
         this.getSceneMgr().setSceneFactory(new SceneFactory());
         this.getLayerMgr().setGUIFactory(new GUIFactory());
         this.setEffectMgr(new EffectMgr());
+        this.setSoundMusicMgr(new SoundMusicMgr());
         this.setLoginMgr(new LoginMgr());
         this.setLobbyMgr(new LobbyMgr());
         this.setBattleMgr(new BattleMgr());
@@ -41,6 +42,12 @@ var Engine = cc.Class.extend({
     },
     getEffectMgr: function(){
         return this._effectMgr;
+    },
+    setSoundMusicMgr: function(mgr){
+        this._soundMusicMgr = mgr;
+    },
+    getSoundMusicMgr: function(){
+        return this._soundMusicMgr;
     },
     setLoginMgr: function(mgr){
         this._loginMgr = mgr;
@@ -67,9 +74,11 @@ var Engine = cc.Class.extend({
         this.getSceneMgr().viewSceneById(SCENE_ID.LOGIN, true);
     },
     viewSceneLobby: function () {
+        this.getSoundMusicMgr().playMusicLobby();
         this.getSceneMgr().viewSceneById(SCENE_ID.LOBBY);
     },
     viewSceneBattle: function () {
+        this.getSoundMusicMgr().playMusicBattle();
         this.getSceneMgr().viewSceneById(SCENE_ID.BATTLE);
         this.getBattleMgr().startBattle();
     },
