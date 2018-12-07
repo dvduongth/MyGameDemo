@@ -132,7 +132,7 @@ var BattleFactory = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "removeObstacle id", id]);
         }
     },
-    showTextWinGame: function (teamWin) {
+    showTextEndBattle: function (teamWin) {
         var path;
         switch (teamWin) {
             case TEAM_1:
@@ -140,6 +140,9 @@ var BattleFactory = cc.Class.extend({
                 break;
             case TEAM_2:
                 path = resImg.RESOURCES__TEXTURES__STRINGS__TEAM2WIN_PNG;
+                break;
+            default :
+                path = resImg.RESOURCES__TEXTURES__STRINGS__DRAW_PNG;
                 break;
         }
         var sprText = Utility.getInstance().createSpriteFromFileName(path);

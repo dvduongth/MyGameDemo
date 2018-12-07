@@ -43,8 +43,12 @@ var BaseScene = cc.Scene.extend({
     onEnter: function () {
         this._super();
         this.schedule(this.update, Setting.TIME_LOOP_RENDER);
+        this.schedule(this.updatePerSecond, 1);
     },
     update: function (dt) {
+        //todo override me
+    },
+    updatePerSecond: function () {
         //todo override me
     },
     getLayer: function (layerId) {
@@ -54,6 +58,7 @@ var BaseScene = cc.Scene.extend({
     clearScene: function () {
         LogUtils.getInstance().log([this.getClassName(), "clearScene"]);
         this.unschedule(this.update);
+        this.unschedule(this.updatePerSecond);
         this.removeAllListener();
     },
     //todo listener

@@ -102,6 +102,29 @@ var MatchMgr = cc.Class.extend({
             return _id != id;
         }));
     },
+    checkLogicWinTimeUp: function () {
+        var curT = gv.engine.getBattleMgr().getBattleDataModel().getTimeCountdownBattle();
+        if(curT >= Setting.BATTLE_DURATION) {
+            if(curT >= (Setting.BATTLE_DURATION + Setting.SUDDEN_DEATH_DURATION)) {
+                //todo show draw
+                this.setPauseGame(true);
+                gv.engine.getBattleMgr().showDrawGame();
+            }else{
+                //check win lose base on number baseSide alive
+                var num1 = gv.engine.getBattleMgr().getPlayerMgr().getNumberBaseAliveByTeam(TEAM_1);
+                var num2 = gv.engine.getBattleMgr().getPlayerMgr().getNumberBaseAliveByTeam(TEAM_2);
+                if(num1 != num2) {
+                    var teamWin = num1 > num2 ? TEAM_1 : TEAM_2;
+                    gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
+                    //todo show win
+                    this.setPauseGame(true);
+                    gv.engine.getBattleMgr().showWinGame();
+                }else{
+                    LogUtils.getInstance().log([this.getClassName(), "checkLogicWinTimeUp", num1, num2]);
+                }
+            }
+        }
+    },
     checkLogicWinKnockoutKillAllTank: function (id, team) {
         gv.engine.getBattleMgr().getPlayerMgr().removeTankID(id);
         if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillAllTank(team)) {

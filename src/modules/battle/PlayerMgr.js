@@ -1,6 +1,6 @@
 'use strict';
 /**
- * PlayerMgr manage player game state
+ * PlayerMgr manage player game state and player data
  * */
 var PlayerMgr = cc.Class.extend({
     _className: "PlayerMgr",
@@ -79,6 +79,23 @@ var PlayerMgr = cc.Class.extend({
         }
         return true;
     },
+    getNumberBaseAliveByTeam: function (team) {
+        var num = 0;
+        var map = this.getMAPGameObjectID();
+        for (var _id in map) {
+            var id = _id + "";
+            var _info = map[id];
+            if (_info != null && _info.team == team) {
+                //existed base alive
+                var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
+                if(gObj.getGameObjectString() == STRING_BASE && gObj.isAlive()) {
+                    num++;
+                }
+            }
+        }
+        return num;
+    },
+
     setTeamWin: function (t) {
         this._teamWin = t;
     },
@@ -113,8 +130,8 @@ var PlayerMgr = cc.Class.extend({
         }
     },
     getRandomMapIndexThrowBotTank: function () {
-        var row = Utility.getInstance().randomBetweenRound(15, 20);
-        var col = Utility.getInstance().randomBetweenRound(1, 20);
+        var row = Utility.getInstance().randomBetweenRound(Setting.MAP_H - 1 - Setting.MAP_LIMIT_ROW_THROW_TANK, Setting.MAP_H - 2);
+        var col = Utility.getInstance().randomBetweenRound(1, Setting.MAP_W - 2);
         return cc.p(row, col);
     },
     isAlreadyDoneThrowAllTank: function () {

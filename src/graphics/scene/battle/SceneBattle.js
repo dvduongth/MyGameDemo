@@ -76,6 +76,14 @@ var SceneBattle = BaseScene.extend({
     update: function (dt) {
         gv.engine.getBattleMgr().update(dt);
     },
+    updatePerSecond: function () {
+        gv.engine.getBattleMgr().updatePerSecond();
+    },
+    countDownTimeUp: function () {
+        var t = gv.engine.getBattleMgr().getBattleDataModel().getTimeCountdownBattle();
+        t = Setting.BATTLE_DURATION - t;
+        this.lbCountdownTime.setString(Utility.getInstance().numberToStringGlobal(t));
+    },
     findAndInitGameObject: function () {
         var MainBase = "MainBase";
         var SideBase = "SideBase";

@@ -18,7 +18,7 @@ var Obstacle = BaseGameObject.extend({
                 Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__CONCRETE_PNG);
                 break;
             case BLOCK_WATER:
-                this.getRootNode().setOpacity(Math.round(255 * MAP_WATER_ALPHA));
+                this.getRootNode().setOpacity(Math.round(255 * Setting.MAP_WATER_ALPHA));
                 this._countdownUpdateWater = 0;
                 Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__WATER_PNG);
                 break;

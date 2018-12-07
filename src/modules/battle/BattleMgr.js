@@ -58,7 +58,18 @@ var BattleMgr = cc.Class.extend({
         }
         this.getMatchMgr().runUpdateTank(dt);
         this.getMatchMgr().runUpdateBullet(dt);
-        this.getMatchMgr().checkLogicCollisionBulletWithTarget();
+        this.getMatchMgr().checkLogicCollisionBulletWithTarget(dt);
+    },
+    updatePerSecond: function () {
+        if (this.getMatchMgr().isPauseGame()) {
+            return false;//todo during pause
+        }
+        this.getBattleDataModel().autoIncreaseTimeCountdownBattle();
+        var sceneBattle = gv.engine.getSceneBattleIfExist();
+        if (sceneBattle != null) {
+            sceneBattle.countDownTimeUp();
+        }
+        this.getMatchMgr().checkLogicWinTimeUp();
     },
     getGameObjectByID: function (id) {
         return this.getBattleFactory().getGameObjectByIDFactory(id);
@@ -76,7 +87,7 @@ var BattleMgr = cc.Class.extend({
             var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
             if (tank != null) {
                 this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam(), tank.getType());
-                if(this.getPlayerMgr().isMyTeam(tank.getTeam())) {
+                if (this.getPlayerMgr().isMyTeam(tank.getTeam())) {
                     this.getBattleDataModel().addPickedTankID(tank.getID());
                     this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
                 }
@@ -95,7 +106,7 @@ var BattleMgr = cc.Class.extend({
     },
     spawnBullet: function (parent, position, direction, team, type, tankGunId) {
         var bullet = this.getBattleFactory().spawnBulletFactory(parent, position, direction, team, type, tankGunId);
-        if(bullet != null) {
+        if (bullet != null) {
             var startTilePointIdx = this.getGameObjectByID(tankGunId).getStartTileLogicPointIndex();
             this.getMapMgr().pushGameObjectForTileLogic(bullet.getID(), bullet, startTilePointIdx);
             this.getMatchMgr().pushBulletID(bullet.getID());
@@ -122,7 +133,7 @@ var BattleMgr = cc.Class.extend({
     updateObstacle: function (rootNode, type, mapPointIdx) {
         LogUtils.getInstance().log([this.getClassName(), "updateObstacle type", type]);
         var obstacle = this.getBattleFactory().updateObstacleFactory(rootNode, type);
-        if(obstacle != null) {
+        if (obstacle != null) {
             this.getMapMgr().updateGameObjectIDForTileLogic(obstacle.getID(), obstacle, mapPointIdx);
             this.getMatchMgr().pushObstacleID(obstacle.getID());
         }
@@ -140,6 +151,10 @@ var BattleMgr = cc.Class.extend({
     },
 
     showWinGame: function () {
-        this.getBattleFactory().showTextWinGame(this.getPlayerMgr().getTeamWin());
-    }
+        this.getBattleFactory().showTextEndBattle(this.getPlayerMgr().getTeamWin());
+    },
+
+    showDrawGame: function () {
+        this.getBattleFactory().showTextEndBattle(-1);
+    },
 });

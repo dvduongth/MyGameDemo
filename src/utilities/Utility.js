@@ -466,6 +466,85 @@ var Utility = (function () {
         instance.randomBetweenRound = function(min, max){
             return Math.round(instance.randomBetween(min, max));
         };
+        instance.numberToShortcutString = function (num, numtoFixed) {
+            num = num != 0 ? num : 0;
+            numtoFixed = numtoFixed >= 0 ? numtoFixed : 3;
+            var obj;
+            var curValue = 1;
+            var phanThapPhanStartIdx = 0;
+            if (!num) {
+                return num + "";
+            }
+            //xet dau
+            var strDau = num >= 0 ? "" : "-";
+            num = Math.abs(num);
+            var strNum = num + "";
+            var lookupPow = [
+                {key: "B", value: 9},
+                {key: "M", value: 6},
+                {key: "K", value: 3}
+            ];//10^pow
+            var str = "0";
+            var stack = [];
+            for (var i = 0, len = lookupPow.length; i < len; ++i) {
+                obj = lookupPow[i];
+                curValue = Math.pow(10, obj.value);
+                while (num >= curValue) {
+                    num = Math.floor(num / curValue);
+                    stack.push(obj.key);
+                    phanThapPhanStartIdx = num > 0 ? (num + "").length : 0;
+                }
+            }
+            //handle stack
+            if (stack.length > 0) {
+                var strKey = "";
+                while (stack.length > 0) {
+                    strKey += stack.pop();
+                }
+                //handle phanThapPhan
+                var strThapPhan = "";
+                if (numtoFixed > 0) {
+                    //convert phanThapPhan to string
+                    var buff = strNum.substring(phanThapPhanStartIdx, phanThapPhanStartIdx + numtoFixed);
+                    while (buff.length > 0 && buff[buff.length - 1] == '0') {
+                        buff = buff.slice(0, buff.length - 1);
+                    }
+                    if (buff.length > 0) {
+                        strThapPhan = "." + buff;
+                    }
+                }
+                //todo result
+                str = strDau + num + strThapPhan + strKey;
+            } else {
+                //todo result
+                str = strDau + num + "";
+            }
+            return str;
+        };
+        instance.numberToStringGlobal = function (number) {
+            if (!number) {
+                number = "0";
+            }
+            var str = number.toString();
+            var dotIndex = str.indexOf(".");
+            if (dotIndex == -1) dotIndex = str.length;
+            var integerPart = str.substring(0, dotIndex);
+            var decimalPart = (dotIndex + 1 < str.length) ? str.substring(dotIndex + 1, str.length) : "";
+            var count = 0;
+            for (var i = integerPart.length - 1; i >= 1; i--) {
+                if (integerPart[i] == ',') continue;
+                count++;
+                if ((count == 3) && (parseInt(integerPart[i - 1]).toString() !== "NaN")) {
+                    integerPart = str.slice(0, i) + "," + integerPart.slice(i);
+                    count = 0;
+                }
+            }
+            if (decimalPart == "")
+                return integerPart;
+            else
+                return (integerPart + "." + decimalPart);
+        };
+
         /**
          * @return
          * @public
