@@ -70,6 +70,7 @@ var BattleMgr = cc.Class.extend({
         this.getMatchMgr().checkLogicCollisionBulletWithTarget(dt);
         // Update all runes
         this.getMatchMgr().checkSpawnPowerUp(dt);
+        this.getMatchMgr().checkLogicCollisionPowerUp(dt);
         // Update all strike
 
     },
@@ -80,7 +81,7 @@ var BattleMgr = cc.Class.extend({
         this.getBattleDataModel().autoIncreaseTimeCountdownBattle();
         var sceneBattle = gv.engine.getSceneBattleIfExist();
         if (sceneBattle != null) {
-            sceneBattle.countDownTimeUp();
+            sceneBattle.countDownTimeUp();//update display
         }
         this.getMatchMgr().checkLogicWinTimeUp();
         this.getMatchMgr().checkLogicSuddenDead();
@@ -98,6 +99,10 @@ var BattleMgr = cc.Class.extend({
             powerUp.runEffectAppear();
         }
     },
+    removePowerUp: function (id) {
+        this.getBattleFactory().removePowerUp(id);
+        this.getMatchMgr().removePowerUpID(id);
+    },
     getGameObjectByID: function (id) {
         return this.getBattleFactory().getGameObjectByIDFactory(id);
     },
@@ -113,7 +118,7 @@ var BattleMgr = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);
             var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
             if (tank != null) {
-                this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam(), tank.getType());
+                this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam());
                 if (this.getPlayerMgr().isMyTeam(tank.getTeam())) {
                     this.getBattleDataModel().addPickedTankID(tank.getID());
                     this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
@@ -128,7 +133,6 @@ var BattleMgr = cc.Class.extend({
         return null;
     },
     removeTank: function (id) {
-        //this.getBattleFactory().removeTank(id);//remove all logic
         this.getMatchMgr().removeTankID(id);
     },
     spawnBullet: function (parent, position, direction, team, type, tankGunId) {
@@ -148,13 +152,12 @@ var BattleMgr = cc.Class.extend({
         LogUtils.getInstance().log([this.getClassName(), "updateBase team", team, "type", type]);
         var base = this.getBattleFactory().updateBaseFactory(rootNode, team, type);
         if (base != null) {
-            this.getPlayerMgr().addBaseIDForTeam(base.getID(), base.getTeam(), base.getType());
+            this.getPlayerMgr().addBaseIDForTeam(base.getID(), base.getTeam());
             this.getMapMgr().updateGameObjectIDForTileLogic(base.getID(), base, mapPointIdx);
             this.getMatchMgr().pushBaseID(base.getID());
         }
     },
     removeBase: function (id) {
-        //this.getBattleFactory().removeBase(id);//remove all logic
         this.getMatchMgr().removeBaseID(id);
     },
     updateObstacle: function (rootNode, type, mapPointIdx) {

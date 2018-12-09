@@ -54,14 +54,29 @@ var PowerUp = cc.Sprite.extend({
         return this._isInActive;
     },
     initPowerUp: function () {
-        this.spawn(this.getType(), this.getMapPointIndex());
         this.setGameObjectString(STRING_POWER_UP);
         this.setLocalZOrder(ZORDER_GROUND);
+        this.setInActive(true);
+        this.setListTileLogicPointIndex([]);
     },
     spawn: function (type, mapIdx) {
         this.setInActive(true);
         this.setListTileLogicPointIndex([]);
-
+        this.setType(type);
+        this.setMapPointIndex(mapIdx);
+        var path;
+        switch (type) {
+            case POWERUP_AIRSTRIKE:
+                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__AIRSTRIKE_PNG);
+                break;
+            case POWERUP_EMP:
+                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__EMP_PNG);
+                break;
+            default :
+                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__AIRSTRIKE_PNG);
+                break;
+        }
+        Utility.getInstance().updateSpriteWithFileName(this, path);
     },
     runEffectAppear: function () {
         gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_BULLETIMPACT);
@@ -73,39 +88,33 @@ var PowerUp = cc.Sprite.extend({
         var eff = gv.engine.getEffectMgr().playEffectDragonBones(args);
     },
     checkForCollision: function () {
-        if(!this.isInActive()) {
-            return false;
-        }
-        return false;//todo test edit after
-        // Check collision with any tanks.
-        for (var i = 0; i < game.m_tanks[Enum.TEAM_1].length; i++) {
-            var tempTank = game.m_tanks[Enum.TEAM_1][i];
-            if (tempTank == null || tempTank.m_HP == 0) continue;
-            if (Math.abs(instance.m_x - tempTank.m_x) < 1 && Math.abs(instance.m_y - tempTank.m_y) < 1) {
-                instance.m_active = 0;
-                instance.m_dirty = true;
-                instance.m_x = -1;
-                instance.m_y = -1;
-
-                game.AcquirePowerup(Enum.TEAM_1, instance.m_type);
-
-                return;
+        var collision = false;
+        var skipID = this.getID();
+        var listTilePointIdx = this.getListTileLogicPointIndex();
+        listTilePointIdx.forEach(function (p) {
+            var existedListId = gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(p, skipID);
+            if(existedListId) {
+                existedListId.forEach(function (id) {
+                    var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
+                    if(gObj != null) {
+                        var str = gObj.getGameObjectString();
+                        switch (str) {
+                            case STRING_TANK:
+                                if(!gObj.isAlive()) {
+                                    return false;
+                                }
+                                collision = true;
+                                gv.engine.getBattleMgr().getPlayerMgr().acquirePowerUp(gObj.getTeam(), skipID);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                });
             }
-        }
-
-        for (var i = 0; i < game.m_tanks[Enum.TEAM_2].length; i++) {
-            var tempTank = game.m_tanks[Enum.TEAM_2][i];
-            if (tempTank == null || tempTank.m_HP == 0) continue;
-            if (Math.abs(instance.m_x - tempTank.m_x) < 1 && Math.abs(instance.m_y - tempTank.m_y) < 1) {
-                instance.m_active = 0;
-                instance.m_dirty = true;
-                instance.m_x = -1;
-                instance.m_y = -1;
-
-                game.AcquirePowerup(Enum.TEAM_2, instance.m_type);
-
-                return;
-            }
+        });
+        if(collision) {
+            this.destroy();
         }
     },
     getWorldPosition: function () {
@@ -148,5 +157,10 @@ var PowerUp = cc.Sprite.extend({
             }
         });
         this.setListTileLogicPointIndex([]);
+    },
+    destroy: function () {
+        this.clearListTileLogicPointIndex();
+        gv.engine.getBattleMgr().removePowerUp(this.getID());
+        this.setInActive(false);
     }
 });

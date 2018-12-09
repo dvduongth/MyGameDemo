@@ -132,6 +132,11 @@ var MatchMgr = cc.Class.extend({
             return _id != id;
         }));
     },
+    removePowerUpID: function (id) {
+        this.setListPowerUpID(this.getListPowerUpID().filter(function (_id) {
+            return _id != id;
+        }));
+    },
     startActionBattle: function () {
         gv.engine.getBattleMgr().getBattleDataModel().setBattleState(STATE_ACTION);
     },
@@ -205,6 +210,14 @@ var MatchMgr = cc.Class.extend({
             var bullet = gv.engine.getBattleMgr().getGameObjectByID(id);
             if (bullet != null) {
                 bullet.checkCollision();
+            }
+        });
+    },
+    checkLogicCollisionPowerUp: function () {
+        this.getListPowerUpID().forEach(function (id) {
+            var powerUp = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (powerUp != null && powerUp.isInActive()) {
+                powerUp.checkForCollision();
             }
         });
     },

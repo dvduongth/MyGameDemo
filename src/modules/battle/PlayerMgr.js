@@ -9,6 +9,10 @@ var PlayerMgr = cc.Class.extend({
     },
     ctor: function () {
         this.setMAPGameObjectID({});
+        this.setListTankIDForTeam([], TEAM_1);
+        this.setListTankIDForTeam([], TEAM_2);
+        this.setListBaseIDForTeam([], TEAM_1);
+        this.setListBaseIDForTeam([], TEAM_2);
         this.setTeamWin(-1);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
@@ -18,6 +22,18 @@ var PlayerMgr = cc.Class.extend({
     },
     getMAPGameObjectID: function () {
         return this._mapGameObjectID;
+    },
+    setListTankIDForTeam: function (m, team) {
+        this.getMAPGameObjectID()["_listTankID" + team] = m;
+    },
+    getListTankIDForTeam: function (team) {
+        return this.getMAPGameObjectID()["_listTankID" + team];
+    },
+    setListBaseIDForTeam: function (m, team) {
+        this.getMAPGameObjectID()["_listBaseID" + team] = m;
+    },
+    getListBaseIDForTeam: function (team) {
+        return this.getMAPGameObjectID()["_listBaseID" + team];
     },
     setMyTeam: function (m) {
         this._myTeam = m;
@@ -34,21 +50,36 @@ var PlayerMgr = cc.Class.extend({
     isMyTeam: function (m) {
         return m === this.getMyTeam();
     },
-    addTankIDForTeam: function (id, team, type) {
-        this.getMAPGameObjectID()[id] = {team: team, type: type};
+    addTankIDForTeam: function (id, team) {
+        this.getListTankIDForTeam(team).push(id);
     },
-    addBaseIDForTeam: function (id, team, type) {
-        this.getMAPGameObjectID()[id] = {team: team, type: type};
+    addBaseIDForTeam: function (id, team) {
+        this.getListBaseIDForTeam(team).push(id);
+    },
+    removeIDFromList: function (id, list) {
+        var exitedIdx = list.findIndex(function (_id) {
+            return _id == id;
+        });
+        if(exitedIdx != -1) {
+            list.splice(exitedIdx, 1);
+            return true;
+        }else{
+            return false;
+        }
     },
     removeTankID: function (id) {
-        this.removeGameObjectID(id);
+        var list = this.getListTankIDForTeam(TEAM_1);
+        if(!this.removeIDFromList(id, list)) {
+            list = this.getListTankIDForTeam(TEAM_2);
+            this.removeIDFromList(id, list);
+        }
     },
     removeBaseID: function (id) {
-        this.removeGameObjectID(id);
-    },
-    removeGameObjectID: function (id) {
-        this.getMAPGameObjectID()[id] = null;
-        delete this.getMAPGameObjectID()[id];
+        var list = this.getListBaseIDForTeam(TEAM_1);
+        if(!this.removeIDFromList(id, list)) {
+            list = this.getListBaseIDForTeam(TEAM_2);
+            this.removeIDFromList(id, list);
+        }
     },
     isKnockoutKillMainBase: function (id) {
         LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillMainBase", id]);
@@ -64,17 +95,13 @@ var PlayerMgr = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank"]);
             return false;
         }
-        var map = this.getMAPGameObjectID();
-        for (var _id in map) {
-            var id = _id + "";
-            var _info = map[id];
-            if (_info != null && _info.team == team) {
-                //existed other tank alive
-                var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
-                if (gObj.getGameObjectString() == STRING_TANK && gObj.isAlive()) {
-                    LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank existed tank alive", id]);
-                    return false;
-                }
+        var listTankID = this.getListTankIDForTeam(team);
+        for (var i = 0; i < listTankID.length; ++i) {
+            var id = listTankID[i];
+            var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (gObj.isAlive()) {
+                LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank existed tank alive", id]);
+                return false;
             }
         }
         return true;
@@ -104,17 +131,23 @@ var PlayerMgr = cc.Class.extend({
     },
     getNumberGameObjectAliveByTeam: function (team, gObjString) {
         var num = 0;
-        var map = this.getMAPGameObjectID();
-        for (var _id in map) {
-            var id = _id + "";
-            var _info = map[id];
-            if (_info != null && _info.team == team) {
+        var list;
+        switch (gObjString) {
+            case STRING_TANK:
+                list = this.getListTankIDForTeam(team);
+                break;
+            case STRING_BASE:
+                list = this.getListBaseIDForTeam(team);
+                break;
+        }
+        if(list && list.length > 0) {
+            list.forEach(function (id) {
                 //existed base alive
                 var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
-                if(gObj.getGameObjectString() == gObjString && gObj.isAlive()) {
+                if (gObj.isAlive()) {
                     num++;
                 }
-            }
+            });
         }
         return num;
     },
@@ -161,12 +194,12 @@ var PlayerMgr = cc.Class.extend({
         var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank();
         return numberPicked >= maxNumTank;
     },
-    AcquirePowerup: function (team, powerUp) {
+    acquirePowerUp: function (team, powerUpID) {
         return false;//todo test edit after
         /*instance.m_inventory[team].push(powerUp);
          inventoryDirty = true;*/
     },
-    UsePowerUp: function (team, powerup, x, y) {
+    usePowerUp: function (team, powerup, x, y) {
         return false;//todo test edit after
         /*console.log('game use power up');
          logger.print('game use power up');

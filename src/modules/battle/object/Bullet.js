@@ -153,7 +153,7 @@ var Bullet = cc.Sprite.extend({
         if (hasExplosion) {
             this.playSoundDestroy();
             var worldPos = this.getWorldPosition();
-            var offset = 20;
+            var offset = 5;
             switch (this.getDirection()) {
                 case DIRECTION_UP:
                     worldPos.y += offset;
