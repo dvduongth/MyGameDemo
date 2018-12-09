@@ -77,6 +77,7 @@ var STRING_OBSTACLE = "0";
 var STRING_BASE = "1";
 var STRING_TANK = "2";
 var STRING_BULLET = "3";
+var STRING_POWER_UP = "4";
 // ========================================================
 // Scene Battle ZOrder
 var ZORDER_BACK_GROUND = 0;
@@ -84,3 +85,4 @@ var ZORDER_MID_GROUND = 1;
 var ZORDER_GROUND = 2;
 var ZORDER_FORCE_GROUND = 3;
 var ZORDER_SKY = 4;
+// ========================================================

@@ -544,6 +544,36 @@ var Utility = (function () {
             else
                 return (integerPart + "." + decimalPart);
         };
+        instance.timeToString = function (seconds) {
+            var hour;
+            var result = "";
+            if (seconds > 86400) {
+                var days = Math.floor(seconds / 86400);
+                result += days + " " + "day";
+                seconds = seconds % 86400;
+                hour = Math.floor(seconds / 3600);
+                if(hour > 0) {
+                    result += " " + (hour >= 10 ? hour : "0" + hour) + " " + "hour";
+                }
+            } else {
+                var isNegative = seconds < 0;
+                if(isNegative) {
+                    seconds = Math.abs(seconds);
+                    result = "-";
+                }
+                hour = Math.floor(seconds / 3600);
+                var minute = Math.floor((seconds % 3600) / 60);
+                var second = Math.floor(seconds - hour * 3600 - minute * 60);
+                if(hour > 0) {
+                    result += (hour >= 10 ? hour : "0" + hour) + ":";
+                }
+                if(minute > 0) {
+                    result += (minute >= 10 ? minute : "0" + minute) + ":";
+                }
+                result += (second >= 10 ? second : "0" + second);
+            }
+            return result;
+        };
 
         /**
          * @return

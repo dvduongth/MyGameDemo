@@ -6,7 +6,7 @@ SCENE_ID.LOGIN = SCENE_ID.getNextEnum();
 SCENE_ID.LOBBY = SCENE_ID.getNextEnum();
 SCENE_ID.BATTLE = SCENE_ID.getNextEnum();
 
-SCENE_ID.toEnumString();//todo test
+SCENE_ID.toEnumString();//show string log
 
 var BaseSceneMgr = cc.Class.extend({
     _className: "BaseSceneMgr",

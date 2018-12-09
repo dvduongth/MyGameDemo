@@ -31,6 +31,9 @@ var BattleFactory = cc.Class.extend({
     getObstacleID: function () {
         return STRING_OBSTACLE + "_" + (this._autoID++);
     },
+    getPowerUpID: function () {
+        return STRING_POWER_UP + "_" + (this._autoID++);
+    },
     getGameObjectByIDFactory: function (id) {
         return this.getMAPSprites()[id];
     },
@@ -158,5 +161,44 @@ var BattleFactory = cc.Class.extend({
         var sprText = Utility.getInstance().createSpriteFromFileName(path);
         gv.engine.getLayerMgr().getLayerById(LAYER_ID.POPUP).addChild(sprText);
         sprText.setPosition(gv.WIN_SIZE.width / 2, gv.WIN_SIZE.height / 2);
-    }
+    },
+    spawnPowerUpFactory: function () {
+        //LogUtils.getInstance().log([this.getClassName(), "spawnPowerUpFactory"]);
+        var availableInfo = gv.engine.getBattleMgr().getMatchMgr().getAvailableInfoSpawnPowerUp();
+        if(availableInfo != null) {
+            var list = gv.engine.getBattleMgr().getBattleDataModel().getPowerUpList();
+            var powerUp;
+            var exited = false;
+            for (var i = 0; i < list.length; ++i) {
+                powerUp = list[i];
+                if (!powerUp.isInActive()) {
+                    //reborn
+                    list[i].spawn(availableInfo.type, availableInfo.mapIdx);
+                    exited = true;
+                }
+            }
+            if(!exited) {
+                //create new
+                powerUp = new PowerUp(this.getPowerUpID(), availableInfo.type, availableInfo.mapIdx);
+                list.push(powerUp);
+                var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
+                parent.addChild(powerUp);
+            }
+            this.addPowerUp(powerUp);
+            return powerUp;
+        }else{
+            //LogUtils.getInstance().error([this.getClassName(), "spawnPowerUpFactory not getAvailableInfoSpawnPowerUp"]);
+            return null;
+        }
+    },
+    addPowerUp: function (powerUp) {
+        this.getMAPSprites()[powerUp.getID()] = powerUp;
+        LogUtils.getInstance().log([this.getClassName(), "addPowerUp with id", powerUp.getID()]);
+    },
+    removePowerUp: function (id) {
+        if (this.getMAPSprites()[id] != null) {
+            this.getMAPSprites()[id] = null;
+            LogUtils.getInstance().log([this.getClassName(), "removePowerUp id", id]);
+        }
+    },
 });

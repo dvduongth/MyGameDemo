@@ -53,6 +53,7 @@ var BattleMgr = cc.Class.extend({
     },
     startBattle: function () {
         this.getMatchMgr().startActionBattle();
+        this.getBattleDataModel().resetSpawnPowerUpCountDown();
         Utility.getInstance().callFunctionWithDelay(3, function () {
             gv.engine.getBattleMgr().getPlayerMgr().throwEnemyTank();
         });
@@ -62,9 +63,15 @@ var BattleMgr = cc.Class.extend({
         if (this.getMatchMgr().isPauseGame()) {
             return false;//todo during pause
         }
+        // Update all tank
         this.getMatchMgr().runUpdateTank(dt);
+        // Update all bullet
         this.getMatchMgr().runUpdateBullet(dt);
         this.getMatchMgr().checkLogicCollisionBulletWithTarget(dt);
+        // Update all runes
+        this.getMatchMgr().checkSpawnPowerUp(dt);
+        // Update all strike
+
     },
     updatePerSecond: function () {
         if (this.getMatchMgr().isPauseGame()) {
@@ -75,8 +82,21 @@ var BattleMgr = cc.Class.extend({
         if (sceneBattle != null) {
             sceneBattle.countDownTimeUp();
         }
-        this.getMatchMgr().checkLogicSuddenDead();
         this.getMatchMgr().checkLogicWinTimeUp();
+        this.getMatchMgr().checkLogicSuddenDead();
+    },
+    spawnPowerUp: function () {
+        var powerUp = this.getBattleFactory().spawnPowerUpFactory();
+        if (powerUp != null) {
+            var mapIdx = powerUp.getMapPointIndex();
+            var startTilePointIdx = this.getMapMgr().convertMapIndexPointToStartTileIndexPoint(mapIdx);
+            var delta = Math.round(Setting.GAME_OBJECT_SIZE / 2);
+            startTilePointIdx.x += delta;
+            startTilePointIdx.y += delta;
+            this.getMapMgr().pushGameObjectForTileLogic(powerUp.getID(), powerUp, startTilePointIdx);
+            this.getMatchMgr().pushPowerUpID(powerUp.getID());
+            powerUp.runEffectAppear();
+        }
     },
     getGameObjectByID: function (id) {
         return this.getBattleFactory().getGameObjectByIDFactory(id);

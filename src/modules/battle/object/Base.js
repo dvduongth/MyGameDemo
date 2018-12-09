@@ -82,6 +82,12 @@ var Base = BaseGameObject.extend({
         }
         if (this.getType() == BASE_MAIN) {
             gv.engine.getBattleMgr().checkWinKnockoutKillMainBase(this.getID(), this.getTeam());
+        }else{
+            //Check win-lost in SuddenDeath mode
+            if (gv.engine.getBattleMgr().getMatchMgr().isDuringSuddenDeadBattle()) {
+                LogUtils.getInstance().log([this.getClassName(), "destroy base isDuringSuddenDeadBattle"]);
+                gv.engine.getBattleMgr().checkWinKnockoutKillMainBase(this.getID(), this.getTeam());
+            }
         }
         gv.engine.getBattleMgr().removeBase(this.getID());
     }

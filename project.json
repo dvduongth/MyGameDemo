@@ -25,7 +25,6 @@
         "src/resources/ResourceFont.js",
         "src/resources/ResourceImage.js",
         "src/resources/ResourceJson.js",
-        "src/resources/ResourceMgr.js",
         "src/resources/ResourcePlist.js",
         "src/resources/ResourceShader.js",
         "src/resources/ResourceSoundMusic.js",

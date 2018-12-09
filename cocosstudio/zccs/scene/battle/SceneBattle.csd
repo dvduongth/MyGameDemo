@@ -2846,14 +2846,14 @@
           <AbstractNodeData Name="sprClock" ActionTag="-1236766851" Tag="231" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="274.8885" RightMargin="860.1115" TopMargin="9.5261" BottomMargin="2093.4739" ctype="SpriteObjectData">
             <Size X="107.0000" Y="105.0000" />
             <Children>
-              <AbstractNodeData Name="lbCountdownTime" ActionTag="1126955779" Tag="232" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="24.0000" RightMargin="24.0000" TopMargin="29.9965" BottomMargin="44.0035" FontSize="20" LabelText="03:59" OutlineEnabled="True" ShadowOffsetX="0.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="59.0000" Y="31.0000" />
+              <AbstractNodeData Name="lbCountdownTime" ActionTag="1126955779" Tag="232" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="10.5000" RightMargin="10.5000" TopMargin="11.9965" BottomMargin="26.0035" IsCustomSize="True" FontSize="28" LabelText="03:59" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineSize="3" OutlineEnabled="True" ShadowOffsetX="0.0000" ShadowOffsetY="-3.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="86.0000" Y="67.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="53.5000" Y="59.5035" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5667" />
-                <PreSize X="0.5514" Y="0.2952" />
+                <PreSize X="0.8037" Y="0.6381" />
                 <FontResource Type="Normal" Path="fonts/font_game_bold.ttf" Plist="" />
                 <OutlineColor A="255" R="12" G="55" B="118" />
                 <ShadowColor A="255" R="64" G="87" B="121" />

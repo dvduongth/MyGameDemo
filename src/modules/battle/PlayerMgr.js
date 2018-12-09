@@ -37,14 +37,8 @@ var PlayerMgr = cc.Class.extend({
     addTankIDForTeam: function (id, team, type) {
         this.getMAPGameObjectID()[id] = {team: team, type: type};
     },
-    getInfoOfTankID: function (id) {
-        return this.getMAPGameObjectID()[id];
-    },
     addBaseIDForTeam: function (id, team, type) {
         this.getMAPGameObjectID()[id] = {team: team, type: type};
-    },
-    getInfoOfBaseID: function (id) {
-        return this.getMAPGameObjectID()[id];
     },
     removeTankID: function (id) {
         this.removeGameObjectID(id);
@@ -57,10 +51,16 @@ var PlayerMgr = cc.Class.extend({
         delete this.getMAPGameObjectID()[id];
     },
     isKnockoutKillMainBase: function (id) {
+        LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillMainBase", id]);
         return true;
     },
     isKnockoutKillAllTank: function (team) {
-        if(!this.isAlreadyDoneThrowAllTank()) {
+        //Check win-lost in SuddenDeath mode
+        if (gv.engine.getBattleMgr().getMatchMgr().isDuringSuddenDeadBattle()) {
+            LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank true isDuringSuddenDeadBattle"]);
+            return true;
+        }
+        if (this.isMyTeam(team) && !this.isAlreadyDoneThrowAllTank()) {
             LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank"]);
             return false;
         }
@@ -71,7 +71,7 @@ var PlayerMgr = cc.Class.extend({
             if (_info != null && _info.team == team) {
                 //existed other tank alive
                 var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
-                if(gObj.getGameObjectString() == STRING_TANK && gObj.isAlive()) {
+                if (gObj.getGameObjectString() == STRING_TANK && gObj.isAlive()) {
                     LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank existed tank alive", id]);
                     return false;
                 }
@@ -79,7 +79,30 @@ var PlayerMgr = cc.Class.extend({
         }
         return true;
     },
+    isKnockoutTimeUpSuddenDead: function () {
+        var num1 = this.getNumberBaseAliveByTeam(TEAM_1);
+        var num2 = this.getNumberBaseAliveByTeam(TEAM_2);
+        var teamWin;
+        if (num1 != num2) {
+            teamWin = num1 > num2 ? TEAM_1 : TEAM_2;
+            this.setTeamWin(teamWin);
+            return true;
+        }
+        num1 = this.getNumberTankAliveByTeam(TEAM_1);
+        num2 = this.getNumberTankAliveByTeam(TEAM_2);
+        if (num1 != num2) {
+            teamWin = num1 > num2 ? TEAM_1 : TEAM_2;
+            this.setTeamWin(teamWin);
+            return true;
+        }
+    },
     getNumberBaseAliveByTeam: function (team) {
+        return this.getNumberGameObjectAliveByTeam(team, STRING_BASE);
+    },
+    getNumberTankAliveByTeam: function (team) {
+        return this.getNumberGameObjectAliveByTeam(team, STRING_TANK);
+    },
+    getNumberGameObjectAliveByTeam: function (team, gObjString) {
         var num = 0;
         var map = this.getMAPGameObjectID();
         for (var _id in map) {
@@ -88,14 +111,13 @@ var PlayerMgr = cc.Class.extend({
             if (_info != null && _info.team == team) {
                 //existed base alive
                 var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
-                if(gObj.getGameObjectString() == STRING_BASE && gObj.isAlive()) {
+                if(gObj.getGameObjectString() == gObjString && gObj.isAlive()) {
                     num++;
                 }
             }
         }
         return num;
     },
-
     setTeamWin: function (t) {
         this._teamWin = t;
     },
@@ -105,7 +127,7 @@ var PlayerMgr = cc.Class.extend({
     throwEnemyTank: function () {
         var _this = this;
         this.setEnemyTeam(TEAM_2);
-        for(var i = 0; i < Setting.NUMBER_OF_TANK; ++i) {
+        for (var i = 0; i < Setting.NUMBER_OF_TANK; ++i) {
             Utility.getInstance().callFunctionWithDelay(i * 0.9, function () {
                 _this.randomThrowBotTank();
             });
@@ -124,7 +146,7 @@ var PlayerMgr = cc.Class.extend({
         tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicByTilePointIndex(tilePointIdx);
         worldPos = tileLogic.getTileWorldPosition();
         var tank = gv.engine.getBattleMgr().throwTank(worldPos, team, type);
-        if(tank != null) {
+        if (tank != null) {
             tank.tankAction(cc.KEY.enter);
             tank.setIsBot(true);
         }
@@ -138,5 +160,43 @@ var PlayerMgr = cc.Class.extend({
         var maxNumTank = Setting.NUMBER_OF_TANK;
         var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank();
         return numberPicked >= maxNumTank;
+    },
+    AcquirePowerup: function (team, powerUp) {
+        return false;//todo test edit after
+        /*instance.m_inventory[team].push(powerUp);
+         inventoryDirty = true;*/
+    },
+    UsePowerUp: function (team, powerup, x, y) {
+        return false;//todo test edit after
+        /*console.log('game use power up');
+         logger.print('game use power up');
+         var checkOK = false;
+
+         for (var i = 0; i < instance.m_inventory[team].length; i++) {
+         if (instance.m_inventory[team][i] == powerup) {
+         instance.m_inventory[team].splice(i, 1);
+         inventoryDirty = true;
+         checkOK = true;
+         break;
+         }
+         }
+
+         if (checkOK) {
+         var strike = null;
+         for (var i = 0; i < instance.m_strikes[team].length; i++) {
+         if (instance.m_strikes[team][i].m_live == false) {
+         strike = instance.m_strikes[team][i];
+         }
+         }
+
+         if (strike == null) {
+         var id = instance.m_strikes[team].length;
+         strike = new Strike(instance, id, team);
+         instance.m_strikes[team][id] = strike;
+         }
+         console.log('strike spawn ', x, y);
+         logger.print('strike spawn x ' + x + " y " + y);
+         strike.Spawn(powerup, x, y);
+         }*/
     }
 });

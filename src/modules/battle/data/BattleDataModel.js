@@ -9,6 +9,7 @@ var BattleDataModel = cc.Class.extend({
     },
     ctor: function () {
         this.setListPickTank([]);
+        this.setPowerUpList([]);
         this.setTimeCountdownBattle(0);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
@@ -52,4 +53,23 @@ var BattleDataModel = cc.Class.extend({
     getBattleResult: function () {
         return this._battleResult;
     },
+    setSpawnPowerUpCountDown: function (t) {
+        this._spawnPowerUpCountDown = t;
+    },
+    getSpawnPowerUpCountDown: function () {
+        return this._spawnPowerUpCountDown;
+    },
+    resetSpawnPowerUpCountDown: function () {
+        this.setSpawnPowerUpCountDown(0);
+    },
+    autoIncreaseSpawnPowerUpCountDown: function () {
+        this.setSpawnPowerUpCountDown(this.getSpawnPowerUpCountDown() + 1);
+    },
+    setPowerUpList: function (t) {
+        this._powerUpList = t;
+    },
+    getPowerUpList: function () {
+        return this._powerUpList;
+    },
+
 });

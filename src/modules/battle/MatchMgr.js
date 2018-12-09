@@ -12,6 +12,7 @@ var MatchMgr = cc.Class.extend({
         this.setListObstacleID([]);
         this.setListTankID([]);
         this.setListBulletID([]);
+        this.setListPowerUpID([]);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
@@ -50,6 +51,12 @@ var MatchMgr = cc.Class.extend({
     getListBulletID: function () {
         return this._listBulletID;
     },
+    setListPowerUpID: function (l) {
+        this._listPowerUpID = l;
+    },
+    getListPowerUpID: function () {
+        return this._listPowerUpID;
+    },
     pushBaseID: function (id) {
         this.getListBaseID().push(id);
     },
@@ -61,6 +68,9 @@ var MatchMgr = cc.Class.extend({
     },
     pushBulletID: function (id) {
         this.getListBulletID().push(id);
+    },
+    pushPowerUpID: function (id) {
+        this.getListPowerUpID().push(id);
     },
     runUpdateTank: function (dt) {
         this.getListTankID().forEach(function (id) {
@@ -146,31 +156,25 @@ var MatchMgr = cc.Class.extend({
                 this.startSuddenDeadBattle();
             }
         }
-
     },
     checkLogicWinTimeUp: function () {
         var curT = gv.engine.getBattleMgr().getBattleDataModel().getTimeCountdownBattle();
         if (curT >= Setting.LOOPS_MATCH_END) {
-            if (curT >= (Setting.LOOPS_MATCH_END + Setting.LOOPS_SUDDEN_DEATH)) {
-                //todo show draw
+            if(gv.engine.getBattleMgr().getPlayerMgr().isKnockoutTimeUpSuddenDead()){
+                //todo show win
                 this.finishBattle();
+                var teamWin = gv.engine.getBattleMgr().getPlayerMgr().getTeamWin();
+                this.setMatchResult(teamWin == TEAM_1 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
                 gv.engine.getBattleMgr().endBattle();
-                this.setMatchResult(MATCH_RESULT_DRAW);
+                return true;
+            }
+            if (curT >= (Setting.LOOPS_MATCH_END + Setting.LOOPS_SUDDEN_DEATH)) {
+                //todo show bad draw
+                this.finishBattle();
+                gv.engine.getBattleMgr().endBattle();//display before
+                this.setMatchResult(MATCH_RESULT_DRAW);//logic after
             } else {
-                //check win lose base on number baseSide alive
-                var num1 = gv.engine.getBattleMgr().getPlayerMgr().getNumberBaseAliveByTeam(TEAM_1);
-                var num2 = gv.engine.getBattleMgr().getPlayerMgr().getNumberBaseAliveByTeam(TEAM_2);
-                if (num1 != num2) {
-                    var teamWin = num1 > num2 ? TEAM_1 : TEAM_2;
-                    gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
-                    //todo show win
-                    this.finishBattle();
-                    this.setMatchResult(num1 > num2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
-                    gv.engine.getBattleMgr().endBattle();
-                } else {
-                    this.setMatchResult(MATCH_RESULT_NOT_FINISH);
-                    LogUtils.getInstance().log([this.getClassName(), "checkLogicWinTimeUp", num1, num2]);
-                }
+                this.setMatchResult(MATCH_RESULT_NOT_FINISH);//not yet finish
             }
         }
     },
@@ -203,6 +207,49 @@ var MatchMgr = cc.Class.extend({
                 bullet.checkCollision();
             }
         });
+    },
+    checkSpawnPowerUp: function () {
+        var c = gv.engine.getBattleMgr().getBattleDataModel().getSpawnPowerUpCountDown();
+        if (c >= Setting.POWERUP_INTERVAL) {
+            gv.engine.getBattleMgr().getBattleDataModel().resetSpawnPowerUpCountDown();
+            gv.engine.getBattleMgr().spawnPowerUp();
+        }else{
+            gv.engine.getBattleMgr().getBattleDataModel().autoIncreaseSpawnPowerUpCountDown();
+        }
+    },
+    getAvailableInfoSpawnPowerUp: function () {
+        var spawnPointList = Setting.POWERUP_SPAWN_POINT;
+        var spawnTypeList = [POWERUP_AIRSTRIKE, POWERUP_EMP];
+        var list = gv.engine.getBattleMgr().getBattleDataModel().getPowerUpList();
+        // Get available spawning point
+        var availableSpawnPoint = [];
+        for (var i = 0; i < spawnPointList.length; i++) {
+            var takeThisPoint = true;
+            for (var j = 0; j < list.length; j++) {
+                var powerUp = list[j];
+                var mapPointIdx = powerUp.getMapPointIndex();
+                if (powerUp.isInActive() && mapPointIdx.x == spawnPointList[i].x && mapPointIdx.y == spawnPointList[i].y) {
+                    takeThisPoint = false;
+                    break;
+                }
+            }
+            if (takeThisPoint) {
+                availableSpawnPoint.push(spawnPointList[i]);
+            }
+        }
+        // If there are free slots, random from those slots
+        if (availableSpawnPoint.length > 0) {
+            // Get a random
+            var slotPoint = (Math.random() * availableSpawnPoint.length) >> 0;
+            var slotType = (Math.random() * spawnTypeList.length) >> 0;
+            var mapIdx = availableSpawnPoint[slotPoint];
+            var type = spawnTypeList[slotType];
+            return {
+                mapIdx: mapIdx,
+                type: type
+            };
+        }
+        return null;
     },
     getGameObjectInfoByWorldPosition: function (worldPos, skipObjectID) {
         var tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicStartByWorldPosition(worldPos);

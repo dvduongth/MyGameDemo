@@ -11537,13 +11537,17 @@
             "Tag": 231,
             "Children": [
               {
-                "FontSize": 20,
+                "IsCustomSize": true,
+                "FontSize": 28,
                 "LabelText": "03:59",
                 "FontResource": {
                   "Type": "Normal",
                   "Path": "fonts/font_game_bold.ttf",
                   "Plist": ""
                 },
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineSize": 3,
                 "OutlineColor": {
                   "R": 12,
                   "G": 55,
@@ -11556,7 +11560,7 @@
                   "B": 121
                 },
                 "ShadowOffsetX": 0.0,
-                "ShadowOffsetY": -2.0,
+                "ShadowOffsetY": -3.0,
                 "ShadowEnabled": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -11577,20 +11581,20 @@
                   "Y": 0.5667
                 },
                 "PreSize": {
-                  "X": 0.5514,
-                  "Y": 0.2952
+                  "X": 0.8037,
+                  "Y": 0.6381
                 },
                 "HorizontalEdge": "BothEdge",
                 "VerticalEdge": "BothEdge",
-                "LeftMargin": 24.0,
-                "RightMargin": 24.0,
-                "TopMargin": 29.9965,
-                "BottomMargin": 44.0035,
+                "LeftMargin": 10.5,
+                "RightMargin": 10.5,
+                "TopMargin": 11.9965,
+                "BottomMargin": 26.0035,
                 "Tag": 232,
                 "ActionTag": 1126955779,
                 "Size": {
-                  "X": 59.0,
-                  "Y": 31.0
+                  "X": 86.0,
+                  "Y": 67.0
                 },
                 "Name": "lbCountdownTime",
                 "ctype": "TextObjectData"

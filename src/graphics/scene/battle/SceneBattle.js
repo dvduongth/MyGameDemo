@@ -80,7 +80,7 @@ var SceneBattle = BaseScene.extend({
         } else {
             t = Setting.LOOPS_MATCH_END - t;
         }
-        this.lbCountdownTime.setString(Utility.getInstance().numberToStringGlobal(t));
+        this.lbCountdownTime.setString(Utility.getInstance().timeToString(t));
     },
     findAndInitGameObject: function () {
         var MainBase = "MainBase";
