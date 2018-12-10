@@ -54,8 +54,6 @@ var PowerUp = cc.Sprite.extend({
         return this._isInActive;
     },
     initPowerUp: function () {
-        this.setGameObjectString(STRING_POWER_UP);
-        this.setLocalZOrder(ZORDER_GROUND);
         this.setInActive(true);
         this.setListTileLogicPointIndex([]);
     },
@@ -91,10 +89,12 @@ var PowerUp = cc.Sprite.extend({
         var collision = false;
         var powerUpID = this.getID();
         var listTilePointIdx = this.getListTileLogicPointIndex();
-        listTilePointIdx.forEach(function (p) {
+        for(var k = 0; k < listTilePointIdx.length; ++k) {
+            var p = listTilePointIdx[k];
             var existedListId = gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(p, powerUpID);
             if(existedListId) {
-                existedListId.forEach(function (id) {
+                for(var i = 0; i < existedListId.length; ++i) {
+                    var id = existedListId[i];
                     var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
                     if(gObj != null) {
                         var str = gObj.getGameObjectString();
@@ -110,9 +110,17 @@ var PowerUp = cc.Sprite.extend({
                                 break;
                         }
                     }
-                });
+                    //stop loop if collision
+                    if(collision) {
+                        break;
+                    }
+                }
             }
-        });
+            //stop loop if collision
+            if(collision) {
+                break;
+            }
+        }
         if(collision) {
             this.destroy();
         }

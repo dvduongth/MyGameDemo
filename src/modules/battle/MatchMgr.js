@@ -98,6 +98,14 @@ var MatchMgr = cc.Class.extend({
             }
         });
     },
+    runUpdateStrike: function (dt) {
+        this.getListStrikeID().forEach(function (id) {
+            var strike = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (strike != null) {
+                strike.update(dt);
+            }
+        });
+    },
     stopGunAllTank: function () {
         this.getListTankID().forEach(function (id) {
             var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
@@ -655,7 +663,8 @@ var MatchMgr = cc.Class.extend({
             var id = listTankID[i];
             var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
             if (tank.isAlive()) {
-                this.usePowerUp(team, powerUpID, tank.getStartTileLogicPointIndex());// BAM!!!
+                var tileLogicIdx = tank.getStartTileLogicPointIndex();
+                this.usePowerUp(team, powerUpID, tileLogicIdx);// BAM!!!
                 return true;
             }
         }
@@ -665,7 +674,8 @@ var MatchMgr = cc.Class.extend({
         var playerMgr = gv.engine.getBattleMgr().getPlayerMgr();
         var activeSuccess = playerMgr.activePowerUp(team, powerUpID);
         if (activeSuccess) {
-            gv.engine.getBattleMgr().spawnStrike(team, startTileLogicPointIdx);
+            var powerUp = gv.engine.getBattleMgr().getGameObjectByID(powerUpID);
+            gv.engine.getBattleMgr().spawnStrike(team, powerUp.getType(), startTileLogicPointIdx);
         }
     },
 });

@@ -169,6 +169,9 @@ var BaseGameObject = cc.Class.extend({
             this.destroy();
         }
     },
+    hitAirStrike: function (damage) {
+        this.hitBullet(damage);
+    },
     setGameObjectString: function (l) {
         this._gameObjectString = l;
     },

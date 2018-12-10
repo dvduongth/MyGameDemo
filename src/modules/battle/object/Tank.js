@@ -73,6 +73,7 @@ var Tank = cc.Sprite.extend({
         this.createHPDisplayProgress();
         this.createTouchListenerOneByOneTank();
         this.setListTileLogicPointIndex([]);
+        this.setEMPCountdown(0);
     },
     createTankSprite: function () {
         var path;
@@ -376,6 +377,10 @@ var Tank = cc.Sprite.extend({
     },
     // Draw - obvious comment is obvious
     update: function (dt) {
+        if(this.getEMPCountdown() > 0) {
+            this.autoCountdownEMP();
+            return false;
+        }
         if(this.isBot()) {
             this.randomBotTankAction();
         }
@@ -422,6 +427,15 @@ var Tank = cc.Sprite.extend({
     },
     getHPMax: function () {
         return this._HPMax;
+    },
+    setEMPCountdown: function (t) {
+        this._EMPCountdown = t;
+    },
+    getEMPCountdown: function () {
+        return this._EMPCountdown;
+    },
+    autoCountdownEMP: function () {
+        this.setEMPCountdown(this.getEMPCountdown() - 1);
     },
     setObjectProgressDisplay: function (o) {
         this._objectProgressDisplay = o;
@@ -515,6 +529,12 @@ var Tank = cc.Sprite.extend({
             //todo die
             this.destroy();
         }
+    },
+    hitAirStrike: function (damage) {
+        this.hitBullet(damage);
+    },
+    hitEMP: function (damage) {
+        this.setEMPCountdown(damage);
     },
     destroy: function () {
         gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_1);

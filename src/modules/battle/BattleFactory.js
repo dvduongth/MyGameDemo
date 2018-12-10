@@ -183,6 +183,8 @@ var BattleFactory = cc.Class.extend({
             if(!exited) {
                 //create new
                 powerUp = new PowerUp(this.getPowerUpID(), availableInfo.type, availableInfo.mapIdx);
+                powerUp.setGameObjectString(STRING_POWER_UP);
+                powerUp.setLocalZOrder(ZORDER_GROUND);
                 list.push(powerUp);
                 var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
                 parent.addChild(powerUp);
@@ -204,9 +206,11 @@ var BattleFactory = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "removePowerUp id", id]);
         }
     },
-    spawnStrikeFactory: function (team) {
+    spawnStrikeFactory: function (team, type) {
         var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
-        var strike = new Strike(this.getStrikeID(), team);
+        var strike = new Strike(this.getStrikeID(), team, type);
+        strike.setGameObjectString(STRING_STRIKE);
+        strike.setLocalZOrder(ZORDER_SKY);
         parent.addChild(strike);
         this.addStrike(strike);
         return strike;

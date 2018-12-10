@@ -204,14 +204,17 @@ var PlayerMgr = cc.Class.extend({
     },
     acquirePowerUp: function (team, powerUpID) {
         this.getListInventoryForTeam(team).push(powerUpID);
+        LogUtils.getInstance().log([this.getClassName(), "acquirePowerUp", team, powerUpID]);
     },
     activePowerUp: function (team, powerUpID) {
         var list = this.getListInventoryForTeam(team);
+        LogUtils.getInstance().log([this.getClassName(), "activePowerUp", team, powerUpID, list.length]);
         var existedIdx = list.findIndex(function (pId) {
             return pId == powerUpID;
         });
         if(existedIdx != -1) {
             list.splice(existedIdx, 1);
+            LogUtils.getInstance().log([this.getClassName(), "activePowerUp remove item", existedIdx, list.length]);
             return true;
         }else{
             return false;
