@@ -34,6 +34,9 @@ var BattleFactory = cc.Class.extend({
     getPowerUpID: function () {
         return STRING_POWER_UP + "_" + (this._autoID++);
     },
+    getStrikeID: function () {
+        return STRING_STRIKE + "_" + (this._autoID++);
+    },
     getGameObjectByIDFactory: function (id) {
         return this.getMAPSprites()[id];
     },
@@ -199,6 +202,23 @@ var BattleFactory = cc.Class.extend({
         if (this.getMAPSprites()[id] != null) {
             this.getMAPSprites()[id] = null;
             LogUtils.getInstance().log([this.getClassName(), "removePowerUp id", id]);
+        }
+    },
+    spawnStrikeFactory: function (team) {
+        var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
+        var strike = new Strike(this.getStrikeID(), team);
+        parent.addChild(strike);
+        this.addStrike(strike);
+        return strike;
+    },
+    addStrike: function (strike) {
+        this.getMAPSprites()[strike.getID()] = strike;
+        LogUtils.getInstance().log([this.getClassName(), "addStrike with id", strike.getID()]);
+    },
+    removeStrike: function (id) {
+        if (this.getMAPSprites()[id] != null) {
+            this.getMAPSprites()[id] = null;
+            LogUtils.getInstance().log([this.getClassName(), "removeStrike id", id]);
         }
     },
 });

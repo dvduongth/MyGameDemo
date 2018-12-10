@@ -13,6 +13,7 @@ var MatchMgr = cc.Class.extend({
         this.setListTankID([]);
         this.setListBulletID([]);
         this.setListPowerUpID([]);
+        this.setListStrikeID([]);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
@@ -57,6 +58,12 @@ var MatchMgr = cc.Class.extend({
     getListPowerUpID: function () {
         return this._listPowerUpID;
     },
+    setListStrikeID: function (l) {
+        this._listStrikeID = l;
+    },
+    getListStrikeID: function () {
+        return this._listStrikeID;
+    },
     pushBaseID: function (id) {
         this.getListBaseID().push(id);
     },
@@ -71,6 +78,9 @@ var MatchMgr = cc.Class.extend({
     },
     pushPowerUpID: function (id) {
         this.getListPowerUpID().push(id);
+    },
+    pushStrikeID: function (id) {
+        this.getListStrikeID().push(id);
     },
     runUpdateTank: function (dt) {
         this.getListTankID().forEach(function (id) {
@@ -137,6 +147,11 @@ var MatchMgr = cc.Class.extend({
             return _id != id;
         }));
     },
+    removeStrikeID: function (id) {
+        this.setListStrikeID(this.getListStrikeID().filter(function (_id) {
+            return _id != id;
+        }));
+    },
     startActionBattle: function () {
         gv.engine.getBattleMgr().getBattleDataModel().setBattleState(STATE_ACTION);
     },
@@ -155,7 +170,7 @@ var MatchMgr = cc.Class.extend({
     },
     checkLogicSuddenDead: function () {
         var curState = gv.engine.getBattleMgr().getBattleDataModel().getBattleState();
-        if(curState == STATE_ACTION) {
+        if (curState == STATE_ACTION) {
             var curT = gv.engine.getBattleMgr().getBattleDataModel().getTimeCountdownBattle();
             if (curT >= Setting.LOOPS_MATCH_END) {
                 this.startSuddenDeadBattle();
@@ -165,7 +180,7 @@ var MatchMgr = cc.Class.extend({
     checkLogicWinTimeUp: function () {
         var curT = gv.engine.getBattleMgr().getBattleDataModel().getTimeCountdownBattle();
         if (curT >= Setting.LOOPS_MATCH_END) {
-            if(gv.engine.getBattleMgr().getPlayerMgr().isKnockoutTimeUpSuddenDead()){
+            if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutTimeUpSuddenDead()) {
                 //todo show win
                 this.finishBattle();
                 var teamWin = gv.engine.getBattleMgr().getPlayerMgr().getTeamWin();
@@ -226,24 +241,27 @@ var MatchMgr = cc.Class.extend({
         if (c >= Setting.POWERUP_INTERVAL) {
             gv.engine.getBattleMgr().getBattleDataModel().resetSpawnPowerUpCountDown();
             gv.engine.getBattleMgr().spawnPowerUp();
-        }else{
+        } else {
             gv.engine.getBattleMgr().getBattleDataModel().autoIncreaseSpawnPowerUpCountDown();
         }
     },
     getAvailableInfoSpawnPowerUp: function () {
         var spawnPointList = Setting.POWERUP_SPAWN_POINT;
         var spawnTypeList = [POWERUP_AIRSTRIKE, POWERUP_EMP];
-        var list = gv.engine.getBattleMgr().getBattleDataModel().getPowerUpList();
+        var listPowerUpID = this.getListPowerUpID();
         // Get available spawning point
         var availableSpawnPoint = [];
         for (var i = 0; i < spawnPointList.length; i++) {
             var takeThisPoint = true;
-            for (var j = 0; j < list.length; j++) {
-                var powerUp = list[j];
-                var mapPointIdx = powerUp.getMapPointIndex();
-                if (powerUp.isInActive() && mapPointIdx.x == spawnPointList[i].x && mapPointIdx.y == spawnPointList[i].y) {
-                    takeThisPoint = false;
-                    break;
+            for (var j = 0; j < listPowerUpID.length; j++) {
+                var powerUpID = listPowerUpID[j];
+                var powerUp = gv.engine.getBattleMgr().getGameObjectByID(powerUpID);
+                if (powerUp != null && powerUp.isInActive()) {
+                    var mapPointIdx = powerUp.getMapPointIndex();
+                    if (mapPointIdx.x == spawnPointList[i].x && mapPointIdx.y == spawnPointList[i].y) {
+                        takeThisPoint = false;
+                        break;
+                    }
                 }
             }
             if (takeThisPoint) {
@@ -617,5 +635,37 @@ var MatchMgr = cc.Class.extend({
                 gv.engine.getBattleMgr().getMapMgr().pushGameObjectForTileLogic(obj.getID(), obj, desStartTileIdx);
             }
         }
-    }
+    },
+    activeAirstrike: function (team, powerUpID) {
+        return this.activePowerUp(team, powerUpID);
+    },
+    activeEMP: function (team, powerUpID) {
+        return this.activePowerUp(team, powerUpID);
+    },
+    activePowerUp: function (team, powerUpID) {
+        var otherTeam;
+        var playerMgr = gv.engine.getBattleMgr().getPlayerMgr();
+        if (playerMgr.isMyTeam(team)) {
+            otherTeam = playerMgr.getEnemyTeam();
+        } else {
+            otherTeam = playerMgr.getMyTeam();
+        }
+        var listTankID = playerMgr.getListTankIDForTeam(otherTeam);
+        for (var i = 0; i < listTankID.length; ++i) {
+            var id = listTankID[i];
+            var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (tank.isAlive()) {
+                this.usePowerUp(team, powerUpID, tank.getStartTileLogicPointIndex());// BAM!!!
+                return true;
+            }
+        }
+    },
+    usePowerUp: function (team, powerUpID, startTileLogicPointIdx) {
+        LogUtils.getInstance().log([this.getClassName(), "usePowerUp", team, powerUpID]);
+        var playerMgr = gv.engine.getBattleMgr().getPlayerMgr();
+        var activeSuccess = playerMgr.activePowerUp(team, powerUpID);
+        if (activeSuccess) {
+            gv.engine.getBattleMgr().spawnStrike(team, startTileLogicPointIdx);
+        }
+    },
 });

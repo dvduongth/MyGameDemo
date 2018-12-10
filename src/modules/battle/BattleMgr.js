@@ -72,7 +72,7 @@ var BattleMgr = cc.Class.extend({
         this.getMatchMgr().checkSpawnPowerUp(dt);
         this.getMatchMgr().checkLogicCollisionPowerUp(dt);
         // Update all strike
-
+        this.getPlayerMgr().checkAutoUsePowerUp();
     },
     updatePerSecond: function () {
         if (this.getMatchMgr().isPauseGame()) {
@@ -102,6 +102,17 @@ var BattleMgr = cc.Class.extend({
     removePowerUp: function (id) {
         this.getBattleFactory().removePowerUp(id);
         this.getMatchMgr().removePowerUpID(id);
+    },
+    spawnStrike: function (team, startTilePointIdx) {
+        var strike = this.getBattleFactory().spawnStrikeFactory(team);
+        if (strike != null) {
+            this.getMapMgr().pushGameObjectForTileLogic(strike.getID(), strike, startTilePointIdx);
+            this.getMatchMgr().pushStrikeID(strike.getID());
+        }
+    },
+    removeStrike: function (id) {
+        this.getBattleFactory().removeStrike(id);
+        this.getMatchMgr().removeStrikeID(id);
     },
     getGameObjectByID: function (id) {
         return this.getBattleFactory().getGameObjectByIDFactory(id);

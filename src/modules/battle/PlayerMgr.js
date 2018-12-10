@@ -13,6 +13,8 @@ var PlayerMgr = cc.Class.extend({
         this.setListTankIDForTeam([], TEAM_2);
         this.setListBaseIDForTeam([], TEAM_1);
         this.setListBaseIDForTeam([], TEAM_2);
+        this.setListInventoryForTeam([], TEAM_1);
+        this.setListInventoryForTeam([], TEAM_2);
         this.setTeamWin(-1);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
@@ -34,6 +36,12 @@ var PlayerMgr = cc.Class.extend({
     },
     getListBaseIDForTeam: function (team) {
         return this.getMAPGameObjectID()["_listBaseID" + team];
+    },
+    setListInventoryForTeam: function (m, team) {
+        this.getMAPGameObjectID()["_listInventory" + team] = m;
+    },
+    getListInventoryForTeam: function (team) {
+        return this.getMAPGameObjectID()["_listInventory" + team];
     },
     setMyTeam: function (m) {
         this._myTeam = m;
@@ -195,41 +203,60 @@ var PlayerMgr = cc.Class.extend({
         return numberPicked >= maxNumTank;
     },
     acquirePowerUp: function (team, powerUpID) {
-        return false;//todo test edit after
-        /*instance.m_inventory[team].push(powerUp);
-         inventoryDirty = true;*/
+        this.getListInventoryForTeam(team).push(powerUpID);
     },
-    usePowerUp: function (team, powerup, x, y) {
-        return false;//todo test edit after
-        /*console.log('game use power up');
-         logger.print('game use power up');
-         var checkOK = false;
-
-         for (var i = 0; i < instance.m_inventory[team].length; i++) {
-         if (instance.m_inventory[team][i] == powerup) {
-         instance.m_inventory[team].splice(i, 1);
-         inventoryDirty = true;
-         checkOK = true;
-         break;
-         }
-         }
-
-         if (checkOK) {
-         var strike = null;
-         for (var i = 0; i < instance.m_strikes[team].length; i++) {
-         if (instance.m_strikes[team][i].m_live == false) {
-         strike = instance.m_strikes[team][i];
-         }
-         }
-
-         if (strike == null) {
-         var id = instance.m_strikes[team].length;
-         strike = new Strike(instance, id, team);
-         instance.m_strikes[team][id] = strike;
-         }
-         console.log('strike spawn ', x, y);
-         logger.print('strike spawn x ' + x + " y " + y);
-         strike.Spawn(powerup, x, y);
-         }*/
+    activePowerUp: function (team, powerUpID) {
+        var list = this.getListInventoryForTeam(team);
+        var existedIdx = list.findIndex(function (pId) {
+            return pId == powerUpID;
+        });
+        if(existedIdx != -1) {
+            list.splice(existedIdx, 1);
+            return true;
+        }else{
+            return false;
+        }
+    },
+    // =========================================================================================================
+    // This is an example on how you use your power up if you acquire one.
+    // If you have airstrike or EMP, you may use them anytime.
+    // I just give a primitive example here: I strike on the first enemy tank, as soon as I acquire power up
+    // =========================================================================================================
+    checkAutoUsePowerUp: function () {
+        var obj = this.hasAirstrike();
+        if (obj != null) {
+            gv.engine.getBattleMgr().getMatchMgr().activeAirstrike(obj.team, obj.powerUpID);
+        }
+        obj = this.hasEMP();
+        if (obj != null) {
+            gv.engine.getBattleMgr().getMatchMgr().activeEMP(obj.team, obj.powerUpID);
+        }
+    },
+    hasAirstrike: function () {
+        // Call this function to see if you have airstrike powerup.
+        return this.hasPowerUpType(POWERUP_AIRSTRIKE);
+    },
+    hasEMP: function () {
+        // Call this function to see if you have EMP powerup.
+        return this.hasPowerUpType(POWERUP_EMP);
+    },
+    hasPowerUpType: function (type) {
+        var list = this.getListInventoryForTeam(TEAM_1);
+        var existed = list.findIndex(function (powerUpID) {
+            var powerUp = gv.engine.getBattleMgr().getGameObjectByID(powerUpID);
+            return powerUp != null && !powerUp.isInActive() && powerUp.getType() == type;
+        });
+        if(existed != -1) {
+            return {team: TEAM_1, powerUpID: list[existed]};
+        }
+        list = this.getListInventoryForTeam(TEAM_2);
+        existed = list.findIndex(function (powerUpID) {
+            var powerUp = gv.engine.getBattleMgr().getGameObjectByID(powerUpID);
+            return powerUp != null && !powerUp.isInActive() && powerUp.getType() == type;
+        });
+        if(existed != -1) {
+            return {team: TEAM_2, powerUpID: list[existed]};
+        }
+        return null;
     }
 });

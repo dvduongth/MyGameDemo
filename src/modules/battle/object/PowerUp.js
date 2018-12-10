@@ -89,10 +89,10 @@ var PowerUp = cc.Sprite.extend({
     },
     checkForCollision: function () {
         var collision = false;
-        var skipID = this.getID();
+        var powerUpID = this.getID();
         var listTilePointIdx = this.getListTileLogicPointIndex();
         listTilePointIdx.forEach(function (p) {
-            var existedListId = gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(p, skipID);
+            var existedListId = gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(p, powerUpID);
             if(existedListId) {
                 existedListId.forEach(function (id) {
                     var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
@@ -104,7 +104,7 @@ var PowerUp = cc.Sprite.extend({
                                     return false;
                                 }
                                 collision = true;
-                                gv.engine.getBattleMgr().getPlayerMgr().acquirePowerUp(gObj.getTeam(), skipID);
+                                gv.engine.getBattleMgr().getPlayerMgr().acquirePowerUp(gObj.getTeam(), powerUpID);
                                 break;
                             default:
                                 break;
@@ -159,8 +159,6 @@ var PowerUp = cc.Sprite.extend({
         this.setListTileLogicPointIndex([]);
     },
     destroy: function () {
-        this.clearListTileLogicPointIndex();
-        gv.engine.getBattleMgr().removePowerUp(this.getID());
         this.setInActive(false);
     }
 });
