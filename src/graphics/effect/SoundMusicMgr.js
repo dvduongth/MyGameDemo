@@ -8,7 +8,6 @@ var SoundMusicMgr = cc.Class.extend({
         return this._className;
     },
     ctor: function () {
-
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
@@ -16,7 +15,6 @@ var SoundMusicMgr = cc.Class.extend({
      * @return {Number|null} the audio id
      * */
     playSoundEffect: function (soundPath, isLoop) {
-        return -1;//todo test
         //LogUtils.getInstance().log("playSoundEffect: " + soundPath);
         if (soundPath == undefined) {
             LogUtils.getInstance().error(soundPath + "undefined!");
@@ -50,7 +48,7 @@ var SoundMusicMgr = cc.Class.extend({
     preloadEffect: function (soundPath) {
         cc.audioEngine.preloadEffect(soundPath);
     },
-    PlaySoundById: function (id) {
+    playSoundEffectById: function (id) {
         switch (id) {
             case SOUND_AIRSTRIKE:
                 return this.playSoundEffect(resSoundMusic.SOUNDS__SOUND__AIRSTRIKE);

@@ -54,30 +54,48 @@ var EffectMgr = cc.Class.extend({
     },
     showExplosion: function (worldPos, type, duration) {
         var arr = [];
+        var listSoundId;
+        var rIdx;
         switch (type) {
             case EXPLOSION_TANK:
                 arr = this.getListResourceForExplosionTank();
+                listSoundId = [SOUND_EXPLOSION_1, SOUND_EXPLOSION_2, SOUND_EXPLOSION_3, SOUND_EXPLOSION_4];
+                rIdx = Utility.getInstance().randomBetweenRound(0, listSoundId.length - 1);
+                gv.engine.getSoundMusicMgr().playSoundEffectById(listSoundId[rIdx]);
                 break;
             case EXPLOSION_CANNON:
                 arr = this.getListResourceForExplosionCannon();
+                listSoundId = [SOUND_EXPLOSION_1, SOUND_EXPLOSION_2, SOUND_EXPLOSION_3, SOUND_EXPLOSION_4];
+                rIdx = Utility.getInstance().randomBetweenRound(0, listSoundId.length - 1);
+                gv.engine.getSoundMusicMgr().playSoundEffectById(listSoundId[rIdx]);
                 break;
             case EXPLOSION_OBSTACLE:
                 arr = this.getListResourceForExplosionObstacle();
+                listSoundId = [SOUND_EXPLOSION_1, SOUND_EXPLOSION_2, SOUND_EXPLOSION_3, SOUND_EXPLOSION_4];
+                rIdx = Utility.getInstance().randomBetweenRound(0, listSoundId.length - 1);
+                gv.engine.getSoundMusicMgr().playSoundEffectById(listSoundId[rIdx]);
                 break;
             case EXPLOSION_EMP:
                 arr = this.getListResourceForExplosionEMP();
+                gv.engine.getSoundMusicMgr().playSoundEffectById(SOUND_EMP);
                 break;
             case EXPLOSION_CANNON_MUZZLE:
                 arr = this.getListResourceForExplosionCannonMuzzle();
+                gv.engine.getSoundMusicMgr().playSoundEffectById(SOUND_CANNONSHOT);
                 break;
             case EXPLOSION_GUN_MUZZLE:
                 arr = this.getListResourceForExplosionGunMuzzle();
+                gv.engine.getSoundMusicMgr().playSoundEffectById(SOUND_GUNSHOT);
                 break;
             case EXPLOSION_BULLET:
                 arr = this.getListResourceForExplosionBullet();
+                gv.engine.getSoundMusicMgr().playSoundEffectById(SOUND_BULLETIMPACT);
                 break;
             case EXPLOSION_BULLET_6:
                 arr = this.getListResourceForExplosionBullet6();
+                listSoundId = [SOUND_EXPLOSION_1, SOUND_EXPLOSION_2, SOUND_EXPLOSION_3, SOUND_EXPLOSION_4];
+                rIdx = Utility.getInstance().randomBetweenRound(0, listSoundId.length - 1);
+                gv.engine.getSoundMusicMgr().playSoundEffectById(listSoundId[rIdx]);
                 break;
             default :
                 break;

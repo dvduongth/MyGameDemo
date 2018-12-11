@@ -1,4 +1,4 @@
-var Strike = cc.Sprite.extend({
+var Strike = cc.Node.extend({
     _className: "Strike",
     getClassName: function () {
         return this._className;
@@ -7,20 +7,34 @@ var Strike = cc.Sprite.extend({
         this.setID(id);
         this.setTeam(team);
         this.setType(type);
+        this._super();
+        this.initStrike();
+    },
+    createStrikeSprite: function () {
         var path;
-        switch (team) {
+        var rotation = 0;
+        switch (this.getTeam()) {
             case TEAM_1:
                 path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__AIRPLANE___1_PNG);
+                rotation = 0;
                 break;
             case TEAM_2:
                 path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__AIRPLANE___2_PNG);
+                rotation = 180;
                 break;
             default :
                 path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__AIRPLANE___1_PNG);
+                rotation = 0;
                 break;
         }
-        this._super(path);
-        this.initStrike();
+        this._strikeSprite = Utility.getInstance().createSpriteFromFileName(path);
+        this.addChild(this._strikeSprite);
+        var shadowOffset = cc.p(-2, -2);
+        this._strikeSprite.setPosition(this.getContentSize().width / 2 - shadowOffset.x, this.getContentSize().height / 2 - shadowOffset.y);
+        this._strikeSprite.setRotation(rotation);
+    },
+    getStrikeSprite: function () {
+        return this._strikeSprite;
     },
     setID: function (id) {
         this._ID = id;
@@ -46,6 +60,12 @@ var Strike = cc.Sprite.extend({
     getCountDown: function () {
         return this._countdown;
     },
+    setOptionValue: function (t) {
+        this._optionValue = t;
+    },
+    getOptionValue: function () {
+        return this._optionValue;
+    },
     autoDecreaseCoundown: function () {
         this.setCountDown(this.getCountDown() - 1);
     },
@@ -56,22 +76,40 @@ var Strike = cc.Sprite.extend({
         return this._isLiving;
     },
     initStrike: function () {
-        var AIRPLANE_OFFSET = -50;
-        var AIRPLANE_SPRITE_SIZE = 250;
-        var AIRPLANE_SMOKE_OFFSET_X_1 = 35;
-        var AIRPLANE_SMOKE_OFFSET_Y_1 = 95;
-        var AIRPLANE_SMOKE_OFFSET_X_2 = 105;
-        var AIRPLANE_SMOKE_OFFSET_Y_2 = 95;
         this.setListTileLogicPointIndex([]);
         this.spawn();
+        this.createStrikeSprite();
     },
     spawn: function () {
         this.setCountDown(Setting.POWERUP_DELAY);
         this.setLiving(true);
     },
+    calculateStrikeSize: function () {
+        var tileLogicSize = gv.engine.getBattleMgr().getMapMgr().getTileLogicSize();
+        var w = this.getAOEValue() * 2 * Setting.GAME_OBJECT_SIZE * tileLogicSize.width;
+        this.setStrikeSize(w);
+        this.setOptionValue((gv.WIN_SIZE.height + w) / Setting.AIRSTRIKE_COUNTDOWN);
+    },
+    setStrikeSize: function (t) {
+        this._strikeSize = t;
+    },
+    getStrikeSize: function () {
+        return this._strikeSize;
+    },
     update: function (dt) {
         if (this.isLiving()) {
             if (this.getCountDown() > 0) {
+                var AIRPLANE_SPRITE_SIZE = this.getStrikeSize();
+                switch (this.getTeam()) {
+                    case TEAM_1:
+                        this.getStrikeSprite().y = AIRPLANE_SPRITE_SIZE - this.getCountDown() * this.getOptionValue() - Setting.MAP_OFFSET_Y;
+                        break;
+                    case TEAM_2:
+                        this.getStrikeSprite().y = -AIRPLANE_SPRITE_SIZE + this.getCountDown() * this.getOptionValue() + Setting.MAP_OFFSET_Y;
+                        break;
+                    default :
+                        break;
+                }
                 this.autoDecreaseCoundown();
             } else {
                 // Strike here
@@ -94,10 +132,10 @@ var Strike = cc.Sprite.extend({
         }
     },
     throwAirStrike: function () {
-        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_1);
         var _this = this;
         var worldPos = this.getWorldPosition();
-        var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_CANNON_MUZZLE);
+        var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_TANK);
+        explosion.setScale(this.getStrikeSize() / explosion.getContentSize().width);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });
@@ -137,10 +175,10 @@ var Strike = cc.Sprite.extend({
         });
     },
     throwEMPStrike: function () {
-        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EMP);
         var _this = this;
         var worldPos = this.getWorldPosition();
         var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_EMP);
+        explosion.setScale(this.getStrikeSize() / explosion.getContentSize().width);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });

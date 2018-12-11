@@ -86,7 +86,6 @@ var Obstacle = BaseGameObject.extend({
         }
     },
     destroy: function () {
-        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_3);
         var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_OBSTACLE);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);

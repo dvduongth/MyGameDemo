@@ -109,6 +109,7 @@ var BattleMgr = cc.Class.extend({
         if (strike != null) {
             this.getMapMgr().pushGameObjectForTileLogic(strike.getID(), strike, startTilePointIdx);
             this.getMatchMgr().pushStrikeID(strike.getID());
+            strike.calculateStrikeSize();
         }
     },
     removeStrike: function (id) {

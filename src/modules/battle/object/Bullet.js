@@ -169,8 +169,17 @@ var Bullet = cc.Sprite.extend({
                 default :
                     break;
             }
-            var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_CANNON);
-            explosion.setScale(0.4);
+            var exId = EXPLOSION_CANNON;
+            switch (this.getType()){
+                case TANK_LIGHT:
+                case TANK_MEDIUM:
+                    exId = EXPLOSION_CANNON;
+                    break;
+                case TANK_HEAVY:
+                    exId = EXPLOSION_BULLET;
+                    break;
+            }
+            var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, exId);
             explosion.setCompleteCallback(function () {
                 explosion.removeFromParent(true);
             });
@@ -178,22 +187,6 @@ var Bullet = cc.Sprite.extend({
         this.clearListTileLogicPointIndex();
         gv.engine.getBattleMgr().removeBullet(this.getID());
         cc.pool.putInPool(this);
-    },
-    playSoundBulletImpact: function () {
-        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_BULLETIMPACT);
-    },
-    playSoundDestroy: function () {
-        switch (this.getType()){
-            case TANK_LIGHT:
-                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_2);
-                break;
-            case TANK_MEDIUM:
-                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_2);
-                break;
-            case TANK_HEAVY:
-                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_4);
-                break;
-        }
     },
     checkCollision: function () {
         var _this = this;
@@ -245,7 +238,6 @@ var Bullet = cc.Sprite.extend({
             }
         });
         if(collision) {
-            this.playSoundBulletImpact();
             this.destroy(true);
         }
     },

@@ -304,7 +304,10 @@ var Tank = cc.Sprite.extend({
         }
     },
     spawnBullet: function () {
-        this.playSoundGunShot();
+        if(this.getEMPCountdown() > 0) {
+            return false;
+        }
+        this.playEffectGunShot();
         var _this = this;
         var direction;
         //LogUtils.getInstance().log([this.getClassName(), "spawnBullet angle", this.getAngle()]);
@@ -336,18 +339,22 @@ var Tank = cc.Sprite.extend({
             })
         ));
     },
-    playSoundGunShot: function () {
+    playEffectGunShot: function () {
+        var exId = EXPLOSION_GUN_MUZZLE;
         switch (this.getType()){
             case TANK_LIGHT:
-                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_CANNONSHOT);
-                break;
             case TANK_MEDIUM:
-                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_CANNONSHOT);
+                exId = EXPLOSION_GUN_MUZZLE;
                 break;
             case TANK_HEAVY:
-                gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_GUNSHOT);
+                exId = EXPLOSION_CANNON_MUZZLE;
                 break;
         }
+        var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), exId);
+        explosion.setRotation(this.getAngle());
+        explosion.setCompleteCallback(function () {
+            explosion.removeFromParent(true);
+        });
     },
     setBlockGun: function (eff) {
         this._blockGun = eff;
@@ -537,7 +544,6 @@ var Tank = cc.Sprite.extend({
         this.setEMPCountdown(damage);
     },
     destroy: function () {
-        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_1);
         this.stopHunt();
         var path;
         switch (this.getType()) {
@@ -629,7 +635,6 @@ var Tank = cc.Sprite.extend({
         this.setListTileLogicPointIndex([]);
     },
     runEffectAppearThrowDown: function () {
-        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_BULLETIMPACT);
         var args = {};
         args["animationName"] = "eff_appear_fall_down";
         args["animationRun"] = "run";

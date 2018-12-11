@@ -34,6 +34,13 @@ var PowerUp = cc.Sprite.extend({
     getType: function () {
         return this._type;
     },
+    setIsInActive: function (t) {
+        this._isInActive = t;
+        this.setVisible(t);
+    },
+    isInActive: function () {
+        return this._isInActive;
+    },
     setGameObjectString: function (l) {
         this._gameObjectString = l;
     },
@@ -46,38 +53,14 @@ var PowerUp = cc.Sprite.extend({
     getMapPointIndex: function () {
         return this._mapPointIndex;
     },
-    setInActive: function (t) {
-        this._isInActive = t;
-        this.setVisible(t);
-    },
-    isInActive: function () {
-        return this._isInActive;
-    },
     initPowerUp: function () {
-        this.setInActive(true);
         this.setListTileLogicPointIndex([]);
+        this.spawn();
     },
-    spawn: function (type, mapIdx) {
-        this.setInActive(true);
-        this.setListTileLogicPointIndex([]);
-        this.setType(type);
-        this.setMapPointIndex(mapIdx);
-        var path;
-        switch (type) {
-            case POWERUP_AIRSTRIKE:
-                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__AIRSTRIKE_PNG);
-                break;
-            case POWERUP_EMP:
-                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__EMP_PNG);
-                break;
-            default :
-                path = Utility.getInstance().getSpriteFileName(resImg.RESOURCES__TEXTURES__POWERUP__AIRSTRIKE_PNG);
-                break;
-        }
-        Utility.getInstance().updateSpriteWithFileName(this, path);
+    spawn: function () {
+        this.setIsInActive(true);
     },
     runEffectAppear: function () {
-        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_BULLETIMPACT);
         var args = {};
         args["animationName"] = "eff_appear_fall_down";
         args["animationRun"] = "run";
@@ -86,6 +69,9 @@ var PowerUp = cc.Sprite.extend({
         var eff = gv.engine.getEffectMgr().playEffectDragonBones(args);
     },
     checkForCollision: function () {
+        if(!this.isInActive()) {
+            return false;
+        }
         var collision = false;
         var powerUpID = this.getID();
         var listTilePointIdx = this.getListTileLogicPointIndex();
@@ -122,7 +108,7 @@ var PowerUp = cc.Sprite.extend({
             }
         }
         if(collision) {
-            this.destroy();
+            this.setIsInActive(false);
         }
     },
     getWorldPosition: function () {
@@ -166,8 +152,11 @@ var PowerUp = cc.Sprite.extend({
         });
         this.setListTileLogicPointIndex([]);
     },
+    /**
+     * auto destroy when spawn strike that used case
+     * */
     destroy: function () {
-        this.setInActive(false);
+        LogUtils.getInstance().log([this.getClassName(), "destroy"]);
         this.clearListTileLogicPointIndex();
         gv.engine.getBattleMgr().removePowerUp(this.getID());
         this.removeFromParent(true);

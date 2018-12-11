@@ -68,23 +68,23 @@ var PlayerMgr = cc.Class.extend({
         var exitedIdx = list.findIndex(function (_id) {
             return _id == id;
         });
-        if(exitedIdx != -1) {
+        if (exitedIdx != -1) {
             list.splice(exitedIdx, 1);
             return true;
-        }else{
+        } else {
             return false;
         }
     },
     removeTankID: function (id) {
         var list = this.getListTankIDForTeam(TEAM_1);
-        if(!this.removeIDFromList(id, list)) {
+        if (!this.removeIDFromList(id, list)) {
             list = this.getListTankIDForTeam(TEAM_2);
             this.removeIDFromList(id, list);
         }
     },
     removeBaseID: function (id) {
         var list = this.getListBaseIDForTeam(TEAM_1);
-        if(!this.removeIDFromList(id, list)) {
+        if (!this.removeIDFromList(id, list)) {
             list = this.getListBaseIDForTeam(TEAM_2);
             this.removeIDFromList(id, list);
         }
@@ -148,7 +148,7 @@ var PlayerMgr = cc.Class.extend({
                 list = this.getListBaseIDForTeam(team);
                 break;
         }
-        if(list && list.length > 0) {
+        if (list && list.length > 0) {
             list.forEach(function (id) {
                 //existed base alive
                 var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
@@ -212,11 +212,11 @@ var PlayerMgr = cc.Class.extend({
         var existedIdx = list.findIndex(function (pId) {
             return pId == powerUpID;
         });
-        if(existedIdx != -1) {
+        if (existedIdx != -1) {
             list.splice(existedIdx, 1);
             LogUtils.getInstance().log([this.getClassName(), "activePowerUp remove item", existedIdx, list.length]);
             return true;
-        }else{
+        } else {
             return false;
         }
     },
@@ -247,17 +247,17 @@ var PlayerMgr = cc.Class.extend({
         var list = this.getListInventoryForTeam(TEAM_1);
         var existed = list.findIndex(function (powerUpID) {
             var powerUp = gv.engine.getBattleMgr().getGameObjectByID(powerUpID);
-            return powerUp != null && !powerUp.isInActive() && powerUp.getType() == type;
+            return powerUp != null && powerUp.getType() == type;
         });
-        if(existed != -1) {
+        if (existed != -1) {
             return {team: TEAM_1, powerUpID: list[existed]};
         }
         list = this.getListInventoryForTeam(TEAM_2);
         existed = list.findIndex(function (powerUpID) {
             var powerUp = gv.engine.getBattleMgr().getGameObjectByID(powerUpID);
-            return powerUp != null && !powerUp.isInActive() && powerUp.getType() == type;
+            return powerUp != null && powerUp.getType() == type;
         });
-        if(existed != -1) {
+        if (existed != -1) {
             return {team: TEAM_2, powerUpID: list[existed]};
         }
         return null;

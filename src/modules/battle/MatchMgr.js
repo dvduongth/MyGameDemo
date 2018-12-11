@@ -239,7 +239,7 @@ var MatchMgr = cc.Class.extend({
     checkLogicCollisionPowerUp: function () {
         this.getListPowerUpID().forEach(function (id) {
             var powerUp = gv.engine.getBattleMgr().getGameObjectByID(id);
-            if (powerUp != null && powerUp.isInActive()) {
+            if (powerUp != null) {
                 powerUp.checkForCollision();
             }
         });
@@ -678,6 +678,7 @@ var MatchMgr = cc.Class.extend({
         if (activeSuccess) {
             var powerUp = gv.engine.getBattleMgr().getGameObjectByID(powerUpID);
             gv.engine.getBattleMgr().spawnStrike(team, powerUp.getType(), startTileLogicPointIdx);
+            powerUp.destroy();//auto destroy when used
         }
     },
 });
