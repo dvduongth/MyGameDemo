@@ -168,31 +168,16 @@ var BattleFactory = cc.Class.extend({
     spawnPowerUpFactory: function () {
         //LogUtils.getInstance().log([this.getClassName(), "spawnPowerUpFactory"]);
         var availableInfo = gv.engine.getBattleMgr().getMatchMgr().getAvailableInfoSpawnPowerUp();
-        if(availableInfo != null) {
-            var list = gv.engine.getBattleMgr().getBattleDataModel().getPowerUpList();
-            var powerUp;
-            var exited = false;
-            for (var i = 0; i < list.length; ++i) {
-                powerUp = list[i];
-                if (!powerUp.isInActive()) {
-                    //reborn
-                    list[i].spawn(availableInfo.type, availableInfo.mapIdx);
-                    exited = true;
-                }
-            }
-            if(!exited) {
-                //create new
-                powerUp = new PowerUp(this.getPowerUpID(), availableInfo.type, availableInfo.mapIdx);
-                powerUp.setGameObjectString(STRING_POWER_UP);
-                powerUp.setLocalZOrder(ZORDER_GROUND);
-                list.push(powerUp);
-                var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
-                parent.addChild(powerUp);
-            }
+        if (availableInfo != null) {
+            var powerUp = new PowerUp(this.getPowerUpID(), availableInfo.type, availableInfo.mapIdx);
+            powerUp.setGameObjectString(STRING_POWER_UP);
+            powerUp.setLocalZOrder(ZORDER_GROUND);
+            var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
+            parent.addChild(powerUp);
             this.addPowerUp(powerUp);
             return powerUp;
-        }else{
-            //LogUtils.getInstance().error([this.getClassName(), "spawnPowerUpFactory not getAvailableInfoSpawnPowerUp"]);
+        } else {
+            LogUtils.getInstance().log([this.getClassName(), "spawnPowerUpFactory not getAvailableInfoSpawnPowerUp"]);
             return null;
         }
     },

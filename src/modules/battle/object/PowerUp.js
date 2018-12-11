@@ -168,5 +168,8 @@ var PowerUp = cc.Sprite.extend({
     },
     destroy: function () {
         this.setInActive(false);
+        this.clearListTileLogicPointIndex();
+        gv.engine.getBattleMgr().removePowerUp(this.getID());
+        this.removeFromParent(true);
     }
 });

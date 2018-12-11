@@ -287,6 +287,8 @@ var MatchMgr = cc.Class.extend({
                 mapIdx: mapIdx,
                 type: type
             };
+        } else {
+            LogUtils.getInstance().log([this.getClassName(), "getAvailableInfoSpawnPowerUp not availableSpawnPoint"]);
         }
         return null;
     },
