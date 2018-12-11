@@ -94,6 +94,7 @@ var Strike = cc.Sprite.extend({
         }
     },
     throwAirStrike: function () {
+        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EXPLOSION_1);
         var _this = this;
         var worldPos = this.getWorldPosition();
         var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_CANNON_MUZZLE);
@@ -136,6 +137,7 @@ var Strike = cc.Sprite.extend({
         });
     },
     throwEMPStrike: function () {
+        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_EMP);
         var _this = this;
         var worldPos = this.getWorldPosition();
         var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_EMP);

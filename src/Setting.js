@@ -79,7 +79,7 @@ Setting.POWERUP_SPAWN_POINT = [cc.p(10, 1), cc.p(10, 10), cc.p(10, 19)];
 Setting.POWERUP_INTERVAL = 5 / Setting.TIME_UPDATE_INTERVAL;
 Setting.POWERUP_DELAY = 1 / Setting.TIME_UPDATE_INTERVAL;
 //AIR STRIKE
-Setting.AIRSTRIKE_COUNTDOWN = 10;
+Setting.AIRSTRIKE_COUNTDOWN = 10;//todo test edit after use it
 Setting.AIRSTRIKE_DAMAGE = 60;
 Setting.AIRSTRIKE_AOE = 3;
 Setting.EMP_DURATION = 4 / Setting.TIME_UPDATE_INTERVAL;

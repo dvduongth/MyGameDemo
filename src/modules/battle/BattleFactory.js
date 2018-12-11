@@ -198,6 +198,7 @@ var BattleFactory = cc.Class.extend({
         strike.setLocalZOrder(ZORDER_SKY);
         parent.addChild(strike);
         this.addStrike(strike);
+        gv.engine.getSoundMusicMgr().PlaySoundById(SOUND_AIRSTRIKE);
         return strike;
     },
     addStrike: function (strike) {
