@@ -82,6 +82,21 @@ var MatchMgr = cc.Class.extend({
     pushStrikeID: function (id) {
         this.getListStrikeID().push(id);
     },
+    update: function (dt) {
+        // Update all tank
+        this.runUpdateTank(dt);
+        // Update all bullet
+        this.runUpdateBullet(dt);
+        this.checkLogicCollisionBulletWithTarget(dt);
+        // Update all runes
+        this.checkSpawnPowerUp(dt);
+        this.checkLogicCollisionPowerUp(dt);
+        this.runUpdateStrike(dt);
+    },
+    updatePerSecond: function () {
+        this.checkLogicWinTimeUp();
+        this.checkLogicSuddenDead();
+    },
     runUpdateTank: function (dt) {
         this.getListTankID().forEach(function (id) {
             var tank = gv.engine.getBattleMgr().getGameObjectByID(id);

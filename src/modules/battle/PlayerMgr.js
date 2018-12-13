@@ -16,6 +16,7 @@ var PlayerMgr = cc.Class.extend({
         this.setListInventoryForTeam([], TEAM_1);
         this.setListInventoryForTeam([], TEAM_2);
         this.setTeamWin(-1);
+        this.resetListFlagWorldPosition();
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
@@ -24,6 +25,12 @@ var PlayerMgr = cc.Class.extend({
     },
     getMAPGameObjectID: function () {
         return this._mapGameObjectID;
+    },
+    setListFlagWorldPosition: function (m) {
+        this._listFlagWorldPosition = m;
+    },
+    getListFlagWorldPosition: function () {
+        return this._listFlagWorldPosition;
     },
     setListTankIDForTeam: function (m, team) {
         this.getMAPGameObjectID()["_listTankID" + team] = m;
@@ -58,10 +65,10 @@ var PlayerMgr = cc.Class.extend({
     isMyTeam: function (m) {
         return m === this.getMyTeam();
     },
-    addTankIDForTeam: function (id, team) {
+    addTankIDForTeam: function (team, id) {
         this.getListTankIDForTeam(team).push(id);
     },
-    addBaseIDForTeam: function (id, team) {
+    addBaseIDForTeam: function (team, id) {
         this.getListBaseIDForTeam(team).push(id);
     },
     removeIDFromList: function (id, list) {
@@ -89,6 +96,9 @@ var PlayerMgr = cc.Class.extend({
             this.removeIDFromList(id, list);
         }
     },
+    resetListFlagWorldPosition: function () {
+        this.setListFlagWorldPosition([]);
+    },
     isKnockoutKillMainBase: function (id) {
         LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillMainBase", id]);
         return true;
@@ -99,7 +109,7 @@ var PlayerMgr = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank true isDuringSuddenDeadBattle"]);
             return true;
         }
-        if (this.isMyTeam(team) && !this.isAlreadyDoneThrowAllTank()) {
+        if (!this.isAlreadyDoneThrowAllTank(team)) {
             LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank"]);
             return false;
         }
@@ -186,20 +196,16 @@ var PlayerMgr = cc.Class.extend({
         tilePointIdx = gv.engine.getBattleMgr().getMapMgr().convertMapIndexPointToStartTileIndexPoint(mapIdx);
         tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicByTilePointIndex(tilePointIdx);
         worldPos = tileLogic.getTileWorldPosition();
-        var tank = gv.engine.getBattleMgr().throwTank(worldPos, team, type);
-        if (tank != null) {
-            tank.tankAction(cc.KEY.enter);
-            tank.setIsBot(true);
-        }
+        var tank = gv.engine.getBattleMgr().throwTank(worldPos, team, type, true);
     },
     getRandomMapIndexThrowBotTank: function () {
         var row = Utility.getInstance().randomBetweenRound(Setting.MAP_H - 1 - Setting.MAP_LIMIT_ROW_THROW_TANK, Setting.MAP_H - 2);
         var col = Utility.getInstance().randomBetweenRound(1, Setting.MAP_W - 2);
         return cc.p(row, col);
     },
-    isAlreadyDoneThrowAllTank: function () {
+    isAlreadyDoneThrowAllTank: function (team) {
         var maxNumTank = Setting.NUMBER_OF_TANK;
-        var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank();
+        var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank(team);
         return numberPicked >= maxNumTank;
     },
     acquirePowerUp: function (team, powerUpID) {

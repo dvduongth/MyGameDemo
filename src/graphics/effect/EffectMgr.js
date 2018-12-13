@@ -175,7 +175,7 @@ var EffectMgr = cc.Class.extend({
     playEffectDragonBones: function (animationName/*or args Object*/, animationRun, parent, pos, delay, durationTo, loop, zOder, autoRemove, funCall, isDelayVisibleTime) {
         if(animationName["animationName"] !== undefined) {
             //animationName is args object
-            this.playEffectDragonBonesByObjectArgument(animationName);
+            return this.playEffectDragonBonesByObjectArgument(animationName);
         }else{
             var args = {};
             args["animationName"] = animationName;
@@ -189,7 +189,7 @@ var EffectMgr = cc.Class.extend({
             args["autoRemove"] = autoRemove;
             args["funCall"] = funCall;
             args["isDelayVisibleTime"] = isDelayVisibleTime;
-            this.playEffectDragonBonesByObjectArgument(args);
+            return this.playEffectDragonBonesByObjectArgument(args);
         }
     },
     playEffectDragonBonesByObjectArgument: function (args) {

@@ -74,6 +74,15 @@ var Tank = cc.Sprite.extend({
         this.createTouchListenerOneByOneTank();
         this.setListTileLogicPointIndex([]);
         this.setEMPCountdown(0);
+        this.autoCalculateReachDestinationDeltaDistance();
+    },
+    autoCalculateReachDestinationDeltaDistance: function () {
+        var tileSize = gv.engine.getBattleMgr().getMapMgr().getTileLogicSize();
+        var d = cc.pDistance(cc.POINT_ZERO, cc.p(tileSize.width,tileSize.height));
+        this._destinationDeltaDistance = d * Setting.REACH_DESTINATION_DELTA_NUMBER_TILE;
+    },
+    getReachDestinationDeltaDistance: function () {
+        return this._destinationDeltaDistance;
     },
     createTankSprite: function () {
         var path;
@@ -119,6 +128,12 @@ var Tank = cc.Sprite.extend({
     getTankSprite: function () {
         return this._tankSprite;
     },
+    setFlagWorldPosition: function (p) {
+        this._flagWorldPosition = p;
+    },
+    getFlagWorldPosition: function () {
+        return this._flagWorldPosition;
+    },
     createTouchListenerOneByOneTank: function () {
         this.removeTouchListenerOneByOneTank();
         var _this = this;
@@ -146,9 +161,12 @@ var Tank = cc.Sprite.extend({
         var isCorrect = cc.rectContainsPoint(rect, locationInNode);
         if (isCorrect && gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())) {
             LogUtils.getInstance().log([this.getClassName(), "touch tank began"]);
-            Utility.getInstance().showTextOnScene(this.getClassName() + " touch tank began");
-            this.tankAction(cc.KEY.enter);
-            gv.engine.getBattleMgr().getBattleDataModel().setCurrentSelectedTankID(this.getID());
+            Utility.getInstance().showTextOnScene(this.getClassName() + " SELECT THIS TANK");
+            if (this.getID() == gv.engine.getBattleMgr().getBattleDataModel().getCurrentSelectedTankID(this.getTeam())) {
+                this.tankAction(cc.KEY.enter);
+            }
+            gv.engine.getBattleMgr().getBattleDataModel().setCurrentSelectedTankID(this.getTeam(), this.getID());
+            this.setFlagWorldPosition(touch.getLocation());
             return true;
         } else {
             //LogUtils.getInstance().log([this.getClassName(), "touch not correct"]);
@@ -156,10 +174,21 @@ var Tank = cc.Sprite.extend({
         }
     },
     onTouchMovedTank: function (touch, event) {
-        var target = event.getCurrentTarget();
+        this.setFlagWorldPosition(touch.getLocation());
+        return true;
+    },
+    onTouchEndedTank: function (touch, event) {
+        this.tankAction(null);
+        this.setFlagWorldPosition(null);
+    },
+    onTouchCancelledTank: function (touch, event) {
+        this.tankAction(null);
+        this.setFlagWorldPosition(null);
+    },
+    checkForTankActionByWorldPosition: function (touchPos) {
+        var target = this;
         var parent = target.getParent();
         var worldPos = parent.convertToWorldSpace(target.getPosition());
-        var touchPos = touch.getLocation();
         var delta = cc.pSub(touchPos, worldPos);
         if (Math.abs(delta.x) > Math.abs(delta.y)) {
             if (delta.x > 0) {
@@ -176,13 +205,12 @@ var Tank = cc.Sprite.extend({
                 this.tankAction(cc.KEY.down);
             }
         }
-        return true;
-    },
-    onTouchEndedTank: function (touch, event) {
-        this.tankAction(null);
-    },
-    onTouchCancelledTank: function (touch, event) {
-        this.tankAction(null);
+        //todo check reach destination pos
+        var d = cc.pDistance(cc.POINT_ZERO, delta);
+        if(d <= this.getReachDestinationDeltaDistance()) {
+            this.setFlagWorldPosition(null);
+            this.tankAction(null);
+        }
     },
     tankAction: function (keyCode) {
         var tank = this;
@@ -304,7 +332,7 @@ var Tank = cc.Sprite.extend({
         }
     },
     spawnBullet: function () {
-        if(this.getEMPCountdown() > 0) {
+        if (this.getEMPCountdown() > 0) {
             return false;
         }
         this.playEffectGunShot();
@@ -341,7 +369,7 @@ var Tank = cc.Sprite.extend({
     },
     playEffectGunShot: function () {
         var exId = EXPLOSION_GUN_MUZZLE;
-        switch (this.getType()){
+        switch (this.getType()) {
             case TANK_LIGHT:
             case TANK_MEDIUM:
                 exId = EXPLOSION_GUN_MUZZLE;
@@ -363,7 +391,7 @@ var Tank = cc.Sprite.extend({
         return this._blockGun;
     },
     Hunt: function () {
-        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
+        if (gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
             LogUtils.getInstance().log([this.getClassName(), "can not Hunt because of pause game"]);
             return;
         }
@@ -384,14 +412,18 @@ var Tank = cc.Sprite.extend({
     },
     // Draw - obvious comment is obvious
     update: function (dt) {
-        if(this.getEMPCountdown() > 0) {
+        if (this.getEMPCountdown() > 0) {
             this.autoCountdownEMP();
             return false;
         }
-        if(this.isBot()) {
+        if (this.isBot()) {
             this.randomBotTankAction();
+        } else {
+            if(this.getFlagWorldPosition() != null) {
+                this.checkForTankActionByWorldPosition(this.getFlagWorldPosition());
+            }
         }
-        if(this.getDirection() == DIRECTION_IDLE) {
+        if (this.getDirection() == DIRECTION_IDLE) {
             return false;
         }
         var angle = 0;
@@ -628,18 +660,19 @@ var Tank = cc.Sprite.extend({
         var list = this.getListTileLogicPointIndex();
         list.forEach(function (c) {
             var tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicByTilePointIndex(c);
-            if(tileLogic != null) {
+            if (tileLogic != null) {
                 tileLogic.removeGameObjectIDOnTile(id);
             }
         });
         this.setListTileLogicPointIndex([]);
     },
-    runEffectAppearThrowDown: function () {
+    runEffectAppearThrowDown: function (funCall) {
         var args = {};
         args["animationName"] = "eff_appear_fall_down";
         args["animationRun"] = "run";
         args["pos"] = this.getWorldPosition();
         args["pos"].y += this.getContentSize().height;
+        args["funCall"] = funCall;
         var eff = gv.engine.getEffectMgr().playEffectDragonBones(args);
     }
 });

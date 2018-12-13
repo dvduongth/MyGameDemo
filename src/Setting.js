@@ -84,3 +84,5 @@ Setting.AIRSTRIKE_DAMAGE = 60;
 Setting.AIRSTRIKE_AOE = 3;
 Setting.EMP_DURATION = 5 / Setting.TIME_UPDATE_INTERVAL;
 Setting.EMP_AOE = 3;
+// other
+Setting.REACH_DESTINATION_DELTA_NUMBER_TILE = Math.round(Setting.GAME_OBJECT_SIZE / 2);

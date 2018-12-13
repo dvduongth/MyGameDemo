@@ -63,17 +63,9 @@ var BattleMgr = cc.Class.extend({
         if (this.getMatchMgr().isPauseGame()) {
             return false;//todo during pause
         }
-        // Update all tank
-        this.getMatchMgr().runUpdateTank(dt);
-        // Update all bullet
-        this.getMatchMgr().runUpdateBullet(dt);
-        this.getMatchMgr().checkLogicCollisionBulletWithTarget(dt);
-        // Update all runes
-        this.getMatchMgr().checkSpawnPowerUp(dt);
-        this.getMatchMgr().checkLogicCollisionPowerUp(dt);
+        this.getMatchMgr().update(dt);
         // Update all strike
         this.getPlayerMgr().checkAutoUsePowerUp();
-        this.getMatchMgr().runUpdateStrike(dt);
     },
     updatePerSecond: function () {
         if (this.getMatchMgr().isPauseGame()) {
@@ -84,8 +76,7 @@ var BattleMgr = cc.Class.extend({
         if (sceneBattle != null) {
             sceneBattle.countDownTimeUp();//update display
         }
-        this.getMatchMgr().checkLogicWinTimeUp();
-        this.getMatchMgr().checkLogicSuddenDead();
+        this.getMatchMgr().updatePerSecond();
     },
     spawnPowerUp: function () {
         var powerUp = this.getBattleFactory().spawnPowerUpFactory();
@@ -119,30 +110,35 @@ var BattleMgr = cc.Class.extend({
     getGameObjectByID: function (id) {
         return this.getBattleFactory().getGameObjectByIDFactory(id);
     },
-    getCurrentSelectedTank: function () {
-        return this.getBattleFactory().getGameObjectByIDFactory(this.getBattleDataModel().getCurrentSelectedTankID());
+    getCurrentSelectedTank: function (team) {
+        return this.getBattleFactory().getGameObjectByIDFactory(this.getBattleDataModel().getCurrentSelectedTankID(team));
     },
-    throwTank: function (worldPos, team, type) {
+    throwTank: function (worldPos, team, type, isBot) {
         var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
         var position = parent.convertToNodeSpace(worldPos);
-        if (this.getPlayerMgr().isAlreadyDoneThrowAllTank()) {
+        if (this.getPlayerMgr().isAlreadyDoneThrowAllTank(team)) {
+            LogUtils.getInstance().error([this.getClassName(), "throwTank RICK MAX NUMBER TANK CAN PICK", team]);
             Utility.getInstance().showTextOnScene("RICK MAX NUMBER TANK CAN PICK " + Setting.NUMBER_OF_TANK);
         } else {
             LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);
             var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
             if (tank != null) {
-                this.getPlayerMgr().addTankIDForTeam(tank.getID(), tank.getTeam());
-                if (this.getPlayerMgr().isMyTeam(tank.getTeam())) {
-                    this.getBattleDataModel().addPickedTankID(tank.getID());
-                    this.getBattleDataModel().setCurrentSelectedTankID(tank.getID());
-                }
+                this.getPlayerMgr().addTankIDForTeam(team, tank.getID());
+                this.getBattleDataModel().addPickedTankID(team, tank.getID());
+                this.getBattleDataModel().setCurrentSelectedTankID(team, tank.getID());
                 this.getMatchMgr().pushTankID(tank.getID());
                 //matchMgr find suitable location and update position
                 this.getMatchMgr().findSuitableLocationForThrowTank(tank);
-                tank.runEffectAppearThrowDown();
+                tank.runEffectAppearThrowDown(function () {
+                    tank.tankAction(cc.KEY.enter);
+                    tank.setIsBot(isBot);
+                });
                 return tank;
+            } else {
+                LogUtils.getInstance().error([this.getClassName(), "throwTank tank null", team, type]);
             }
         }
+        LogUtils.getInstance().error([this.getClassName(), "throwTank return null", team, type]);
         return null;
     },
     removeTank: function (id) {
@@ -165,7 +161,7 @@ var BattleMgr = cc.Class.extend({
         LogUtils.getInstance().log([this.getClassName(), "updateBase team", team, "type", type]);
         var base = this.getBattleFactory().updateBaseFactory(rootNode, team, type);
         if (base != null) {
-            this.getPlayerMgr().addBaseIDForTeam(base.getID(), base.getTeam());
+            this.getPlayerMgr().addBaseIDForTeam(team, base.getID());
             this.getMapMgr().updateGameObjectIDForTileLogic(base.getID(), base, mapPointIdx);
             this.getMatchMgr().pushBaseID(base.getID());
         }

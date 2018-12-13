@@ -8,28 +8,29 @@ var BattleDataModel = cc.Class.extend({
         return this._className;
     },
     ctor: function () {
-        this.setListPickTank([]);
+        this.setListPickTank(TEAM_1, []);
+        this.setListPickTank(TEAM_2, []);
         this.setTimeCountdownBattle(0);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
-    getNumberPickedTank: function () {
-        return this.getListPickTank().length;
+    getNumberPickedTank: function (team) {
+        return this.getListPickTank(team).length;
     },
-    setListPickTank: function (l) {
-        this._listPickTank = l;
+    setListPickTank: function (team, l) {
+        this["_listPickTank" + team] = l;
     },
-    getListPickTank: function () {
-        return this._listPickTank;
+    getListPickTank: function (team) {
+        return this["_listPickTank" + team];
     },
-    addPickedTankID: function (id) {
-        this.getListPickTank().push(id);
+    addPickedTankID: function (team, id) {
+        this.getListPickTank(team).push(id);
     },
-    setCurrentSelectedTankID: function (t) {
-        this._currentSelectedTankID = t;
+    setCurrentSelectedTankID: function (team, id) {
+        this["_currentSelectedTankID" + team] = id;
     },
-    getCurrentSelectedTankID: function () {
-        return this._currentSelectedTankID;
+    getCurrentSelectedTankID: function (team) {
+        return this["_currentSelectedTankID" + team];
     },
     setTimeCountdownBattle: function (t) {
         this._timeCountdownBattle = t;

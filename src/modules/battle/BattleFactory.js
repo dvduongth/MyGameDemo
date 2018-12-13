@@ -50,6 +50,7 @@ var BattleFactory = cc.Class.extend({
             parent.addChild(tank);
             tank.setPosition(position);
             this.addTank(tank);
+            LogUtils.getInstance().log([this.getClassName(), "throwTankFactory success"]);
             return tank;
         } else {
             LogUtils.getInstance().error([this.getClassName(), "throwTank with parent null"]);
