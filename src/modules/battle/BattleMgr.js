@@ -111,7 +111,7 @@ var BattleMgr = cc.Class.extend({
         return this.getBattleFactory().getGameObjectByIDFactory(id);
     },
     getCurrentSelectedTank: function (team) {
-        return this.getBattleFactory().getGameObjectByIDFactory(this.getBattleDataModel().getCurrentSelectedTankID(team));
+        return this.getBattleFactory().getGameObjectByIDFactory(this.getPlayerMgr().getCurrentSelectedTankID(team));
     },
     throwTank: function (worldPos, team, type, isBot) {
         var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
@@ -124,8 +124,11 @@ var BattleMgr = cc.Class.extend({
             var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
             if (tank != null) {
                 this.getPlayerMgr().addTankIDForTeam(team, tank.getID());
-                this.getBattleDataModel().addPickedTankID(team, tank.getID());
-                this.getBattleDataModel().setCurrentSelectedTankID(team, tank.getID());
+                if (this.getPlayerMgr().isMyTeam(team) && gv.engine.isCurrentSceneBattle()) {
+                    gv.engine.getSceneBattleIfExist().setSelectTankForControlByIndex(this.getPlayerMgr().getNumberPickedTank(team) - 1);
+                } else {
+                    this.getPlayerMgr().setCurrentSelectedTankID(team, tank.getID());
+                }
                 this.getMatchMgr().pushTankID(tank.getID());
                 //matchMgr find suitable location and update position
                 this.getMatchMgr().findSuitableLocationForThrowTank(tank);

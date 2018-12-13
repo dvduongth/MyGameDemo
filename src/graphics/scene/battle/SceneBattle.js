@@ -55,6 +55,9 @@ var SceneBattle = BaseScene.extend({
         this._super();
     },
     updateDisplayPickTankSlot: function () {
+        this.revertDisplaySlotPickTank(this.imgTank_0);
+        this.revertDisplaySlotPickTank(this.imgTank_1);
+        this.revertDisplaySlotPickTank(this.imgTank_2);
         if (gv.engine.getBattleMgr().getPlayerMgr().isAlreadyDoneThrowAllTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam())) {
             this.removeTouchListenerOneByOneTank();
             this.imgTank_0.setVisible(false);
@@ -299,14 +302,14 @@ var SceneBattle = BaseScene.extend({
             gv.engine.getBattleMgr().throwTank(worldPos, gv.engine.getBattleMgr().getPlayerMgr().getMyTeam(), type);
             this.updateDisplayPickTankSlot();
         }
-        target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
-        target.setScale(1);
-        this.removeLayerRedLimitThrowTank();
-        this.removeLayerGreenLimitThrowTank();
+        this.revertDisplaySlotPickTank(target);
     },
     onTouchCancelledTank: function (touch, event) {
         LogUtils.getInstance().log([this.getClassName(), "touch tank cancelled"]);
         var target = event.getCurrentTarget();
+        this.revertDisplaySlotPickTank(target);
+    },
+    revertDisplaySlotPickTank: function (target) {
         var parent = target.getParent();
         target.setPosition(parent.getContentSize().width / 2, parent.getContentSize().height / 2);
         target.setScale(1);
@@ -475,7 +478,38 @@ var SceneBattle = BaseScene.extend({
             case this.btnClose:
                 gv.engine.end();
                 break;
+            case this.btnNextTank:
+                gv.engine.getBattleMgr().getPlayerMgr().autoSelectOtherTankIDForCurrentSelectedFunction(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
+                break;
+            case this.btnTankHunt:
+                var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
+                if (!tank) {
+                    LogUtils.getInstance().error([this.getClassName(), "checkTankAction not yet select tank"]);
+                    return false;
+                }
+                tank.tankAction(cc.KEY.enter);
+                break;
+
+            case this.btnTank_0:
+                this.setSelectTankForControlByIndex(0);
+                break;
+            case this.btnTank_1:
+                this.setSelectTankForControlByIndex(1);
+                break;
+            case this.btnTank_2:
+                this.setSelectTankForControlByIndex(2);
+                break;
+            case this.btnTank_3:
+                this.setSelectTankForControlByIndex(3);
+                break;
         }
+    },
+    setSelectTankForControlByIndex: function (idx) {
+        this.btnTank_0.setEnabled(idx != 0 && gv.engine.getBattleMgr().getPlayerMgr().isTankAliveByIndex(0));
+        this.btnTank_1.setEnabled(idx != 1 && gv.engine.getBattleMgr().getPlayerMgr().isTankAliveByIndex(1));
+        this.btnTank_2.setEnabled(idx != 2 && gv.engine.getBattleMgr().getPlayerMgr().isTankAliveByIndex(2));
+        this.btnTank_3.setEnabled(idx != 3 && gv.engine.getBattleMgr().getPlayerMgr().isTankAliveByIndex(3));
+        gv.engine.getBattleMgr().getPlayerMgr().setCurrentSelectedTankIDByIndex(idx);
     }
 });
 

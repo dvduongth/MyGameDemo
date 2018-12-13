@@ -162,10 +162,10 @@ var Tank = cc.Sprite.extend({
         if (isCorrect && gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())) {
             LogUtils.getInstance().log([this.getClassName(), "touch tank began"]);
             Utility.getInstance().showTextOnScene(this.getClassName() + " SELECT THIS TANK");
-            if (this.getID() == gv.engine.getBattleMgr().getBattleDataModel().getCurrentSelectedTankID(this.getTeam())) {
+            if (this.getID() == gv.engine.getBattleMgr().getPlayerMgr().getCurrentSelectedTankID(this.getTeam())) {
                 this.tankAction(cc.KEY.enter);
             }
-            gv.engine.getBattleMgr().getBattleDataModel().setCurrentSelectedTankID(this.getTeam(), this.getID());
+            gv.engine.getBattleMgr().getPlayerMgr().setCurrentSelectedTankID(this.getTeam(), this.getID());
             this.setFlagWorldPosition(touch.getLocation());
             return true;
         } else {

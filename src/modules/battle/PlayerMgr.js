@@ -15,6 +15,8 @@ var PlayerMgr = cc.Class.extend({
         this.setListBaseIDForTeam([], TEAM_2);
         this.setListInventoryForTeam([], TEAM_1);
         this.setListInventoryForTeam([], TEAM_2);
+        this.setListTankIDNotYetSelectForTeam([], TEAM_1);
+        this.setListTankIDNotYetSelectForTeam([], TEAM_2);
         this.setTeamWin(-1);
         this.resetListFlagWorldPosition();
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
@@ -26,11 +28,11 @@ var PlayerMgr = cc.Class.extend({
     getMAPGameObjectID: function () {
         return this._mapGameObjectID;
     },
-    setListFlagWorldPosition: function (m) {
-        this._listFlagWorldPosition = m;
+    setListFlagWorldPosition: function (team, m) {
+        this.getMAPGameObjectID()["_listFlagWorldPosition" + team] = m;
     },
-    getListFlagWorldPosition: function () {
-        return this._listFlagWorldPosition;
+    getListFlagWorldPosition: function (team) {
+        return this.getMAPGameObjectID()["_listFlagWorldPosition" + team];
     },
     setListTankIDForTeam: function (m, team) {
         this.getMAPGameObjectID()["_listTankID" + team] = m;
@@ -43,6 +45,12 @@ var PlayerMgr = cc.Class.extend({
     },
     getListBaseIDForTeam: function (team) {
         return this.getMAPGameObjectID()["_listBaseID" + team];
+    },
+    setListTankIDNotYetSelectForTeam: function (m, team) {
+        this.getMAPGameObjectID()["_listTankIDNotYetSelectForTeam" + team] = m;
+    },
+    getListTankIDNotYetSelectForTeam: function (team) {
+        return this.getMAPGameObjectID()["_listTankIDNotYetSelectForTeam" + team];
     },
     setListInventoryForTeam: function (m, team) {
         this.getMAPGameObjectID()["_listInventory" + team] = m;
@@ -65,8 +73,28 @@ var PlayerMgr = cc.Class.extend({
     isMyTeam: function (m) {
         return m === this.getMyTeam();
     },
+    getNumberPickedTank: function (team) {
+        return this.getListTankIDForTeam(team).length;
+    },
+    setCurrentSelectedTankID: function (team, id) {
+        var oldSelected = this["_currentSelectedTankID" + team];
+        this["_currentSelectedTankID" + team] = id;
+        //remove from not yet select
+        var list = this.getListTankIDNotYetSelectForTeam(team).filter(function (_id) {
+            return _id != id;
+        });
+        //push old
+        if (oldSelected != id) {
+            list.push(oldSelected);
+        }
+        this.setListTankIDNotYetSelectForTeam(list);
+    },
+    getCurrentSelectedTankID: function (team) {
+        return this["_currentSelectedTankID" + team];
+    },
     addTankIDForTeam: function (team, id) {
         this.getListTankIDForTeam(team).push(id);
+        this.getListTankIDNotYetSelectForTeam(team).push(id);
     },
     addBaseIDForTeam: function (team, id) {
         this.getListBaseIDForTeam(team).push(id);
@@ -97,7 +125,8 @@ var PlayerMgr = cc.Class.extend({
         }
     },
     resetListFlagWorldPosition: function () {
-        this.setListFlagWorldPosition([]);
+        this.setListFlagWorldPosition(TEAM_1, []);
+        this.setListFlagWorldPosition(TEAM_2, []);
     },
     isKnockoutKillMainBase: function (id) {
         LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillMainBase", id]);
@@ -205,7 +234,7 @@ var PlayerMgr = cc.Class.extend({
     },
     isAlreadyDoneThrowAllTank: function (team) {
         var maxNumTank = Setting.NUMBER_OF_TANK;
-        var numberPicked = gv.engine.getBattleMgr().getBattleDataModel().getNumberPickedTank(team);
+        var numberPicked = gv.engine.getBattleMgr().getPlayerMgr().getNumberPickedTank(team);
         return numberPicked >= maxNumTank;
     },
     acquirePowerUp: function (team, powerUpID) {
@@ -267,5 +296,23 @@ var PlayerMgr = cc.Class.extend({
             return {team: TEAM_2, powerUpID: list[existed]};
         }
         return null;
+    },
+    autoSelectOtherTankIDForCurrentSelectedFunction: function (team) {
+        this.setCurrentSelectedTankID(this.getListTankIDNotYetSelectForTeam(team)[0]);
+    },
+    setCurrentSelectedTankIDByIndex: function (idx) {
+        var listTankID = this.getListTankIDForTeam(this.getMyTeam());
+        this.setCurrentSelectedTankID(listTankID[idx]);
+    },
+    isTankAliveByIndex: function (idx) {
+        var listTankID = this.getListTankIDForTeam(this.getMyTeam());
+        var tank = gv.engine.getBattleMgr().getGameObjectByID(listTankID[idx]);
+        return tank != null && tank.isAlive();
+    },
+    update: function (dt) {
+
+    },
+    updatePerSecond: function () {
+
     }
 });
