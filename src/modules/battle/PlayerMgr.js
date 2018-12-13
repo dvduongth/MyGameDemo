@@ -152,7 +152,7 @@ var PlayerMgr = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank true isDuringSuddenDeadBattle"]);
             return true;
         }
-        if (!this.isAlreadyDoneThrowAllTank(team)) {
+        if (this.isMyTeam(team) && !this.isAlreadyDoneThrowAllTank(team)) {
             LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank", this.getNumberPickedTank(team), team]);
             return false;
         }

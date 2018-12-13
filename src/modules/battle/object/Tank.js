@@ -704,6 +704,7 @@ var Tank = cc.Sprite.extend({
         args["pos"].y += this.getContentSize().height;
         args["funCall"] = funCall;
         var eff = gv.engine.getEffectMgr().playEffectDragonBones(args);
+        Utility.getInstance().executeFunction(funCall);
     },
     setSelected: function (eff) {
         this.getSelectedSprite().setVisible(eff);

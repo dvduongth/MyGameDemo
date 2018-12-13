@@ -173,6 +173,7 @@ var EffectMgr = cc.Class.extend({
      * animationName || args, animationRun, parent, pos, delay, durationTo, loop, zOder, autoRemove, funCall, isDelayVisibleTime
      * */
     playEffectDragonBones: function (animationName/*or args Object*/, animationRun, parent, pos, delay, durationTo, loop, zOder, autoRemove, funCall, isDelayVisibleTime) {
+        return false;
         if(animationName["animationName"] !== undefined) {
             //animationName is args object
             return this.playEffectDragonBonesByObjectArgument(animationName);

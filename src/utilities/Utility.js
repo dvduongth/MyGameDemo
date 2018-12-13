@@ -152,6 +152,29 @@ var Utility = (function () {
             }
         };
 
+        instance.updateButtonWithFileName = function (btn, fileName) {
+            if (btn == null) {
+                LogUtils.getInstance().error([getName(), "updateButtonWithFileName with sprite null fileName", fileName]);
+                return false;
+            }
+            if (fileName == null) {
+                LogUtils.getInstance().error([getName(), "updateButtonWithFileName with fileName null", fileName]);
+                return false;
+            }
+
+            if (cc.spriteFrameCache.getSpriteFrame(fileName)) {
+                //todo cached
+                if (btn.loadTextures) {
+                    btn.loadTextures(fileName, fileName, fileName, ccui.Widget.PLIST_TEXTURE);
+                }
+            } else {
+                //todo from local
+                if (btn.loadTextures) {
+                    btn.loadTextures(fileName, fileName, fileName, ccui.Widget.LOCAL_TEXTURE);
+                }
+            }
+        };
+
         instance.calculateTimeMove = function (startPoint, endPoint, ratio) {
             startPoint = startPoint || cc.p(0, 0);
             endPoint = endPoint || cc.p(1, 1);
