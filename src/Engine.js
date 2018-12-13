@@ -72,15 +72,16 @@ var Engine = cc.Class.extend({
     },
     viewSceneLogin: function () {
         this.getSceneMgr().viewSceneById(SCENE_ID.LOGIN, true);
+        this.getSoundMusicMgr().playMusicLobby();
     },
     viewSceneLobby: function () {
-        this.getSoundMusicMgr().playMusicLobby();
         this.getSceneMgr().viewSceneById(SCENE_ID.LOBBY);
+        this.getSoundMusicMgr().playMusicLobby();
     },
     viewSceneBattle: function () {
-        this.getSoundMusicMgr().playMusicBattle();
         this.getSceneMgr().viewSceneById(SCENE_ID.BATTLE);
         this.getBattleMgr().startBattle();
+        this.getSoundMusicMgr().playMusicBattle();
     },
     isCurrentSceneBattle: function () {
         return this.getSceneMgr().isCurrentSceneById(SCENE_ID.BATTLE);

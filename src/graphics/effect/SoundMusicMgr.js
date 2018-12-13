@@ -38,15 +38,20 @@ var SoundMusicMgr = cc.Class.extend({
         cc.audioEngine.stopMusic();
     },
     playMusicLobby: function () {
-        //this.stopMusic();
-        //this.playMusic(resSoundMusic.SOUNDS__MUSIC__MUSIC_LOBBY);
+        this.stopMusic();
+        this.playMusic(resSoundMusic.SOUNDS__MUSIC__MUSIC_LOBBY);
     },
     playMusicBattle: function () {
-        //this.stopMusic();
-        //this.playMusic(resSoundMusic.SOUNDS__MUSIC__MUSIC_MAIN_GAME);
+        this.stopMusic();
+        this.playMusic(resSoundMusic.SOUNDS__MUSIC__MUSIC_MAIN_GAME);
     },
     preloadEffect: function (soundPath) {
-        cc.audioEngine.preloadEffect(soundPath);
+        if(soundPath == resSoundMusic.SOUNDS__MUSIC__MUSIC_LOBBY
+        || soundPath == resSoundMusic.SOUNDS__MUSIC__MUSIC_MAIN_GAME) {
+            jsb.AudioEngine.preload(soundPath);
+        }else{
+            cc.audioEngine.preloadEffect(soundPath);
+        }
     },
     playSoundEffectById: function (id) {
         switch (id) {

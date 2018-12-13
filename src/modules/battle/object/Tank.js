@@ -128,6 +128,31 @@ var Tank = cc.Sprite.extend({
     getTankSprite: function () {
         return this._tankSprite;
     },
+    createSelectedSprite: function () {
+        var path;
+        switch (this.getType()) {
+            case TANK_LIGHT:
+                path = resImg.RESOURCES__TEXTURES__TANK__TANK1SELECTED_PNG;
+                break;
+            case TANK_MEDIUM:
+                path = resImg.RESOURCES__TEXTURES__TANK__TANK2SELECTED_PNG;
+                break;
+            case TANK_HEAVY:
+                path = resImg.RESOURCES__TEXTURES__TANK__TANK3SELECTED_PNG;
+                break;
+            default :
+                break;
+        }
+        this._selectedSprite = Utility.getInstance().createSpriteFromFileName(path);
+        this.addChild(this._selectedSprite, -1);
+        this._selectedSprite.setPosition(this.getContentSize().width / 2, this.getContentSize().height / 2);
+    },
+    getSelectedSprite: function () {
+        if(!this._selectedSprite) {
+            this.createSelectedSprite();
+        }
+        return this._selectedSprite;
+    },
     setFlagWorldPosition: function (p) {
         this._flagWorldPosition = p;
     },
@@ -619,6 +644,10 @@ var Tank = cc.Sprite.extend({
         Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
         this.getObjectProgressDisplay().setVisible(false);
         this.removeTouchListenerOneByOneTank();
+        if (this.getID() == gv.engine.getBattleMgr().getPlayerMgr().getCurrentSelectedTankID(this.getTeam())) {
+            this.setSelected(false);
+            gv.engine.getBattleMgr().getPlayerMgr().autoSelectOtherTankIDForCurrentSelectedFunction(this.getTeam());
+        }
         gv.engine.getBattleMgr().checkWinKnockoutKillAllTank(this.getID(), this.getTeam());
         gv.engine.getBattleMgr().removeTank(this.getID());
     },
@@ -667,6 +696,7 @@ var Tank = cc.Sprite.extend({
         this.setListTileLogicPointIndex([]);
     },
     runEffectAppearThrowDown: function (funCall) {
+        gv.engine.getSoundMusicMgr().playSoundEffect(resSoundMusic.SOUNDS__SOUND__THROW_DOWN);
         var args = {};
         args["animationName"] = "eff_appear_fall_down";
         args["animationRun"] = "run";
@@ -674,5 +704,8 @@ var Tank = cc.Sprite.extend({
         args["pos"].y += this.getContentSize().height;
         args["funCall"] = funCall;
         var eff = gv.engine.getEffectMgr().playEffectDragonBones(args);
+    },
+    setSelected: function (eff) {
+        this.getSelectedSprite().setVisible(eff);
     }
 });

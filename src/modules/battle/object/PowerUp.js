@@ -61,6 +61,7 @@ var PowerUp = cc.Sprite.extend({
         this.setIsInActive(true);
     },
     runEffectAppear: function () {
+        gv.engine.getSoundMusicMgr().playSoundEffect(resSoundMusic.SOUNDS__SOUND__APPEAR_POWER_UP);
         var args = {};
         args["animationName"] = "eff_appear_fall_down";
         args["animationRun"] = "run";
@@ -86,11 +87,11 @@ var PowerUp = cc.Sprite.extend({
                         var str = gObj.getGameObjectString();
                         switch (str) {
                             case STRING_TANK:
-                                if(!gObj.isAlive()) {
-                                    return false;
+                                if(gObj.isAlive()) {
+                                    collision = true;
+                                    gv.engine.getBattleMgr().getPlayerMgr().acquirePowerUp(gObj.getTeam(), powerUpID);
+                                    break;
                                 }
-                                collision = true;
-                                gv.engine.getBattleMgr().getPlayerMgr().acquirePowerUp(gObj.getTeam(), powerUpID);
                                 break;
                             default:
                                 break;
@@ -108,6 +109,7 @@ var PowerUp = cc.Sprite.extend({
             }
         }
         if(collision) {
+            gv.engine.getSoundMusicMgr().playSoundEffect(resSoundMusic.SOUNDS__SOUND__GET_POWER_UP);
             this.setIsInActive(false);
         }
     },

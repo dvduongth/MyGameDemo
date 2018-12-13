@@ -17,6 +17,7 @@ var SceneBattle = BaseScene.extend({
         this.btnTank_3 = null;
         this.btnNextTank = null;
         this.btnTankHunt = null;
+        this.btnTankFlagDestination = null;
 
         this._super(resJson.ZCCS__SCENE__BATTLE__SCENEBATTLE);
     },
@@ -82,6 +83,9 @@ var SceneBattle = BaseScene.extend({
             t = Setting.LOOPS_MATCH_END + Setting.LOOPS_SUDDEN_DEATH - t;
         } else {
             t = Setting.LOOPS_MATCH_END - t;
+        }
+        if(t <= 10) {
+            gv.engine.getSoundMusicMgr().playSoundEffect(resSoundMusic.SOUNDS__SOUND__TIME_COUNT);
         }
         this.lbCountdownTime.setString(Utility.getInstance().timeToString(t));
     },
@@ -320,7 +324,7 @@ var SceneBattle = BaseScene.extend({
     checkTankAction: function (touch) {
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
         if (!tank) {
-            LogUtils.getInstance().error([this.getClassName(), "checkTankAction not yet select tank"]);
+            //LogUtils.getInstance().error([this.getClassName(), "checkTankAction not yet select tank"]);
             return false;
         }
         tank.setFlagWorldPosition(touch.getLocation());
@@ -328,6 +332,14 @@ var SceneBattle = BaseScene.extend({
     checkTouchPickTank: function (touch) {
         var worldPos = touch.getLocation();
         var list = [this.imgTank_0, this.imgTank_1, this.imgTank_2];
+        list.push(this.btnBackToLobby);
+        list.push(this.btnClose);
+        list.push(this.btnTank_0);
+        list.push(this.btnTank_1);
+        list.push(this.btnTank_2);
+        list.push(this.btnTank_3);
+        list.push(this.btnNextTank);
+        list.push(this.btnTankHunt);
         var target;
         for (var i = 0; i < list.length; ++i) {
             target = list[i];

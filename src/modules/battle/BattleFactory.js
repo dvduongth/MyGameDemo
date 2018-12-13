@@ -140,6 +140,12 @@ var BattleFactory = cc.Class.extend({
         }
     },
     showTextEndBattle: function () {
+        var teamWin = gv.engine.getBattleMgr().getPlayerMgr().getTeamWin();
+        if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(teamWin)){
+            gv.engine.getSoundMusicMgr().playSoundEffect(resSoundMusic.SOUNDS__SOUND__WIN);
+        }else{
+            gv.engine.getSoundMusicMgr().playSoundEffect(resSoundMusic.SOUNDS__SOUND__LOSE);
+        }
         var path;
         var matchResult = gv.engine.getBattleMgr().getBattleDataModel().getBattleResult();
         switch (matchResult) {

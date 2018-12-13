@@ -78,14 +78,28 @@ var PlayerMgr = cc.Class.extend({
     },
     setCurrentSelectedTankID: function (team, id) {
         var oldSelected = this["_currentSelectedTankID" + team];
+        var tank;
+        if(this.isMyTeam(team) && oldSelected != null) {
+            tank = gv.engine.getBattleMgr().getGameObjectByID(oldSelected);
+            if(tank != null) {
+                tank.setSelected(false);
+            }
+        }
         this["_currentSelectedTankID" + team] = id;
+        tank = gv.engine.getBattleMgr().getGameObjectByID(id);
+        if(this.isMyTeam(team) && tank != null) {
+            tank.setSelected(true);
+        }
         //remove from not yet select
         var list = this.getListTankIDNotYetSelectForTeam(team).filter(function (_id) {
             return _id != id;
         });
         //push old
-        if (oldSelected != id) {
-            list.push(oldSelected);
+        if (oldSelected != null && oldSelected != id) {
+            tank = gv.engine.getBattleMgr().getGameObjectByID(oldSelected);
+            if(tank != null && tank.isAlive()) {
+                list.push(oldSelected);
+            }
         }
         this.setListTankIDNotYetSelectForTeam(list);
     },
@@ -139,7 +153,7 @@ var PlayerMgr = cc.Class.extend({
             return true;
         }
         if (!this.isAlreadyDoneThrowAllTank(team)) {
-            LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank"]);
+            LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank", this.getNumberPickedTank(team), team]);
             return false;
         }
         var listTankID = this.getListTankIDForTeam(team);
@@ -208,7 +222,7 @@ var PlayerMgr = cc.Class.extend({
         var _this = this;
         this.setEnemyTeam(TEAM_2);
         for (var i = 0; i < Setting.NUMBER_OF_TANK; ++i) {
-            Utility.getInstance().callFunctionWithDelay(i * 0.9, function () {
+            Utility.getInstance().callFunctionWithDelay(i * 2, function () {
                 _this.randomThrowBotTank();
             });
         }
@@ -298,11 +312,15 @@ var PlayerMgr = cc.Class.extend({
         return null;
     },
     autoSelectOtherTankIDForCurrentSelectedFunction: function (team) {
-        this.setCurrentSelectedTankID(this.getListTankIDNotYetSelectForTeam(team)[0]);
+        this.setCurrentSelectedTankID(team, this.getListTankIDNotYetSelectForTeam(team).shift());
     },
     setCurrentSelectedTankIDByIndex: function (idx) {
         var listTankID = this.getListTankIDForTeam(this.getMyTeam());
-        this.setCurrentSelectedTankID(listTankID[idx]);
+        var tankID = listTankID[idx];
+        var tank = gv.engine.getBattleMgr().getGameObjectByID(tankID);
+        if(tank != null && tank.isAlive()) {
+            this.setCurrentSelectedTankID(this.getMyTeam(), tankID);
+        }
     },
     isTankAliveByIndex: function (idx) {
         var listTankID = this.getListTankIDForTeam(this.getMyTeam());

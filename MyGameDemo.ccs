@@ -592,6 +592,7 @@
               <Image Name="RewindButton.png" />
             </Folder>
             <Image Name="clock.png" />
+            <Image Name="destination_point.png" />
             <Image Name="progress_bg.png" />
             <Image Name="progress_bule.png" />
             <Image Name="progress_red.png" />
