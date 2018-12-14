@@ -35,6 +35,7 @@ var SceneBattle = BaseScene.extend({
         this.createKeyBoardListener();
         this.createTouchListenerOneByOne();
         this.createTouchListenerOneByOneTank();
+        this.setIsUseMarkFlagDestinationForSelectedTank(false);
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
     },
     initDisplayPickTankSlot: function () {
@@ -343,6 +344,17 @@ var SceneBattle = BaseScene.extend({
         this.removeLayerGreenLimitThrowTank();
     },
 
+    checkMarkDestinationPointTankAction: function (touch) {
+        if(!this.isUseMarkFlagDestinationForSelectedTank()) {
+            return false;
+        }
+        var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
+        if (!tank) {
+            //LogUtils.getInstance().error([this.getClassName(), "checkTankAction not yet select tank"]);
+            return false;
+        }
+        tank.pushListFlagMarkDestinationPointInfo(touch.getLocation());
+    },
     checkTankAction: function (touch) {
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
         if (!tank) {
@@ -362,6 +374,7 @@ var SceneBattle = BaseScene.extend({
         list.push(this.btnTank_3);
         list.push(this.btnNextTank);
         list.push(this.btnTankHunt);
+        list.push(this.btnTankFlagDestination);
         var target;
         for (var i = 0; i < list.length; ++i) {
             target = list[i];
@@ -399,6 +412,7 @@ var SceneBattle = BaseScene.extend({
 
         LogUtils.getInstance().log([this.getClassName(), "onTouchBegan check tank action"]);
         this.checkTankAction(touch);
+
         return true;
     },
     onTouchMoved: function (touch, event) {
@@ -511,6 +525,13 @@ var SceneBattle = BaseScene.extend({
             tank.setDirection(DIRECTION_IDLE);
         }
     },
+    setIsUseMarkFlagDestinationForSelectedTank: function (eff) {
+        this._isUseMarkFlagDestinationForSelectedTank = eff;
+    },
+    isUseMarkFlagDestinationForSelectedTank: function () {
+        return this._isUseMarkFlagDestinationForSelectedTank;
+    },
+
     onTouchUIEndEvent: function (sender) {
         switch (sender) {
             case this.btnBackToLobby:
@@ -542,6 +563,9 @@ var SceneBattle = BaseScene.extend({
                 break;
             case this.btnTank_3:
                 this.setSelectTankForControlByIndex(3);
+                break;
+            case this.btnTankFlagDestination:
+                this.setIsUseMarkFlagDestinationForSelectedTank(!this.isUseMarkFlagDestinationForSelectedTank());
                 break;
         }
     },

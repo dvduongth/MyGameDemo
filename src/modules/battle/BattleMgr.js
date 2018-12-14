@@ -125,7 +125,7 @@ var BattleMgr = cc.Class.extend({
             if (tank != null) {
                 this.getPlayerMgr().addTankIDForTeam(team, tank.getID());
                 if (this.getPlayerMgr().isMyTeam(team) && gv.engine.isCurrentSceneBattle()) {
-                    gv.engine.getSceneBattleIfExist().setSelectTankForControlByIndex(this.getPlayerMgr().getNumberPickedTank(team) - 1);
+                    gv.engine.getSceneBattleIfExist().setSelectTankForControlByIndex(this.getPlayerMgr().getNumberPickedTankForTeam(team) - 1);
                 } else {
                     this.getPlayerMgr().setCurrentSelectedTankID(team, tank.getID());
                 }

@@ -17,6 +17,8 @@ var PlayerMgr = cc.Class.extend({
         this.setListInventoryForTeam([], TEAM_2);
         this.setListTankIDNotYetSelectForTeam([], TEAM_1);
         this.setListTankIDNotYetSelectForTeam([], TEAM_2);
+        this.setNumberPickedTankForTeam(TEAM_1, 0);
+        this.setNumberPickedTankForTeam(TEAM_2, 0);
         this.setTeamWin(-1);
         this.resetListFlagWorldPosition();
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
@@ -73,8 +75,14 @@ var PlayerMgr = cc.Class.extend({
     isMyTeam: function (m) {
         return m === this.getMyTeam();
     },
-    getNumberPickedTank: function (team) {
-        return this.getListTankIDForTeam(team).length;
+    setNumberPickedTankForTeam: function (team, n) {
+        this["_numberPickedTankForTeam" + team] = n;
+    },
+    getNumberPickedTankForTeam: function (team) {
+        return this["_numberPickedTankForTeam" + team];
+    },
+    autoIncreaseNumberPickedTankForTeam: function (team) {
+        this.setNumberPickedTankForTeam(team, this.getNumberPickedTankForTeam(team) + 1);
     },
     setCurrentSelectedTankID: function (team, id) {
         var oldSelected = this["_currentSelectedTankID" + team];
@@ -109,6 +117,7 @@ var PlayerMgr = cc.Class.extend({
     addTankIDForTeam: function (team, id) {
         this.getListTankIDForTeam(team).push(id);
         this.getListTankIDNotYetSelectForTeam(team).push(id);
+        this.autoIncreaseNumberPickedTankForTeam(team);
     },
     addBaseIDForTeam: function (team, id) {
         this.getListBaseIDForTeam(team).push(id);
@@ -152,8 +161,8 @@ var PlayerMgr = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank true isDuringSuddenDeadBattle"]);
             return true;
         }
-        if (this.isMyTeam(team) && !this.isAlreadyDoneThrowAllTank(team)) {
-            LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank", this.getNumberPickedTank(team), team]);
+        if (!this.isAlreadyDoneThrowAllTank(team)) {
+            LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillAllTank false because of not yet done pick tank", this.getNumberPickedTankForTeam(team), team]);
             return false;
         }
         var listTankID = this.getListTankIDForTeam(team);
@@ -248,7 +257,7 @@ var PlayerMgr = cc.Class.extend({
     },
     isAlreadyDoneThrowAllTank: function (team) {
         var maxNumTank = Setting.NUMBER_OF_TANK;
-        var numberPicked = gv.engine.getBattleMgr().getPlayerMgr().getNumberPickedTank(team);
+        var numberPicked = gv.engine.getBattleMgr().getPlayerMgr().getNumberPickedTankForTeam(team);
         return numberPicked >= maxNumTank;
     },
     acquirePowerUp: function (team, powerUpID) {

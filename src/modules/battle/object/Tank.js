@@ -75,6 +75,7 @@ var Tank = cc.Sprite.extend({
         this.setListTileLogicPointIndex([]);
         this.setEMPCountdown(0);
         this.autoCalculateReachDestinationDeltaDistance();
+        this.setListFlagMarkDestinationPointInfo([]);
     },
     autoCalculateReachDestinationDeltaDistance: function () {
         var tileSize = gv.engine.getBattleMgr().getMapMgr().getTileLogicSize();
@@ -159,6 +160,64 @@ var Tank = cc.Sprite.extend({
     getFlagWorldPosition: function () {
         return this._flagWorldPosition;
     },
+    setListFlagMarkDestinationPointInfo: function (p) {
+        this._listFlagMarkDestinationPointInfo = p;
+    },
+    getListFlagMarkDestinationPointInfo: function () {
+        return this._listFlagMarkDestinationPointInfo;
+    },
+    pushListFlagMarkDestinationPointInfo: function (worldPos) {
+        var parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
+        var spr = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__DESTINATION_POINT_PNG);
+        parent.addChild(spr);
+        spr.setPosition(worldPos);
+        this.getListFlagMarkDestinationPointInfo().push({
+            spr: spr,
+            pos: worldPos
+        });
+    },
+    checkHandleTankActionByFlagDestination: function () {
+        if(this.getFlagWorldPosition() != null) {
+            this.checkForTankActionByWorldPosition(this.getFlagWorldPosition());
+        }else{
+            var list = this.getListFlagMarkDestinationPointInfo();
+            if(list.length > 0) {
+                var info = list.shift();
+                if(info != null) {
+                    this.setFlagWorldPosition(info.pos);
+                    this.checkForTankActionByWorldPosition(this.getFlagWorldPosition());
+                }
+            }
+        }
+    },
+    clearFlagMarkDestinationPointInfoByWorldPosition: function (wPos) {
+        var list = this.getListFlagMarkDestinationPointInfo();
+        var exitedIdx = list.findIndex(function (info) {
+            var pos = info.pos;
+            if(pos.x == wPos.x && pos.y == wPos.y) {
+                return true;
+            }
+            if(Math.floor(pos.x) == Math.floor(wPos.x) && Math.floor(pos.y) == Math.floor(wPos.y)) {
+                return true;
+            }
+            return false;
+        });
+        if(exitedIdx != -1) {
+            var info = list[exitedIdx];
+            if(info != null) {
+                info.spr.removeFromParent(true);
+            }
+            list.splice(exitedIdx, 1);
+        }
+    },
+    clearAllFlagMarkDestinationPointInfo: function () {
+        var list = this.getListFlagMarkDestinationPointInfo();
+        list.forEach(function (info) {
+            info.spr.removeFromParent(true);
+        });
+        this.setListFlagMarkDestinationPointInfo([]);
+    },
+
     createTouchListenerOneByOneTank: function () {
         this.removeTouchListenerOneByOneTank();
         var _this = this;
@@ -233,6 +292,7 @@ var Tank = cc.Sprite.extend({
         //todo check reach destination pos
         var d = cc.pDistance(cc.POINT_ZERO, delta);
         if(d <= this.getReachDestinationDeltaDistance()) {
+            this.clearFlagMarkDestinationPointInfoByWorldPosition(this.getFlagWorldPosition());
             this.setFlagWorldPosition(null);
             this.tankAction(null);
         }
@@ -444,9 +504,7 @@ var Tank = cc.Sprite.extend({
         if (this.isBot()) {
             this.randomBotTankAction();
         } else {
-            if(this.getFlagWorldPosition() != null) {
-                this.checkForTankActionByWorldPosition(this.getFlagWorldPosition());
-            }
+            this.checkHandleTankActionByFlagDestination();
         }
         if (this.getDirection() == DIRECTION_IDLE) {
             return false;
@@ -637,6 +695,7 @@ var Tank = cc.Sprite.extend({
             default :
                 break;
         }
+        this.clearAllFlagMarkDestinationPointInfo();
         var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_TANK);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
@@ -704,7 +763,6 @@ var Tank = cc.Sprite.extend({
         args["pos"].y += this.getContentSize().height;
         args["funCall"] = funCall;
         var eff = gv.engine.getEffectMgr().playEffectDragonBones(args);
-        Utility.getInstance().executeFunction(funCall);
     },
     setSelected: function (eff) {
         this.getSelectedSprite().setVisible(eff);
