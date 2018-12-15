@@ -173,10 +173,10 @@ var EffectMgr = cc.Class.extend({
      * animationName || args, animationRun, parent, pos, delay, durationTo, loop, zOder, autoRemove, funCall, isDelayVisibleTime
      * */
     playEffectDragonBones: function (animationName/*or args Object*/, animationRun, parent, pos, delay, durationTo, loop, zOder, autoRemove, funCall, isDelayVisibleTime) {
-        if(animationName["animationName"] !== undefined) {
+        if (animationName["animationName"] !== undefined) {
             //animationName is args object
             return this.playEffectDragonBonesByObjectArgument(animationName);
-        }else{
+        } else {
             var args = {};
             args["animationName"] = animationName;
             args["animationRun"] = animationRun;
@@ -208,62 +208,63 @@ var EffectMgr = cc.Class.extend({
         if (isDelayVisibleTime === undefined) {
             isDelayVisibleTime = false;
         }
-
-        Utility.getInstance().executeFunction(funCall);//todo test rm after
-        return false;//todo test edit after
-
-        var effect = Utility.getInstance().createAnimationDragonBones(animationName);
-        if (effect == null) {
-            LogUtils.getInstance().log("fail effect " + animationName);
+        try {
+            var effect = Utility.getInstance().createAnimationDragonBones(animationName);
+            if (effect == null) {
+                LogUtils.getInstance().log("fail effect " + animationName);
+                return null;
+            }
+            if (pos === undefined) {
+                pos = cc.p(gv.WIN_SIZE.width / 2, gv.WIN_SIZE.height / 2);
+            }
+            effect.setPosition(pos.x, pos.y);
+            if (zOder === undefined) {
+                zOder = 100;
+            }
+            if (parent === undefined) {
+                parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
+            }
+            parent.addChild(effect, zOder);
+            if (isDelayVisibleTime) {
+                effect.visible = false;
+                setTimeout(function () {
+                    if (effect) {
+                        try {
+                            if (!effect.removed) {
+                                effect.visible = true;
+                            }
+                        } catch (exp) {
+                            cc.error("can not set visible is true for effect");
+                        }
+                    }
+                }, 5);
+            }
+            if (animationRun === undefined) {
+                animationRun = "run";
+            }
+            if (delay === undefined) {
+                delay = -1;
+            }
+            if (durationTo === undefined) {
+                durationTo = -1;
+            }
+            if (loop === undefined) {
+                loop = 1;
+            }
+            effect.gotoAndPlay(animationRun, delay, durationTo, loop);
+            if (funCall !== undefined && funCall !== null) {
+                effect._funCall = funCall;
+            }
+            effect._autoRemove = autoRemove;
+            if (autoRemove === undefined) {
+                effect._autoRemove = true;
+            }
+            effect.setCompleteListener(this.onFinishEffect);
+            return effect;
+        } catch (err) {
+            Utility.getInstance().executeFunction(funCall);
             return null;
         }
-        if (pos === undefined) {
-            pos = cc.p(gv.WIN_SIZE.width / 2, gv.WIN_SIZE.height / 2);
-        }
-        effect.setPosition(pos.x, pos.y);
-        if (zOder === undefined) {
-            zOder = 100;
-        }
-        if (parent === undefined) {
-            parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
-        }
-        parent.addChild(effect, zOder);
-        if (isDelayVisibleTime) {
-            effect.visible = false;
-            setTimeout(function () {
-                if (effect) {
-                    try {
-                        if (!effect.removed) {
-                            effect.visible = true;
-                        }
-                    } catch (exp) {
-                        cc.error("can not set visible is true for effect");
-                    }
-                }
-            }, 5);
-        }
-        if (animationRun === undefined) {
-            animationRun = "run";
-        }
-        if (delay === undefined) {
-            delay = -1;
-        }
-        if (durationTo === undefined) {
-            durationTo = -1;
-        }
-        if (loop === undefined) {
-            loop = 1;
-        }
-        effect.gotoAndPlay(animationRun, delay, durationTo, loop);
-        if (funCall !== undefined && funCall !== null) {
-            effect._funCall = funCall;
-        }
-        effect._autoRemove = autoRemove;
-        if (autoRemove === undefined) {
-            effect._autoRemove = true;
-        }
-        effect.setCompleteListener(this.onFinishEffect);
-        return effect;
     },
     onFinishEffect: function (effect) {
         LogUtils.getInstance().log("End Effect");
