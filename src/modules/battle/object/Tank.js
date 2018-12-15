@@ -79,7 +79,7 @@ var Tank = cc.Sprite.extend({
     },
     autoCalculateReachDestinationDeltaDistance: function () {
         var tileSize = gv.engine.getBattleMgr().getMapMgr().getTileLogicSize();
-        var d = cc.pDistance(cc.POINT_ZERO, cc.p(tileSize.width,tileSize.height));
+        var d = cc.pDistance(cc.POINT_ZERO, cc.p(tileSize.width, tileSize.height));
         this._destinationDeltaDistance = d * Setting.REACH_DESTINATION_DELTA_NUMBER_TILE;
     },
     getReachDestinationDeltaDistance: function () {
@@ -149,13 +149,18 @@ var Tank = cc.Sprite.extend({
         this._selectedSprite.setPosition(this.getContentSize().width / 2, this.getContentSize().height / 2);
     },
     getSelectedSprite: function () {
-        if(!this._selectedSprite) {
+        if (!this._selectedSprite) {
             this.createSelectedSprite();
         }
         return this._selectedSprite;
     },
-    setFlagWorldPosition: function (p) {
-        this._flagWorldPosition = p;
+    setMoveDestinationWorldPosition: function (wPos) {
+        this._flagWorldPosition = wPos;
+        if(wPos != null) {
+            this.getDestinationPointDisplay().setPosition(wPos);
+        }else{
+            this.clearDestinationPointDisplay();
+        }
     },
     getFlagWorldPosition: function () {
         return this._flagWorldPosition;
@@ -171,51 +176,83 @@ var Tank = cc.Sprite.extend({
         var spr = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__DESTINATION_POINT_PNG);
         parent.addChild(spr);
         spr.setPosition(worldPos);
+        spr.runAction(cc.sequence(cc.fadeOut(1),cc.fadeIn(0.4)).repeatForever());
         this.getListFlagMarkDestinationPointInfo().push({
             spr: spr,
             pos: worldPos
         });
     },
+    createDestinationPointDisplay: function () {
+        var parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
+        var spr = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__DESTINATION_TOUCH_PNG);
+        parent.addChild(spr);
+        var opacity = 255;
+        if(!gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())){
+            spr.setColor(cc.color.RED);
+            opacity = 50;
+        }
+        spr.runAction(cc.sequence(cc.fadeOut(0.4),cc.fadeTo(0.25, opacity)).repeatForever());
+        return spr;
+    },
+    getDestinationPointDisplay: function () {
+        if(!this._destinationPointDisplay) {
+            this._destinationPointDisplay = this.createDestinationPointDisplay();
+        }
+        return this._destinationPointDisplay;
+    },
+    clearDestinationPointDisplay: function () {
+        if(this._destinationPointDisplay != null) {
+            this._destinationPointDisplay.removeFromParent(true);
+            this._destinationPointDisplay = null;
+        }
+    },
     checkHandleTankActionByFlagDestination: function () {
-        if(this.getFlagWorldPosition() != null) {
+        if (this.getFlagWorldPosition() != null) {
             this.checkForTankActionByWorldPosition(this.getFlagWorldPosition());
-        }else{
+        } else {
             var list = this.getListFlagMarkDestinationPointInfo();
-            if(list.length > 0) {
-                var info = list.shift();
-                if(info != null) {
-                    this.setFlagWorldPosition(info.pos);
+            if (list.length > 0) {
+                var info = list[0];
+                if (info != null) {
+                    LogUtils.getInstance().log([this.getClassName(), "checkHandleTankActionByFlagDestination auto set next flag destination", list.length]);
+                    this.setMoveDestinationWorldPosition(info.pos);
                     this.checkForTankActionByWorldPosition(this.getFlagWorldPosition());
                 }
             }
         }
     },
     clearFlagMarkDestinationPointInfoByWorldPosition: function (wPos) {
+        LogUtils.getInstance().log([this.getClassName(), "clearFlagMarkDestinationPointInfoByWorldPosition"]);
         var list = this.getListFlagMarkDestinationPointInfo();
         var exitedIdx = list.findIndex(function (info) {
             var pos = info.pos;
-            if(pos.x == wPos.x && pos.y == wPos.y) {
+            if (pos.x == wPos.x && pos.y == wPos.y) {
                 return true;
             }
-            if(Math.floor(pos.x) == Math.floor(wPos.x) && Math.floor(pos.y) == Math.floor(wPos.y)) {
+            if (Math.floor(pos.x) == Math.floor(wPos.x) && Math.floor(pos.y) == Math.floor(wPos.y)) {
                 return true;
             }
             return false;
         });
-        if(exitedIdx != -1) {
+        if (exitedIdx != -1) {
             var info = list[exitedIdx];
-            if(info != null) {
+            if (info != null) {
                 info.spr.removeFromParent(true);
             }
             list.splice(exitedIdx, 1);
+            LogUtils.getInstance().log([this.getClassName(), "clearFlagMarkDestinationPointInfoByWorldPosition success", exitedIdx]);
+        } else {
+            LogUtils.getInstance().log([this.getClassName(), "clearFlagMarkDestinationPointInfoByWorldPosition not existed", wPos.x, wPos.y]);
         }
     },
     clearAllFlagMarkDestinationPointInfo: function () {
+        LogUtils.getInstance().log([this.getClassName(), "clearAllFlagMarkDestinationPointInfo"]);
         var list = this.getListFlagMarkDestinationPointInfo();
         list.forEach(function (info) {
             info.spr.removeFromParent(true);
         });
         this.setListFlagMarkDestinationPointInfo([]);
+        this.clearDestinationPointDisplay();
     },
 
     createTouchListenerOneByOneTank: function () {
@@ -250,7 +287,7 @@ var Tank = cc.Sprite.extend({
                 this.tankAction(cc.KEY.enter);
             }
             gv.engine.getBattleMgr().getPlayerMgr().setCurrentSelectedTankID(this.getTeam(), this.getID());
-            this.setFlagWorldPosition(touch.getLocation());
+            this.clearAllFlagMarkDestinationPointInfo();
             return true;
         } else {
             //LogUtils.getInstance().log([this.getClassName(), "touch not correct"]);
@@ -258,42 +295,88 @@ var Tank = cc.Sprite.extend({
         }
     },
     onTouchMovedTank: function (touch, event) {
-        this.setFlagWorldPosition(touch.getLocation());
+        this.setMoveDestinationWorldPosition(touch.getLocation());
         return true;
     },
     onTouchEndedTank: function (touch, event) {
         this.tankAction(null);
-        this.setFlagWorldPosition(null);
+        this.setMoveDestinationWorldPosition(null);
     },
     onTouchCancelledTank: function (touch, event) {
         this.tankAction(null);
-        this.setFlagWorldPosition(null);
+        this.setMoveDestinationWorldPosition(null);
     },
     checkForTankActionByWorldPosition: function (touchPos) {
         var target = this;
         var parent = target.getParent();
         var worldPos = parent.convertToWorldSpace(target.getPosition());
         var delta = cc.pSub(touchPos, worldPos);
+        var mapMgr = gv.engine.getBattleMgr().getMapMgr();
         if (Math.abs(delta.x) > Math.abs(delta.y)) {
             if (delta.x > 0) {
                 //move to right
-                this.tankAction(cc.KEY.right);
+                if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_RIGHT, 1)) {
+                    this.tankAction(cc.KEY.right);
+                } else {
+                    //find other way
+                    if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_UP, 1)) {
+                        this.tankAction(cc.KEY.up);
+                    } else if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_LEFT, 1)) {
+                        this.tankAction(cc.KEY.left);
+                    } else if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_DOWN, 1)) {
+                        this.tankAction(cc.KEY.down);
+                    }
+                }
             } else {
-                this.tankAction(cc.KEY.left);
+                if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_LEFT, 1)) {
+                    this.tankAction(cc.KEY.left);
+                } else {
+                    //find other way
+                    if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_DOWN, 1)) {
+                        this.tankAction(cc.KEY.down);
+                    } else if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_RIGHT, 1)) {
+                        this.tankAction(cc.KEY.right);
+                    } else if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_UP, 1)) {
+                        this.tankAction(cc.KEY.up);
+                    }
+                }
             }
         } else {
             if (delta.y > 0) {
                 //move to top
-                this.tankAction(cc.KEY.up);
+                if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_UP, 1)) {
+                    this.tankAction(cc.KEY.up);
+                } else {
+                    //find other way
+                    if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_LEFT, 1)) {
+                        this.tankAction(cc.KEY.left);
+                    } else if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_DOWN, 1)) {
+                        this.tankAction(cc.KEY.down);
+                    } else if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_RIGHT, 1)) {
+                        this.tankAction(cc.KEY.right);
+                    }
+                }
             } else {
-                this.tankAction(cc.KEY.down);
+                if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_DOWN, 1)) {
+                    this.tankAction(cc.KEY.down);
+                } else {
+                    //find other way
+                    if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_RIGHT, 1)) {
+                        this.tankAction(cc.KEY.right);
+                    } else if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_UP, 1)) {
+                        this.tankAction(cc.KEY.up);
+                    } else if (mapMgr.isCanMoveTankByIdWithDirection(this.getID(), DIRECTION_LEFT, 1)) {
+                        this.tankAction(cc.KEY.left);
+                    }
+                }
             }
         }
         //todo check reach destination pos
         var d = cc.pDistance(cc.POINT_ZERO, delta);
-        if(d <= this.getReachDestinationDeltaDistance()) {
+        if (d <= this.getReachDestinationDeltaDistance()) {
+            LogUtils.getInstance().log([this.getClassName(), "checkForTankActionByWorldPosition reach flag"]);
             this.clearFlagMarkDestinationPointInfoByWorldPosition(this.getFlagWorldPosition());
-            this.setFlagWorldPosition(null);
+            this.setMoveDestinationWorldPosition(null);
             this.tankAction(null);
         }
     },
@@ -325,12 +408,6 @@ var Tank = cc.Sprite.extend({
                 tank.setDirection(DIRECTION_IDLE);
                 break;
         }
-    },
-    setIsBot: function (eff) {
-        this._isBot = eff;
-    },
-    isBot: function () {
-        return this._isBot;
     },
     resetHP: function () {
         switch (this.getType()) {
@@ -491,21 +568,13 @@ var Tank = cc.Sprite.extend({
         LogUtils.getInstance().log([this.getClassName(), "STOP Hunt"]);
         this.removeActionHunt();
     },
-    randomBotTankAction: function () {
-        var actionKey = [cc.KEY.up, cc.KEY.down, cc.KEY.right, cc.KEY.left, null];
-        this.tankAction(actionKey[Utility.getInstance().randomBetweenRound(0, 4)]);
-    },
     // Draw - obvious comment is obvious
     update: function (dt) {
         if (this.getEMPCountdown() > 0) {
             this.autoCountdownEMP();
             return false;
         }
-        if (this.isBot()) {
-            this.randomBotTankAction();
-        } else {
-            this.checkHandleTankActionByFlagDestination();
-        }
+        this.checkHandleTankActionByFlagDestination();
         if (this.getDirection() == DIRECTION_IDLE) {
             return false;
         }
@@ -706,6 +775,8 @@ var Tank = cc.Sprite.extend({
         if (this.getID() == gv.engine.getBattleMgr().getPlayerMgr().getCurrentSelectedTankID(this.getTeam())) {
             this.setSelected(false);
             gv.engine.getBattleMgr().getPlayerMgr().autoSelectOtherTankIDForCurrentSelectedFunction(this.getTeam());
+        } else {
+            gv.engine.getBattleMgr().getPlayerMgr().removeTankIDNotYetSelectForTeam(this.getTeam(), this.getID());
         }
         gv.engine.getBattleMgr().checkWinKnockoutKillAllTank(this.getID(), this.getTeam());
         gv.engine.getBattleMgr().removeTank(this.getID());
@@ -716,9 +787,15 @@ var Tank = cc.Sprite.extend({
     getGameObjectString: function () {
         return this._gameObjectString;
     },
+    /**
+     * @param {GameObjectPointIndex} l
+     * */
     setGameObjectSizeNumberPoint: function (l) {
         this._gameObjectSizeNumberPoint = l;
     },
+    /**
+     * @return {GameObjectPointIndex}
+     * */
     getGameObjectSizeNumberPoint: function () {
         return this._gameObjectSizeNumberPoint;
     },

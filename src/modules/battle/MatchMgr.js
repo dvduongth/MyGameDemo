@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * MatchMgr manage game logic
  * */
@@ -205,7 +205,6 @@ var MatchMgr = cc.Class.extend({
         if (curT >= Setting.LOOPS_MATCH_END) {
             if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutTimeUpSuddenDead()) {
                 //todo show win
-                this.finishBattle();
                 var teamWin = gv.engine.getBattleMgr().getPlayerMgr().getTeamWin();
                 this.setMatchResult(teamWin == TEAM_1 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
                 gv.engine.getBattleMgr().endBattle();
@@ -213,7 +212,6 @@ var MatchMgr = cc.Class.extend({
             }
             if (curT >= (Setting.LOOPS_MATCH_END + Setting.LOOPS_SUDDEN_DEATH)) {
                 //todo show bad draw
-                this.finishBattle();
                 gv.engine.getBattleMgr().endBattle();//display before
                 this.setMatchResult(MATCH_RESULT_DRAW);//logic after
             } else {
@@ -222,12 +220,10 @@ var MatchMgr = cc.Class.extend({
         }
     },
     checkLogicWinKnockoutKillAllTank: function (id, team) {
-        gv.engine.getBattleMgr().getPlayerMgr().removeTankID(id);
         if (gv.engine.getBattleMgr().getPlayerMgr().isKnockoutKillAllTank(team)) {
             var teamWin = team == TEAM_2 ? TEAM_1 : TEAM_2;
             gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
             //todo show win
-            this.finishBattle();
             this.setMatchResult(team == TEAM_2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
             gv.engine.getBattleMgr().endBattle();
         }
@@ -238,7 +234,6 @@ var MatchMgr = cc.Class.extend({
             var teamWin = team == TEAM_2 ? TEAM_1 : TEAM_2;
             gv.engine.getBattleMgr().getPlayerMgr().setTeamWin(teamWin);
             //todo show win
-            this.finishBattle();
             this.setMatchResult(team == TEAM_2 ? MATCH_RESULT_TEAM_1_WIN : MATCH_RESULT_TEAM_2_WIN);
             gv.engine.getBattleMgr().endBattle();
         }

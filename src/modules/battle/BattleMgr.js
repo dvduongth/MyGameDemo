@@ -64,8 +64,7 @@ var BattleMgr = cc.Class.extend({
             return false;//todo during pause
         }
         this.getMatchMgr().update(dt);
-        // Update all strike
-        this.getPlayerMgr().checkAutoUsePowerUp();
+        this.getPlayerMgr().update(dt);
     },
     updatePerSecond: function () {
         if (this.getMatchMgr().isPauseGame()) {
@@ -77,6 +76,7 @@ var BattleMgr = cc.Class.extend({
             sceneBattle.countDownTimeUp();//update display
         }
         this.getMatchMgr().updatePerSecond();
+        this.getPlayerMgr().updatePerSecond();
     },
     spawnPowerUp: function () {
         var powerUp = this.getBattleFactory().spawnPowerUpFactory();
@@ -134,7 +134,6 @@ var BattleMgr = cc.Class.extend({
                 this.getMatchMgr().findSuitableLocationForThrowTank(tank);
                 tank.runEffectAppearThrowDown(function () {
                     tank.tankAction(cc.KEY.enter);
-                    tank.setIsBot(isBot);
                 });
                 return tank;
             } else {
@@ -197,6 +196,7 @@ var BattleMgr = cc.Class.extend({
         this.getMatchMgr().stopGunAllTank();
         this.getBattleFactory().showTextEndBattle();
         Utility.getInstance().callFunctionWithDelay(1, function () {
+            _this.getMatchMgr().finishBattle();
             _this.getMatchMgr().destroyAllBullet();
         });
     }

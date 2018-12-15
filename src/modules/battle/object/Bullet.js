@@ -247,9 +247,15 @@ var Bullet = cc.Sprite.extend({
     getGameObjectString: function () {
         return this._gameObjectString;
     },
+    /**
+     * @param {GameObjectPointIndex} l
+     * */
     setGameObjectSizeNumberPoint: function (l) {
         this._gameObjectSizeNumberPoint = l;
     },
+    /**
+     * @return {GameObjectPointIndex} l
+     * */
     getGameObjectSizeNumberPoint: function () {
         return this._gameObjectSizeNumberPoint;
     },

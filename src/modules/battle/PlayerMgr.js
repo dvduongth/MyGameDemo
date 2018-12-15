@@ -20,7 +20,7 @@ var PlayerMgr = cc.Class.extend({
         this.setNumberPickedTankForTeam(TEAM_1, 0);
         this.setNumberPickedTankForTeam(TEAM_2, 0);
         this.setTeamWin(-1);
-        this.resetListFlagWorldPosition();
+        this.setListBotID([]);
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
@@ -30,11 +30,11 @@ var PlayerMgr = cc.Class.extend({
     getMAPGameObjectID: function () {
         return this._mapGameObjectID;
     },
-    setListFlagWorldPosition: function (team, m) {
-        this.getMAPGameObjectID()["_listFlagWorldPosition" + team] = m;
+    setListBotID: function (m) {
+        this._listBotID = m;
     },
-    getListFlagWorldPosition: function (team) {
-        return this.getMAPGameObjectID()["_listFlagWorldPosition" + team];
+    getListBotID: function () {
+        return this._listBotID;
     },
     setListTankIDForTeam: function (m, team) {
         this.getMAPGameObjectID()["_listTankID" + team] = m;
@@ -84,32 +84,49 @@ var PlayerMgr = cc.Class.extend({
     autoIncreaseNumberPickedTankForTeam: function (team) {
         this.setNumberPickedTankForTeam(team, this.getNumberPickedTankForTeam(team) + 1);
     },
-    setCurrentSelectedTankID: function (team, id) {
-        var oldSelected = this["_currentSelectedTankID" + team];
-        var tank;
-        if(this.isMyTeam(team) && oldSelected != null) {
-            tank = gv.engine.getBattleMgr().getGameObjectByID(oldSelected);
-            if(tank != null) {
-                tank.setSelected(false);
-            }
-        }
-        this["_currentSelectedTankID" + team] = id;
-        tank = gv.engine.getBattleMgr().getGameObjectByID(id);
-        if(this.isMyTeam(team) && tank != null) {
-            tank.setSelected(true);
-        }
-        //remove from not yet select
+    removeTankIDNotYetSelectForTeam: function (team, id) {
+        LogUtils.getInstance().log([this.getClassName(), "removeTankIDNotYetSelectForTeam", team, id]);
         var list = this.getListTankIDNotYetSelectForTeam(team).filter(function (_id) {
             return _id != id;
         });
-        //push old
-        if (oldSelected != null && oldSelected != id) {
-            tank = gv.engine.getBattleMgr().getGameObjectByID(oldSelected);
-            if(tank != null && tank.isAlive()) {
-                list.push(oldSelected);
-            }
-        }
         this.setListTankIDNotYetSelectForTeam(list);
+    },
+    pushTankIDNotYetSelectForTeam: function (team, id) {
+        LogUtils.getInstance().log([this.getClassName(), "pushTankIDNotYetSelectForTeam", team, id]);
+        var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
+        if (tank != null) {
+            tank.setSelected(false);
+            //push old into not yet select
+            if (tank.isAlive()) {
+                this.getListTankIDNotYetSelectForTeam(team).push(id);
+                LogUtils.getInstance().log([this.getClassName(), "pushTankIDNotYetSelectForTeam success", team, id]);
+            }
+        } else {
+            LogUtils.getInstance().error([this.getClassName(), "pushTankIDNotYetSelectForTeam tank null"]);
+        }
+    },
+    setCurrentSelectedTankID: function (team, id) {
+        if (!this.isMyTeam(team)) {
+            return false;
+        }
+        var oldSelectedID = this["_currentSelectedTankID" + team];
+        if (oldSelectedID == id) {
+            return false;
+        }
+        LogUtils.getInstance().log([this.getClassName(), "setCurrentSelectedTankID", team, id]);
+        //remove from not yet select
+        this.removeTankIDNotYetSelectForTeam(team, id);
+        if (oldSelectedID != null) {
+            this.pushTankIDNotYetSelectForTeam(team, oldSelectedID);
+        }
+        var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
+        if (tank != null && tank.isAlive()) {
+            tank.setSelected(true);
+            this["_currentSelectedTankID" + team] = id;
+            LogUtils.getInstance().log([this.getClassName(), "setCurrentSelectedTankID success", team, id]);
+        } else {
+            LogUtils.getInstance().log([this.getClassName(), "setCurrentSelectedTankID failed", team, id]);
+        }
     },
     getCurrentSelectedTankID: function (team) {
         return this["_currentSelectedTankID" + team];
@@ -146,10 +163,6 @@ var PlayerMgr = cc.Class.extend({
             list = this.getListBaseIDForTeam(TEAM_2);
             this.removeIDFromList(id, list);
         }
-    },
-    resetListFlagWorldPosition: function () {
-        this.setListFlagWorldPosition(TEAM_1, []);
-        this.setListFlagWorldPosition(TEAM_2, []);
     },
     isKnockoutKillMainBase: function (id) {
         LogUtils.getInstance().log([this.getClassName(), "isKnockoutKillMainBase", id]);
@@ -249,6 +262,11 @@ var PlayerMgr = cc.Class.extend({
         tileLogic = gv.engine.getBattleMgr().getMapMgr().getTileLogicByTilePointIndex(tilePointIdx);
         worldPos = tileLogic.getTileWorldPosition();
         var tank = gv.engine.getBattleMgr().throwTank(worldPos, team, type, true);
+        if (tank != null) {
+            this.getListBotID().push(tank.getID());
+        } else {
+            LogUtils.getInstance().error([this.getClassName(), "randomThrowBotTank tank null"]);
+        }
     },
     getRandomMapIndexThrowBotTank: function () {
         var row = Utility.getInstance().randomBetweenRound(Setting.MAP_H - 1 - Setting.MAP_LIMIT_ROW_THROW_TANK, Setting.MAP_H - 2);
@@ -321,13 +339,23 @@ var PlayerMgr = cc.Class.extend({
         return null;
     },
     autoSelectOtherTankIDForCurrentSelectedFunction: function (team) {
-        this.setCurrentSelectedTankID(team, this.getListTankIDNotYetSelectForTeam(team).shift());
+        var id = -1;
+        var found = false;
+        while (!found && this.getListTankIDNotYetSelectForTeam(team).length > 0) {
+            id = this.getListTankIDNotYetSelectForTeam(team).shift();
+            var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
+            found = tank != null && tank.isAlive();
+        }
+        if (found) {
+            this.setCurrentSelectedTankID(team, id);
+        }
     },
     setCurrentSelectedTankIDByIndex: function (idx) {
+        LogUtils.getInstance().log([this.getClassName(), "setCurrentSelectedTankIDByIndex", idx]);
         var listTankID = this.getListTankIDForTeam(this.getMyTeam());
         var tankID = listTankID[idx];
         var tank = gv.engine.getBattleMgr().getGameObjectByID(tankID);
-        if(tank != null && tank.isAlive()) {
+        if (tank != null && tank.isAlive()) {
             this.setCurrentSelectedTankID(this.getMyTeam(), tankID);
         }
     },
@@ -337,9 +365,141 @@ var PlayerMgr = cc.Class.extend({
         return tank != null && tank.isAlive();
     },
     update: function (dt) {
-
+        // Update all strike
+        this.checkAutoUsePowerUp();
     },
     updatePerSecond: function () {
+        this.autoCheckActionForBot();
+    },
+    autoCheckActionForBot: function () {
+        var _this = this;
+        var baseMainId = this.getListBaseIDForTeam(this.getMyTeam()).find(function (id) {
+            var base = gv.engine.getBattleMgr().getGameObjectByID(id);
+            return base != null && base.getType() == BASE_MAIN;
+        });
+        var baseMain = gv.engine.getBattleMgr().getGameObjectByID(baseMainId);
+        if(!baseMain) {
+            //battle ended
+            return false;
+        }
+        var baseMainWPos = baseMain.getWorldPosition();
+        var listBotID = this.getListBotID();
+        listBotID.forEach(function (id) {
+            var botTank = gv.engine.getBattleMgr().getGameObjectByID(id);
+            var wPos = botTank.getWorldPosition();
+            var powerUpPos = _this.autoBotCheckFindNearestPowerupIfExist(id);
+            var tankEnemyPos = _this.autoBotCheckFindNearestEnemyCanAttack(id);
+            var baseSidePos = _this.autoBotCheckFindNearestSideBaseCanAttack(id);
+            var result = baseMainWPos;
+            var curD = cc.pDistance(baseMainWPos, wPos);
+            var d;
+            //check has enemy tank
+            if(tankEnemyPos) {
+                if(powerUpPos) {
+                    result = powerUpPos;
+                    curD = cc.pDistance(powerUpPos, wPos);
+                }
+                d = cc.pDistance(tankEnemyPos, wPos);
+                if(d < curD) {
+                    curD = d;
+                    result = tankEnemyPos;
+                }else{
+                    if(baseSidePos) {
+                        d = cc.pDistance(baseSidePos, wPos);
+                        if(d < curD) {
+                            result = baseSidePos;
+                        }
+                    }
+                }
+            }
+            if(result) {
+                botTank.setMoveDestinationWorldPosition(result);
+            }
+        });
+    },
+    autoBotCheckFindWorldPositionOfListTargetId: function (botId, listID, checkAlive) {
+        var len, i, id, d;
+        var botTank = gv.engine.getBattleMgr().getGameObjectByID(botId);
+        if (botTank != null && botTank.isAlive()) {
+            var foundTarget = null;
+            var curD = null;
+            var botStartTileIdx = botTank.getStartTileLogicPointIndex();
+            len = listID.length;
+            for (i = 0; i < len; ++i) {
+                id = listID[i];
+                var gObj = gv.engine.getBattleMgr().getGameObjectByID(id);
+                if (gObj != null) {
+                    if(checkAlive && !gObj.isAlive()){
+                        continue;//skip this case caused died
+                    }
+                    //kiem tra khoang cach den power up
+                    var powerUpStartTileIdx = gObj.getStartTileLogicPointIndex();
+                    //calculate distance
+                    if (foundTarget == null) {
+                        foundTarget = gObj;
+                    }
+                    d = cc.pDistance(botStartTileIdx, powerUpStartTileIdx);
+                    if (curD == null) {
+                        curD = d;
+                    } else {
+                        if (d < curD) {
+                            foundTarget = gObj;
+                            curD = d;
+                        }
+                    }
+                }
+            }
+            if (foundTarget != null) {
+                return foundTarget.getWorldPosition();
+            } else {
+                //LogUtils.getInstance().error([this.getClassName(), "autoBotCheckFindNearestPowerupIfExist foundTarget null"]);
+            }
+        } else {
+            //LogUtils.getInstance().error([this.getClassName(), "autoBotCheckFindNearestPowerupIfExist bot null or died"]);
+        }
+        return false;
+    },
+    autoBotCheckFindNearestPowerupIfExist: function (botId) {
+        var listID = gv.engine.getBattleMgr().getMatchMgr().getListPowerUpID();
+        return this.autoBotCheckFindWorldPositionOfListTargetId(botId, listID, false);
+    },
+    autoBotCheckFindNearestEnemyCanAttack: function (botId) {
+        var listID = this.getListTankIDForTeam(this.getMyTeam());
+        return this.autoBotCheckFindWorldPositionOfListTargetId(botId, listID, true);
+    },
+    autoBotCheckFindNearestSideBaseCanAttack: function (botId) {
+        var listID = this.getListBaseIDForTeam(this.getMyTeam());
+        listID = listID.filter(function (id) {
+            var base = gv.engine.getBattleMgr().getGameObjectByID(id);
+            return base != null && base.getType() != BASE_MAIN;
+        });
+        return this.autoBotCheckFindWorldPositionOfListTargetId(botId, listID, true);
+    },
+    autoBotCheckMustAvoidEnemyBullet: function (botId) {
+        var botTank = gv.engine.getBattleMgr().getGameObjectByID(botId);
+        if (botTank != null && botTank.isAlive()) {
+            var botStartTileIdx = botTank.getStartTileLogicPointIndex();
+            var botNumTilePoint = botTank.getGameObjectSizeNumberPoint();
+            var rect1 = cc.rect(botStartTileIdx.x, botStartTileIdx.y, botNumTilePoint.x, botNumTilePoint.y);
+            var listID = gv.engine.getBattleMgr().getMatchMgr().getListBulletID();
+            var len = listID.length;
+            for (var i = 0; i < len; ++i) {
+                var id = listID[i];
+                var bullet = gv.engine.getBattleMgr().getGameObjectByID(id);
+                if (bullet != null) {
+                    var bulletStartTileIdx = bullet.getStartTileLogicPointIndex();
+                    var bulletNumTilePoint = bullet.getGameObjectSizeNumberPoint();
+                    var rect2 = cc.rect(bulletStartTileIdx.x, bulletStartTileIdx.y, bulletNumTilePoint.x, bulletNumTilePoint.y);
+                    //isCollisionOverLapRect
+                    //kiem tra cung row hoac cung col
+                    //kiem tra huong bay ve phia bot => dangerous => move away
+                }
+            }
+        }
 
+    },
+    autoCheckObstacleFrontOfBotId: function (botId) {
+        //can not move immediately, no quickly
     }
+
 });

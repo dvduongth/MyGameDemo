@@ -116,9 +116,15 @@ var PowerUp = cc.Sprite.extend({
     getWorldPosition: function () {
         return this.getParent().convertToWorldSpace(this.getPosition());
     },
+    /**
+     * @param {GameObjectPointIndex} l
+     * */
     setGameObjectSizeNumberPoint: function (l) {
         this._gameObjectSizeNumberPoint = l;
     },
+    /**
+     * @return {GameObjectPointIndex} l
+     * */
     getGameObjectSizeNumberPoint: function () {
         return this._gameObjectSizeNumberPoint;
     },

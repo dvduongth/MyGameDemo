@@ -42,7 +42,7 @@ var BattleFactory = cc.Class.extend({
     },
 
     throwTankFactory: function (parent, position, team, type) {
-        LogUtils.getInstance().log([this.getClassName(), "throwTank team", team, "type", type]);
+        LogUtils.getInstance().log([this.getClassName(), "throwTankFactory team", team, "type", type]);
         if (parent != null) {
             var tank = new Tank(this.getTankID(), team, type);
             tank.setLocalZOrder(ZORDER_FORCE_GROUND);
@@ -50,7 +50,7 @@ var BattleFactory = cc.Class.extend({
             parent.addChild(tank);
             tank.setPosition(position);
             this.addTank(tank);
-            LogUtils.getInstance().log([this.getClassName(), "throwTankFactory success"]);
+            LogUtils.getInstance().log([this.getClassName(), "throwTankFactory success", tank.getID()]);
             return tank;
         } else {
             LogUtils.getInstance().error([this.getClassName(), "throwTank with parent null"]);

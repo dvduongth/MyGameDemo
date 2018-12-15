@@ -196,6 +196,154 @@ var MapMgr = cc.Class.extend({
         }else{
             return false;
         }
+    },
+    isCanMoveTankByIdWithDirection: function (id, direction, numTile) {
+        var tank = gv.engine.getBattleMgr().getGameObjectByID(id);
+        if(tank != null) {
+            var sizeNumberPoint = tank.getGameObjectSizeNumberPoint();
+            var isLookingVertical = direction == DIRECTION_UP || direction == DIRECTION_DOWN;
+            var curStartTileLogicPointIdx = tank.getStartTileLogicPointIndex();
+            var up, down, left, right, startLookingIdx;
+            switch (direction) {
+                case DIRECTION_UP:
+                    up = true;
+                    startLookingIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, sizeNumberPoint.row - 1, 0);
+                    //LogUtils.getInstance().log([this.getClassName(), "isCanMoveTankByIdWithDirection up"]);
+                    break;
+                case DIRECTION_DOWN:
+                    down = true;
+                    startLookingIdx = curStartTileLogicPointIdx;
+                    //LogUtils.getInstance().log([this.getClassName(), "isCanMoveTankByIdWithDirection down"]);
+                    break;
+                case DIRECTION_LEFT:
+                    left = true;
+                    startLookingIdx = curStartTileLogicPointIdx;
+                    //LogUtils.getInstance().log([this.getClassName(), "isCanMoveTankByIdWithDirection left"]);
+                    break;
+                case DIRECTION_RIGHT:
+                    right = true;
+                    startLookingIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(curStartTileLogicPointIdx, 0, sizeNumberPoint.col - 1);
+                    //LogUtils.getInstance().log([this.getClassName(), "isCanMoveTankByIdWithDirection right"]);
+                    break;
+                default :
+                    LogUtils.getInstance().error([this.getClassName(), "isCanMoveTankByIdWithDirection direction undefined"]);
+                    break;
+            }
+            //LogUtils.getInstance().log([this.getClassName(), "isCanMoveTankByIdWithDirection curStartTileLogicPointIdx", curStartTileLogicPointIdx.x, curStartTileLogicPointIdx.y, startLookingIdx.x, startLookingIdx.y]);
+            var isEqualPoint = function(p1, p2) {
+                return p1.x == p2.x && p1.y == p2.y;
+            };
+            var findNexIdxEmpty = function(tilePointIdx) {
+                var foundedIdx = null;
+                var dx = 0;
+                var dy = 0;
+                if (up) {
+                    dx = numTile;
+                } else if (down) {
+                    dx = -numTile;
+                } else if (left) {
+                    dy = -numTile;
+                } else if (right) {
+                    dy = numTile;
+                }
+                var nextIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(tilePointIdx, dx, dy);
+                if (!isEqualPoint(nextIdx, tilePointIdx)) {
+                    var existedListId = gv.engine.getBattleMgr().getMapMgr().existedGameObjectOnTileAtTilePointIndex(nextIdx);
+                    if (!existedListId) {
+                        foundedIdx = nextIdx;
+                    } else {
+                        var listBarrierID = existedListId.filter(function (id) {
+                            return gv.engine.getBattleMgr().getMatchMgr().isBarrierGameObjectByID(id);
+                        });
+                        if (listBarrierID.length > 0) {
+                            //stop search
+                            return foundedIdx;
+                        } else {
+                            //can move
+                            foundedIdx = nextIdx;
+                        }
+                    }
+                }
+                return foundedIdx;
+            };
+
+            var i, len, startTileLogicPointIdx, listNextIdx = [];
+            len = isLookingVertical ? sizeNumberPoint.col : sizeNumberPoint.row;
+            for (i = 0; i < len; ++i) {
+                var dx = isLookingVertical ? 0 : i;
+                var dy = isLookingVertical ? i : 0;
+                startTileLogicPointIdx = gv.engine.getBattleMgr().getMapMgr().getNextTileLogicPointIndexByDelta(startLookingIdx, dx, dy);
+                var nextIdx = findNexIdxEmpty(startTileLogicPointIdx, 0, i);
+                if (nextIdx != null) {
+                    if (listNextIdx.length > 0) {
+                        var existedIdx = listNextIdx.findIndex(function (p) {
+                            return isEqualPoint(nextIdx, p);
+                        });
+                        if (existedIdx == -1) {
+                            listNextIdx.push(nextIdx);
+                        }
+                    } else {
+                        listNextIdx.push(nextIdx);
+                    }
+                }
+            }
+            if (listNextIdx.length == len) {
+                var exited, isNoMove, delta;
+                if (up || down) {
+                    exited = listNextIdx.findIndex(function (p) {
+                        return p.x == startLookingIdx.x;
+                    });
+                    isNoMove = exited != -1;
+                    if (isNoMove) {
+                        //LogUtils.getInstance().log([this.getClassName(), "isTankByIdWithDirection no move"]);
+                        return false;
+                    }
+                    if (up) {
+                        var minRow = listNextIdx[0].x;
+                        listNextIdx.forEach(function (p) {
+                            minRow = Math.min(minRow, p.x);
+                        });
+                        delta = minRow - startLookingIdx.x;
+                    } else {
+                        var maxRow = listNextIdx[0].x;
+                        listNextIdx.forEach(function (p) {
+                            maxRow = Math.max(maxRow, p.x);
+                        });
+                        delta = maxRow - startLookingIdx.x;
+                    }
+                    //found
+                    return {delta: delta, direction: direction};
+                }
+                if (left || right) {
+                    exited = listNextIdx.findIndex(function (p) {
+                        return p.y == startLookingIdx.y;
+                    });
+                    isNoMove = exited != -1;
+                    if (isNoMove) {
+                        //LogUtils.getInstance().log([this.getClassName(), "no move"]);
+                        return false;
+                    }
+                    if (right) {
+                        var minCol = listNextIdx[0].y;
+                        listNextIdx.forEach(function (p) {
+                            //LogUtils.getInstance().log(["listNextIdx", p.x, p.y]);
+                            minCol = Math.min(minCol, p.y);
+                        });
+                        delta = minCol - startLookingIdx.y;
+                    } else {
+                        var maxRowCol = listNextIdx[0].y;
+                        listNextIdx.forEach(function (p) {
+                            //LogUtils.getInstance().log(["listNextIdx", p.x, p.y]);
+                            maxRowCol = Math.max(maxRowCol, p.y);
+                        });
+                        delta = maxRowCol - startLookingIdx.y;
+                    }
+                    //found
+                    return {delta: delta, direction: direction};
+                }
+            }
+        }
+        return false;
     }
 });
 function GameObjectPointIndex (row, col){
