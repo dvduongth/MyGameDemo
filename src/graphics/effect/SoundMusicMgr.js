@@ -15,7 +15,7 @@ var SoundMusicMgr = cc.Class.extend({
      * @return {Number|null} the audio id
      * */
     playSoundEffect: function (soundPath, isLoop) {
-        return false;
+        //return false;
         //LogUtils.getInstance().log("playSoundEffect: " + soundPath);
         if (soundPath == undefined) {
             LogUtils.getInstance().error(soundPath + "undefined!");
@@ -32,7 +32,7 @@ var SoundMusicMgr = cc.Class.extend({
         cc.audioEngine.stopAllEffects()
     },
     playMusic: function (musicPath, isLoop) {
-        return false;
+        //return false;
         isLoop = typeof  isLoop !== 'undefined' ? isLoop : true;
         cc.audioEngine.playMusic(musicPath, isLoop);
     },
