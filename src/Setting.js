@@ -86,3 +86,4 @@ Setting.EMP_DURATION = 5 / Setting.TIME_UPDATE_INTERVAL;
 Setting.EMP_AOE = 3;
 // other
 Setting.REACH_DESTINATION_DELTA_NUMBER_TILE = Setting.TANK_LIGHT_SPEED;
+Setting.MAP_CELL_CONTENTSIZE = 60;//design size

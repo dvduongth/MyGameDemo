@@ -10,6 +10,7 @@
           <Image Name="btn_blue_1.png" />
           <Image Name="btn_orange_0.png" />
           <Image Name="button_brown_0.png" />
+          <Image Name="button_bum.png" />
           <Image Name="button_green_0.png" />
           <Image Name="button_green_1.png" />
           <Image Name="button_green_2.png" />
@@ -25,7 +26,6 @@
           <Image Name="x.png" />
           <Image Name="x2.png" />
           <Image Name="x3.png" />
-          <Image Name="button_bum.png" />
         </Folder>
         <Folder Name="Default">
           <Image Name="Button_Disable.png" />

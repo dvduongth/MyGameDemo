@@ -114,6 +114,7 @@ var BattleMgr = cc.Class.extend({
         return this.getBattleFactory().getGameObjectByIDFactory(this.getPlayerMgr().getCurrentSelectedTankID(team));
     },
     throwTank: function (worldPos, team, type, isBot) {
+        var _this = this;
         var parent = gv.engine.getBattleMgr().getMapMgr().getMapBackgroundObj();
         var position = parent.convertToNodeSpace(worldPos);
         if (this.getPlayerMgr().isAlreadyDoneThrowAllTank(team)) {
@@ -124,16 +125,15 @@ var BattleMgr = cc.Class.extend({
             var tank = this.getBattleFactory().throwTankFactory(parent, position, team, type);
             if (tank != null) {
                 this.getPlayerMgr().addTankIDForTeam(team, tank.getID());
-                if (this.getPlayerMgr().isMyTeam(team) && gv.engine.isCurrentSceneBattle()) {
-                    gv.engine.getSceneBattleIfExist().setSelectTankForControlByIndex(this.getPlayerMgr().getNumberPickedTankForTeam(team) - 1);
-                } else {
-                    this.getPlayerMgr().setCurrentSelectedTankID(team, tank.getID());
-                }
+                this.getPlayerMgr().setCurrentSelectedTankID(team, tank.getID());
                 this.getMatchMgr().pushTankID(tank.getID());
                 //matchMgr find suitable location and update position
                 this.getMatchMgr().findSuitableLocationForThrowTank(tank);
                 tank.runEffectAppearThrowDown(function () {
                     tank.tankAction(cc.KEY.enter);
+                    if(_this.getPlayerMgr().isMyTeam(team)){
+                        gv.engine.getSceneBattleIfExist().updateDisplayButtonHunt();
+                    }
                 });
                 return tank;
             } else {

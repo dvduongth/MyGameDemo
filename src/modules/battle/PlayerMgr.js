@@ -127,6 +127,7 @@ var PlayerMgr = cc.Class.extend({
         } else {
             LogUtils.getInstance().log([this.getClassName(), "setCurrentSelectedTankID failed", team, id]);
         }
+        gv.engine.getSceneBattleIfExist().updateDisplayButtonTankForSelect();
     },
     getCurrentSelectedTankID: function (team) {
         return this["_currentSelectedTankID" + team];
@@ -339,6 +340,9 @@ var PlayerMgr = cc.Class.extend({
         return null;
     },
     autoSelectOtherTankIDForCurrentSelectedFunction: function (team) {
+        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
+            return false;
+        }
         var id = -1;
         var found = false;
         while (!found && this.getListTankIDNotYetSelectForTeam(team).length > 0) {

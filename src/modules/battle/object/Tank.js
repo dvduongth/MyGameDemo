@@ -381,6 +381,9 @@ var Tank = cc.Sprite.extend({
         }
     },
     tankAction: function (keyCode) {
+        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
+            return false;
+        }
         var tank = this;
         switch (keyCode) {
             case cc.KEY.up:
@@ -478,7 +481,9 @@ var Tank = cc.Sprite.extend({
                 return Setting.TANK_HEAVY_ROF;
         }
     },
-
+    isDuringActionHunting: function () {
+        return this._actionTankHunt != null;
+    },
     createActionHunt: function () {
         this.removeActionHunt();
         this._actionTankHunt = cc.sequence(
@@ -494,6 +499,9 @@ var Tank = cc.Sprite.extend({
         }
     },
     spawnBullet: function () {
+        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
+            return false;
+        }
         if (this.getEMPCountdown() > 0) {
             return false;
         }
@@ -636,13 +644,13 @@ var Tank = cc.Sprite.extend({
     },
     createHPDisplayProgress: function () {
         var progressBg = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__PROGRESS_RED_PNG);
-        this.addChild(progressBg);
+        this.addChild(progressBg, 0);
         progressBg.setPosition(this.getContentSize().width / 2, -2);
         this._HPDisplayProgress = Utility.getInstance().createLoadingBar(resImg.RESOURCES__TEXTURES__PROGRESS_BULE_PNG);
         progressBg.addChild(this._HPDisplayProgress);
         this._HPDisplayProgress.setPosition(progressBg.getContentSize().width / 2, progressBg.getContentSize().height / 2);
         this._HPDisplayProgress.setPercent(100);
-        progressBg.setScale(0.25);
+        progressBg.setScale(0.5);
         this.setObjectProgressDisplay(progressBg);
         this.resetHP();
     },
@@ -728,6 +736,8 @@ var Tank = cc.Sprite.extend({
         this.setEMPCountdown(damage);
     },
     destroy: function () {
+        this.removeTouchListenerOneByOneTank();
+        this.clearAllFlagMarkDestinationPointInfo();
         this.stopHunt();
         var path;
         switch (this.getType()) {
@@ -764,14 +774,15 @@ var Tank = cc.Sprite.extend({
             default :
                 break;
         }
-        this.clearAllFlagMarkDestinationPointInfo();
         var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_TANK);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });
         Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
         this.getObjectProgressDisplay().setVisible(false);
-        this.removeTouchListenerOneByOneTank();
+        if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())){
+            gv.engine.getSceneBattleIfExist().updateDisplayButtonHunt();
+        }
         if (this.getID() == gv.engine.getBattleMgr().getPlayerMgr().getCurrentSelectedTankID(this.getTeam())) {
             this.setSelected(false);
             gv.engine.getBattleMgr().getPlayerMgr().autoSelectOtherTankIDForCurrentSelectedFunction(this.getTeam());

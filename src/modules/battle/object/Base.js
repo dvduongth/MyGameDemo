@@ -48,7 +48,7 @@ var Base = BaseGameObject.extend({
     },
     createHPDisplayProgress: function () {
         var progressBg = this._super();
-        progressBg.setScale(0.4);
+        //progressBg.setScale(0.4);
         this.setObjectProgressDisplay(progressBg);
     },
     destroy: function () {

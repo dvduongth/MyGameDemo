@@ -129,7 +129,7 @@
                   "Y": 0.0
                 },
                 "LeftMargin": 511.2951,
-                "RightMargin": 730.7048,
+                "RightMargin": 730.7049,
                 "TopMargin": 624.1274,
                 "BottomMargin": 617.8726,
                 "Tag": 146,
@@ -1280,7 +1280,7 @@
                 },
                 "LeftMargin": 99.984,
                 "RightMargin": 1142.016,
-                "TopMargin": 1086.5172,
+                "TopMargin": 1086.5173,
                 "BottomMargin": 155.4827,
                 "Tag": 135,
                 "Children": [
@@ -2715,7 +2715,7 @@
                 },
                 "LeftMargin": 428.0471,
                 "RightMargin": 813.9529,
-                "TopMargin": 1138.5994,
+                "TopMargin": 1138.5992,
                 "BottomMargin": 103.4007,
                 "Tag": 162,
                 "Children": [
@@ -5770,7 +5770,7 @@
                 },
                 "LeftMargin": 386.9375,
                 "RightMargin": 855.0625,
-                "TopMargin": 810.3536,
+                "TopMargin": 810.3537,
                 "BottomMargin": 431.6463,
                 "Tag": 198,
                 "Children": [
@@ -7405,7 +7405,7 @@
                 },
                 "LeftMargin": -99.5422,
                 "RightMargin": 1341.5422,
-                "TopMargin": 901.0557,
+                "TopMargin": 901.0556,
                 "BottomMargin": 340.9444,
                 "Tag": 168,
                 "Children": [
@@ -8339,7 +8339,7 @@
                   "Y": 0.0
                 },
                 "LeftMargin": -38.2591,
-                "RightMargin": 1280.259,
+                "RightMargin": 1280.2592,
                 "TopMargin": 30.2683,
                 "BottomMargin": 1211.7317,
                 "Tag": 152,
@@ -10491,7 +10491,7 @@
                   "Y": 0.0926
                 },
                 "LeftMargin": 945.6744,
-                "RightMargin": 181.3256,
+                "RightMargin": 181.3257,
                 "TopMargin": 182.0238,
                 "BottomMargin": 944.9762,
                 "Tag": 226,
@@ -10551,7 +10551,7 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 613.2827,
+                  "X": 613.2996,
                   "Y": -6.9219
                 },
                 "Scale": {
@@ -10570,8 +10570,8 @@
                 },
                 "HorizontalEdge": "BothEdge",
                 "VerticalEdge": "BottomEdge",
-                "LeftMargin": 613.2827,
-                "RightMargin": 628.7173,
+                "LeftMargin": 613.2996,
+                "RightMargin": 628.7004,
                 "TopMargin": 1248.9219,
                 "BottomMargin": -6.9219,
                 "Tag": 214,
@@ -10991,12 +10991,12 @@
                         },
                         "PressedFileData": {
                           "Type": "Normal",
-                          "Path": "resources/textures/Tank/Team 1/1A.png",
+                          "Path": "resources/textures/Tank/Team 1/1S.png",
                           "Plist": ""
                         },
                         "NormalFileData": {
                           "Type": "Normal",
-                          "Path": "resources/textures/Tank/Team 1/1A.png",
+                          "Path": "resources/textures/Tank/Team 1/1S.png",
                           "Plist": ""
                         },
                         "Scale9OriginX": 15,
@@ -11059,8 +11059,8 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 29.2525,
-                              "Y": 30.1396
+                              "X": 30.0,
+                              "Y": 30.0
                             },
                             "Scale": {
                               "ScaleX": 1.0,
@@ -11068,18 +11068,20 @@
                             },
                             "CColor": {},
                             "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
                             "PrePosition": {
-                              "X": 0.4875,
-                              "Y": 0.5023
+                              "X": 0.5,
+                              "Y": 0.5
                             },
                             "PreSize": {
                               "X": 1.05,
                               "Y": 1.15
                             },
-                            "LeftMargin": -2.2475,
-                            "RightMargin": -0.7525,
-                            "TopMargin": -4.6396,
-                            "BottomMargin": -4.3604,
+                            "LeftMargin": -1.5,
+                            "RightMargin": -1.5,
+                            "TopMargin": -4.5,
+                            "BottomMargin": -4.5,
                             "Tag": 1074,
                             "ActionTag": -691138340,
                             "Size": {
@@ -11087,6 +11089,49 @@
                               "Y": 69.0
                             },
                             "Name": "sprSelected",
+                            "ctype": "SpriteObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Tank/Team 1/1A.png",
+                              "Plist": ""
+                            },
+                            "BlendFunc": {
+                              "Src": 1,
+                              "Dst": 771
+                            },
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 30.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 1.0,
+                              "Y": 1.0
+                            },
+                            "Tag": 265,
+                            "ActionTag": 1465102312,
+                            "Size": {
+                              "X": 60.0,
+                              "Y": 60.0
+                            },
+                            "Name": "sprTank",
                             "ctype": "SpriteObjectData"
                           }
                         ],
@@ -11113,12 +11158,12 @@
                         },
                         "PressedFileData": {
                           "Type": "Normal",
-                          "Path": "resources/textures/Tank/Team 1/1A.png",
+                          "Path": "resources/textures/Tank/Team 1/1S.png",
                           "Plist": ""
                         },
                         "NormalFileData": {
                           "Type": "Normal",
-                          "Path": "resources/textures/Tank/Team 1/1A.png",
+                          "Path": "resources/textures/Tank/Team 1/1S.png",
                           "Plist": ""
                         },
                         "Scale9OriginX": 15,
@@ -11212,6 +11257,49 @@
                             },
                             "Name": "sprSelected",
                             "ctype": "SpriteObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Tank/Team 1/1A.png",
+                              "Plist": ""
+                            },
+                            "BlendFunc": {
+                              "Src": 1,
+                              "Dst": 771
+                            },
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 30.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 1.0,
+                              "Y": 1.0
+                            },
+                            "Tag": 266,
+                            "ActionTag": 1453575109,
+                            "Size": {
+                              "X": 60.0,
+                              "Y": 60.0
+                            },
+                            "Name": "sprTank",
+                            "ctype": "SpriteObjectData"
                           }
                         ],
                         "ActionTag": 1620880654,
@@ -11237,12 +11325,12 @@
                         },
                         "PressedFileData": {
                           "Type": "Normal",
-                          "Path": "resources/textures/Tank/Team 1/1A.png",
+                          "Path": "resources/textures/Tank/Team 1/1S.png",
                           "Plist": ""
                         },
                         "NormalFileData": {
                           "Type": "Normal",
-                          "Path": "resources/textures/Tank/Team 1/1A.png",
+                          "Path": "resources/textures/Tank/Team 1/1S.png",
                           "Plist": ""
                         },
                         "Scale9OriginX": 15,
@@ -11267,7 +11355,7 @@
                         },
                         "Position": {
                           "X": 181.7441,
-                          "Y": 51.7122
+                          "Y": 51.71
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -11286,8 +11374,8 @@
                         "VerticalEdge": "TopEdge",
                         "LeftMargin": 151.7441,
                         "RightMargin": 388.2559,
-                        "TopMargin": 28.2878,
-                        "BottomMargin": 21.7122,
+                        "TopMargin": 28.29,
+                        "BottomMargin": 21.71,
                         "Tag": 229,
                         "Children": [
                           {
@@ -11336,6 +11424,49 @@
                             },
                             "Name": "sprSelected",
                             "ctype": "SpriteObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Tank/Team 1/1A.png",
+                              "Plist": ""
+                            },
+                            "BlendFunc": {
+                              "Src": 1,
+                              "Dst": 771
+                            },
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 30.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 1.0,
+                              "Y": 1.0
+                            },
+                            "Tag": 267,
+                            "ActionTag": -1266566554,
+                            "Size": {
+                              "X": 60.0,
+                              "Y": 60.0
+                            },
+                            "Name": "sprTank",
+                            "ctype": "SpriteObjectData"
                           }
                         ],
                         "ActionTag": -1503233003,
@@ -11361,12 +11492,12 @@
                         },
                         "PressedFileData": {
                           "Type": "Normal",
-                          "Path": "resources/textures/Tank/Team 1/1A.png",
+                          "Path": "resources/textures/Tank/Team 1/1S.png",
                           "Plist": ""
                         },
                         "NormalFileData": {
                           "Type": "Normal",
-                          "Path": "resources/textures/Tank/Team 1/1A.png",
+                          "Path": "resources/textures/Tank/Team 1/1S.png",
                           "Plist": ""
                         },
                         "Scale9OriginX": 15,
@@ -11390,7 +11521,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": 254.6527,
+                          "X": 254.65,
                           "Y": 51.7122
                         },
                         "Scale": {
@@ -11408,8 +11539,8 @@
                           "Y": 0.5455
                         },
                         "VerticalEdge": "TopEdge",
-                        "LeftMargin": 224.6527,
-                        "RightMargin": 315.3473,
+                        "LeftMargin": 224.65,
+                        "RightMargin": 315.35,
                         "TopMargin": 28.2878,
                         "BottomMargin": 21.7122,
                         "Tag": 230,
@@ -11459,6 +11590,49 @@
                               "Y": 69.0
                             },
                             "Name": "sprSelected",
+                            "ctype": "SpriteObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Tank/Team 1/1A.png",
+                              "Plist": ""
+                            },
+                            "BlendFunc": {
+                              "Src": 1,
+                              "Dst": 771
+                            },
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 30.0,
+                              "Y": 30.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 1.0,
+                              "Y": 1.0
+                            },
+                            "Tag": 268,
+                            "ActionTag": -1116106954,
+                            "Size": {
+                              "X": 60.0,
+                              "Y": 60.0
+                            },
+                            "Name": "sprTank",
                             "ctype": "SpriteObjectData"
                           }
                         ],
@@ -11719,8 +11893,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 280.9027,
-              "Y": 2110.4929
+              "X": 1106.646,
+              "Y": 2070.606
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -11729,19 +11903,19 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.2262,
-              "Y": 0.9558
+              "X": 0.891,
+              "Y": 0.9378
             },
             "PreSize": {
               "X": 0.0862,
               "Y": 0.0476
             },
-            "HorizontalEdge": "LeftEdge",
+            "HorizontalEdge": "RightEdge",
             "VerticalEdge": "TopEdge",
-            "LeftMargin": 227.4027,
-            "RightMargin": 907.5973,
-            "TopMargin": 45.0071,
-            "BottomMargin": 2057.9929,
+            "LeftMargin": 1053.146,
+            "RightMargin": 81.854,
+            "TopMargin": 84.894,
+            "BottomMargin": 2018.106,
             "Tag": 231,
             "Children": [
               {
@@ -11776,7 +11950,7 @@
                 },
                 "Position": {
                   "X": 53.5,
-                  "Y": 58.5034
+                  "Y": 58.506
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -11796,8 +11970,8 @@
                 "VerticalEdge": "BothEdge",
                 "LeftMargin": 10.5,
                 "RightMargin": 10.5,
-                "TopMargin": 12.9966,
-                "BottomMargin": 25.0034,
+                "TopMargin": 12.994,
+                "BottomMargin": 25.006,
                 "Tag": 232,
                 "ActionTag": 1126955779,
                 "Size": {
@@ -12009,7 +12183,7 @@
             "HorizontalEdge": "LeftEdge",
             "VerticalEdge": "TopEdge",
             "LeftMargin": 3.8162,
-            "RightMargin": 1038.1837,
+            "RightMargin": 1038.1838,
             "TopMargin": 1.4775,
             "BottomMargin": 2006.5225,
             "Tag": 356,
