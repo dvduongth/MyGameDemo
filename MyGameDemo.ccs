@@ -25,6 +25,7 @@
           <Image Name="x.png" />
           <Image Name="x2.png" />
           <Image Name="x3.png" />
+          <Image Name="button_bum.png" />
         </Folder>
         <Folder Name="Default">
           <Image Name="Button_Disable.png" />
@@ -523,7 +524,6 @@
             </Folder>
             <Folder Name="Map">
               <Image Name="Background.png" />
-              <Image Name="Background_1.png" />
               <Image Name="Brick 1.png" />
               <Image Name="Brick 2.png" />
               <Image Name="Brick 3.png" />
@@ -585,14 +585,20 @@
                 <Image Name="3D.png" />
                 <Image Name="3S.png" />
               </Folder>
+              <Image Name="tank1Selected.png" />
+              <Image Name="tank2Selected.png" />
+              <Image Name="tank3Selected.png" />
             </Folder>
             <Folder Name="UI">
+              <Image Name="bg_advertise.png" />
+              <Image Name="bgTooltip.png" />
               <Image Name="FastForwardButton.png" />
               <Image Name="MetalBoard.png" />
               <Image Name="RewindButton.png" />
             </Folder>
             <Image Name="clock.png" />
             <Image Name="destination_point.png" />
+            <Image Name="destination_touch.png" />
             <Image Name="progress_bg.png" />
             <Image Name="progress_bule.png" />
             <Image Name="progress_red.png" />

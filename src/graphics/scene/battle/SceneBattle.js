@@ -51,10 +51,10 @@ var SceneBattle = BaseScene.extend({
                 Utility.getInstance().updateSpriteWithFileName(this.imgTank_2, resImg.RESOURCES__TEXTURES__TANK__TEAM___2__3A_PNG);
                 break;
         }
-        this.btnTank_0.setVisible(false);
-        this.btnTank_1.setVisible(false);
-        this.btnTank_2.setVisible(false);
-        this.btnTank_3.setVisible(false);
+        this.btnTank_0.setEnabled(false);
+        this.btnTank_1.setEnabled(false);
+        this.btnTank_2.setEnabled(false);
+        this.btnTank_3.setEnabled(false);
     },
     clearScene: function () {
         this.removeTouchListenerOneByOneTank();
@@ -110,7 +110,7 @@ var SceneBattle = BaseScene.extend({
 
         }
         btn.setContentSize(btn["oldSizeCCS"]);
-        btn.setVisible(true);
+        btn.setEnabled(true);
     },
     update: function (dt) {
         gv.engine.getBattleMgr().update(dt);

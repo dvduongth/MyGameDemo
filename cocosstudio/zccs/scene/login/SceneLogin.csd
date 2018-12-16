@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="1242.0000" Y="2208.0000" />
         <Children>
-          <AbstractNodeData Name="Panel_1" ActionTag="324077466" Tag="15" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_1" ActionTag="324077466" Tag="15" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TouchEnable="True" StretchWidthEnable="True" StretchHeightEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1242.0000" Y="2208.0000" />
             <AnchorPoint />
             <Position />
@@ -19,40 +19,40 @@
             <EndColor A="255" R="139" G="105" B="20" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1" ActionTag="1165379752" Tag="3" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="423.2278" RightMargin="382.7722" TopMargin="30.6855" BottomMargin="2071.3145" FontSize="72" LabelText="Scene login" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="436.0000" Y="106.0000" />
+          <AbstractNodeData Name="Text_1" ActionTag="1165379752" Tag="3" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="423.7446" RightMargin="383.2554" TopMargin="30.6855" BottomMargin="2071.3145" FontSize="72" LabelText="Scene login" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="435.0000" Y="106.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="641.2278" Y="2124.3145" />
+            <Position X="641.2446" Y="2124.3145" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="0" />
             <PrePosition X="0.5163" Y="0.9621" />
-            <PreSize X="0.6812" Y="0.0933" />
+            <PreSize X="0.3502" Y="0.0480" />
             <FontResource Type="Normal" Path="fonts/font_game_bold.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnLogin" ActionTag="-1079991131" Tag="4" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="537.8506" RightMargin="511.1494" TopMargin="1963.7734" BottomMargin="185.2265" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="163" Scale9Height="37" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="193.0000" Y="59.0000" />
+          <AbstractNodeData Name="btnLogin" ActionTag="-1079991131" Tag="4" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="321.0000" RightMargin="321.0000" TopMargin="954.0000" BottomMargin="954.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="163" Scale9Height="37" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="600.0000" Y="300.0000" />
             <Children>
-              <AbstractNodeData Name="Text_2" ActionTag="1457706825" Tag="5" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="58.0000" RightMargin="58.0000" TopMargin="11.0000" BottomMargin="11.0000" FontSize="24" LabelText="Login" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-                <Size X="77.0000" Y="37.0000" />
+              <AbstractNodeData Name="Text_2" ActionTag="1457706825" Tag="5" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="178.3846" RightMargin="183.6154" TopMargin="82.9198" BottomMargin="101.0802" FontSize="72" LabelText="LOGIN" OutlineSize="5" OutlineEnabled="True" ShadowOffsetX="0.0000" ShadowOffsetY="-5.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="238.0000" Y="116.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="96.5000" Y="29.5000" />
+                <Position X="297.3846" Y="159.0802" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="192" B="203" />
-                <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="0.3472" Y="0.5932" />
+                <CColor A="255" R="45" G="235" B="114" />
+                <PrePosition X="0.4956" Y="0.5303" />
+                <PreSize X="0.3967" Y="0.3867" />
                 <FontResource Type="Normal" Path="fonts/font_game_bold.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <OutlineColor A="255" R="6" G="39" B="6" />
+                <ShadowColor A="255" R="23" G="46" B="28" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="634.3506" Y="214.7265" />
+            <Position X="621.0000" Y="1104.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5107" Y="0.0972" />
-            <PreSize X="0.3016" Y="0.0519" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.4831" Y="0.1359" />
             <TextColor A="255" R="65" G="65" B="70" />
             <PressedFileData Type="Normal" Path="button/bt_chon.png" Plist="" />
             <NormalFileData Type="Normal" Path="button/bt_chon.png" Plist="" />
