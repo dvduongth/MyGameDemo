@@ -10,7 +10,7 @@ var SceneLogin = BaseScene.extend({
     initScene: function () {
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
         //this.createKeyBoardListener();
-        //this.createTouchListenerOneByOne();
+        this.createTouchListenerOneByOne();
     },
     onKeyPressed: function (keyCode, event) {
         LogUtils.getInstance().log(this.getClassName() + " onKeyPressed: " + keyCode);
@@ -35,10 +35,11 @@ var SceneLogin = BaseScene.extend({
     },
     onTouchBegan: function (touch, event) {
         LogUtils.getInstance().log(this.getClassName() + " onTouchBegan");
-        var explosion = gv.engine.getEffectMgr().showExplosion(touch.getLocation(), EXPLOSION_TANK);
-        explosion.setCompleteCallback(function () {
-            explosion.removeFromParent(true);
-        });
+        //var explosion = gv.engine.getEffectMgr().showExplosion(touch.getLocation(), EXPLOSION_TANK);
+        //explosion.setCompleteCallback(function () {
+        //    explosion.removeFromParent(true);
+        //});
+        var smoke = gv.engine.getEffectMgr().showEffectSmoke(touch.getLocation());
         return true;
     },
 

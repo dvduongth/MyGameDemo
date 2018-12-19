@@ -280,4 +280,31 @@ var EffectMgr = cc.Class.extend({
             effect.removed = true;
         }
     },
+    showEffectSmoke: function (worldPos) {
+        var parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
+        var zOrder = 1;
+        var node = new cc.Node();
+        parent.addChild(node, zOrder);
+        var particleBlack = new cc.ParticleSmoke();
+        var particleFrag = new cc.ParticleFire();
+        var particleWhite = new cc.ParticleSmoke();
+        node.addChild(particleBlack);
+        node.addChild(particleWhite);
+        node.addChild(particleFrag);
+        var startSize = 20.0;
+        particleBlack.setStartSize(startSize);
+        particleFrag.setStartSize(startSize / 5);
+        particleWhite.setStartSize(startSize / 2);
+        particleBlack.setTexture(cc.textureCache.addImage(resImg.RESOURCES__TEXTURES__PARTICLE__BLACKSMOKE_PNG));
+        particleFrag.setTexture(cc.textureCache.addImage(resImg.RESOURCES__TEXTURES__PARTICLE__FRAG_PNG));
+        particleWhite.setTexture(cc.textureCache.addImage(resImg.RESOURCES__TEXTURES__PARTICLE__WHITESMOKE_PNG));
+        particleBlack.setPosition(worldPos);
+        particleFrag.setPosition(worldPos);
+        particleWhite.setPosition(worldPos);
+
+        node.setCascadeOpacityEnabled(true);
+        node.setCascadeColorEnabled(true);
+        node.setOpacity(50);
+        return node;
+    }
 });
