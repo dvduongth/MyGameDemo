@@ -56,6 +56,7 @@ var Base = BaseGameObject.extend({
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });
+        gv.engine.getEffectMgr().showEffectSmoke(this.getWorldPosition());
         var path = null;
         switch (this.getType()) {
             case BASE_MAIN:

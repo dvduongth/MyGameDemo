@@ -10,7 +10,7 @@ var SceneLogin = BaseScene.extend({
     initScene: function () {
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
         //this.createKeyBoardListener();
-        this.createTouchListenerOneByOne();
+        //this.createTouchListenerOneByOne();
     },
     onKeyPressed: function (keyCode, event) {
         LogUtils.getInstance().log(this.getClassName() + " onKeyPressed: " + keyCode);

@@ -778,6 +778,7 @@ var Tank = cc.Sprite.extend({
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });
+        gv.engine.getEffectMgr().showEffectSmoke(this.getWorldPosition());
         Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
         this.getObjectProgressDisplay().setVisible(false);
         if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())){

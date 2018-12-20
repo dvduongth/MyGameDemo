@@ -283,28 +283,32 @@ var EffectMgr = cc.Class.extend({
     showEffectSmoke: function (worldPos) {
         var parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
         var zOrder = 1;
+        var startSize = 4.0;
         var node = new cc.Node();
         parent.addChild(node, zOrder);
         var particleBlack = new cc.ParticleSmoke();
-        var particleFrag = new cc.ParticleFire();
+        var particleFrag = new cc.ParticleSmoke();
         var particleWhite = new cc.ParticleSmoke();
         node.addChild(particleBlack);
-        node.addChild(particleWhite);
         node.addChild(particleFrag);
-        var startSize = 20.0;
-        particleBlack.setStartSize(startSize);
-        particleFrag.setStartSize(startSize / 5);
-        particleWhite.setStartSize(startSize / 2);
-        particleBlack.setTexture(cc.textureCache.addImage(resImg.RESOURCES__TEXTURES__PARTICLE__BLACKSMOKE_PNG));
-        particleFrag.setTexture(cc.textureCache.addImage(resImg.RESOURCES__TEXTURES__PARTICLE__FRAG_PNG));
-        particleWhite.setTexture(cc.textureCache.addImage(resImg.RESOURCES__TEXTURES__PARTICLE__WHITESMOKE_PNG));
-        particleBlack.setPosition(worldPos);
-        particleFrag.setPosition(worldPos);
-        particleWhite.setPosition(worldPos);
-
-        node.setCascadeOpacityEnabled(true);
-        node.setCascadeColorEnabled(true);
-        node.setOpacity(50);
+        node.addChild(particleWhite);
+        var setupParticle = function (particle, ratioSize, worldPos, path) {
+            var sSize = startSize * ratioSize;
+            particle.setEmitterMode(cc.ParticleSystem.MODE_GRAVITY);
+            particle.setRadialAccel(5);
+            particle.setRadialAccelVar(2);
+            particle.setSpeed(20);
+            particle.setSpeedVar(1);
+            particle.setLife(2);
+            particle.setLifeVar(1);
+            particle.setStartSize(sSize);
+            particle.setStartSizeVar(sSize >> 1);
+            particle.setTexture(cc.textureCache.addImage(path));
+            particle.setPosition(worldPos);
+        };
+        setupParticle(particleBlack,1, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__BLACKSMOKE_PNG);
+        setupParticle(particleFrag,3, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__FRAG_PNG);
+        setupParticle(particleWhite,1, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__WHITESMOKE_PNG);
         return node;
     }
 });
