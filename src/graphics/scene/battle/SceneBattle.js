@@ -283,6 +283,10 @@ var SceneBattle = BaseScene.extend({
         this._touchListenerBaseOneByOneTank_2 = null;
     },
     onTouchBeganTank: function (touch, event) {
+        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()){
+            LogUtils.getInstance().log([this.getClassName(), "onTouchBeganTank during pause game"]);
+            return false;
+        }
         var target = event.getCurrentTarget();
         var locationInNode = target.convertToNodeSpace(touch.getLocation());
         var s = target.getContentSize();
@@ -413,6 +417,10 @@ var SceneBattle = BaseScene.extend({
         return null;
     },
     onTouchBegan: function (touch, event) {
+        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()){
+            LogUtils.getInstance().log([this.getClassName(), "onTouchBegan during pause game"]);
+            return false;
+        }
         var worldPos = touch.getLocation();
         var gameObjectInfo = gv.engine.getBattleMgr().getMatchMgr().getGameObjectInfoByWorldPosition(worldPos);
         if (gameObjectInfo != null
