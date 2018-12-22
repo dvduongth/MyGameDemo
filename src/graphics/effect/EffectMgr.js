@@ -283,7 +283,7 @@ var EffectMgr = cc.Class.extend({
     showEffectSmoke: function (worldPos) {
         var parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
         var zOrder = 1;
-        var startSize = 4.0;
+        var startSize = 6.0;
         var node = new cc.Node();
         parent.addChild(node, zOrder);
         var particleBlack = new cc.ParticleSmoke();
@@ -308,7 +308,12 @@ var EffectMgr = cc.Class.extend({
         };
         setupParticle(particleBlack,1, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__BLACKSMOKE_PNG);
         setupParticle(particleFrag,3, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__FRAG_PNG);
-        setupParticle(particleWhite,1, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__WHITESMOKE_PNG);
+        setupParticle(particleWhite,2, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__WHITESMOKE_PNG);
+        node.setScale = function (s) {
+            particleBlack.setScale(s);
+            particleFrag.setScale(s);
+            particleWhite.setScale(s);
+        };
         return node;
     }
 });

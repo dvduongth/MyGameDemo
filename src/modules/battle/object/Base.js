@@ -52,11 +52,13 @@ var Base = BaseGameObject.extend({
         this.setObjectProgressDisplay(progressBg);
     },
     destroy: function () {
-        var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_TANK);
+        var worldPos = this.getWorldPosition();
+        var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_TANK);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });
-        gv.engine.getEffectMgr().showEffectSmoke(this.getWorldPosition());
+        var smoke = gv.engine.getEffectMgr().showEffectSmoke(cc.p(worldPos.x, worldPos.y - this.getContentSize().height / 2));
+        smoke.setScale(2);
         var path = null;
         switch (this.getType()) {
             case BASE_MAIN:

@@ -774,11 +774,12 @@ var Tank = cc.Sprite.extend({
             default :
                 break;
         }
-        var explosion = gv.engine.getEffectMgr().showExplosion(this.getWorldPosition(), EXPLOSION_TANK);
+        var worldPos = this.getWorldPosition();
+        var explosion = gv.engine.getEffectMgr().showExplosion(worldPos, EXPLOSION_TANK);
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });
-        gv.engine.getEffectMgr().showEffectSmoke(this.getWorldPosition());
+        gv.engine.getEffectMgr().showEffectSmoke(cc.p(worldPos.x, worldPos.y - this.getContentSize().height / 2));
         Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
         this.getObjectProgressDisplay().setVisible(false);
         if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())){
