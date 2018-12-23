@@ -30,6 +30,7 @@
         "src/resources/ResourceSoundMusic.js",
         "src/Engine.js",
         "src/graphics/custom/CustomRichText.js",
+        "src/graphics/custom/CustomSpriteNumber.js",
         "src/graphics/custom/CustomTableView.js",
         "src/graphics/effect/EffectMgr.js",
         "src/graphics/effect/SoundMusicMgr.js",

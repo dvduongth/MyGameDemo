@@ -22,6 +22,17 @@ var SceneBattle = BaseScene.extend({
 
         this._super(resJson.ZCCS__SCENE__BATTLE__SCENEBATTLE);
     },
+    onEnterTransitionDidFinish: function () {
+        this._super();
+        var readyGo = Utility.getInstance().getLabel({
+            text: "READY GO",
+            fontSize: 48,
+            color: cc.color.ORANGE
+        });
+        gv.engine.getEffectMgr().showEffectCountDown(5, readyGo, function () {
+            gv.engine.getBattleMgr().startBattle();
+        });
+    },
     initScene: function () {
         //local zorder
         this.sprMapBackground.setLocalZOrder(ZORDER_BACK_GROUND);

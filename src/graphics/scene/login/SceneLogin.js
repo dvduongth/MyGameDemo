@@ -39,7 +39,8 @@ var SceneLogin = BaseScene.extend({
         //explosion.setCompleteCallback(function () {
         //    explosion.removeFromParent(true);
         //});
-        var smoke = gv.engine.getEffectMgr().showEffectSmoke(touch.getLocation());
+        //var smoke = gv.engine.getEffectMgr().showEffectSmoke(touch.getLocation());
+        //gv.engine.getEffectMgr().showEffectCountDown(15);
         return true;
     },
 

@@ -87,3 +87,9 @@ var ZORDER_GROUND = 2;
 var ZORDER_FORCE_GROUND = 3;
 var ZORDER_SKY = 4;
 // ========================================================
+var NUMBER_STYLE = {
+    style1: 1,
+    style2: 2,
+    style3: 3,
+    style4: 4
+};

@@ -306,14 +306,79 @@ var EffectMgr = cc.Class.extend({
             particle.setTexture(cc.textureCache.addImage(path));
             particle.setPosition(worldPos);
         };
-        setupParticle(particleBlack,1, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__BLACKSMOKE_PNG);
-        setupParticle(particleFrag,3, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__FRAG_PNG);
-        setupParticle(particleWhite,2, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__WHITESMOKE_PNG);
+        setupParticle(particleBlack, 1, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__BLACKSMOKE_PNG);
+        setupParticle(particleFrag, 3, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__FRAG_PNG);
+        setupParticle(particleWhite, 2, worldPos, resImg.RESOURCES__TEXTURES__PARTICLE__WHITESMOKE_PNG);
         node.setScale = function (s) {
             particleBlack.setScale(s);
             particleFrag.setScale(s);
             particleWhite.setScale(s);
         };
         return node;
+    },
+    showEffectCountDown: function (number, lastSpriteDisplay, callback) {
+        var parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
+        var centerPos = cc.p(gv.WIN_SIZE.width / 2, gv.WIN_SIZE.height / 2);
+        var desScale = 3;
+        var startScale = 10 * desScale;
+        if (lastSpriteDisplay != null) {
+            parent.addChild(lastSpriteDisplay);
+            lastSpriteDisplay.setPosition(centerPos);
+            lastSpriteDisplay.setVisible(false);
+            lastSpriteDisplay.setOpacity(0);
+        }
+        var seq = [];
+        var action = cc.sequence(
+            cc.spawn(
+                cc.sequence(
+                    cc.fadeIn(0.1),
+                    cc.delayTime(0.4)
+                ),
+                cc.scaleTo(0.5, desScale).easing(cc.easeElasticOut(0.7))
+            ),
+            cc.delayTime(0.3),
+            cc.spawn(
+                cc.moveBy(0.2, 0, 10 * startScale),
+                cc.scaleTo(0.2, startScale / 2),
+                cc.sequence(
+                    cc.fadeOut(0.1),
+                    cc.delayTime(0.1)
+                )
+            ),
+            cc.removeSelf(true)
+        );
+        action.retain();
+        for (var i = number; i > 0; --i) {
+            var sprNumber = new CustomSpriteNumber(i, NUMBER_STYLE.style3);
+            parent.addChild(sprNumber);
+            sprNumber.setPosition(centerPos);
+            sprNumber.setCascadeOpacityEnabled(true);
+            sprNumber.setOpacity(0);
+            sprNumber.setVisible(false);
+            seq.push(cc.callFunc(function (sprNumber) {
+                sprNumber.setVisible(true);
+                sprNumber.setScale(startScale);
+                sprNumber.runAction(action.clone());
+            }.bind(this, sprNumber)));
+            seq.push(cc.delayTime(1));
+        }
+        if (lastSpriteDisplay != null) {
+            seq.push(cc.callFunc(function () {
+                lastSpriteDisplay.setVisible(true);
+                lastSpriteDisplay.setScale(startScale);
+                lastSpriteDisplay.runAction(action.clone());
+            }.bind(this)));
+            seq.push(cc.delayTime(1));
+        }
+        seq.push(cc.callFunc(function () {
+            action.release();
+            action = null;
+        }));
+        if (callback !== undefined) {
+            seq.push(cc.callFunc(function () {
+                Utility.getInstance().executeFunction(callback);
+            }));
+        }
+        parent.runAction(cc.sequence(seq));
     }
 });

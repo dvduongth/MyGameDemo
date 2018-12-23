@@ -79,8 +79,8 @@ var Engine = cc.Class.extend({
         this.getSoundMusicMgr().playMusicLobby();
     },
     viewSceneBattle: function () {
+        var _this = this;
         this.getSceneMgr().viewSceneById(SCENE_ID.BATTLE);
-        this.getBattleMgr().startBattle();
         this.getSoundMusicMgr().playMusicBattle();
     },
     isCurrentSceneBattle: function () {

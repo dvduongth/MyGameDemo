@@ -54,9 +54,7 @@ var BattleMgr = cc.Class.extend({
     startBattle: function () {
         this.getMatchMgr().startActionBattle();
         this.getBattleDataModel().resetSpawnPowerUpCountDown();
-        Utility.getInstance().callFunctionWithDelay(3, function () {
-            gv.engine.getBattleMgr().getPlayerMgr().throwEnemyTank();
-        });
+        this.getPlayerMgr().throwEnemyTank();
     },
 
     update: function (dt) {
