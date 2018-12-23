@@ -12,7 +12,6 @@ Setting.LOOPS_MATCH_END = 150; //count the loops in 2m30s
 // ====================================================================================================
 // Map data 22x22, each block have the enum BLOCK_ in Enum.js
 Setting.GAME_OBJECT_SIZE = 5;//number tile logic
-Setting.MAP_WATER_ALPHA = 0.3;
 Setting.MAP_LIMIT_ROW_THROW_TANK = 6;
 Setting.MAP_OFFSET_X = -100; // Reserved for screenshake
 Setting.MAP_OFFSET_Y = -100; // Reserved for screenshake

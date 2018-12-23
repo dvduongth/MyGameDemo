@@ -92,6 +92,15 @@ var MatchMgr = cc.Class.extend({
         this.checkSpawnPowerUp(dt);
         this.checkLogicCollisionPowerUp(dt);
         this.runUpdateStrike(dt);
+        this.runUpdateObstacle(dt);
+    },
+    runUpdateObstacle: function (dt) {
+        this.getListObstacleID().forEach(function (id) {
+            var obj = gv.engine.getBattleMgr().getGameObjectByID(id);
+            if (obj != null) {
+                obj.update(dt);
+            }
+        });
     },
     updatePerSecond: function () {
         this.checkLogicWinTimeUp();

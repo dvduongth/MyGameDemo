@@ -10,15 +10,12 @@ var Obstacle = BaseGameObject.extend({
         switch (this.getType()) {
             case BLOCK_SOFT_OBSTACLE:
                 this.setHP(Setting.OBSTACLE_HP);
-                this.getRootNode().setOpacity(255);
                 Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___1_PNG);
                 break;
             case BLOCK_HARD_OBSTACLE:
-                this.getRootNode().setOpacity(255);
                 Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__CONCRETE_PNG);
                 break;
             case BLOCK_WATER:
-                this.getRootNode().setOpacity(Math.round(255 * Setting.MAP_WATER_ALPHA));
                 this._countdownUpdateWater = 0;
                 Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__WATER_PNG);
                 break;
@@ -31,7 +28,7 @@ var Obstacle = BaseGameObject.extend({
         switch (this.getType()) {
             case BLOCK_WATER:
                 this._countdownUpdateWater++;
-                if (this._countdownUpdateWater == 10) {
+                if (this._countdownUpdateWater == 2) {
                     this._countdownUpdateWater = 0;
                     var r = Math.random();
                     var rootNode = this.getRootNode();
