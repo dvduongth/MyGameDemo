@@ -275,6 +275,10 @@ var Tank = cc.Sprite.extend({
         this._touchListenerBaseOneByOne = null;
     },
     onTouchBeganTank: function (touch, event) {
+        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()){
+            LogUtils.getInstance().log([this.getClassName(), "onTouchBeganTank during pause game"]);
+            return false;
+        }
         var target = event.getCurrentTarget();
         var locationInNode = target.convertToNodeSpace(touch.getLocation());
         var s = target.getContentSize();
