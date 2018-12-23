@@ -25,10 +25,10 @@
               <AbstractNodeData Name="ndWater_0" ActionTag="-1865838630" Tag="146" IconVisible="True" LeftMargin="511.2951" RightMargin="730.7049" TopMargin="624.1274" BottomMargin="617.8726" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Water_10_8" ActionTag="-379693447" Tag="149" IconVisible="False" LeftMargin="-73.4939" RightMargin="13.4939" TopMargin="-10.0098" BottomMargin="-49.9902" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_8" ActionTag="-379693447" Tag="149" IconVisible="False" LeftMargin="-73.4940" RightMargin="13.4940" TopMargin="-8.0096" BottomMargin="-51.9904" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-43.4939" Y="-19.9902" />
+                    <Position X="-43.4940" Y="-21.9904" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -36,10 +36,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_7" ActionTag="-1170487229" Tag="151" IconVisible="False" LeftMargin="-114.1745" RightMargin="54.1745" TopMargin="-10.0098" BottomMargin="-49.9902" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_7" ActionTag="-1170487229" Tag="151" IconVisible="False" LeftMargin="-115.1746" RightMargin="55.1746" TopMargin="-8.0094" BottomMargin="-51.9906" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-84.1745" Y="-19.9902" />
+                    <Position X="-85.1746" Y="-21.9906" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -47,10 +47,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_6" ActionTag="-1664285418" Tag="153" IconVisible="False" LeftMargin="-156.8794" RightMargin="96.8794" TopMargin="-10.0098" BottomMargin="-49.9902" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_6" ActionTag="-1664285418" Tag="153" IconVisible="False" LeftMargin="-157.8795" RightMargin="97.8795" TopMargin="-8.0094" BottomMargin="-51.9906" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-126.8794" Y="-19.9902" />
+                    <Position X="-127.8795" Y="-21.9906" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -58,10 +58,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_5" ActionTag="-382915355" Tag="155" IconVisible="False" LeftMargin="-199.5841" RightMargin="139.5841" TopMargin="-10.0098" BottomMargin="-49.9902" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_5" ActionTag="-382915355" Tag="155" IconVisible="False" LeftMargin="-214.5850" RightMargin="154.5850" TopMargin="-7.0076" BottomMargin="-52.9924" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-169.5841" Y="-19.9902" />
+                    <Position X="-184.5850" Y="-22.9924" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -69,10 +69,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_4" ActionTag="-880467136" Tag="157" IconVisible="False" LeftMargin="-242.2891" RightMargin="182.2891" TopMargin="-10.0098" BottomMargin="-49.9902" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_4" ActionTag="-880467136" Tag="157" IconVisible="False" LeftMargin="-266.2905" RightMargin="206.2905" TopMargin="-7.0065" BottomMargin="-52.9935" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-212.2891" Y="-19.9902" />
+                    <Position X="-236.2905" Y="-22.9935" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -80,10 +80,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_3" ActionTag="1900865380" Tag="233" IconVisible="False" LeftMargin="-270.2733" RightMargin="210.2733" TopMargin="-9.7547" BottomMargin="-50.2453" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_3" ActionTag="1900865380" Tag="233" IconVisible="False" LeftMargin="-316.2766" RightMargin="256.2766" TopMargin="-6.7468" BottomMargin="-53.2532" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-240.2733" Y="-20.2453" />
+                    <Position X="-286.2766" Y="-23.2532" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -91,10 +91,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_8" ActionTag="-1658147558" Tag="158" IconVisible="False" LeftMargin="-73.0568" RightMargin="13.0568" TopMargin="-48.6402" BottomMargin="-11.3598" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_8" ActionTag="-1658147558" Tag="158" IconVisible="False" LeftMargin="-75.0574" RightMargin="15.0574" TopMargin="-59.6355" BottomMargin="-0.3645" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-43.0568" Y="18.6402" />
+                    <Position X="-45.0574" Y="29.6355" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -102,10 +102,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_7" ActionTag="-1588237426" Tag="159" IconVisible="False" LeftMargin="-113.7378" RightMargin="53.7378" TopMargin="-48.6402" BottomMargin="-11.3598" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_7" ActionTag="-1588237426" Tag="159" IconVisible="False" LeftMargin="-114.7382" RightMargin="54.7382" TopMargin="-60.6390" BottomMargin="0.6390" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-83.7378" Y="18.6402" />
+                    <Position X="-84.7382" Y="30.6390" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -113,10 +113,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_6" ActionTag="2304667" Tag="160" IconVisible="False" LeftMargin="-156.4429" RightMargin="96.4429" TopMargin="-48.6402" BottomMargin="-11.3598" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_6" ActionTag="2304667" Tag="160" IconVisible="False" LeftMargin="-157.4429" RightMargin="97.4429" TopMargin="-59.6391" BottomMargin="-0.3609" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-126.4429" Y="18.6402" />
+                    <Position X="-127.4429" Y="29.6391" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -124,10 +124,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_5" ActionTag="-2017070898" Tag="161" IconVisible="False" LeftMargin="-199.1480" RightMargin="139.1480" TopMargin="-48.6402" BottomMargin="-11.3598" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_5" ActionTag="-2017070898" Tag="161" IconVisible="False" LeftMargin="-216.1492" RightMargin="156.1492" TopMargin="-59.6391" BottomMargin="-0.3609" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-169.1480" Y="18.6402" />
+                    <Position X="-186.1492" Y="29.6391" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -135,10 +135,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_4" ActionTag="2134643241" Tag="162" IconVisible="False" LeftMargin="-241.8529" RightMargin="181.8529" TopMargin="-48.6402" BottomMargin="-11.3598" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_4" ActionTag="2134643241" Tag="162" IconVisible="False" LeftMargin="-262.8549" RightMargin="202.8549" TopMargin="-59.6391" BottomMargin="-0.3609" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-211.8529" Y="18.6402" />
+                    <Position X="-232.8549" Y="29.6391" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -146,10 +146,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_3" ActionTag="-832470860" Tag="234" IconVisible="False" LeftMargin="-270.0593" RightMargin="210.0593" TopMargin="-48.8801" BottomMargin="-11.1199" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_3" ActionTag="-832470860" Tag="234" IconVisible="False" LeftMargin="-315.0619" RightMargin="255.0619" TopMargin="-59.8733" BottomMargin="-0.1267" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-240.0593" Y="18.8801" />
+                    <Position X="-285.0619" Y="29.8733" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -168,10 +168,10 @@
               <AbstractNodeData Name="ndWater_1" ActionTag="-146838675" Tag="163" IconVisible="True" LeftMargin="1057.3774" RightMargin="184.6226" TopMargin="620.4722" BottomMargin="621.5278" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Water_10_18" ActionTag="1696002736" Tag="164" IconVisible="False" LeftMargin="-74.1010" RightMargin="14.1010" TopMargin="-11.3102" BottomMargin="-48.6898" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_18" ActionTag="1696002736" Tag="164" IconVisible="False" LeftMargin="-67.1009" RightMargin="7.1009" TopMargin="-3.3102" BottomMargin="-56.6898" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-44.1010" Y="-18.6898" />
+                    <Position X="-37.1009" Y="-26.6898" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -179,10 +179,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_17" ActionTag="1640985900" Tag="165" IconVisible="False" LeftMargin="-114.7821" RightMargin="54.7821" TopMargin="-11.3102" BottomMargin="-48.6898" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_17" ActionTag="1640985900" Tag="165" IconVisible="False" LeftMargin="-99.7816" RightMargin="39.7816" TopMargin="-4.3102" BottomMargin="-55.6898" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-84.7821" Y="-18.6898" />
+                    <Position X="-69.7816" Y="-25.6898" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -190,10 +190,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_16" ActionTag="-1123864318" Tag="166" IconVisible="False" LeftMargin="-157.4876" RightMargin="97.4876" TopMargin="-11.3102" BottomMargin="-48.6898" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_16" ActionTag="-1123864318" Tag="166" IconVisible="False" LeftMargin="-145.4878" RightMargin="85.4878" TopMargin="-4.3102" BottomMargin="-55.6898" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-127.4876" Y="-18.6898" />
+                    <Position X="-115.4878" Y="-25.6898" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -201,10 +201,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_15" ActionTag="1821780204" Tag="167" IconVisible="False" LeftMargin="-200.1925" RightMargin="140.1925" TopMargin="-11.3102" BottomMargin="-48.6898" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_15" ActionTag="1821780204" Tag="167" IconVisible="False" LeftMargin="-193.1925" RightMargin="133.1925" TopMargin="-5.3102" BottomMargin="-54.6898" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-170.1925" Y="-18.6898" />
+                    <Position X="-163.1925" Y="-24.6898" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -212,10 +212,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_14" ActionTag="1902354267" Tag="168" IconVisible="False" LeftMargin="-242.8976" RightMargin="182.8976" TopMargin="-11.3102" BottomMargin="-48.6898" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_14" ActionTag="1902354267" Tag="168" IconVisible="False" LeftMargin="-246.8978" RightMargin="186.8978" TopMargin="-5.3102" BottomMargin="-54.6898" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-212.8976" Y="-18.6898" />
+                    <Position X="-216.8978" Y="-24.6898" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -223,10 +223,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_10_13" ActionTag="-725667282" Tag="235" IconVisible="False" LeftMargin="-270.2857" RightMargin="210.2857" TopMargin="-11.1297" BottomMargin="-48.8703" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_10_13" ActionTag="-725667282" Tag="235" IconVisible="False" LeftMargin="-305.2866" RightMargin="245.2866" TopMargin="-6.1295" BottomMargin="-53.8705" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-240.2857" Y="-18.8703" />
+                    <Position X="-275.2866" Y="-23.8705" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -234,10 +234,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_18" ActionTag="1991198377" Tag="169" IconVisible="False" LeftMargin="-73.7448" RightMargin="13.7448" TopMargin="-47.5823" BottomMargin="-12.4177" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_18" ActionTag="1991198377" Tag="169" IconVisible="False" LeftMargin="-66.7448" RightMargin="6.7448" TopMargin="-55.5819" BottomMargin="-4.4181" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-43.7448" Y="17.5823" />
+                    <Position X="-36.7448" Y="25.5819" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -245,10 +245,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_17" ActionTag="1386888066" Tag="170" IconVisible="False" LeftMargin="-114.4258" RightMargin="54.4258" TopMargin="-47.5823" BottomMargin="-12.4177" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_17" ActionTag="1386888066" Tag="170" IconVisible="False" LeftMargin="-99.4256" RightMargin="39.4256" TopMargin="-55.5819" BottomMargin="-4.4181" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-84.4258" Y="17.5823" />
+                    <Position X="-69.4256" Y="25.5819" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -256,10 +256,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_16" ActionTag="756634021" Tag="171" IconVisible="False" LeftMargin="-157.1311" RightMargin="97.1311" TopMargin="-47.5823" BottomMargin="-12.4177" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_16" ActionTag="756634021" Tag="171" IconVisible="False" LeftMargin="-144.1311" RightMargin="84.1311" TopMargin="-55.5819" BottomMargin="-4.4181" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-127.1311" Y="17.5823" />
+                    <Position X="-114.1311" Y="25.5819" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -267,10 +267,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_15" ActionTag="-1909048203" Tag="172" IconVisible="False" LeftMargin="-199.8360" RightMargin="139.8360" TopMargin="-47.5823" BottomMargin="-12.4177" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_15" ActionTag="-1909048203" Tag="172" IconVisible="False" LeftMargin="-191.8362" RightMargin="131.8362" TopMargin="-55.5819" BottomMargin="-4.4181" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-169.8360" Y="17.5823" />
+                    <Position X="-161.8362" Y="25.5819" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -278,10 +278,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_14" ActionTag="-2024013147" Tag="173" IconVisible="False" LeftMargin="-242.5413" RightMargin="182.5413" TopMargin="-47.5823" BottomMargin="-12.4177" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_14" ActionTag="-2024013147" Tag="173" IconVisible="False" LeftMargin="-246.5414" RightMargin="186.5414" TopMargin="-55.5819" BottomMargin="-4.4181" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-212.5413" Y="17.5823" />
+                    <Position X="-216.5414" Y="25.5819" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -289,10 +289,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Water.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Water_11_13" ActionTag="916376352" Tag="236" IconVisible="False" LeftMargin="-270.8039" RightMargin="210.8039" TopMargin="-47.7585" BottomMargin="-12.2415" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="Water_11_13" ActionTag="916376352" Tag="236" IconVisible="False" LeftMargin="-304.8051" RightMargin="244.8051" TopMargin="-54.7585" BottomMargin="-5.2415" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="-240.8039" Y="17.7585" />
+                    <Position X="-274.8051" Y="24.7585" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -1818,10 +1818,10 @@
                     <FileData Type="Normal" Path="resources/textures/Map/Concrete.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="ObstacleHard_0_21" ActionTag="532637931" Tag="151" IconVisible="False" LeftMargin="1235.7736" RightMargin="-1295.7736" TopMargin="-35.0148" BottomMargin="-24.9852" ctype="SpriteObjectData">
+                  <AbstractNodeData Name="ObstacleHard_0_21" ActionTag="532637931" Tag="151" IconVisible="False" LeftMargin="1228.7712" RightMargin="-1288.7712" TopMargin="-35.0148" BottomMargin="-24.9852" ctype="SpriteObjectData">
                     <Size X="60.0000" Y="60.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="1265.7736" Y="5.0148" />
+                    <Position X="1258.7712" Y="5.0148" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -2321,7 +2321,7 @@
                 <PrePosition X="-0.0308" Y="0.9756" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ndConcrete_2_0_1_0" ActionTag="647269811" Tag="191" IconVisible="True" LeftMargin="1301.6215" RightMargin="-59.6215" TopMargin="780.3354" BottomMargin="461.6646" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="ndConcrete_2_0_1_0" ActionTag="647269811" Tag="191" IconVisible="True" LeftMargin="1303.6211" RightMargin="-61.6211" TopMargin="780.3353" BottomMargin="461.6647" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="ObstacleHard_1_21" ActionTag="1016775469" Tag="192" IconVisible="False" LeftMargin="-121.5608" RightMargin="61.5608" TopMargin="349.6478" BottomMargin="-409.6478" ctype="SpriteObjectData">
@@ -2546,10 +2546,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="1301.6215" Y="461.6646" />
+                <Position X="1303.6211" Y="461.6647" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="1.0480" Y="0.3717" />
+                <PrePosition X="1.0496" Y="0.3717" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="MainBase_1_10_0" ActionTag="1872307175" Tag="222" IconVisible="False" LeftMargin="571.9176" RightMargin="555.0824" TopMargin="1074.3032" BottomMargin="52.6968" ctype="SpriteObjectData">
@@ -2912,6 +2912,30 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
+                      <AbstractNodeData Name="sprBgControlJoystick" ActionTag="-1541707358" Tag="269" IconVisible="False" LeftMargin="-313.7820" RightMargin="593.7820" TopMargin="-60.8467" BottomMargin="-149.1533" ctype="SpriteObjectData">
+                        <Size X="320.0000" Y="320.0000" />
+                        <Children>
+                          <AbstractNodeData Name="sprJoystick" ActionTag="1767600721" Tag="270" IconVisible="False" LeftMargin="106.0000" RightMargin="106.0000" TopMargin="107.5000" BottomMargin="107.5000" ctype="SpriteObjectData">
+                            <Size X="108.0000" Y="105.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="160.0000" Y="160.0000" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.5000" Y="0.5000" />
+                            <PreSize X="0.3375" Y="0.3281" />
+                            <FileData Type="Normal" Path="resources/textures/Map/circle_white.png" Plist="" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
+                        </Children>
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="-153.7820" Y="10.8467" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="-0.2563" Y="0.0986" />
+                        <PreSize X="0.5333" Y="2.9091" />
+                        <FileData Type="Normal" Path="resources/textures/Map/background_4_direction.png" Plist="" />
+                        <BlendFunc Src="1" Dst="771" />
+                      </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
                     <Position />
@@ -2942,7 +2966,7 @@
             <FileData Type="Normal" Path="resources/textures/Map/Background.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="sprClock" ActionTag="-1236766851" Tag="231" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="1053.1460" RightMargin="81.8540" TopMargin="84.8940" BottomMargin="2018.1060" ctype="SpriteObjectData">
+          <AbstractNodeData Name="sprClock" ActionTag="-1236766851" Tag="231" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="TopEdge" LeftMargin="567.5000" RightMargin="567.5000" TopMargin="4.3787" BottomMargin="2098.6213" ctype="SpriteObjectData">
             <Size X="107.0000" Y="105.0000" />
             <Children>
               <AbstractNodeData Name="lbCountdownTime" ActionTag="1126955779" Tag="232" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="10.5000" RightMargin="10.5000" TopMargin="12.9940" BottomMargin="25.0060" IsCustomSize="True" FontSize="22" LabelText="03:59" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="0.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
@@ -2959,15 +2983,15 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1106.6460" Y="2070.6060" />
+            <Position X="621.0000" Y="2151.1213" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8910" Y="0.9378" />
+            <PrePosition X="0.5000" Y="0.9742" />
             <PreSize X="0.0862" Y="0.0476" />
             <FileData Type="Normal" Path="resources/textures/clock.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnBackToLobby" ActionTag="566998122" Tag="224" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="TopEdge" LeftMargin="973.5649" RightMargin="7.4351" TopMargin="7.4666" BottomMargin="2127.5334" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="231" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnBackToLobby" ActionTag="566998122" Tag="224" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="5.4911" RightMargin="975.5089" TopMargin="6.3953" BottomMargin="2128.6047" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="231" Scale9Height="51" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="261.0000" Y="73.0000" />
             <Children>
               <AbstractNodeData Name="Text_2_3_3_2" ActionTag="688898436" Tag="225" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="30.5000" RightMargin="30.5000" TopMargin="18.0000" BottomMargin="18.0000" FontSize="24" LabelText="BACK TO LOBBY" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
@@ -2984,28 +3008,14 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1104.0649" Y="2164.0334" />
+            <Position X="135.9911" Y="2165.1047" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8889" Y="0.9801" />
+            <PrePosition X="0.1095" Y="0.9806" />
             <PreSize X="0.2101" Y="0.0331" />
             <TextColor A="255" R="65" G="65" B="70" />
             <PressedFileData Type="Normal" Path="button/button_green_0.png" Plist="" />
             <NormalFileData Type="Normal" Path="button/button_green_0.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="btnClose" ActionTag="-1364130738" Tag="356" IconVisible="False" HorizontalEdge="LeftEdge" VerticalEdge="TopEdge" LeftMargin="3.8162" RightMargin="1038.1838" TopMargin="1.4775" BottomMargin="2006.5225" TouchEnable="True" FontSize="14" LeftEage="13" RightEage="13" TopEage="11" BottomEage="11" Scale9OriginX="13" Scale9OriginY="11" Scale9Width="14" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="200.0000" Y="200.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="103.8162" Y="2106.5225" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0836" Y="0.9540" />
-            <PreSize X="0.1610" Y="0.0906" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="button/CloseSelected.png" Plist="" />
-            <NormalFileData Type="Normal" Path="button/CloseNormal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

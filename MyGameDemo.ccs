@@ -524,11 +524,13 @@
             </Folder>
             <Folder Name="Map">
               <Image Name="Background.png" />
+              <Image Name="background_4_direction.png" />
               <Image Name="Brick 1.png" />
               <Image Name="Brick 2.png" />
               <Image Name="Brick 3.png" />
               <Image Name="Brick 4.png" />
               <Image Name="Brick 5.png" />
+              <Image Name="circle_white.png" />
               <Image Name="Concrete.png" />
               <Image Name="Water.png" />
             </Folder>

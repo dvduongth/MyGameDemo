@@ -252,6 +252,7 @@ var Tank = cc.Sprite.extend({
             info.spr.removeFromParent(true);
         });
         this.setListFlagMarkDestinationPointInfo([]);
+        this.setMoveDestinationWorldPosition(null);
         this.clearDestinationPointDisplay();
     },
 

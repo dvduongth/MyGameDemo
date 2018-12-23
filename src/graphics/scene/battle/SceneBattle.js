@@ -3,7 +3,6 @@ var SceneBattle = BaseScene.extend({
     ctor: function () {
         //todo ccs element
         this.btnBackToLobby = null;
-        this.btnClose = null;
         this.sprMapBackground = null;
         this.sprClock = null;
         this.lbCountdownTime = null;
@@ -18,6 +17,8 @@ var SceneBattle = BaseScene.extend({
         this.btnNextTank = null;
         this.btnTankHunt = null;
         this.btnTankFlagDestination = null;
+        this.sprBgControlJoystick = null;
+        this.sprJoystick = null;
 
         this._super(resJson.ZCCS__SCENE__BATTLE__SCENEBATTLE);
     },
@@ -26,7 +27,6 @@ var SceneBattle = BaseScene.extend({
         this.sprMapBackground.setLocalZOrder(ZORDER_BACK_GROUND);
         this.sprClock.setLocalZOrder(ZORDER_SKY);
         this.btnBackToLobby.setLocalZOrder(ZORDER_FORCE_GROUND);
-        this.btnClose.setLocalZOrder(ZORDER_FORCE_GROUND);
         this.ndSlotPickTank.setLocalZOrder(ZORDER_SKY);
         gv.engine.getBattleMgr().getMapMgr().setMapBackgroundObj(this.sprMapBackground);
         gv.engine.getBattleMgr().getMapMgr().initMap();
@@ -283,7 +283,7 @@ var SceneBattle = BaseScene.extend({
         this._touchListenerBaseOneByOneTank_2 = null;
     },
     onTouchBeganTank: function (touch, event) {
-        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()){
+        if (gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
             LogUtils.getInstance().log([this.getClassName(), "onTouchBeganTank during pause game"]);
             return false;
         }
@@ -416,8 +416,74 @@ var SceneBattle = BaseScene.extend({
         }
         return null;
     },
+    checkForTankActionByJoystickControl: function () {
+        var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
+        if (!tank || !tank.isAlive()) {
+            return false;
+        }
+        var s = this.sprBgControlJoystick.getContentSize();
+        var centerPos = cc.p(s.width / 2, s.height / 2);
+        var nPos = this.sprJoystick.getPosition();
+        var delta = cc.pSub(nPos, centerPos);
+        if (Math.abs(delta.x) > Math.abs(delta.y)) {
+            if (delta.x > 0) {
+                //move to right
+                tank.tankAction(cc.KEY.right);
+            } else {
+                tank.tankAction(cc.KEY.left);
+            }
+        } else {
+            if (delta.y > 0) {
+                //move to top
+                tank.tankAction(cc.KEY.up);
+            } else {
+                tank.tankAction(cc.KEY.down);
+            }
+        }
+    },
+    updateJoystickLocationDisplay: function (touch) {
+        if (touch) {
+            var worldPos = touch.getLocation();
+            var target = this.sprBgControlJoystick;
+            var locationInNode = target.convertToNodeSpace(worldPos);
+            var s = target.getContentSize();
+            var radius = s.width / 2;
+            var centerPos = cc.p(s.width / 2, s.height / 2);
+            var x = Math.max(0, locationInNode.x);
+            x = Math.min(x, s.width);
+            var y = Math.max(0, locationInNode.y);
+            y = Math.min(y, s.height);
+            var nPos = cc.p(x, y);
+            var d = cc.pDistance(nPos, centerPos);
+            if (d > radius) {
+                //calculate valid position
+                var deltaPos = cc.pSub(nPos, centerPos);
+                var angle = cc.pToAngle(deltaPos);
+                var anglePoint = cc.pForAngle(angle);
+                x = centerPos.x + radius * anglePoint.x;
+                y = centerPos.y + radius * anglePoint.y;
+                nPos = cc.p(x, y);
+            }
+            this.sprJoystick.setPosition(nPos);
+            this.checkForTankActionByJoystickControl();
+        } else {
+            var size = this.sprBgControlJoystick.getContentSize();
+            this.sprJoystick.setPosition(size.width / 2, size.height / 2);
+        }
+    },
+    setIsUseJoystick: function (eff) {
+        this._isUseJoystick = eff;
+        if (!eff) {
+            //not use
+            this.updateJoystickLocationDisplay(false);
+        }
+    },
+    isUseJoystick: function () {
+        return this._isUseJoystick;
+    },
+
     onTouchBegan: function (touch, event) {
-        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()){
+        if (gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
             LogUtils.getInstance().log([this.getClassName(), "onTouchBegan during pause game"]);
             return false;
         }
@@ -435,30 +501,60 @@ var SceneBattle = BaseScene.extend({
             //LogUtils.getInstance().log([this.getClassName(), "onTouchBegan is during lock tank action THROW TANK", gameObjectInfo.ID, gameObjectInfo.type]);
             return false;
         }
-
+        if (this.onTouchBeganJoystick(touch, event)) {
+            //todo continue
+            return true;
+        }
         LogUtils.getInstance().log([this.getClassName(), "onTouchBegan check tank action"]);
         this.checkMarkDestinationPointTankAction(touch);
         this.checkTankAction(touch);
         return true;
     },
+    onTouchBeganJoystick: function (touch, event) {
+        var worldPos = touch.getLocation();
+        var target = this.sprBgControlJoystick;
+        if (target != null) {
+            var locationInNode = target.convertToNodeSpace(worldPos);
+            var s = target.getContentSize();
+            var rect = cc.rect(0, 0, s.width, s.height);
+            var isCorrect = cc.rectContainsPoint(rect, locationInNode);
+            if (isCorrect) {
+                this.setIsUseMarkFlagDestinationForSelectedTank(false);
+                this.setIsUseJoystick(true);
+                this.updateJoystickLocationDisplay(touch);
+                return true;
+            }
+        }
+        this.setIsUseJoystick(false);
+        return false;
+    },
     onTouchMoved: function (touch, event) {
-        this.checkTankAction(touch);
+        if (this.isUseJoystick()) {
+            this.onTouchMovedJoystick(touch, event);
+        } else {
+            this.checkTankAction(touch);
+        }
         return true;
     },
+    onTouchMovedJoystick: function (touch, event) {
+        this.updateJoystickLocationDisplay(touch);
+    },
     onTouchEnded: function (touch, event) {
+        this.setIsUseJoystick(false);
         LogUtils.getInstance().log([this.getClassName(), "onTouchEnded"]);
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
         if (!tank || !tank.isAlive()) {
-            LogUtils.getInstance().error([this.getClassName(), "onTouchEnded not yet select tank"]);
+            //LogUtils.getInstance().error([this.getClassName(), "onTouchEnded not yet select tank"]);
             return false;
         }
         tank.tankAction(null);
     },
     onTouchCancelled: function (touch, event) {
+        this.setIsUseJoystick(false);
         LogUtils.getInstance().log([this.getClassName(), "onTouchCancelled"]);
         var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
         if (!tank || !tank.isAlive()) {
-            LogUtils.getInstance().error([this.getClassName(), "onTouchCancelled not yet select tank"]);
+            //LogUtils.getInstance().error([this.getClassName(), "onTouchCancelled not yet select tank"]);
             return false;
         }
         tank.tankAction(null);
@@ -474,21 +570,25 @@ var SceneBattle = BaseScene.extend({
         switch (keyCode) {
             case cc.KEY.up:
                 //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed UP", keyCode]);
+                this.setIsUseMarkFlagDestinationForSelectedTank(false);
                 tank.setDirection(DIRECTION_UP);
                 tank.getMapPressAction()["up"] = true;
                 break;
             case cc.KEY.down:
                 //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed DOWN", keyCode]);
+                this.setIsUseMarkFlagDestinationForSelectedTank(false);
                 tank.setDirection(DIRECTION_DOWN);
                 tank.getMapPressAction()["down"] = true;
                 break;
             case cc.KEY.left:
                 //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed LEFT", keyCode]);
+                this.setIsUseMarkFlagDestinationForSelectedTank(false);
                 tank.setDirection(DIRECTION_LEFT);
                 tank.getMapPressAction()["left"] = true;
                 break;
             case cc.KEY.right:
                 //LogUtils.getInstance().log([this.getClassName(), "onKeyPressed RIGHT", keyCode]);
+                this.setIsUseMarkFlagDestinationForSelectedTank(false);
                 tank.setDirection(DIRECTION_RIGHT);
                 tank.getMapPressAction()["right"] = true;
                 break;
@@ -573,9 +673,6 @@ var SceneBattle = BaseScene.extend({
         switch (sender) {
             case this.btnBackToLobby:
                 gv.engine.viewSceneLobby();
-                break;
-            case this.btnClose:
-                gv.engine.end();
                 break;
             case this.btnNextTank:
                 gv.engine.getBattleMgr().getPlayerMgr().autoSelectOtherTankIDForCurrentSelectedFunction(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
@@ -665,7 +762,7 @@ var SceneBattle = BaseScene.extend({
                 //not hunt
                 this.btnTankHunt.setColor(cc.color(100, 100, 100));
             }
-        }else{
+        } else {
             //not hunt
             this.btnTankHunt.setColor(cc.color(100, 100, 100));
         }
