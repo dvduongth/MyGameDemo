@@ -139,7 +139,7 @@ var BattleMgr = cc.Class.extend({
                 this.getMatchMgr().findSuitableLocationForThrowTank(tank);
                 tank.runEffectAppearThrowDown(function () {
                     tank.tankAction(cc.KEY.enter);
-                    if(_this.getPlayerMgr().isMyTeam(team)){
+                    if (_this.getPlayerMgr().isMyTeam(team)) {
                         gv.engine.getSceneBattleIfExist().updateDisplayButtonHunt();
                     }
                 });
@@ -227,6 +227,7 @@ var BattleMgr = cc.Class.extend({
         this.getBattleFactory().respawnAllObstacle();
         this.resetCountdown();
         this.resetPlayerData();
+        gv.engine.getSceneBattleIfExist().resetStateStartBattle();
         this.showStatePrepareStartBattle();
     }
 });

@@ -42,6 +42,11 @@ var SceneBattle = BaseScene.extend({
         this.setIsUseMarkFlagDestinationForSelectedTank(false);
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
     },
+    resetStateStartBattle: function () {
+        this.updateDisplayPickTankSlot();
+        this.createTouchListenerOneByOneTank();
+        this.updateDisplayButtonTankForSelect();
+    },
     initDisplayPickTankSlot: function () {
         switch (gv.engine.getBattleMgr().getPlayerMgr().getMyTeam()) {
             case TEAM_1:

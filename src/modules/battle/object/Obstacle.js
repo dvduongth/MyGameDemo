@@ -64,9 +64,9 @@ var Obstacle = BaseGameObject.extend({
         }
     },
     selfDestruct: function () {
-      if(this.isAlive()) {
-          this.hitBullet(this.getHP());
-      }
+        if (this.isAlive()) {
+            this.hitBullet(this.getHP());
+        }
     },
     hitBullet: function (damage) {
         if (this.getType() == BLOCK_SOFT_OBSTACLE) {
@@ -93,6 +93,7 @@ var Obstacle = BaseGameObject.extend({
     },
     respawnSelf: function () {
         this.initObstacle();
+        gv.engine.getBattleMgr().getBattleFactory().addObstacle(this);
         gv.engine.getBattleMgr().getMapMgr().pushGameObjectForTileLogic(this.getID(), this, this.getStartTileLogicPointIndex());
         gv.engine.getBattleMgr().getMatchMgr().pushObstacleID(this.getID());
     }

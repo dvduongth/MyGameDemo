@@ -156,9 +156,9 @@ var Tank = cc.Sprite.extend({
     },
     setMoveDestinationWorldPosition: function (wPos) {
         this._flagWorldPosition = wPos;
-        if(wPos != null) {
+        if (wPos != null) {
             this.getDestinationPointDisplay().setPosition(wPos);
-        }else{
+        } else {
             this.clearDestinationPointDisplay();
         }
     },
@@ -176,7 +176,7 @@ var Tank = cc.Sprite.extend({
         var spr = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__DESTINATION_POINT_PNG);
         parent.addChild(spr);
         spr.setPosition(worldPos);
-        spr.runAction(cc.sequence(cc.fadeOut(1),cc.fadeIn(0.4)).repeatForever());
+        spr.runAction(cc.sequence(cc.fadeOut(1), cc.fadeIn(0.4)).repeatForever());
         this.getListFlagMarkDestinationPointInfo().push({
             spr: spr,
             pos: worldPos
@@ -187,21 +187,21 @@ var Tank = cc.Sprite.extend({
         var spr = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__DESTINATION_TOUCH_PNG);
         parent.addChild(spr);
         var opacity = 255;
-        if(!gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())){
+        if (!gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())) {
             spr.setColor(cc.color.RED);
             opacity = 50;
         }
-        spr.runAction(cc.sequence(cc.fadeOut(0.4),cc.fadeTo(0.25, opacity)).repeatForever());
+        spr.runAction(cc.sequence(cc.fadeOut(0.4), cc.fadeTo(0.25, opacity)).repeatForever());
         return spr;
     },
     getDestinationPointDisplay: function () {
-        if(!this._destinationPointDisplay) {
+        if (!this._destinationPointDisplay) {
             this._destinationPointDisplay = this.createDestinationPointDisplay();
         }
         return this._destinationPointDisplay;
     },
     clearDestinationPointDisplay: function () {
-        if(this._destinationPointDisplay != null) {
+        if (this._destinationPointDisplay != null) {
             this._destinationPointDisplay.removeFromParent(true);
             this._destinationPointDisplay = null;
         }
@@ -276,7 +276,7 @@ var Tank = cc.Sprite.extend({
         this._touchListenerBaseOneByOne = null;
     },
     onTouchBeganTank: function (touch, event) {
-        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()){
+        if (gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
             LogUtils.getInstance().log([this.getClassName(), "onTouchBeganTank during pause game"]);
             return false;
         }
@@ -386,7 +386,7 @@ var Tank = cc.Sprite.extend({
         }
     },
     tankAction: function (keyCode) {
-        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
+        if (gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
             return false;
         }
         var tank = this;
@@ -504,7 +504,7 @@ var Tank = cc.Sprite.extend({
         }
     },
     spawnBullet: function () {
-        if(gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
+        if (gv.engine.getBattleMgr().getMatchMgr().isPauseGame()) {
             return false;
         }
         if (this.getEMPCountdown() > 0) {
@@ -788,7 +788,7 @@ var Tank = cc.Sprite.extend({
         gv.engine.getBattleMgr().getBattleDataModel().pushEffectSmoke(smoke);
         Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
         this.getObjectProgressDisplay().setVisible(false);
-        if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())){
+        if (gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())) {
             gv.engine.getSceneBattleIfExist().updateDisplayButtonHunt();
         }
         if (this.getID() == gv.engine.getBattleMgr().getPlayerMgr().getCurrentSelectedTankID(this.getTeam())) {
@@ -865,6 +865,7 @@ var Tank = cc.Sprite.extend({
     },
     removeSelf: function () {
         LogUtils.getInstance().log([this.getClassName(), "removeSelf"]);
+        this.clearAllFlagMarkDestinationPointInfo();
         this.clearListTileLogicPointIndex();//remove all logic
         gv.engine.getBattleMgr().getBattleFactory().removeTank(this.getID());//remove all logic
         this.removeFromParent(true);
