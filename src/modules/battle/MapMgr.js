@@ -44,6 +44,10 @@ var MapMgr = cc.Class.extend({
         return this._tileLogicSize;
     },
     initMap: function () {
+        if(this._initMapDone){
+            return false;
+        }
+        this._initMapDone = true;
         var numCol = this.getNumberTileMapHorizontal();
         var numRow = this.getNumberTileMapVertical();
         var dw = this.getMapContentSize().width / numCol;
@@ -75,6 +79,17 @@ var MapMgr = cc.Class.extend({
             y += dh;
         }
         LogUtils.getInstance().log([this.getClassName(), "init map success"]);
+    },
+    cleanMap: function () {
+        var numCol = this.getNumberTileMapHorizontal();
+        var numRow = this.getNumberTileMapVertical();
+        for (var row = 0; row < numRow; ++row) {
+            for (var col = 0; col < numCol; ++col) {
+                var tileLogic = this.getTileMatrix()[row][col];
+                tileLogic.removeAllGameObjectIDOnTile();
+            }
+        }
+        LogUtils.getInstance().log([this.getClassName(), "cleanMap success"]);
     },
     convertTileIndexPointToMapIndexPoint: function (p) {
         return cc.p(Math.floor(p.x / Setting.GAME_OBJECT_SIZE), Math.floor(p.y / Setting.GAME_OBJECT_SIZE));

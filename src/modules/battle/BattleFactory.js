@@ -9,9 +9,13 @@ var BattleFactory = cc.Class.extend({
         return this._className;
     },
     ctor: function () {
-        this.setMAPSprite({});
+        this.cleanFactory();
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
+    },
+    cleanFactory: function () {
+        this._autoID = 0;
+        this.setMAPSprite({});
     },
     setMAPSprite: function (m) {
         this._mapSpr = m;

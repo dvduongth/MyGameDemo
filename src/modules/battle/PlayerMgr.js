@@ -8,10 +8,7 @@ var PlayerMgr = cc.Class.extend({
         return this._className;
     },
     ctor: function () {
-        this.setMAPGameObjectID({});
-        this.setListBaseIDForTeam([], TEAM_1);
-        this.setListBaseIDForTeam([], TEAM_2);
-        this.initPlayer();
+        this.cleanPlayer();
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
     },
@@ -26,6 +23,12 @@ var PlayerMgr = cc.Class.extend({
         this.setNumberPickedTankForTeam(TEAM_2, 0);
         this.setTeamWin(-1);
         this.setListBotID([]);
+    },
+    cleanPlayer: function () {
+        this.setMAPGameObjectID({});
+        this.setListBaseIDForTeam([], TEAM_1);
+        this.setListBaseIDForTeam([], TEAM_2);
+        this.initPlayer();
     },
     setMAPGameObjectID: function (m) {
         this._mapGameObjectID = m;

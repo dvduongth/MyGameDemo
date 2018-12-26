@@ -8,14 +8,17 @@ var MatchMgr = cc.Class.extend({
         return this._className;
     },
     ctor: function () {
+        this.initMatchStart();
+        LogUtils.getInstance().log([this.getClassName(), "create success"]);
+        return true;
+    },
+    initMatchStart: function () {
         this.setListBaseID([]);
         this.setListObstacleID([]);
         this.setListTankID([]);
         this.setListBulletID([]);
         this.setListPowerUpID([]);
         this.setListStrikeID([]);
-        LogUtils.getInstance().log([this.getClassName(), "create success"]);
-        return true;
     },
     isPauseGame: function () {
         //STATE_SUDDEN_DEATH

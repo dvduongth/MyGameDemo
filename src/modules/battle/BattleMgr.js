@@ -232,5 +232,27 @@ var BattleMgr = cc.Class.extend({
         this.resetPlayerData();
         gv.engine.getSceneBattleIfExist().resetStateStartBattle();
         this.showStatePrepareStartBattle();
+    },
+    removeAllBattle: function () {
+        this.cleanData();
+        this.cleanMap();
+        this.cleanMatch();
+        this.cleanPlayer();
+        this.cleanFactory();
+    },
+    cleanMap: function () {
+        this.getMapMgr().cleanMap();
+    },
+    cleanMatch: function () {
+        this.getMatchMgr().initMatchStart();
+    },
+    cleanPlayer: function () {
+        this.getPlayerMgr().cleanPlayer();
+    },
+    cleanData: function () {
+        this.getBattleDataModel().initBattleData();
+    },
+    cleanFactory: function () {
+        this.getBattleFactory().cleanFactory();
     }
 });

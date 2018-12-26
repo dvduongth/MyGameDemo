@@ -24,6 +24,7 @@ var SceneBattle = BaseScene.extend({
     },
     onEnterTransitionDidFinish: function () {
         this._super();
+        gv.engine.getBattleMgr().getMapMgr().initMap();
         gv.engine.getBattleMgr().showStatePrepareStartBattle();
     },
     initScene: function () {
@@ -33,7 +34,6 @@ var SceneBattle = BaseScene.extend({
         this.btnBackToLobby.setLocalZOrder(ZORDER_FORCE_GROUND);
         this.ndSlotPickTank.setLocalZOrder(ZORDER_SKY);
         gv.engine.getBattleMgr().getMapMgr().setMapBackgroundObj(this.sprMapBackground);
-        gv.engine.getBattleMgr().getMapMgr().initMap();
         this.findAndInitGameObject();
         this.initDisplayPickTankSlot();
         this.createKeyBoardListener();
@@ -686,6 +686,7 @@ var SceneBattle = BaseScene.extend({
         switch (sender) {
             case this.btnBackToLobby:
                 gv.engine.viewSceneLobby();
+                gv.engine.getBattleMgr().removeAllBattle();
                 break;
             case this.btnNextTank:
                 gv.engine.getBattleMgr().getPlayerMgr().autoSelectOtherTankIDForCurrentSelectedFunction(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());

@@ -81,5 +81,8 @@ var TileLogic = cc.Class.extend({
         this.setListIDOnTile(this.getListIDOnTile().filter(function (e) {
             return e != id;
         }));
+    },
+    removeAllGameObjectIDOnTile: function () {
+        this.setListIDOnTile([]);
     }
 });
