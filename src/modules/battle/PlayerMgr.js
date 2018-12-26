@@ -9,10 +9,15 @@ var PlayerMgr = cc.Class.extend({
     },
     ctor: function () {
         this.setMAPGameObjectID({});
-        this.setListTankIDForTeam([], TEAM_1);
-        this.setListTankIDForTeam([], TEAM_2);
         this.setListBaseIDForTeam([], TEAM_1);
         this.setListBaseIDForTeam([], TEAM_2);
+        this.initPlayer();
+        LogUtils.getInstance().log([this.getClassName(), "create success"]);
+        return true;
+    },
+    initPlayer: function () {
+        this.setListTankIDForTeam([], TEAM_1);
+        this.setListTankIDForTeam([], TEAM_2);
         this.setListInventoryForTeam([], TEAM_1);
         this.setListInventoryForTeam([], TEAM_2);
         this.setListTankIDNotYetSelectForTeam([], TEAM_1);
@@ -21,8 +26,6 @@ var PlayerMgr = cc.Class.extend({
         this.setNumberPickedTankForTeam(TEAM_2, 0);
         this.setTeamWin(-1);
         this.setListBotID([]);
-        LogUtils.getInstance().log([this.getClassName(), "create success"]);
-        return true;
     },
     setMAPGameObjectID: function (m) {
         this._mapGameObjectID = m;

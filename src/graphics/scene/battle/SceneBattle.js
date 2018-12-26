@@ -24,14 +24,7 @@ var SceneBattle = BaseScene.extend({
     },
     onEnterTransitionDidFinish: function () {
         this._super();
-        var readyGo = Utility.getInstance().getLabel({
-            text: "READY GO",
-            fontSize: 48,
-            color: cc.color.ORANGE
-        });
-        gv.engine.getEffectMgr().showEffectCountDown(5, readyGo, function () {
-            gv.engine.getBattleMgr().startBattle();
-        });
+        gv.engine.getBattleMgr().showStatePrepareStartBattle();
     },
     initScene: function () {
         //local zorder
@@ -617,6 +610,10 @@ var SceneBattle = BaseScene.extend({
             case cc.KEY.n:
             case cc.KEY.m:
                 gv.engine.getBattleMgr().getPlayerMgr().autoSelectOtherTankIDForCurrentSelectedFunction(gv.engine.getBattleMgr().getPlayerMgr());
+                break;
+            case cc.KEY.t:
+            case cc.KEY.r:
+                gv.engine.getBattleMgr().restartBattle();//todo test edit after
                 break;
         }
     },

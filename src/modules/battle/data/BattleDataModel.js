@@ -8,9 +8,16 @@ var BattleDataModel = cc.Class.extend({
         return this._className;
     },
     ctor: function () {
-        this.setTimeCountdownBattle(0);
+        this.initBattleData();
         LogUtils.getInstance().log([this.getClassName(), "create success"]);
         return true;
+    },
+    initBattleData: function () {
+        this.setTimeCountdownBattle(0);
+        this.setListTankIDNotUse([]);
+        this.setListBaseIDNotUse([]);
+        this.setListObstacleNotUse([]);
+        this.setListEffectSmoke([]);
     },
 
     setTimeCountdownBattle: function (t) {
@@ -45,5 +52,32 @@ var BattleDataModel = cc.Class.extend({
     },
     autoIncreaseSpawnPowerUpCountDown: function () {
         this.setSpawnPowerUpCountDown(this.getSpawnPowerUpCountDown() + 1);
+    },
+    setListTankIDNotUse: function (t) {
+        this._listTankIDNotUse = t;
+    },
+    getListTankIDNotUse: function () {
+        return this._listTankIDNotUse;
+    },
+    setListBaseIDNotUse: function (t) {
+        this._listBaseIDNotUse = t;
+    },
+    getListBaseIDNotUse: function () {
+        return this._listBaseIDNotUse;
+    },
+    setListObstacleNotUse: function (t) {
+        this._listObstacleNotUse = t;
+    },
+    getListObstacleNotUse: function () {
+        return this._listObstacleNotUse;
+    },
+    setListEffectSmoke: function (t) {
+        this._listEffectSmoke = t;
+    },
+    getListEffectSmoke: function () {
+        return this._listEffectSmoke;
+    },
+    pushEffectSmoke: function (s) {
+        this.getListEffectSmoke().push(s);
     }
 });

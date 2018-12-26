@@ -56,6 +56,16 @@ var BattleMgr = cc.Class.extend({
         this.getBattleDataModel().resetSpawnPowerUpCountDown();
         this.getPlayerMgr().throwEnemyTank();
     },
+    showStatePrepareStartBattle: function () {
+        var readyGo = Utility.getInstance().getLabel({
+            text: "READY GO",
+            fontSize: 48,
+            color: cc.color.ORANGE
+        });
+        gv.engine.getEffectMgr().showEffectCountDown(5, readyGo, function () {
+            gv.engine.getBattleMgr().startBattle();
+        });
+    },
 
     update: function (dt) {
         if (this.getMatchMgr().isPauseGame()) {
@@ -143,6 +153,7 @@ var BattleMgr = cc.Class.extend({
     },
     removeTank: function (id) {
         this.getMatchMgr().removeTankID(id);
+        this.getBattleFactory().pushTankIDNotUse(id);
     },
     spawnBullet: function (parent, position, direction, team, type, tankGunId) {
         var bullet = this.getBattleFactory().spawnBulletFactory(parent, position, direction, team, type, tankGunId);
@@ -168,6 +179,7 @@ var BattleMgr = cc.Class.extend({
     },
     removeBase: function (id) {
         this.getMatchMgr().removeBaseID(id);
+        this.getBattleFactory().pushBaseIDNotUse(id);
     },
     updateObstacle: function (rootNode, type, mapPointIdx) {
         LogUtils.getInstance().log([this.getClassName(), "updateObstacle type", type]);
@@ -178,6 +190,7 @@ var BattleMgr = cc.Class.extend({
         }
     },
     removeObstacle: function (id) {
+        this.getBattleFactory().pushObstacleNotUse(this.getGameObjectByID(id));
         this.getBattleFactory().removeObstacle(id);//remove all logic
         this.getMatchMgr().removeObstacleID(id);
     },
@@ -197,5 +210,23 @@ var BattleMgr = cc.Class.extend({
             _this.getMatchMgr().finishBattle();
             _this.getMatchMgr().destroyAllBullet();
         });
+    },
+    resetCountdown: function () {
+        this.getBattleDataModel().resetSpawnPowerUpCountDown();
+        this.getBattleDataModel().initBattleData();
+    },
+    resetPlayerData: function () {
+        this.getPlayerMgr().initPlayer();
+    },
+    restartBattle: function () {
+        this.getBattleFactory().removeAllTank();
+        this.getBattleFactory().removeAllPowerUp();
+        this.getBattleFactory().removeAllSmoke();
+        this.getBattleFactory().removeTextEndBattle();
+        this.getBattleFactory().respawnAllBase();
+        this.getBattleFactory().respawnAllObstacle();
+        this.resetCountdown();
+        this.resetPlayerData();
+        this.showStatePrepareStartBattle();
     }
 });

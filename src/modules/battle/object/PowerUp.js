@@ -165,7 +165,7 @@ var PowerUp = cc.Sprite.extend({
      * */
     destroy: function () {
         LogUtils.getInstance().log([this.getClassName(), "destroy"]);
-        this.clearListTileLogicPointIndex();
+        this.clearListTileLogicPointIndex();//remove all logic
         gv.engine.getBattleMgr().removePowerUp(this.getID());
         this.removeFromParent(true);
     }

@@ -13,6 +13,9 @@ var Base = BaseGameObject.extend({
     },
     initBase: function () {
         this.createHPDisplayProgress();
+        this.initStartDisplay();
+    },
+    initStartDisplay: function () {
         switch (this.getType()) {
             case BASE_MAIN:
                 this.setHPMax(Setting.BASE_MAIN_HP);
@@ -59,6 +62,7 @@ var Base = BaseGameObject.extend({
         });
         var smoke = gv.engine.getEffectMgr().showEffectSmoke(cc.p(worldPos.x, worldPos.y - this.getContentSize().height / 2));
         smoke.setScale(2);
+        gv.engine.getBattleMgr().getBattleDataModel().pushEffectSmoke(smoke);
         var path = null;
         switch (this.getType()) {
             case BASE_MAIN:
@@ -96,5 +100,10 @@ var Base = BaseGameObject.extend({
             }
         }
         gv.engine.getBattleMgr().removeBase(this.getID());
+    },
+    respawnSelf: function () {
+        gv.engine.getBattleMgr().getMatchMgr().pushBaseID(this.getID());
+        this.initStartDisplay();
+        this.getObjectProgressDisplay().setVisible(true);
     }
 });

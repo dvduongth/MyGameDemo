@@ -784,7 +784,8 @@ var Tank = cc.Sprite.extend({
         explosion.setCompleteCallback(function () {
             explosion.removeFromParent(true);
         });
-        gv.engine.getEffectMgr().showEffectSmoke(cc.p(worldPos.x, worldPos.y - this.getContentSize().height / 2));
+        var smoke = gv.engine.getEffectMgr().showEffectSmoke(cc.p(worldPos.x, worldPos.y - this.getContentSize().height / 2));
+        gv.engine.getBattleMgr().getBattleDataModel().pushEffectSmoke(smoke);
         Utility.getInstance().updateSpriteWithFileName(this.getTankSprite(), path);
         this.getObjectProgressDisplay().setVisible(false);
         if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(this.getTeam())){
@@ -861,5 +862,11 @@ var Tank = cc.Sprite.extend({
     },
     setSelected: function (eff) {
         this.getSelectedSprite().setVisible(eff);
+    },
+    removeSelf: function () {
+        LogUtils.getInstance().log([this.getClassName(), "removeSelf"]);
+        this.clearListTileLogicPointIndex();//remove all logic
+        gv.engine.getBattleMgr().getBattleFactory().removeTank(this.getID());//remove all logic
+        this.removeFromParent(true);
     }
 });

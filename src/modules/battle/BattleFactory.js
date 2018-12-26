@@ -139,7 +139,18 @@ var BattleFactory = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "removeObstacle id", id]);
         }
     },
+    setTextEndBattle: function (t) {
+        this._textEndBattle = t;
+    },
+    getTextEndBattle: function () {
+        return this._textEndBattle;
+    },
+
     showTextEndBattle: function () {
+        if(this.getTextEndBattle() != null) {
+            this.getTextEndBattle().removeFromParent(true);
+            this.setTextEndBattle(null);
+        }
         var teamWin = gv.engine.getBattleMgr().getPlayerMgr().getTeamWin();
         if(gv.engine.getBattleMgr().getPlayerMgr().isMyTeam(teamWin)){
             gv.engine.getSoundMusicMgr().playSoundEffect(resSoundMusic.SOUNDS__SOUND__WIN);
@@ -171,6 +182,7 @@ var BattleFactory = cc.Class.extend({
         var sprText = Utility.getInstance().createSpriteFromFileName(path);
         gv.engine.getLayerMgr().getLayerById(LAYER_ID.POPUP).addChild(sprText);
         sprText.setPosition(gv.WIN_SIZE.width / 2, gv.WIN_SIZE.height / 2);
+        this.setTextEndBattle(sprText);
     },
     spawnPowerUpFactory: function () {
         //LogUtils.getInstance().log([this.getClassName(), "spawnPowerUpFactory"]);
@@ -219,4 +231,60 @@ var BattleFactory = cc.Class.extend({
             LogUtils.getInstance().log([this.getClassName(), "removeStrike id", id]);
         }
     },
+    pushTankIDNotUse: function (id) {
+        gv.engine.getBattleMgr().getBattleDataModel().getListTankIDNotUse().push(id);
+    },
+    pushBaseIDNotUse: function (id) {
+        gv.engine.getBattleMgr().getBattleDataModel().getListBaseIDNotUse().push(id);
+    },
+    pushObstacleNotUse: function (id) {
+        gv.engine.getBattleMgr().getBattleDataModel().getListObstacleNotUse().push(id);
+    },
+    removeAllTank: function () {
+        var _this = this;
+        var list = gv.engine.getBattleMgr().getBattleDataModel().getListTankIDNotUse();
+        list = list.concat(gv.engine.getBattleMgr().getMatchMgr().getListTankID());
+        list.forEach(function (id) {
+            var obj = _this.getGameObjectByIDFactory(id);
+            obj.removeSelf();
+        });
+        gv.engine.getBattleMgr().getBattleDataModel().setListTankIDNotUse([]);
+        gv.engine.getBattleMgr().getMatchMgr().setListTankID([]);
+    },
+    removeAllPowerUp: function () {
+        var _this = this;
+        var list = gv.engine.getBattleMgr().getMatchMgr().getListPowerUpID();
+        list.forEach(function (id) {
+            var obj = _this.getGameObjectByIDFactory(id);
+            obj.destroy();
+        });
+        gv.engine.getBattleMgr().getMatchMgr().setListPowerUpID([]);
+    },
+    removeAllSmoke: function () {
+        var list = gv.engine.getBattleMgr().getBattleDataModel().getListEffectSmoke();
+        list.forEach(function (smoke) {
+            smoke.removeFromParent(true);
+        });
+        gv.engine.getBattleMgr().getBattleDataModel().setListEffectSmoke([]);
+    },
+    removeTextEndBattle: function () {
+        if(this.getTextEndBattle() != null) {
+            this.getTextEndBattle().removeFromParent(true);
+            this.setTextEndBattle(null);
+        }
+    },
+    respawnAllBase: function () {
+        var _this = this;
+        var list = gv.engine.getBattleMgr().getBattleDataModel().getListBaseIDNotUse();
+        list.forEach(function (id) {
+            var obj = _this.getGameObjectByIDFactory(id);
+            obj.respawnSelf();
+        });
+    },
+    respawnAllObstacle: function () {
+        var list = gv.engine.getBattleMgr().getBattleDataModel().getListObstacleNotUse();
+        list.forEach(function (obj) {
+            obj.respawnSelf();
+        });
+    }
 });

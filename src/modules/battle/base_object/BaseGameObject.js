@@ -221,5 +221,8 @@ var BaseGameObject = cc.Class.extend({
             }
         });
         this.setListTileLogicPointIndex([]);
+    },
+    respawnSelf: function () {
+        //todo override me
     }
 });

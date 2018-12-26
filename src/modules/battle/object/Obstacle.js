@@ -90,5 +90,10 @@ var Obstacle = BaseGameObject.extend({
         Utility.getInstance().updateSpriteWithFileName(this.getRootNode(), resImg.RESOURCES__TEXTURES__MAP__BRICK___5_PNG);
         this.clearListTileLogicPointIndex();//remove all logic
         gv.engine.getBattleMgr().removeObstacle(this.getID());
+    },
+    respawnSelf: function () {
+        this.initObstacle();
+        gv.engine.getBattleMgr().getMapMgr().pushGameObjectForTileLogic(this.getID(), this, this.getStartTileLogicPointIndex());
+        gv.engine.getBattleMgr().getMatchMgr().pushObstacleID(this.getID());
     }
 });
