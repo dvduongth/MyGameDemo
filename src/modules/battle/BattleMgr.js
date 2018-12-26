@@ -209,7 +209,9 @@ var BattleMgr = cc.Class.extend({
         Utility.getInstance().callFunctionWithDelay(0.1, function () {
             _this.getMatchMgr().finishBattle();
             _this.getMatchMgr().destroyAllBullet();
-            _this.getBattleFactory().showTextCountdownRestartBattle();
+            _this.getBattleFactory().showTextCountdownRestartBattle(function () {
+                _this.restartBattle();
+            });
         });
     },
     resetCountdown: function () {
