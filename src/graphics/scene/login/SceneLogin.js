@@ -41,6 +41,9 @@ var SceneLogin = BaseScene.extend({
         //});
         //var smoke = gv.engine.getEffectMgr().showEffectSmoke(touch.getLocation());
         //gv.engine.getEffectMgr().showEffectCountDown(15);
+        //gv.engine.getBattleMgr().getBattleFactory().showTextCountdownRestartBattle(function () {
+        //    LogUtils.getInstance().error("test done");
+        //});
         return true;
     },
 

@@ -9,6 +9,7 @@ Setting.TIME_UPDATE_INTERVAL = 0.15;//second
 Setting.TIME_LOOP_RENDER = 0.05;//second
 Setting.LOOPS_SUDDEN_DEATH = 60; //count the loops in 2 minutes (2*60*1000)
 Setting.LOOPS_MATCH_END = 150; //count the loops in 2m30s
+Setting.TIME_COUNTDOWN_AUTO_RESTART_MATCH = 5; //second
 // ====================================================================================================
 // Map data 22x22, each block have the enum BLOCK_ in Enum.js
 Setting.GAME_OBJECT_SIZE = 5;//number tile logic

@@ -206,9 +206,10 @@ var BattleMgr = cc.Class.extend({
         var _this = this;
         this.getMatchMgr().stopGunAllTank();
         this.getBattleFactory().showTextEndBattle();
-        Utility.getInstance().callFunctionWithDelay(1, function () {
+        Utility.getInstance().callFunctionWithDelay(0.1, function () {
             _this.getMatchMgr().finishBattle();
             _this.getMatchMgr().destroyAllBullet();
+            _this.getBattleFactory().showTextCountdownRestartBattle();
         });
     },
     resetCountdown: function () {

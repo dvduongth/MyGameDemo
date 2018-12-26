@@ -286,5 +286,24 @@ var BattleFactory = cc.Class.extend({
         list.forEach(function (obj) {
             obj.respawnSelf();
         });
-    }
+    },
+    showTextCountdownRestartBattle: function (callback) {
+        var str = "BATTLE RESTART AFTER @number";
+        var time = Setting.TIME_COUNTDOWN_AUTO_RESTART_MATCH;
+        var txt = Utility.getInstance().getLabel({text: str, fontSize: 48, horizontalAlignment: cc.TEXT_ALIGNMENT_CENTER});
+        var seq = [];
+        for(var i = time; i > 0; --i) {
+            seq.push(cc.callFunc(function (i) {
+                this.setString(str.replace("@number", Utility.getInstance().numberToStringGlobal(i)));
+            }.bind(txt, i)));
+            seq.push(cc.delayTime(1));
+        }
+        seq.push(cc.callFunc(function () {
+            Utility.getInstance().executeFunction(callback);
+        }));
+        seq.push(cc.removeSelf(true));
+        gv.engine.getLayerMgr().getLayerById(LAYER_ID.POPUP).addChild(txt);
+        txt.setPosition(gv.WIN_SIZE.width / 2, gv.WIN_SIZE.height / 2 - 100);
+        txt.runAction(cc.sequence(seq));
+    },
 });
