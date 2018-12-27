@@ -865,6 +865,7 @@ var Tank = cc.Sprite.extend({
     },
     removeSelf: function () {
         LogUtils.getInstance().log([this.getClassName(), "removeSelf"]);
+        this.stopHunt();
         this.clearAllFlagMarkDestinationPointInfo();
         this.clearListTileLogicPointIndex();//remove all logic
         gv.engine.getBattleMgr().getBattleFactory().removeTank(this.getID());//remove all logic

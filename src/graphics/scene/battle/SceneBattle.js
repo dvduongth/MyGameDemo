@@ -685,8 +685,7 @@ var SceneBattle = BaseScene.extend({
         var tank;
         switch (sender) {
             case this.btnBackToLobby:
-                gv.engine.viewSceneLobby();
-                gv.engine.getBattleMgr().removeAllBattle();
+                gv.engine.getBattleMgr().backToLobby();
                 break;
             case this.btnNextTank:
                 gv.engine.getBattleMgr().getPlayerMgr().autoSelectOtherTankIDForCurrentSelectedFunction(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());

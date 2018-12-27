@@ -102,7 +102,10 @@ var Base = BaseGameObject.extend({
         gv.engine.getBattleMgr().removeBase(this.getID());
     },
     respawnSelf: function () {
-        gv.engine.getBattleMgr().getMatchMgr().pushBaseID(this.getID());
+        //check alive
+        if(!this.isAlive()) {
+            gv.engine.getBattleMgr().getMatchMgr().pushBaseID(this.getID());
+        }
         this.initStartDisplay();
         this.getObjectProgressDisplay().setVisible(true);
     }

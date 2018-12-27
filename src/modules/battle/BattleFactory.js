@@ -280,15 +280,22 @@ var BattleFactory = cc.Class.extend({
     respawnAllBase: function () {
         var _this = this;
         var list = gv.engine.getBattleMgr().getBattleDataModel().getListBaseIDNotUse();
+        list = list.concat(gv.engine.getBattleMgr().getMatchMgr().getListBaseID());
         list.forEach(function (id) {
             var obj = _this.getGameObjectByIDFactory(id);
             obj.respawnSelf();
         });
     },
     respawnAllObstacle: function () {
+        var _this = this;
         var list = gv.engine.getBattleMgr().getBattleDataModel().getListObstacleNotUse();
         list.forEach(function (obj) {
             obj.respawnSelf();
+        });
+        list = gv.engine.getBattleMgr().getMatchMgr().getListObstacleID();
+        list.forEach(function (id) {
+            var obj = _this.getGameObjectByIDFactory(id);
+            obj.initObstacle();
         });
     },
     showTextCountdownRestartBattle: function (callback) {

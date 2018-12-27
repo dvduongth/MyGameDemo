@@ -234,6 +234,9 @@ var BattleMgr = cc.Class.extend({
         this.showStatePrepareStartBattle();
     },
     removeAllBattle: function () {
+        this.getMatchMgr().stopGunAllTank();
+        this.getMatchMgr().finishBattle();
+        this.getMatchMgr().destroyAllBullet();
         this.cleanData();
         this.cleanMap();
         this.cleanMatch();
@@ -253,6 +256,16 @@ var BattleMgr = cc.Class.extend({
         this.getBattleDataModel().initBattleData();
     },
     cleanFactory: function () {
+        this.getBattleFactory().removeAllTank();
+        this.getBattleFactory().removeAllPowerUp();
+        this.getBattleFactory().removeAllSmoke();
+        this.getBattleFactory().removeTextEndBattle();
+        this.getBattleFactory().respawnAllBase();
+        this.getBattleFactory().respawnAllObstacle();
         this.getBattleFactory().cleanFactory();
+    },
+    backToLobby: function () {
+        this.removeAllBattle();
+        gv.engine.viewSceneLobby();
     }
 });
