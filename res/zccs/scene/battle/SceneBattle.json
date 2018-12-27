@@ -10551,7 +10551,7 @@
               {
                 "AnchorPoint": {},
                 "Position": {
-                  "X": 613.2996,
+                  "X": 1242.0,
                   "Y": -6.9219
                 },
                 "Scale": {
@@ -10561,17 +10561,16 @@
                 "CColor": {},
                 "IconVisible": true,
                 "PrePosition": {
-                  "X": 0.4938,
+                  "X": 1.0,
                   "Y": -0.0056
                 },
                 "PreSize": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "HorizontalEdge": "BothEdge",
+                "HorizontalEdge": "RightEdge",
                 "VerticalEdge": "BottomEdge",
-                "LeftMargin": 613.2996,
-                "RightMargin": 628.7004,
+                "LeftMargin": 1242.0,
                 "TopMargin": 1248.9219,
                 "BottomMargin": -6.9219,
                 "Tag": 214,
@@ -10599,8 +10598,8 @@
                       "ScaleX": 0.5
                     },
                     "Position": {
-                      "X": -25.9883,
-                      "Y": -313.3992
+                      "X": -462.6943,
+                      "Y": -306.4009
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -10616,10 +10615,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -475.9883,
-                    "RightMargin": -424.0117,
-                    "TopMargin": 113.3992,
-                    "BottomMargin": -313.3992,
+                    "LeftMargin": -912.6943,
+                    "RightMargin": 12.6943,
+                    "TopMargin": 106.4009,
+                    "BottomMargin": -306.4009,
                     "Tag": 215,
                     "Children": [
                       {
@@ -10954,8 +10953,8 @@
                       "ScaleY": 1.0
                     },
                     "Position": {
-                      "X": 0.0,
-                      "Y": 0.0
+                      "X": -436.7108,
+                      "Y": 6.9981
                     },
                     "Scale": {
                       "ScaleX": 1.0,
@@ -10971,9 +10970,10 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": -300.0,
-                    "RightMargin": -300.0,
-                    "BottomMargin": -110.0,
+                    "LeftMargin": -736.7108,
+                    "RightMargin": 136.7108,
+                    "TopMargin": -6.9981,
+                    "BottomMargin": -103.0019,
                     "Tag": 226,
                     "Children": [
                       {
@@ -11866,8 +11866,8 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": -153.782,
-                          "Y": 10.8467
+                          "X": -238.202,
+                          "Y": 31.3239
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -11876,17 +11876,17 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": -0.2563,
-                          "Y": 0.0986
+                          "X": -0.397,
+                          "Y": 0.2848
                         },
                         "PreSize": {
                           "X": 0.5333,
                           "Y": 2.9091
                         },
-                        "LeftMargin": -313.782,
-                        "RightMargin": 593.782,
-                        "TopMargin": -60.8467,
-                        "BottomMargin": -149.1533,
+                        "LeftMargin": -398.202,
+                        "RightMargin": 678.202,
+                        "TopMargin": -81.3239,
+                        "BottomMargin": -128.6761,
                         "Tag": 269,
                         "Children": [
                           {

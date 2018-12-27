@@ -2618,10 +2618,10 @@
                 <FileData Type="Normal" Path="resources/textures/Base/Team 2/SideBase.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ndSlotPickTank" ActionTag="-902819725" Tag="214" IconVisible="True" HorizontalEdge="BothEdge" VerticalEdge="BottomEdge" LeftMargin="613.2996" RightMargin="628.7004" TopMargin="1248.9219" BottomMargin="-6.9219" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="ndSlotPickTank" ActionTag="-902819725" Tag="214" IconVisible="True" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="1242.0000" TopMargin="1248.9219" BottomMargin="-6.9219" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
-                  <AbstractNodeData Name="Panel_2_11" ActionTag="590409940" Tag="215" IconVisible="False" LeftMargin="-475.9883" RightMargin="-424.0117" TopMargin="113.3992" BottomMargin="-313.3992" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="Panel_2_11" ActionTag="590409940" Tag="215" IconVisible="False" LeftMargin="-912.6943" RightMargin="12.6943" TopMargin="106.4009" BottomMargin="-306.4009" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="900.0000" Y="200.0000" />
                     <Children>
                       <AbstractNodeData Name="slotTank_0" ActionTag="-1690328356" Tag="216" IconVisible="False" LeftMargin="145.6103" RightMargin="574.3897" TopMargin="12.7952" BottomMargin="7.2048" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -2701,7 +2701,7 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" />
-                    <Position X="-25.9883" Y="-313.3992" />
+                    <Position X="-462.6943" Y="-306.4009" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -2711,7 +2711,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Panel_2" ActionTag="-449252719" Tag="226" IconVisible="False" LeftMargin="-300.0000" RightMargin="-300.0000" BottomMargin="-110.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="Panel_2" ActionTag="-449252719" Tag="226" IconVisible="False" LeftMargin="-736.7108" RightMargin="136.7108" TopMargin="-6.9981" BottomMargin="-103.0019" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="600.0000" Y="110.0000" />
                     <Children>
                       <AbstractNodeData Name="btnTank_0" ActionTag="-4446768" Tag="227" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="5.9270" RightMargin="534.0730" TopMargin="28.2879" BottomMargin="21.7121" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="30" Scale9Height="38" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -2912,7 +2912,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="sprBgControlJoystick" ActionTag="-1541707358" Tag="269" IconVisible="False" LeftMargin="-313.7820" RightMargin="593.7820" TopMargin="-60.8467" BottomMargin="-149.1533" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="sprBgControlJoystick" ActionTag="-1541707358" Tag="269" IconVisible="False" LeftMargin="-398.2020" RightMargin="678.2020" TopMargin="-81.3239" BottomMargin="-128.6761" ctype="SpriteObjectData">
                         <Size X="320.0000" Y="320.0000" />
                         <Children>
                           <AbstractNodeData Name="sprJoystick" ActionTag="1767600721" Tag="270" IconVisible="False" LeftMargin="106.0000" RightMargin="106.0000" TopMargin="107.5000" BottomMargin="107.5000" ctype="SpriteObjectData">
@@ -2928,17 +2928,17 @@
                           </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="-153.7820" Y="10.8467" />
+                        <Position X="-238.2020" Y="31.3239" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.2563" Y="0.0986" />
+                        <PrePosition X="-0.3970" Y="0.2848" />
                         <PreSize X="0.5333" Y="2.9091" />
                         <FileData Type="Normal" Path="resources/textures/Map/background_4_direction.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position />
+                    <Position X="-436.7108" Y="6.9981" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
@@ -2950,10 +2950,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="613.2996" Y="-6.9219" />
+                <Position X="1242.0000" Y="-6.9219" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4938" Y="-0.0056" />
+                <PrePosition X="1.0000" Y="-0.0056" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>
