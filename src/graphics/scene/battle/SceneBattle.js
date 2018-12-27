@@ -436,41 +436,28 @@ var SceneBattle = BaseScene.extend({
         var centerPos = cc.p(s.width / 2, s.height / 2);
         var nPos = this.sprJoystick.getPosition();
         var delta = cc.pSub(nPos, centerPos);
-        var margin = 10;
-        var pos = cc.POINT_ZERO;
-        var anchorPoint = cc.POINT_ZERO;
         var angle = 0;
         if (Math.abs(delta.x) > Math.abs(delta.y)) {
             if (delta.x > 0) {
                 //move to right
                 tank.tankAction(cc.KEY.right);
                 angle = 90;
-                anchorPoint = cc.p(0, 0.5);
-                pos = cc.p(s.width + margin, s.height / 2);
             } else {
                 tank.tankAction(cc.KEY.left);
                 angle = 270;
-                anchorPoint = cc.p(1, 0.5);
-                pos = cc.p(-margin, s.height / 2);
             }
         } else {
             if (delta.y > 0) {
                 //move to top
                 tank.tankAction(cc.KEY.up);
                 angle = 0;
-                anchorPoint = cc.p(0.5, 0);
-                pos = cc.p(s.width / 2, s.height + margin);
             } else {
                 tank.tankAction(cc.KEY.down);
                 angle = 180;
-                anchorPoint = cc.p(0.5, 1);
-                pos = cc.p(s.width / 2, -margin);
             }
         }
         this.sprJoystickDirection.setVisible(true);
         this.sprJoystickDirection.setRotation(angle);
-        this.sprJoystickDirection.setAnchorPoint(anchorPoint);
-        this.sprJoystickDirection.setPosition(pos);
     },
     updateJoystickLocationDisplay: function (touch) {
         if (touch) {
@@ -496,6 +483,7 @@ var SceneBattle = BaseScene.extend({
                 nPos = cc.p(x, y);
             }
             this.sprJoystick.setPosition(nPos);
+            this.sprJoystickDirection.setPosition(locationInNode.x, locationInNode.y + 20);
             this.checkForTankActionByJoystickControl();
         } else {
             var size = this.sprBgControlJoystick.getContentSize();
