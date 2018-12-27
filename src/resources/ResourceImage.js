@@ -401,6 +401,7 @@ var resImg = {
 	RESOURCES__TEXTURES__MAP__BRICK___5_PNG: "res/resources/textures/Map/Brick 5.png",
 	RESOURCES__TEXTURES__MAP__CIRCLE_WHITE_PNG: "res/resources/textures/Map/circle_white.png",
 	RESOURCES__TEXTURES__MAP__CONCRETE_PNG: "res/resources/textures/Map/Concrete.png",
+	RESOURCES__TEXTURES__MAP__DIRECTION_UP_PNG: "res/resources/textures/Map/direction_up.png",
 	RESOURCES__TEXTURES__MAP__WATER_PNG: "res/resources/textures/Map/Water.png",
 	RESOURCES__TEXTURES__PARTICLE__BLACKSMOKE_PNG: "res/resources/textures/Particle/BlackSmoke.png",
 	RESOURCES__TEXTURES__PARTICLE__FRAG_PNG: "res/resources/textures/Particle/Frag.png",

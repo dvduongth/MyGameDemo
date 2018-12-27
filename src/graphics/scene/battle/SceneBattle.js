@@ -483,7 +483,7 @@ var SceneBattle = BaseScene.extend({
                 nPos = cc.p(x, y);
             }
             this.sprJoystick.setPosition(nPos);
-            this.sprJoystickDirection.setPosition(locationInNode.x, locationInNode.y + 20);
+            this.sprJoystickDirection.setPosition(locationInNode.x, locationInNode.y + 150);
             this.checkForTankActionByJoystickControl();
         } else {
             var size = this.sprBgControlJoystick.getContentSize();
@@ -539,6 +539,12 @@ var SceneBattle = BaseScene.extend({
             var rect = cc.rect(0, 0, s.width, s.height);
             var isCorrect = cc.rectContainsPoint(rect, locationInNode);
             if (isCorrect) {
+                var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
+                if (!tank || !tank.isAlive()) {
+                    LogUtils.getInstance().error([this.getClassName(), "onTouchBeganJoystick not exist available tank"]);
+                    Utility.getInstance().showTextOnScene("PLEASE DRAG TANK INTO MAP TO PLAY!");
+                    return true;
+                }
                 this.setIsUseMarkFlagDestinationForSelectedTank(false);
                 this.setIsUseJoystick(true);
                 this.updateJoystickLocationDisplay(touch);
