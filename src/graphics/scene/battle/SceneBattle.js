@@ -19,6 +19,7 @@ var SceneBattle = BaseScene.extend({
         this.btnTankFlagDestination = null;
         this.sprBgControlJoystick = null;
         this.sprJoystick = null;
+        this.sprJoystickDirection = null;
 
         this._super(resJson.ZCCS__SCENE__BATTLE__SCENEBATTLE);
     },
@@ -41,6 +42,7 @@ var SceneBattle = BaseScene.extend({
         this.createTouchListenerOneByOneTank();
         this.setIsUseMarkFlagDestinationForSelectedTank(false);
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
+        this.sprJoystickDirection.setVisible(false);
     },
     resetStateStartBattle: function () {
         this.updateDisplayPickTankSlot();
@@ -434,21 +436,41 @@ var SceneBattle = BaseScene.extend({
         var centerPos = cc.p(s.width / 2, s.height / 2);
         var nPos = this.sprJoystick.getPosition();
         var delta = cc.pSub(nPos, centerPos);
+        var margin = 10;
+        var pos = cc.POINT_ZERO;
+        var anchorPoint = cc.POINT_ZERO;
+        var angle = 0;
         if (Math.abs(delta.x) > Math.abs(delta.y)) {
             if (delta.x > 0) {
                 //move to right
                 tank.tankAction(cc.KEY.right);
+                angle = 90;
+                anchorPoint = cc.p(0, 0.5);
+                pos = cc.p(s.width + margin, s.height / 2);
             } else {
                 tank.tankAction(cc.KEY.left);
+                angle = 270;
+                anchorPoint = cc.p(1, 0.5);
+                pos = cc.p(-margin, s.height / 2);
             }
         } else {
             if (delta.y > 0) {
                 //move to top
                 tank.tankAction(cc.KEY.up);
+                angle = 0;
+                anchorPoint = cc.p(0.5, 0);
+                pos = cc.p(s.width / 2, s.height + margin);
             } else {
                 tank.tankAction(cc.KEY.down);
+                angle = 180;
+                anchorPoint = cc.p(0.5, 1);
+                pos = cc.p(s.width / 2, -margin);
             }
         }
+        this.sprJoystickDirection.setVisible(true);
+        this.sprJoystickDirection.setRotation(angle);
+        this.sprJoystickDirection.setAnchorPoint(anchorPoint);
+        this.sprJoystickDirection.setPosition(pos);
     },
     updateJoystickLocationDisplay: function (touch) {
         if (touch) {
@@ -478,6 +500,7 @@ var SceneBattle = BaseScene.extend({
         } else {
             var size = this.sprBgControlJoystick.getContentSize();
             this.sprJoystick.setPosition(size.width / 2, size.height / 2);
+            this.sprJoystickDirection.setVisible(false);
         }
     },
     setIsUseJoystick: function (eff) {
