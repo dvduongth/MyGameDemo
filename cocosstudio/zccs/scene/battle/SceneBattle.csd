@@ -2912,7 +2912,7 @@
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="sprBgControlJoystick" ActionTag="-1541707358" Tag="269" IconVisible="False" LeftMargin="-398.2020" RightMargin="678.2020" TopMargin="-81.3239" BottomMargin="-128.6761" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="sprBgControlJoystick" ActionTag="-1541707358" Tag="269" IconVisible="False" LeftMargin="-340.0000" RightMargin="620.0000" TopMargin="-81.3239" BottomMargin="-128.6761" ctype="SpriteObjectData">
                         <Size X="320.0000" Y="320.0000" />
                         <Children>
                           <AbstractNodeData Name="sprJoystick" ActionTag="1767600721" Tag="270" IconVisible="False" LeftMargin="106.0000" RightMargin="106.0000" TopMargin="107.5000" BottomMargin="107.5000" ctype="SpriteObjectData">
@@ -2926,12 +2926,23 @@
                             <FileData Type="Normal" Path="resources/textures/Map/circle_white.png" Plist="" />
                             <BlendFunc Src="1" Dst="771" />
                           </AbstractNodeData>
+                          <AbstractNodeData Name="sprJoystickDirection" ActionTag="-350822625" Tag="270" IconVisible="False" LeftMargin="94.8033" RightMargin="97.1967" TopMargin="-162.7493" BottomMargin="354.7493" ctype="SpriteObjectData">
+                            <Size X="128.0000" Y="128.0000" />
+                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                            <Position X="158.8033" Y="418.7493" />
+                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                            <CColor A="255" R="255" G="255" B="255" />
+                            <PrePosition X="0.4963" Y="1.3086" />
+                            <PreSize X="0.3375" Y="0.3281" />
+                            <FileData Type="Normal" Path="resources/textures/Map/direction_up.png" Plist="" />
+                            <BlendFunc Src="1" Dst="771" />
+                          </AbstractNodeData>
                         </Children>
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                        <Position X="-238.2020" Y="31.3239" />
+                        <Position X="-180.0000" Y="31.3239" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.3970" Y="0.2848" />
+                        <PrePosition X="-0.3000" Y="0.2848" />
                         <PreSize X="0.5333" Y="2.9091" />
                         <FileData Type="Normal" Path="resources/textures/Map/background_4_direction.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />

@@ -532,6 +532,7 @@
               <Image Name="Brick 5.png" />
               <Image Name="circle_white.png" />
               <Image Name="Concrete.png" />
+              <Image Name="direction_up.png" />
               <Image Name="Water.png" />
             </Folder>
             <Folder Name="Particle">

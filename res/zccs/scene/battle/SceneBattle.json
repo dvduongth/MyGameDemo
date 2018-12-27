@@ -11866,7 +11866,7 @@
                           "ScaleY": 0.5
                         },
                         "Position": {
-                          "X": -238.202,
+                          "X": -180.0,
                           "Y": 31.3239
                         },
                         "Scale": {
@@ -11876,15 +11876,15 @@
                         "CColor": {},
                         "IconVisible": false,
                         "PrePosition": {
-                          "X": -0.397,
+                          "X": -0.3,
                           "Y": 0.2848
                         },
                         "PreSize": {
                           "X": 0.5333,
                           "Y": 2.9091
                         },
-                        "LeftMargin": -398.202,
-                        "RightMargin": 678.202,
+                        "LeftMargin": -340.0,
+                        "RightMargin": 620.0,
                         "TopMargin": -81.3239,
                         "BottomMargin": -128.6761,
                         "Tag": 269,
@@ -11932,6 +11932,51 @@
                               "Y": 105.0
                             },
                             "Name": "sprJoystick",
+                            "ctype": "SpriteObjectData"
+                          },
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "resources/textures/Map/direction_up.png",
+                              "Plist": ""
+                            },
+                            "BlendFunc": {
+                              "Src": 1,
+                              "Dst": 771
+                            },
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 158.8033,
+                              "Y": 418.7493
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PrePosition": {
+                              "X": 0.4963,
+                              "Y": 1.3086
+                            },
+                            "PreSize": {
+                              "X": 0.3375,
+                              "Y": 0.3281
+                            },
+                            "LeftMargin": 94.8033,
+                            "RightMargin": 97.1967,
+                            "TopMargin": -162.7493,
+                            "BottomMargin": 354.7493,
+                            "Tag": 270,
+                            "ActionTag": -350822625,
+                            "Size": {
+                              "X": 128.0,
+                              "Y": 128.0
+                            },
+                            "Name": "sprJoystickDirection",
                             "ctype": "SpriteObjectData"
                           }
                         ],
@@ -12240,6 +12285,7 @@
         "../../../resources/textures/Map/Brick 1.png",
         "../../../resources/textures/Map/circle_white.png",
         "../../../resources/textures/Map/Concrete.png",
+        "../../../resources/textures/Map/direction_up.png",
         "../../../resources/textures/Map/Water.png",
         "../../../resources/textures/Tank/tank1Selected.png",
         "../../../resources/textures/Tank/Team 1/1A.png",
