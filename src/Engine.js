@@ -21,6 +21,7 @@ var Engine = cc.Class.extend({
         this.setLoginMgr(new LoginMgr());
         this.setLobbyMgr(new LobbyMgr());
         this.setBattleMgr(new BattleMgr());
+        this.setTutorialMgr(new TutorialMgr());
 
         //todo default
         this.viewSceneLoading();
@@ -67,6 +68,12 @@ var Engine = cc.Class.extend({
     getLobbyMgr: function(){
         return this._lobbyMgr;
     },
+    setTutorialMgr: function(mgr){
+        this._tutorialMgr = mgr;
+    },
+    getTutorialMgr: function(){
+        return this._tutorialMgr;
+    },
     viewSceneLoading: function () {
         this.getSceneMgr().viewSceneById(SCENE_ID.LOADING);
     },
@@ -79,7 +86,6 @@ var Engine = cc.Class.extend({
         this.getSoundMusicMgr().playMusicLobby();
     },
     viewSceneBattle: function () {
-        var _this = this;
         this.getSceneMgr().viewSceneById(SCENE_ID.BATTLE);
         this.getSoundMusicMgr().playMusicBattle();
     },

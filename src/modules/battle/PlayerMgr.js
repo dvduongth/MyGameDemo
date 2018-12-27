@@ -374,12 +374,24 @@ var PlayerMgr = cc.Class.extend({
         var tank = gv.engine.getBattleMgr().getGameObjectByID(listTankID[idx]);
         return tank != null && tank.isAlive();
     },
+    checkShowTipsHelpPlayer: function () {
+        var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(this.getMyTeam());
+        if (!tank || !tank.isAlive()) {
+            if(!this._duringShowTips){
+                this._duringShowTips = true;
+                gv.engine.getTutorialMgr().showTipsDragThrowTankForPlay();
+            }else{
+                this._duringShowTips = Math.random() > 0.5;
+            }
+        }
+    },
     update: function (dt) {
         // Update all strike
         this.checkAutoUsePowerUp();
     },
     updatePerSecond: function () {
         this.autoCheckActionForBot();
+        this.checkShowTipsHelpPlayer();
     },
     autoCheckActionForBot: function () {
         var _this = this;

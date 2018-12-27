@@ -392,6 +392,7 @@ var resImg = {
 	RESOURCES__TEXTURES__EXPLOSION__EX8__EX_22_PNG: "res/resources/textures/Explosion/ex8/ex_22.png",
 	RESOURCES__TEXTURES__EXPLOSION__EX8__EX_23_PNG: "res/resources/textures/Explosion/ex8/ex_23.png",
 	RESOURCES__TEXTURES__EXPLOSION__EX8__EX_24_PNG: "res/resources/textures/Explosion/ex8/ex_24.png",
+	RESOURCES__TEXTURES__HAND_PNG: "res/resources/textures/hand.png",
 	RESOURCES__TEXTURES__MAP__BACKGROUND_PNG: "res/resources/textures/Map/Background.png",
 	RESOURCES__TEXTURES__MAP__BACKGROUND_4_DIRECTION_PNG: "res/resources/textures/Map/background_4_direction.png",
 	RESOURCES__TEXTURES__MAP__BRICK___1_PNG: "res/resources/textures/Map/Brick 1.png",

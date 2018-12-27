@@ -75,6 +75,7 @@
         "src/modules/loading/LoadingMgr.js",
         "src/modules/lobby/LobbyMgr.js",
         "src/modules/login/LoginMgr.js",
+        "src/modules/TutorialMgr.js",
         "src/network/CmdDefine.js",
         "src/network/ErrorCodeDefine.js",
         "src/network/NetworkListener.js",

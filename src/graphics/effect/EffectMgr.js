@@ -380,5 +380,101 @@ var EffectMgr = cc.Class.extend({
             }));
         }
         parent.runAction(cc.sequence(seq));
-    }
+    },
+    showEffectHandTouch: function (worldPos, isLoop) {
+        var parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
+        var zOrder = 1;
+        var node = new cc.Node();
+        parent.addChild(node, zOrder);
+        node.setPosition(worldPos);
+        var sprHand = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__HAND_PNG);
+        var pos = cc.p(30, -30);
+        node.addChild(sprHand, 1);
+        sprHand.setPosition(pos);
+        var num = 2;
+        var seq = [];
+        for (var i = 0; i < num; ++i) {
+            seq.push(cc.callFunc(function () {
+                sprHand.runAction(cc.sequence(
+                    cc.moveBy(0.15, 10, 5),
+                    cc.callFunc(function () {
+                        var spr = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__DESTINATION_TOUCH_PNG);
+                        node.addChild(spr, 0);
+                        spr.setScale(0.5);
+                        spr.runAction(cc.sequence(
+                            cc.spawn(
+                                cc.scaleTo(0.75, 5),
+                                cc.sequence(
+                                    cc.fadeOut(0.6),
+                                    cc.delayTime(0.15)
+                                )
+                            ),
+                            cc.removeSelf(true)
+                        ));
+                    }),
+                    cc.jumpTo(0.25, pos.x, pos.y, 35, 1)
+                ));
+            }));
+            seq.push(cc.delayTime(0.4));
+        }
+        seq.push(cc.delayTime(0.5));
+        if (isLoop) {
+            node.runAction(cc.sequence(seq).repeatForever());
+        } else {
+            seq.push(cc.removeSelf(true));
+            node.runAction(cc.sequence(seq));
+        }
+        return node;
+    },
+    showEffectHandSlide: function (worldPos, isLoop) {
+        var parent = gv.engine.getLayerMgr().getLayerById(LAYER_ID.EFFECT);
+        var zOrder = 1;
+        var startSize = 30;
+        var node = new cc.Node();
+        parent.addChild(node, zOrder);
+        node.setPosition(worldPos);
+        var sprHand = Utility.getInstance().createSpriteFromFileName(resImg.RESOURCES__TEXTURES__HAND_PNG);
+        var pos = cc.p(30, -30);
+        node.addChild(sprHand, 1);
+        sprHand.setPosition(pos);
+        var d = 500;
+        var setupParticle = function (particle, ratioSize, worldPos, path) {
+            var sSize = startSize * ratioSize;
+            particle.setEmitterMode(cc.ParticleSystem.MODE_GRAVITY);
+
+            particle.setGravity(cc.p(-100, -100));
+            particle.setSpeed(5);
+            particle.setSpeedVar(2);
+            particle.setLife(2);
+            particle.setLifeVar(1);
+            particle.setStartSize(sSize);
+            particle.setStartSizeVar(sSize >> 1);
+            particle.setEndSize(sSize * 2);
+            particle.setTexture(cc.textureCache.addImage(path));
+            particle.setPosition(cc.POINT_ZERO);
+        };
+        var seq = [];
+        seq.push(cc.callFunc(function () {
+            var particle = new cc.ParticleMeteor();
+            particle.setName("particle");
+            node.addChild(particle, 0);
+            setupParticle(particle, 1, worldPos, resImg.RESOURCES__TEXTURES__DESTINATION_TOUCH_PNG);
+            node.setPosition(worldPos);
+            node.setVisible(true);
+        }));
+        seq.push(cc.jumpBy(1, Utility.getInstance().randomBetweenRound(-100, 100), d, 50, 1));
+        seq.push(cc.delayTime(0.5));
+        if (isLoop) {
+            seq.push(cc.callFunc(function () {
+                node.setVisible(false);
+                node.getChildByName("particle").removeFromParent(true);
+            }));
+            seq.push(cc.delayTime(0.1));
+            node.runAction(cc.sequence(seq).repeatForever());
+        } else {
+            seq.push(cc.removeSelf(true));
+            node.runAction(cc.sequence(seq));
+        }
+        return node;
+    },
 });

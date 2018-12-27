@@ -65,6 +65,16 @@ var SceneBattle = BaseScene.extend({
         this.updateDisplayButtonTankForSelect();
         this.updateDisplayButtonHunt();
     },
+    getListWorldPositionPickTankSlot: function () {
+        var target = this.imgTank_0;
+        var list = [];
+        list.push(target.getParent().convertToWorldSpace(target.getPosition()));
+        target = this.imgTank_1;
+        list.push(target.getParent().convertToWorldSpace(target.getPosition()));
+        target = this.imgTank_2;
+        list.push(target.getParent().convertToWorldSpace(target.getPosition()));
+        return list;
+    },
     clearScene: function () {
         this.removeTouchListenerOneByOneTank();
         this._super();
