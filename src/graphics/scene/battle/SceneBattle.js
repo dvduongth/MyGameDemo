@@ -43,6 +43,10 @@ var SceneBattle = BaseScene.extend({
         this.setIsUseMarkFlagDestinationForSelectedTank(false);
         LogUtils.getInstance().log([this.getClassName(), "initScene success"]);
         this.sprJoystickDirection.setVisible(false);
+        this.saveOldCCSValues();
+    },
+    saveOldCCSValues: function () {
+        gv.engine.getBattleMgr().getMapMgr().setOldCCSPosition(this.sprBgControlJoystick);
     },
     resetStateStartBattle: function () {
         this.updateDisplayPickTankSlot();
@@ -451,18 +455,22 @@ var SceneBattle = BaseScene.extend({
             if (delta.x > 0) {
                 //move to right
                 tank.tankAction(cc.KEY.right);
+                gv.engine.getBattleMgr().getMapMgr().setJoystickDirection(DIRECTION_RIGHT);
                 angle = 90;
             } else {
                 tank.tankAction(cc.KEY.left);
+                gv.engine.getBattleMgr().getMapMgr().setJoystickDirection(DIRECTION_LEFT);
                 angle = 270;
             }
         } else {
             if (delta.y > 0) {
                 //move to top
                 tank.tankAction(cc.KEY.up);
+                gv.engine.getBattleMgr().getMapMgr().setJoystickDirection(DIRECTION_UP);
                 angle = 0;
             } else {
                 tank.tankAction(cc.KEY.down);
+                gv.engine.getBattleMgr().getMapMgr().setJoystickDirection(DIRECTION_DOWN);
                 angle = 180;
             }
         }
@@ -493,12 +501,48 @@ var SceneBattle = BaseScene.extend({
                 nPos = cc.p(x, y);
             }
             this.sprJoystick.setPosition(nPos);
-            this.sprJoystickDirection.setPosition(locationInNode.x, locationInNode.y + 150);
+            var pos = cc.p(nPos.x, nPos.y + 150);
+            this.sprJoystickDirection.setPosition(pos);
             this.checkForTankActionByJoystickControl();
+            this.updateJoystickPosition(worldPos);
         } else {
             var size = this.sprBgControlJoystick.getContentSize();
             this.sprJoystick.setPosition(size.width / 2, size.height / 2);
             this.sprJoystickDirection.setVisible(false);
+            this.updateJoystickPosition(false);
+        }
+    },
+    updateJoystickPosition: function (worldPos) {
+        var target = this.sprBgControlJoystick;
+        var desPos, ACTION_TIME;
+        target.stopAllActions();
+        if (worldPos) {
+            var parent = target.getParent();
+            var locationInNode = parent.convertToNodeSpace(worldPos);
+            var s = target.getContentSize();
+            var deltaX = 0, deltaY = 0;
+            var direction = gv.engine.getBattleMgr().getMapMgr().getJoystickDirection();
+            switch (direction){
+                case DIRECTION_UP:
+                    deltaY = -s.height/2;
+                    break;
+                case DIRECTION_DOWN:
+                    deltaY = s.height/2;
+                    break;
+                case DIRECTION_LEFT:
+                    deltaX = s.width/2;
+                    break;
+                case DIRECTION_RIGHT:
+                    deltaX = -s.width/2;
+                    break;
+            }
+            desPos = cc.pAdd(locationInNode, cc.p(deltaX, deltaY));
+            ACTION_TIME = 0.4;
+            target.runAction(cc.moveTo(ACTION_TIME, desPos));
+        } else {
+            desPos = gv.engine.getBattleMgr().getMapMgr().getOldCCSPosition(target);
+            ACTION_TIME = 0.1;
+            target.runAction(cc.moveTo(ACTION_TIME, desPos));
         }
     },
     setIsUseJoystick: function (eff) {
@@ -573,6 +617,12 @@ var SceneBattle = BaseScene.extend({
         return true;
     },
     onTouchMovedJoystick: function (touch, event) {
+        var tank = gv.engine.getBattleMgr().getCurrentSelectedTank(gv.engine.getBattleMgr().getPlayerMgr().getMyTeam());
+        if (!tank || !tank.isAlive()) {
+            LogUtils.getInstance().log([this.getClassName(), "onTouchMovedJoystick not exist available tank"]);
+            this.updateJoystickLocationDisplay(false);
+            return false;
+        }
         this.updateJoystickLocationDisplay(touch);
     },
     onTouchEnded: function (touch, event) {

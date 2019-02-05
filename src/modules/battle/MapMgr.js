@@ -43,6 +43,32 @@ var MapMgr = cc.Class.extend({
     getTileLogicSize: function () {
         return this._tileLogicSize;
     },
+    setOldCCSPosition: function (obj) {
+        if(!obj){
+            LogUtils.getInstance().error([this.getClassName(), "setOldCCSValues obj null"]);
+        }
+        if(!obj["_oldCCSPos"]){
+            obj["_oldCCSPos"] = obj.getPosition();
+        }
+    },
+    getOldCCSPosition: function (obj) {
+        if(!obj["_oldCCSPos"]){
+            this.setOldCCSPosition(obj);
+        }
+        return obj["_oldCCSPos"];
+    },
+    setJoystickDirection: function (d) {
+        this._joystickDirection = d;
+    },
+    getJoystickDirection: function () {
+        return this._joystickDirection;
+    },
+    setJoystickDirectionArrowCurrentPosition: function (d) {
+        this._joystickDirectionArrowCurrentPosition = d;
+    },
+    getJoystickDirectionArrowCurrentPosition: function () {
+        return this._joystickDirectionArrowCurrentPosition;
+    },
     initMap: function () {
         if(this._initMapDone){
             return false;
